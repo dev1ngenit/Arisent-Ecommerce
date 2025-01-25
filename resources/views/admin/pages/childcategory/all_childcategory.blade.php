@@ -52,238 +52,235 @@
     </div>
     <!--end::Toolbar-->
 
-    <!--begin::Post-->
+    {{-- <!--begin::Post-->
     <div class="post d-flex flex-column-fluid" id="kt_post">
         <!--begin::Container-->
-        <div id="kt_content_container" class="container-xxl">
-            <!--begin::Products-->
-            <div class="card card-flush">
-                <!--begin::Card header-->
-                <div class="card-header align-items-center py-5 gap-2 gap-md-5">
+        <div id="kt_content_container" class="container-xxl"> --}}
+    <!--begin::Products-->
+    <div class="card card-flush">
+        <!--begin::Card header-->
+        <div class="card-header align-items-center py-5 gap-2 gap-md-5">
 
 
-                    <!--begin::Card toolbar-->
-                    <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
+            <!--begin::Card toolbar-->
+            <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
 
-                        <!--begin::Add product-->
-                        @if (Auth::guard('admin')->user()->can('add.childcategory'))
-                            <a data-bs-toggle="modal" data-bs-target="#addModal" class="btn btn-light-primary btn-sm">Add
-                                ChildCategory</a>
-                        @endif
-                        <!--end::Add product-->
+                <!--begin::Add product-->
+                @if (Auth::guard('admin')->user()->can('add.childcategory'))
+                    <a data-bs-toggle="modal" data-bs-target="#addModal" class="btn btn-light-primary btn-sm">Add
+                        ChildCategory</a>
+                @endif
+                <!--end::Add product-->
 
-                    </div>
-                    <!--end::Card toolbar-->
+            </div>
+            <!--end::Card toolbar-->
 
-                </div>
-                <!--end::Card header-->
-                <!--begin::Card body-->
-                <div class="card-body pt-0">
-                    <!--begin::Table-->
+        </div>
+        <!--end::Card header-->
+        <!--begin::Card body-->
+        <div class="card-body pt-0">
+            <!--begin::Table-->
 
-                    <table id="kt_datatable_example_5" class="table table-striped" style="width:100%">
-                        <thead>
-                            <tr>
-                                <th>Sl No</th>
-                                <th>Image</th>
-                                {{-- <th>Category Name</th> --}}
-                                <th>ChildCategory Name</th>
-                                <th>Status</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($childcategorys as $key => $childcategory)
-                                <tr>
+            <table id="kt_datatable_example_5" class="table table-striped" style="width:100%">
+                <thead class="bg-dark text-light">
+                    <tr>
+                        <th class="text-center">No</th>
+                        <th>Image</th>
+                        {{-- <th>Category Name</th> --}}
+                        <th>ChildCategory Name</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($childcategorys as $key => $childcategory)
+                        <tr>
 
-                                    <td>{{ $key + 1 }}</td>
-                                    <td>
-                                        <img src="{{ asset('storage/childcategory/' . $childcategory->childcategory_image) }}"
-                                            style="width: 40px;" alt="">
-                                    </td>
-                                    {{-- <td>{{ $subcategory['category']['category_name'] }}</td> --}}
-                                    <td>{{ $childcategory->childcategory_name }}</td>
-                                    <td>
-                                        @if ($childcategory->status == 1)
-                                            <span class="badge badge-light-success">Active</span>
-                                        @else
-                                            <span class="badge badge-light-danger">inactive</span>
-                                        @endif
-                                    </td>
-                                    <td>
+                            <td class="text-center">{{ $key + 1 }}</td>
+                            <td>
+                                <img src="{{ asset('storage/childcategory/' . $childcategory->childcategory_image) }}"
+                                    style="width: 40px;" alt="">
+                            </td>
+                            {{-- <td>{{ $subcategory['category']['category_name'] }}</td> --}}
+                            <td>{{ $childcategory->childcategory_name }}</td>
+                            <td>
+                                @if ($childcategory->status == 1)
+                                    <span class="badge badge-light-success">is_active</span>
+                                @else
+                                    <span class="badge badge-light-danger">is_inactive</span>
+                                @endif
+                            </td>
+                            <td>
 
-                                        @if ($childcategory->status == 1)
-                                            <a href="{{ route('childcategory.inactive', $childcategory->id) }}"
-                                                title="Inactive"><i class="bi bi-hand-thumbs-down text-danger fs-3"></i></a>
-                                        @else
-                                            <a href="{{ route('childcategory.active', $childcategory->id) }}"
-                                                title="Active"><i class="bi bi-hand-thumbs-up text-success fs-3"></i></a>
-                                        @endif
+                                @if ($childcategory->status == 1)
+                                    <a href="{{ route('childcategory.inactive', $childcategory->id) }}" title="Inactive"><i
+                                            class="bi bi-hand-thumbs-down text-danger fs-3"></i></a>
+                                @else
+                                    <a href="{{ route('childcategory.active', $childcategory->id) }}" title="Active"><i
+                                            class="bi bi-hand-thumbs-up text-success fs-3"></i></a>
+                                @endif
 
-                                        {{-- Edit Category Modal --}}
-                                        @if (Auth::guard('admin')->user()->can('edit.childcategory'))
-                                            <a href="" class="ms-1" title="Edit" data-bs-toggle="modal"
-                                                data-bs-target="#editModal{{ $childcategory->id }}"
-                                                class="btn btn-primary btn-sm"><i
-                                                    class="bi bi-pencil-square fs-3 text-primary"></i>
-                                            </a>
-                                        @endif
-
+                                {{-- Edit Category Modal --}}
+                                @if (Auth::guard('admin')->user()->can('edit.childcategory'))
+                                    <a href="" class="ms-1" title="Edit" data-bs-toggle="modal"
+                                        data-bs-target="#editModal{{ $childcategory->id }}"
+                                        class="btn btn-primary btn-sm"><i class="bi bi-pencil-square fs-3 text-primary"></i>
+                                    </a>
+                                @endif
 
 
-                                        <!-- EditModal -->
 
-                                        <div class="modal fade" id="editModal{{ $childcategory->id }}" tabindex="-1"
-                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <!-- EditModal -->
 
-                                            <div class="modal-dialog modal-dialog-centered modal-lg">
+                                <div class="modal fade" id="editModal{{ $childcategory->id }}" tabindex="-1"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
 
-                                                <div class="modal-content">
-                                                    <div class="modal-header" style="background: #6196A6;height: 50px;">
-                                                        <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">Edit
-                                                            ChildCategory
-                                                        </h1>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                            aria-label="Close"></button>
+                                    <div class="modal-dialog modal-dialog-centered modal-lg">
+
+                                        <div class="modal-content">
+                                            <div class="modal-header" style="background: #6196A6;height: 50px;">
+                                                <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">Edit
+                                                    ChildCategory
+                                                </h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+
+                                            <form action="{{ route('update.childcategory') }}" method="POST"
+                                                enctype="multipart/form-data">
+                                                @csrf
+
+                                                <input type="hidden" name="id" value="{{ $childcategory->id }}">
+
+                                                <div class="modal-body">
+
+                                                    <div class="row">
+
+
+                                                        <div class="col-4 mb-3">
+                                                            <label for="" class="mb-2">Category
+                                                                Name</label>
+
+                                                            <select name="category_id" autocomplete="off"
+                                                                class="form-select form-select-sm" id="">
+                                                                <option selected disabled>Choose Category</option>
+
+                                                                @foreach ($categorys as $category)
+                                                                    <option
+                                                                        value="{{ $category->id }}"{{ $childcategory->category_id == $category->id ? 'selected' : '' }}>
+                                                                        {{ $category->category_name }}</option>
+                                                                @endforeach
+
+                                                            </select>
+
+
+                                                            @error('category_id')
+                                                                <div class="text-danger">{{ $message }}</div>
+                                                            @enderror
+
+                                                        </div>
+
+
+                                                        <div class="col-4 mb-3">
+                                                            <label for="" class="mb-2">Subtegory
+                                                                Name</label>
+
+                                                            <select name="subcategory_id" autocomplete="off"
+                                                                class="form-select form-select-sm" id="">
+                                                                <option selected disabled>Choose SubCategory
+                                                                </option>
+
+                                                                @foreach ($subcategorys as $subcategory)
+                                                                    <option
+                                                                        value="{{ $subcategory->id }}"{{ $childcategory->subcategory_id == $subcategory->id ? 'selected' : '' }}>
+                                                                        {{ $subcategory->subcategory_name }}
+                                                                    </option>
+                                                                @endforeach
+
+                                                            </select>
+
+
+                                                            @error('category_id')
+                                                                <div class="text-danger">{{ $message }}</div>
+                                                            @enderror
+
+                                                        </div>
+
+
+                                                        <div class="col-4 mb-3">
+                                                            <label for="" class="mb-2">ChildCategory
+                                                                Name</label>
+                                                            <input type="text" name="childcategory_name"
+                                                                placeholder="ChildCategory Name"
+                                                                value="{{ $childcategory->childcategory_name }}"
+                                                                autocomplete="off"
+                                                                class="form-control form-control-sm @error('childcategory_name') is-invalid @enderror">
+
+                                                            @error('childcategory_name')
+                                                                <div class="text-danger">{{ $message }}</div>
+                                                            @enderror
+                                                        </div>
+
+                                                        <div class="col-12 mb-3">
+                                                            <label for="" class="mb-2">Description</label>
+                                                            <textarea name="description" placeholder="Write Some In ChildCategory" autocomplete="off"
+                                                                class="form-control form-control-sm" cols="3" rows="3">{{ $childcategory->description }}</textarea>
+                                                        </div>
+
+                                                        <div class="col-12">
+                                                            <label for="" class="mb-2">Image</label>
+                                                            <input type="file" name="childcategory_image"
+                                                                class="form-control form-control-sm imageSrc @error('childcategory_image') is-invalid @enderror">
+
+                                                            @error('childcategory_image')
+                                                                <div class="text-danger">{{ $message }}
+                                                                </div>
+                                                            @enderror
+
+                                                            <img src="{{ asset('storage/childcategory/' . $childcategory->childcategory_image) }}"
+                                                                class="mt-3 showImageSrc" style="width: 73px;"
+                                                                alt="">
+                                                        </div>
+
                                                     </div>
 
-                                                    <form action="{{ route('update.childcategory') }}" method="POST"
-                                                        enctype="multipart/form-data">
-                                                        @csrf
-
-                                                        <input type="hidden" name="id"
-                                                            value="{{ $childcategory->id }}">
-
-                                                        <div class="modal-body">
-
-                                                            <div class="row">
-
-
-                                                                <div class="col-4 mb-3">
-                                                                    <label for="" class="mb-2">Category
-                                                                        Name</label>
-
-                                                                    <select name="category_id" autocomplete="off"
-                                                                        class="form-select form-select-sm" id="">
-                                                                        <option selected disabled>Choose Category</option>
-
-                                                                        @foreach ($categorys as $category)
-                                                                            <option
-                                                                                value="{{ $category->id }}"{{ $childcategory->category_id == $category->id ? 'selected' : '' }}>
-                                                                                {{ $category->category_name }}</option>
-                                                                        @endforeach
-
-                                                                    </select>
-
-
-                                                                    @error('category_id')
-                                                                        <div class="text-danger">{{ $message }}</div>
-                                                                    @enderror
-
-                                                                </div>
-
-
-                                                                <div class="col-4 mb-3">
-                                                                    <label for="" class="mb-2">Subtegory
-                                                                        Name</label>
-
-                                                                    <select name="subcategory_id" autocomplete="off"
-                                                                        class="form-select form-select-sm" id="">
-                                                                        <option selected disabled>Choose SubCategory
-                                                                        </option>
-
-                                                                        @foreach ($subcategorys as $subcategory)
-                                                                            <option
-                                                                                value="{{ $subcategory->id }}"{{ $childcategory->subcategory_id == $subcategory->id ? 'selected' : '' }}>
-                                                                                {{ $subcategory->subcategory_name }}
-                                                                            </option>
-                                                                        @endforeach
-
-                                                                    </select>
-
-
-                                                                    @error('category_id')
-                                                                        <div class="text-danger">{{ $message }}</div>
-                                                                    @enderror
-
-                                                                </div>
-
-
-                                                                <div class="col-4 mb-3">
-                                                                    <label for="" class="mb-2">ChildCategory
-                                                                        Name</label>
-                                                                    <input type="text" name="childcategory_name"
-                                                                        placeholder="ChildCategory Name"
-                                                                        value="{{ $childcategory->childcategory_name }}"
-                                                                        autocomplete="off"
-                                                                        class="form-control form-control-sm @error('childcategory_name') is-invalid @enderror">
-
-                                                                    @error('childcategory_name')
-                                                                        <div class="text-danger">{{ $message }}</div>
-                                                                    @enderror
-                                                                </div>
-
-                                                                <div class="col-12 mb-3">
-                                                                    <label for=""
-                                                                        class="mb-2">Description</label>
-                                                                    <textarea name="description" placeholder="Write Some In ChildCategory" autocomplete="off"
-                                                                        class="form-control form-control-sm" cols="3" rows="3">{{ $childcategory->description }}</textarea>
-                                                                </div>
-
-                                                                <div class="col-12">
-                                                                    <label for="" class="mb-2">Image</label>
-                                                                    <input type="file" name="childcategory_image"
-                                                                        class="form-control form-control-sm imageSrc @error('childcategory_image') is-invalid @enderror">
-
-                                                                    @error('childcategory_image')
-                                                                        <div class="text-danger">{{ $message }}
-                                                                        </div>
-                                                                    @enderror
-
-                                                                    <img src="{{ asset('storage/childcategory/' . $childcategory->childcategory_image) }}"
-                                                                        class="mt-3 showImageSrc" style="width: 73px;"
-                                                                        alt="">
-                                                                </div>
-
-                                                            </div>
-
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary btn-sm"
-                                                                data-bs-dismiss="modal">Close</button>
-                                                            <button type="submit" class="btn btn-primary btn-sm">Save
-                                                                changes</button>
-                                                        </div>
-
-                                                    </form>
-
                                                 </div>
-                                            </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary btn-sm"
+                                                        data-bs-dismiss="modal">Close</button>
+                                                    <button type="submit" class="btn btn-primary btn-sm">Save
+                                                        changes</button>
+                                                </div>
+
+                                            </form>
+
                                         </div>
+                                    </div>
+                                </div>
 
-                                        {{-- Edit Category Modal --}}
-                                        @if (Auth::guard('admin')->user()->can('delete.childcategory'))
-                                            <a href="{{ route('delete.childcategory', $childcategory->id) }}"
-                                                class="ms-1" id="delete" title="Delete"><i
-                                                    class="bi bi-trash3-fill fs-3 text-danger"></i></a>
-                                        @endif
+                                {{-- Edit Category Modal --}}
+                                @if (Auth::guard('admin')->user()->can('delete.childcategory'))
+                                    <a href="{{ route('delete.childcategory', $childcategory->id) }}" class="ms-1"
+                                        id="delete" title="Delete"><i
+                                            class="bi bi-trash3-fill fs-3 text-danger"></i></a>
+                                @endif
 
 
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
 
-                    <!--end::Table-->
-                </div>
-                <!--end::Card body-->
-            </div>
-            <!--end::Products-->
+            <!--end::Table-->
         </div>
+        <!--end::Card body-->
+    </div>
+    <!--end::Products-->
+    {{-- </div>
         <!--end::Container-->
     </div>
-    <!--end::Post-->
+    <!--end::Post--> --}}
 
 
     <!--end::Content-->

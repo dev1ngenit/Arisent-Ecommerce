@@ -55,20 +55,22 @@
                     <!--begin::Table-->
 
                     <table id="kt_datatable_example_5" class="table table-striped" style="width:100%">
-                        <thead>
+
+                        <thead class="bg-dark text-light">
                             <tr>
-                                <th>Sl No</th>
+                                <th class="text-center">No</th>
                                 <th>Image</th>
                                 <th>Brand Name</th>
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
+
                         <tbody>
                             @foreach ($brands as $key => $brand)
                                 <tr>
 
-                                    <td>{{ $key + 1 }}</td>
+                                    <td class="text-center">{{ $key + 1 }}</td>
                                     <td>
                                         <img src="{{ asset('storage/brand/' . $brand->brand_image) }}" style="width: 40px;"
                                             alt="">

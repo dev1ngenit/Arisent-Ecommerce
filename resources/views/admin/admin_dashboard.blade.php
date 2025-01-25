@@ -8,13 +8,13 @@
 
 
     <meta charset="utf-8" />
-    <meta name="description" content="{{ $site->site_slogan }} " />
+    <meta name="description" content="{{ optional($site)->site_slogan }} " />
     <meta name="keywords" content="Admin, bootstrap, boo" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="{{ $site->site_name }}" />
-    <meta property="og:site_name" content="{{ $site->site_name }}" />
-    <title>{{ $site->site_name }}</title>
+    <meta property="og:title" content="{{ optional($site)->site_name }}" />
+    <meta property="og:site_name" content="{{ optional($site)->site_name }}" />
+    <title>{{ optional($site)->site_name }}</title>
 
     {{-- <meta name="csrf-token" content="{{ csrf_token() }}"> --}}
 
@@ -67,19 +67,20 @@
                 <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
 
                     <!--begin::Post-->
-                    <div class="post d-flex flex-column-fluid" id="kt_post">
-                        <!--begin::Container-->
-                        <div id="kt_content_container" class="container-xxl">
+                    {{-- <div class="post d-flex flex-column-fluid" id="kt_post"> --}}
 
 
-                            <!--begin::Row-->
-                            @yield('admin')
-                            <!--end::Row-->
+                    <!--begin::Container-->
+                    {{-- <div id="kt_content_container" class="container-xxl"> --}}
+                    <div id="" class="mx-5">
 
+                        <!--begin::Row-->
+                        @yield('admin')
+                        <!--end::Row-->
 
-                        </div>
-                        <!--end::Container-->
                     </div>
+                    <!--end::Container-->
+                    {{-- </div> --}}
                     <!--end::Post-->
 
                 </div>

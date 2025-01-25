@@ -44,117 +44,113 @@
     <!--end::Toolbar-->
 
     <!--begin::Post-->
-    <div class="post d-flex flex-column-fluid" id="kt_post">
+    {{-- <div class="post d-flex flex-column-fluid" id="kt_post">
         <!--begin::Container-->
-        <div id="kt_content_container" class="container">
-            <!--begin::Products-->
-            <div class="card card-flush">
-                <!--begin::Card header-->
-                <div class="card-header align-items-center py-5 gap-2 gap-md-5">
+        <div id="kt_content_container" class="container"> --}}
+    <!--begin::Products-->
+    <div class="card card-flush">
+        <!--begin::Card header-->
+        <div class="card-header align-items-center py-5 gap-2 gap-md-5">
 
 
-                    <!--begin::Card toolbar-->
-                    <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
+            <!--begin::Card toolbar-->
+            <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
 
-                        <!--begin::Add product-->
-                        @if (Auth::guard('admin')->user()->can('add.sproduct'))
-                            <a href="{{ route('add.single.page') }}" class="btn btn-light-primary btn-sm">Add
-                                Single Product</a>
-                        @endif
-                        <!--end::Add product-->
+                <!--begin::Add product-->
+                @if (Auth::guard('admin')->user()->can('add.sproduct'))
+                    <a href="{{ route('add.single.page') }}" class="btn btn-light-primary btn-sm">Add
+                        Single Product</a>
+                @endif
+                <!--end::Add product-->
 
-                    </div>
-                    <!--end::Card toolbar-->
-
-                </div>
-                <!--end::Card header-->
-                <!--begin::Card body-->
-                <div class="card-body pt-0">
-                    <!--begin::Table-->
-
-                    <table id="kt_datatable_example_5" class="table table-striped" style="width:100%">
-                        <thead>
-                            <tr>
-                                <th>Sl No</th>
-                                <th>Image</th>
-                                <th>Name</th>
-                                <th>Price</th>
-                                <th>Quantity</th>
-                                <th>Status</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($sproducts as $key => $sproduct)
-                                <tr>
-
-                                    <td>{{ $key + 1 }}</td>
-                                    <td>
-                                        <img src="{{ asset($sproduct['products']['product_image']) }}"
-                                            style="width: 40px; height:40px;" alt="">
-                                    </td>
-                                    <td>{{ $sproduct['products']['product_name'] }}</td>
-                                    <td>
-                                        @if ($sproduct['products']['price'])
-                                            <span>{{ $sproduct['products']['price'] }} $</span>
-                                        @elseif ($sproduct['products']['sas_price'])
-                                            <span>{{ $sproduct['products']['sas_price'] }} $</span>
-                                        @else
-                                            <span>{{ $sproduct['products']['discount_price'] }} $</span>
-                                        @endif
-                                    </td>
-                                    <td>{{ $sproduct['products']['qty'] }}</td>
-                                    <td>
-                                        @if ($sproduct->status == 'active')
-                                            <span class="badge badge-light-success">Is_active</span>
-                                        @else
-                                            <span class="badge badge-light-danger">Is_inactive</span>
-                                        @endif
-                                    </td>
-                                    <td>
-
-                                        @if (Auth::guard('admin')->user()->can('status.sproduct'))
-                                            @if ($sproduct->status == 'active')
-                                                <a href="{{ route('inactive.single.page', $sproduct->id) }}"
-                                                    title="Inactive"><i
-                                                        class="bi bi-hand-thumbs-down text-danger fs-3"></i></a>
-                                            @else
-                                                <a href="{{ route('active.single.page', $sproduct->id) }}"
-                                                    title="Active"><i
-                                                        class="bi bi-hand-thumbs-up text-success fs-3"></i></a>
-                                            @endif
-                                        @endif
-
-                                        {{-- Edit Category Modal --}}
-                                        @if (Auth::guard('admin')->user()->can('edit.sproduct'))
-                                            <a href="{{ route('edit.single.page', $sproduct->id) }}" class="ms-1"
-                                                title="Edit" class="btn btn-primary btn-sm"><i
-                                                    class="bi bi-pencil-square fs-3 text-primary"></i>
-                                            </a>
-                                        @endif
-
-                                        @if (Auth::guard('admin')->user()->can('delete.sproduct'))
-                                            <a href="{{ route('delete.single.page', $sproduct->id) }}" class="ms-1"
-                                                id="delete" title="Delete"><i
-                                                    class="bi bi-trash3-fill fs-3 text-danger"></i></a>
-                                        @endif
-
-
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-
-                    <!--end::Table-->
-                </div>
-                <!--end::Card body-->
             </div>
-            <!--end::Products-->
+            <!--end::Card toolbar-->
+
         </div>
+        <!--end::Card header-->
+        <!--begin::Card body-->
+        <div class="card-body pt-0">
+            <!--begin::Table-->
+
+            <table id="kt_datatable_example_5" class="table table-striped" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Sl No</th>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($sproducts as $key => $sproduct)
+                        <tr>
+
+                            <td>{{ $key + 1 }}</td>
+                            <td>
+                                <img src="{{ asset($sproduct['products']['product_image']) }}"
+                                    style="width: 40px; height:40px;" alt="">
+                            </td>
+                            <td>{{ $sproduct['products']['product_name'] }}</td>
+                            <td>
+                                @if ($sproduct['products']['price'])
+                                    <span>{{ $sproduct['products']['price'] }} $</span>
+                                @elseif ($sproduct['products']['sas_price'])
+                                    <span>{{ $sproduct['products']['sas_price'] }} $</span>
+                                @else
+                                    <span>{{ $sproduct['products']['discount_price'] }} $</span>
+                                @endif
+                            </td>
+                            <td>{{ $sproduct['products']['qty'] }}</td>
+                            <td>
+                                @if ($sproduct->status == 'active')
+                                    <span class="badge badge-light-success">Is_active</span>
+                                @else
+                                    <span class="badge badge-light-danger">Is_inactive</span>
+                                @endif
+                            </td>
+                            <td>
+
+                                @if (Auth::guard('admin')->user()->can('status.sproduct'))
+                                    @if ($sproduct->status == 'active')
+                                        <a href="{{ route('inactive.single.page', $sproduct->id) }}" title="Inactive"><i
+                                                class="bi bi-hand-thumbs-down text-danger fs-3"></i></a>
+                                    @else
+                                        <a href="{{ route('active.single.page', $sproduct->id) }}" title="Active"><i
+                                                class="bi bi-hand-thumbs-up text-success fs-3"></i></a>
+                                    @endif
+                                @endif
+
+                                {{-- Edit Category Modal --}}
+                                @if (Auth::guard('admin')->user()->can('edit.sproduct'))
+                                    <a href="{{ route('edit.single.page', $sproduct->id) }}" class="ms-1" title="Edit"
+                                        class="btn btn-primary btn-sm"><i class="bi bi-pencil-square fs-3 text-primary"></i>
+                                    </a>
+                                @endif
+
+                                @if (Auth::guard('admin')->user()->can('delete.sproduct'))
+                                    <a href="{{ route('delete.single.page', $sproduct->id) }}" class="ms-1"
+                                        id="delete" title="Delete"><i class="bi bi-trash3-fill fs-3 text-danger"></i></a>
+                                @endif
+
+
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+
+            <!--end::Table-->
+        </div>
+        <!--end::Card body-->
+    </div>
+    <!--end::Products-->
+    {{-- </div>
         <!--end::Container-->
     </div>
-    <!--end::Post-->
+    <!--end::Post--> --}}
 
 
     <!-- AddModal -->

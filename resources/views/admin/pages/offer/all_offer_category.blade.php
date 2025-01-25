@@ -55,9 +55,9 @@
                     <!--begin::Table-->
 
                     <table id="kt_datatable_example_5" class="table table-striped" style="width:100%">
-                        <thead>
+                        <thead class="bg-dark text-light">
                             <tr>
-                                <th>Sl No</th>
+                                <th class="text-center">No</th>
                                 <th>Image</th>
                                 <th>Name</th>
                                 <th>Status</th>
@@ -68,7 +68,7 @@
                             @foreach ($offercats as $key => $offercat)
                                 <tr>
 
-                                    <td>{{ $key + 1 }}</td>
+                                    <td class="text-center">{{ $key + 1 }}</td>
                                     <td>
                                         <img src="{{ !empty($offercat->offer_category_image) ? url('storage/offer_category_image/' . $offercat->offer_category_image) : url('https://ui-avatars.com/api/?name=' . urlencode($offercat->offer_category_name)) }}"
                                             style="width: 40px;height:40px;" alt="">
@@ -134,7 +134,7 @@
                                                                 <div class="col-12 mb-3">
 
                                                                     <div class="form-group mb-3">
-                                                                        <label for="" class="mb-2">Category
+                                                                        <label for="" class="mb-2">Offer Category
                                                                             Name</label>
                                                                         <input type="text" name="offer_category_name"
                                                                             class="form-control form-control-sm form-control-solid"
@@ -237,7 +237,7 @@
                             <div class="col-12 mb-3">
 
                                 <div class="form-group mb-3">
-                                    <label for="" class="mb-2">Category Name</label>
+                                    <label for="" class="mb-2">Offer Category Name</label>
                                     <input type="text" name="offer_category_name"
                                         class="form-control form-control-sm form-control-solid"
                                         placeholder="Offer Category Name" value="{{ old('offer_category_name') }}"

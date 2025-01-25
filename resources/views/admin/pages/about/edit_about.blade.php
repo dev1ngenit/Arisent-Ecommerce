@@ -68,15 +68,15 @@
                                 <select name="status" id="" class="form-select form-select-sm">
                                     <option selected disabled>Choose Tamplate</option>
 
-                                    <option value="tamplate_one"
-                                        {{ $about->status == 'tamplate_one' ? 'selected' : '' }}>Template One</option>
+                                    <option value="tamplate_one" {{ $about->status == 'tamplate_one' ? 'selected' : '' }}>
+                                        About Us One</option>
 
-                                    <option value="tamplate_two"
+                                    {{-- <option value="tamplate_two"
                                         {{ $about->status == 'tamplate_two' ? 'selected' : '' }}>Template Two</option>
 
                                     <option value="tamplate_three"
                                         {{ $about->status == 'tamplate_three' ? 'selected' : '' }}>Template Three
-                                    </option>
+                                    </option> --}}
 
                                 </select>
                             </div>
@@ -96,7 +96,8 @@
                                                 <div class="form-group">
                                                     <label for="">Breadcrumb Title</label>
                                                     <input type="text" class="form-control form-control-sm mt-2"
-                                                        name="breadcrumb_title" required value="{{ $about->breadcrumb_title }}">
+                                                        name="breadcrumb_title" required
+                                                        value="{{ $about->breadcrumb_title }}">
                                                 </div>
                                             </div>
 

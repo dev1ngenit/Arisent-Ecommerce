@@ -2,7 +2,6 @@
 @section('admin')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
-
     <!--begin::Toolbar-->
     <div class="toolbar" id="kt_toolbar">
         <!--begin::Container-->
@@ -55,9 +54,9 @@
                         <!--begin::Table-->
 
                         <table id="kt_datatable_example_5" class="table table-striped" style="width:100%">
-                            <thead>
+                            <thead class="bg-dark text-light">
                                 <tr>
-                                    <th>Sl No</th>
+                                    <th class="text-center">No</th>
                                     <th>Image</th>
                                     <th>Product Name</th>
                                     <th>Status</th>
@@ -67,7 +66,7 @@
                             <tbody>
                                 @foreach ($products as $key => $product)
                                     <tr>
-                                        <td>{{ $key + 1 }}</td>
+                                        <td class="text-center">{{ $key + 1 }}</td>
                                         <td>
                                             <img src="{{ asset($product->product_image) }}" style="width: 40px;"
                                                 alt="">
@@ -140,4 +139,5 @@
                 ">"
         });
     </script>
+
 @endsection

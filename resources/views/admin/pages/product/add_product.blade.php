@@ -102,7 +102,8 @@
                                         <div class="row">
 
                                             {{-- product_name --}}
-                                            <div class="col-6 mb-3">
+
+                                            {{-- <div class="col-6 mb-3">
                                                 <div class="fv-row mb-3">
 
                                                     <label class="form-label required">Product
@@ -118,7 +119,26 @@
                                                         Name.
                                                     </div>
                                                 </div>
+                                            </div> --}}
+
+                                            <div class="col-6 mb-3">
+                                                <div class="fv-row mb-3">
+                                                    <label class="form-label required">Product Name</label>
+
+                                                    <input name="product_name"
+                                                        class="form-control form-control-sm form-control-solid @error('product_name') is-invalid @enderror"
+                                                        placeholder="Enter Product Name" type="text"
+                                                        value="{{ old('product_name') }}" required />
+
+                                                    <!-- Display error message if validation fails -->
+                                                    @error('product_name')
+                                                        <div class="invalid-feedback">
+                                                            {{ $message }}
+                                                        </div>
+                                                    @enderror
+                                                </div>
                                             </div>
+
 
                                             {{-- sku_code --}}
                                             {{-- <div class="col-3 mb-3">
@@ -143,7 +163,7 @@
                                                     <input name="mf_code"
                                                         class="form-control form-control-sm form-control-solid"
                                                         placeholder="Eg: MF-2647374" type="text"
-                                                        value="{{ old('mf_code') }}"  />
+                                                        value="{{ old('mf_code') }}" />
                                                     {{-- <div class="invalid-feedback">
                                                         Please Enter MF
                                                         Code.</div> --}}
@@ -225,8 +245,7 @@
 
                                                     <select class="form-select form-select-solid form-select-sm"
                                                         name="brand_id" data-control="select2"
-                                                        data-placeholder="Select an Brand Name" data-allow-clear="true"
-                                                        >
+                                                        data-placeholder="Select an Brand Name" data-allow-clear="true">
                                                         <option></option>
 
                                                         @foreach ($brands as $brand)
@@ -242,7 +261,7 @@
 
                                             </div>
 
-                                            {{-- Discount Price--}}
+                                            {{-- Discount Price --}}
                                             {{-- <div class="col-3 mb-3">
                                                 <div class="fv-row mb-3">
 
@@ -282,22 +301,24 @@
                                                     <div class="rfq_price d-none">
                                                         <label class="ms-1" for="price_status">SAS Price <span
                                                                 class="text-danger">*</span></label>
-                                                        <input class="form-control form-control-sm" type="number" step="0.01"
-                                                            name="sas_price" placeholder="RFQ Price for Sas">
+                                                        <input class="form-control form-control-sm" type="number"
+                                                            step="0.01" name="sas_price"
+                                                            placeholder="RFQ Price for Sas">
                                                     </div>
 
                                                     <div class="price d-none">
                                                         <label class="ms-1" for="price_status">Price <span
                                                                 class="text-danger">*</span></label>
-                                                        <input class="form-control form-control-sm" type="number" step="0.01"
-                                                            name="price" placeholder="Price">
+                                                        <input class="form-control form-control-sm" type="number"
+                                                            step="0.01" name="price" placeholder="Price">
                                                     </div>
 
                                                     <div class="offer_price d-none">
                                                         <label class="ms-1" for="price_status">Discount Price <span
                                                                 class="text-danger">*</span></label>
-                                                        <input class="form-control form-control-sm" type="number" step="0.01"
-                                                            name="discount_price" placeholder="Discounted Price">
+                                                        <input class="form-control form-control-sm" type="number"
+                                                            step="0.01" name="discount_price"
+                                                            placeholder="Discounted Price">
                                                     </div>
 
                                                 </div>
@@ -338,8 +359,7 @@
 
                                                     <select class="form-select form-select-solid form-select-sm"
                                                         name="subcategory_id" data-control="select2"
-                                                        data-placeholder="SubCategory Name" data-allow-clear="true"
-                                                        >
+                                                        data-placeholder="SubCategory Name" data-allow-clear="true">
                                                         <option></option>
 
                                                     </select>
@@ -358,8 +378,7 @@
 
                                                     <select class="form-select form-select-solid form-select-sm"
                                                         name="childcategory_id" data-control="select2"
-                                                        data-placeholder="ChildCategory Name" data-allow-clear="true"
-                                                        >
+                                                        data-placeholder="ChildCategory Name" data-allow-clear="true">
                                                         <option></option>
 
                                                     </select>

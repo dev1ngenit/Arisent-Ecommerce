@@ -47,9 +47,9 @@
     <!--end::Toolbar-->
 
     <!--begin::Post-->
-    <div class="post d-flex flex-column-fluid" id="kt_post">
+    {{-- <div class="post d-flex flex-column-fluid" id="kt_post">
         <!--begin::Container-->
-        <div id="kt_content_container" class="container">
+        <div id="kt_content_container" class="container"> --}}
             <!--begin::Products-->
             <div class="card">
                 <!--begin::Card header-->
@@ -69,13 +69,13 @@
                     <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_datatable_example_5">
 
                         <!--begin::Table head-->
-                        <thead>
+                        <thead class="bg-dark text-center">
                             <!--begin::Table row-->
-                            <tr class="text-start text-gray-400 fw-bolder fs-7 gs-0">
+                            <tr class="text-center text-gray-400 fw-bolder fs-7 gs-0">
 
-                                <th>Sl</th>
-                                <th>Role Name</th>
-                                <th>Action</th>
+                                <th class="text-center">No</th>
+                                <th class="text-start">Role Name</th>
+                                <th class="text-center">Action</th>
 
                             </tr>
                             <!--end::Table row-->
@@ -89,10 +89,10 @@
                             @foreach ($roles as $key => $role)
                                 <tr>
 
-                                    <td>{{ $key + 1 }}</td>
-                                    <td>{{ $role->name }}</td>
+                                    <td class="text-center">{{ $key + 1 }}</td>
+                                    <td class="text-start">{{ $role->name }}</td>
 
-                                    <td>
+                                    <td class="text-center">
 
                                         <a href="" title="Edit" data-bs-toggle="modal"
                                             data-bs-target="#editModal{{ $role->id }}"><i
@@ -157,10 +157,10 @@
                 <!--end::Card body-->
             </div>
             <!--end::Products-->
-        </div>
+        {{-- </div>
         <!--end::Container-->
     </div>
-    <!--end::Post-->
+    <!--end::Post--> --}}
 
 
 

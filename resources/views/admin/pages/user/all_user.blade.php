@@ -46,77 +46,77 @@
     <!--end::Toolbar-->
 
     <!--begin::Post-->
-    <div class="post d-flex flex-column-fluid" id="kt_post">
+    {{-- <div class="post d-flex flex-column-fluid" id="kt_post">
         <!--begin::Container-->
-        <div id="kt_content_container" class="container">
-            <!--begin::Products-->
-            <div class="card card-flush">
+        <div id="kt_content_container" class="container"> --}}
+    <!--begin::Products-->
+    <div class="card card-flush">
 
-                <!--begin::Card body-->
-                <div class="card-body pt-0">
-                    <!--begin::Table-->
+        <!--begin::Card body-->
+        <div class="card-body pt-0">
+            <!--begin::Table-->
 
-                    <table id="kt_datatable_example_5" class="table table-striped" style="width:100%">
-                        <thead>
-                            <tr>
-                                <th>Sl No</th>
-                                <th>Name</th>
-                                <th>Phone</th>
-                                <th>Email</th>
-                                <th>Address</th>
-                                <th>Status</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($users as $key => $user)
-                                <tr>
+            <table id="kt_datatable_example_5" class="table table-striped" style="width:100%">
+                <thead class="bg-dark text-light">
+                    <tr>
+                        <th class="text-center">No</th>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($users as $key => $user)
+                        <tr>
 
-                                    <td>{{ $key + 1 }}</td>
-                                    <td>{{ $user->name }}</td>
-                                    <td>{{ $user->phone }}</td>
-                                    <td>{{ $user->email }}</td>
-                                    <td>{{ $user->address }}</td>
-                                    <td>
-                                        @if ($user->status == 1)
-                                            <span class="badge badge-light-success">Active</span>
-                                        @else
-                                            <span class="badge badge-light-danger">inactive</span>
-                                        @endif
-                                    </td>
-                                    <td>
+                            <td class="text-center">{{ $key + 1 }}</td>
+                            <td>{{ $user->name }}</td>
+                            <td>{{ $user->phone }}</td>
+                            <td>{{ $user->email }}</td>
+                            <td>{{ $user->address }}</td>
+                            <td>
+                                @if ($user->status == 1)
+                                    <span class="badge badge-light-success">Active</span>
+                                @else
+                                    <span class="badge badge-light-danger">inactive</span>
+                                @endif
+                            </td>
+                            <td>
 
-                                        @if (Auth::guard('admin')->user()->can('status.user'))
-                                            @if ($user->status == 1)
-                                                <a href="{{ route('user.inactive.admin', $user->id) }}" title="Inactive"><i
-                                                        class="bi bi-hand-thumbs-down text-danger fs-3"></i></a>
-                                            @else
-                                                <a href="{{ route('user.active.admin', $user->id) }}" title="Active"><i
-                                                        class="bi bi-hand-thumbs-up text-success fs-3"></i></a>
-                                            @endif
-                                        @endif
+                                @if (Auth::guard('admin')->user()->can('status.user'))
+                                    @if ($user->status == 1)
+                                        <a href="{{ route('user.inactive.admin', $user->id) }}" title="Inactive"><i
+                                                class="bi bi-hand-thumbs-down text-danger fs-3"></i></a>
+                                    @else
+                                        <a href="{{ route('user.active.admin', $user->id) }}" title="Active"><i
+                                                class="bi bi-hand-thumbs-up text-success fs-3"></i></a>
+                                    @endif
+                                @endif
 
-                                        @if (Auth::guard('admin')->user()->can('delete.user'))
-                                            <a href="{{ route('delete.user', $user->id) }}" class="ms-1" id="delete"
-                                                title="Delete"><i class="bi bi-trash3-fill fs-3 text-danger"></i></a>
-                                        @endif
+                                @if (Auth::guard('admin')->user()->can('delete.user'))
+                                    <a href="{{ route('delete.user', $user->id) }}" class="ms-1" id="delete"
+                                        title="Delete"><i class="bi bi-trash3-fill fs-3 text-danger"></i></a>
+                                @endif
 
 
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
 
-                    <!--end::Table-->
-                </div>
-                <!--end::Card body-->
-            </div>
-            <!--end::Products-->
+            <!--end::Table-->
         </div>
+        <!--end::Card body-->
+    </div>
+    <!--end::Products-->
+    {{-- </div>
         <!--end::Container-->
     </div>
-    <!--end::Post-->
+    <!--end::Post--> --}}
 
 
 

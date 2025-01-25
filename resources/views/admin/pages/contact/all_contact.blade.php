@@ -52,9 +52,9 @@
                     <!--begin::Table-->
 
                     <table id="kt_datatable_example_5" class="table table-striped" style="width:100%">
-                        <thead>
+                        <thead class="bg-dark text-light">
                             <tr>
-                                <th style="width: 30px;">No</th>
+                                <th class="text-center" style="width: 40px;">No</th>
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Phone</th>
@@ -66,7 +66,7 @@
                             @foreach ($contacts as $key => $contact)
                                 <tr>
 
-                                    <td>{{ $key + 1 }}</td>
+                                    <td class="text-center">{{ $key + 1 }}</td>
                                     <td>{{ $contact->name }}</td>
                                     <td>{{ $contact->email }}</td>
                                     <td>{{ $contact->phone }}</td>
@@ -210,9 +210,8 @@
                                             </div>
                                         </div> --}}
 
-                                        <a href="{{ route('delete.contact', $contact->id) }}" class="ms-1"
-                                            id="delete" title="Delete"><i
-                                                class="bi bi-trash3-fill fs-3 text-danger"></i></a>
+                                        <a href="{{ route('delete.contact', $contact->id) }}" class="ms-1" id="delete"
+                                            title="Delete"><i class="bi bi-trash3-fill fs-3 text-danger"></i></a>
                                     </td>
                                 </tr>
                             @endforeach

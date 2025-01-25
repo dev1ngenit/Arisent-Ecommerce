@@ -4,8 +4,8 @@
         <!--begin::Copyright-->
         <div class="text-dark order-2 order-md-1">
             <span class="text-muted fw-bold me-1"></span>
-            <a href="{{ route('admin.dashboard') }}" target="_blank"
-                class="text-gray-800 text-hover-primary">Copyright 2024 {{ $site->company_name }} All Rights Reserved.</a>
+            <a href="{{ route('admin.dashboard') }}" target="_blank" class="text-gray-800 text-hover-primary">Copyright
+                2024 @ {{ optional($site)->company_name }} All Rights Reserved.</a>
         </div>
         <!--end::Copyright-->
 

@@ -71,7 +71,7 @@
                                     <tr>
                                         <td class="text-center">{{ $key + 1 }}</td>
 
-                                        <td>{{ isset($words[$key]) ? 'Tamplate' . ' ' . Str::ucfirst($words[$key]) : 'Number out of range' }}
+                                        <td>{{ isset($words[$key]) ? 'About Us' . ' ' . Str::ucfirst($words[$key]) : 'Number out of range' }}
                                         </td>
 
                                         <td>

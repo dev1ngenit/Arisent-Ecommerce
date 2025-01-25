@@ -50,9 +50,9 @@
                     <!--begin::Table-->
 
                     <table id="kt_datatable_example_5" class="table table-striped" style="width:100%">
-                        <thead>
+                        <thead class="bg-dark text-light">
                             <tr>
-                                <th>Sl No</th>
+                                <th class="text-center">No</th>
                                 <th>Name</th>
                                 <th>Active Time</th>
                                 <th>Next Template</th>
@@ -65,9 +65,10 @@
                             @foreach ($templates as $key => $template)
                                 <tr>
 
-                                    <td>{{ $key + 1 }}</td>
+                                    <td class="text-center">{{ $key + 1 }}</td>
                                     <td>{{ $template->name }}</td>
-                                    <td class="text-danger">{{ Carbon\Carbon::parse($template->active_at)->diffForHumans() }}</td>
+                                    <td class="text-danger">
+                                        {{ Carbon\Carbon::parse($template->active_at)->diffForHumans() }}</td>
                                     <td>{{ $template->next_template }}</td>
                                     <td>{{ $template->next_activition_date }}</td>
 

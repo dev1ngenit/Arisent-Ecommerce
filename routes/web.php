@@ -154,28 +154,7 @@ Route::controller(TemplateOneController::class)->group(function () {
 //Cart Controller
 Route::controller(CartController::class)->group(function () {
 
-    //Add To Cart
-    // Route::post('/dcart/data/store/{id}', 'AddToCartDetails');
-    // Route::get('/product/mini/cart', 'AddMiniCart');
-    // Route::get('/minicart/product/remove/{rowId}', 'RemoveMiniCart');
     Route::get('/product-cart', 'TotalCart')->name('product.cart');
-
-    // // My Cart
-    // Route::get('/get-cart-product', 'GetCartProduct');
-    // // Route::get('/get-cart-product1', 'GetCartProduct1');
-    // Route::get('/cart-remove/{rowId}', 'CartRemove');
-    // Route::get('/cart-decrement/{rowId}', 'CartDecrement');
-    // Route::get('/cart-increment/{rowId}', 'CartIncrement');
-    // //checkout
-    // Route::get('/checkout', 'CheckoutCreate')->name('checkout');
-    // Route::post('/checkout/store', 'CheckoutStore')->name('checkout.store');
-
-    // /////////////////////////////////////// Template One ////////////////////////
-
-    // //Add To Cart
-    // Route::post('/product/store/{id}', 'AddToCartOne');
-    // Route::get('/product/mini-cart', 'AddMiniCartTemplateOne');
-    // Route::get('/minicart/product/remove/{rowId}', 'RemoveMiniCartTemplateOne');
 
 });
 
@@ -188,8 +167,6 @@ Route::controller(TemplateOneCartController::class)->group(function () {
     //Buy To Cart
     Route::post('/product/buy/store/{id}', 'BuyToCartTemplateOne');
 
-    //Buy To Cart Single
-    // Route::post('/product/store-single/{id}', 'AddToCartTemplateOneSingle');
 
     //Add To Cart
     Route::post('/product/store/{id}', 'AddToCartTemplateOne');

@@ -49,161 +49,152 @@
     <!--end::Toolbar-->
 
     <!--begin::Post-->
-    <div class="post d-flex flex-column-fluid" id="kt_post">
-        <!--begin::Container-->
-        <div id="" class="container">
-            <!--begin::Products-->
-            <div class="card card-flush">
 
-                <!--begin::Card body-->
-                <div class="card-body pt-0">
-                    <!--begin::Table-->
+    <!--begin::Products-->
+    <div class="card card-flush">
 
-                    <table id="kt_datatable_example_5" class="table table-striped" style="width:100%">
+        <!--begin::Card body-->
+        <div class="card-body pt-0">
+            <!--begin::Table-->
 
-                        <thead>
-                            <tr>
-                                <th>Sl No</th>
-                                <th>Image</th>
-                                <th>Banner Name</th>
-                                <th>Status</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
+            <table id="kt_datatable_example_5" class="table table-striped" style="width:100%">
 
-                        <tbody>
-                            @foreach ($banners as $key => $banner)
-                                <tr>
-                                    <td>{{ $key + 1 }}</td>
-                                    <td>
-                                        <img src="{{ asset($banner->banner_image) }}" style="width: 50px;height:30px;"
-                                            alt="">
-                                    </td>
-                                    <td>{{ $banner->banner_name }}</td>
-                                    <td>
-                                        @if ($banner->status == 1)
-                                            <span class="badge badge-light-success">Active</span>
-                                        @else
-                                            <span class="badge badge-light-danger">inactive</span>
-                                        @endif
-                                    </td>
-                                    <td>
-                                        @if (Auth::guard('admin')->user()->can('status.banner'))
-                                            @if ($banner->status == 1)
-                                                <a href="{{ route('banner.inactive', $banner->id) }}" title="Inactive"><i
-                                                        class="bi bi-hand-thumbs-down text-danger fs-3"></i></a>
-                                            @else
-                                                <a href="{{ route('banner.active', $banner->id) }}" title="Active"><i
-                                                        class="bi bi-hand-thumbs-up text-success fs-3"></i></a>
-                                            @endif
-                                        @endif
+                <thead class="bg-dark text-light">
+                    <tr>
+                        <th class="text-center">No</th>
+                        <th>Image</th>
+                        <th>Banner Name</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
 
-                                        {{-- Edit Modal  --}}
-                                        @if (Auth::guard('admin')->user()->can('edit.banner'))
-                                            <a href="" data-bs-toggle="modal"
-                                                data-bs-target="#editModal{{ $banner->id }}" class="ms-1"
-                                                title="Edit"><i class="bi bi-pencil-square fs-3 text-primary"></i></a>
-                                        @endif
+                <tbody>
+                    @foreach ($banners as $key => $banner)
+                        <tr>
+                            <td class="text-center">{{ $key + 1 }}</td>
+                            <td>
+                                <img src="{{ asset($banner->banner_image) }}" style="width: 50px;height:30px;"
+                                    alt="">
+                            </td>
+                            <td>{{ $banner->banner_name }}</td>
+                            <td>
+                                @if ($banner->status == 1)
+                                    <span class="badge badge-light-success">is_active</span>
+                                @else
+                                    <span class="badge badge-light-danger">is_inactive</span>
+                                @endif
+                            </td>
+                            <td>
+                                @if (Auth::guard('admin')->user()->can('status.banner'))
+                                    @if ($banner->status == 1)
+                                        <a href="{{ route('banner.inactive', $banner->id) }}" title="Inactive"><i
+                                                class="bi bi-hand-thumbs-down text-danger fs-3"></i></a>
+                                    @else
+                                        <a href="{{ route('banner.active', $banner->id) }}" title="Active"><i
+                                                class="bi bi-hand-thumbs-up text-success fs-3"></i></a>
+                                    @endif
+                                @endif
+
+                                {{-- Edit Modal  --}}
+                                @if (Auth::guard('admin')->user()->can('edit.banner'))
+                                    <a href="" data-bs-toggle="modal" data-bs-target="#editModal{{ $banner->id }}"
+                                        class="ms-1" title="Edit"><i
+                                            class="bi bi-pencil-square fs-3 text-primary"></i></a>
+                                @endif
 
 
-                                        {{-- Edit Modal  --}}
-                                        <div class="modal fade" id="editModal{{ $banner->id }}" tabindex="-1"
-                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog modal-lg">
-                                                <div class="modal-content">
+                                {{-- Edit Modal  --}}
+                                <div class="modal fade" id="editModal{{ $banner->id }}" tabindex="-1"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
 
-                                                    <div class="modal-header" style="background: #6196A6;height: 50px;">
-                                                        <h1 class="modal-title fs-5 text-light" id="exampleModalLabel">Edit
-                                                            Banner</h1>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                            aria-label="Close"></button>
-                                                    </div>
+                                            <div class="modal-header" style="background: #6196A6;height: 50px;">
+                                                <h1 class="modal-title fs-5 text-light" id="exampleModalLabel">Edit
+                                                    Banner</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
 
-                                                    <form action="{{ route('update.banner') }}" method="POST"
-                                                        enctype="multipart/form-data">
+                                            <form action="{{ route('update.banner') }}" method="POST"
+                                                enctype="multipart/form-data">
 
-                                                        @csrf
+                                                @csrf
 
-                                                        <input type="hidden" name="id" value="{{ $banner->id }}">
-                                                        <input type="hidden" name="old_image"
-                                                            value="{{ $banner->banner_image }}">
+                                                <input type="hidden" name="id" value="{{ $banner->id }}">
+                                                <input type="hidden" name="old_image" value="{{ $banner->banner_image }}">
 
-                                                        <div class="modal-body">
+                                                <div class="modal-body">
 
-                                                            <div class="row">
-                                                                <div class="col-12">
+                                                    <div class="row">
+                                                        <div class="col-12">
 
-                                                                    <div class="form-group mb-3">
-                                                                        <label for="" class="mb-2">Banner
-                                                                            Name</label>
-                                                                        <input type="text"
-                                                                            value="{{ $banner->banner_name }}"
-                                                                            name="banner_name"
-                                                                            class="form-control form-control-sm @error('banner_name') is-invalid @enderror"
-                                                                            placeholder="Banner Name" autocomplete="off">
-                                                                        @error('banner_name')
-                                                                            <span class="text-danger"> {{ $message }}
-                                                                            </span>
-                                                                        @enderror
-                                                                    </div>
+                                                            <div class="form-group mb-3">
+                                                                <label for="" class="mb-2">Banner
+                                                                    Name</label>
+                                                                <input type="text" value="{{ $banner->banner_name }}"
+                                                                    name="banner_name"
+                                                                    class="form-control form-control-sm @error('banner_name') is-invalid @enderror"
+                                                                    placeholder="Banner Name" autocomplete="off">
+                                                                @error('banner_name')
+                                                                    <span class="text-danger"> {{ $message }}
+                                                                    </span>
+                                                                @enderror
+                                                            </div>
 
-                                                                    <div class="form-group mb-3">
-                                                                        <label for=""
-                                                                            class="mb-2">Description</label>
-                                                                        <textarea name="description" rows="3" cols="3" class="form-control form-control-sm">{!! $banner->description !!}</textarea>
-                                                                    </div>
+                                                            <div class="form-group mb-3">
+                                                                <label for="" class="mb-2">Description</label>
+                                                                <textarea name="description" rows="3" cols="3" class="form-control form-control-sm">{!! $banner->description !!}</textarea>
+                                                            </div>
 
-                                                                    <div class="form-group">
-                                                                        <label for="" class="mb-2">Image</label>
-                                                                        <input type="file" autocomplete="off"
-                                                                            name="banner_image"
-                                                                            class="image mb-2 form-control form-control-sm @error('banner_image') is-invalid @enderror">
+                                                            <div class="form-group">
+                                                                <label for="" class="mb-2">Image</label>
+                                                                <input type="file" autocomplete="off" name="banner_image"
+                                                                    class="image mb-2 form-control form-control-sm @error('banner_image') is-invalid @enderror">
 
-                                                                        @error('banner_image')
-                                                                            <span class="text-danger"> {{ $message }}
-                                                                            </span>
-                                                                        @enderror
+                                                                @error('banner_image')
+                                                                    <span class="text-danger"> {{ $message }}
+                                                                    </span>
+                                                                @enderror
 
-                                                                        <img src="{{ asset($banner->banner_image) }}"
-                                                                            style="width:73px;" class="showImage"
-                                                                            alt="" class="mt-3">
-                                                                    </div>
-
-                                                                </div>
+                                                                <img src="{{ asset($banner->banner_image) }}"
+                                                                    style="width:73px;" class="showImage" alt=""
+                                                                    class="mt-3">
                                                             </div>
 
                                                         </div>
-                                                        <div class="modal-footer">
-                                                            <button type="submit" class="btn btn-primary btn-sm">Update
-                                                                Banner</button>
-                                                        </div>
-                                                    </form>
+                                                    </div>
 
                                                 </div>
-                                            </div>
+                                                <div class="modal-footer">
+                                                    <button type="submit" class="btn btn-primary btn-sm">Update
+                                                        Banner</button>
+                                                </div>
+                                            </form>
+
                                         </div>
+                                    </div>
+                                </div>
 
-                                        {{-- Delete --}}
-                                        @if (Auth::guard('admin')->user()->can('delete.banner'))
-                                            <a href="{{ route('delete.banner', $banner->id) }}" class="ms-1"
-                                                id="delete" title="Delete"><i
-                                                    class="bi bi-trash3-fill fs-3 text-danger"></i></a>
-                                        @endif
+                                {{-- Delete --}}
+                                @if (Auth::guard('admin')->user()->can('delete.banner'))
+                                    <a href="{{ route('delete.banner', $banner->id) }}" class="ms-1" id="delete"
+                                        title="Delete"><i class="bi bi-trash3-fill fs-3 text-danger"></i></a>
+                                @endif
 
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
 
-                    <!--end::Table-->
-                </div>
-                <!--end::Card body-->
-            </div>
-            <!--end::Products-->
+            <!--end::Table-->
         </div>
-        <!--end::Container-->
+        <!--end::Card body-->
     </div>
+    <!--end::Products-->
+
     <!--end::Post-->
 
     {{-- Add Modal --}}
