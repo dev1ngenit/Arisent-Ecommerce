@@ -20,9 +20,10 @@ use App\Http\Controllers\Admin\CouponCrontroller;
 use App\Http\Controllers\Admin\EmployeeCategoryController;
 use App\Http\Controllers\Admin\EmployeeController;
 use App\Http\Controllers\Admin\FaqController;
-use App\Http\Controllers\Admin\HomePageController;
 use App\Http\Controllers\Admin\OfferCategoryController;
+use App\Http\Controllers\Admin\PrivacyPolicyController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\ReturnPolicyController;
 use App\Http\Controllers\Admin\SiteController;
 use App\Http\Controllers\Admin\SmtpController;
 use App\Http\Controllers\Admin\SubCategoryController;
@@ -450,5 +451,31 @@ Route::middleware(['auth:admin', 'verified'])->group(function () {
         Route::get('/admin-inactive/{id}', 'InactiveAdmin')->name('admin.inactive');
         Route::get('/admin-active/{id}', 'ActiveAdmin')->name('admin.active');
     });
+
+});
+
+Route::middleware(['auth:admin'])->prefix('admin')->name('admin.')->group(function () {
+
+    Route::resources(
+        [
+            'privacy-policy' => PrivacyPolicyController::class,
+            'return-policy'  => ReturnPolicyController::class,
+        ],
+
+    );
+
+});
+
+Route::middleware(['auth:admin'])->group(function () {
+
+    // Privacy & Policy
+    Route::get('/privacy/{id}/inactive', [PrivacyPolicyController::class, 'inactive'])->name('privacy-policy.inactive');
+    Route::get('/privacy/{id}/active', [PrivacyPolicyController::class, 'active'])->name('privacy-policy.active');
+    Route::get('/privacy/delete/{id}', [PrivacyPolicyController::class, 'DeletePrivacy'])->name('delete.privacy');
+
+    // Return & Policy
+    Route::get('/return-policy/{id}/inactive', [ReturnPolicyController::class, 'inactive'])->name('return-policy.inactive');
+    Route::get('/return-policy/{id}/active', [ReturnPolicyController::class, 'active'])->name('return-policy.active');
+    Route::get('/return/delete/{id}', [ReturnPolicyController::class, 'DeleteReturn'])->name('delete.return');
 
 });

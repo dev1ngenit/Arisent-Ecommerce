@@ -474,7 +474,7 @@
 
                 {{-- Contact Management Section --}}
                 <div data-kt-menu-trigger="click"
-                    class="menu-item menu-accordion {{ Request::routeIs('all.contact','all.subscribe', 'all.about', 'all.faq', 'all.term') ? 'here show' : '' }}">
+                    class="menu-item menu-accordion {{ Request::routeIs('all.contact', 'all.subscribe', 'all.about', 'all.faq', 'all.term', 'admin.privacy-policy.index', 'admin.return-policy.index') ? 'here show' : '' }}">
 
                     <span class="menu-link">
                         <span class="menu-icon">
@@ -521,15 +521,15 @@
 
                         {{-- Subscribe --}}
                         {{-- @if (Auth::guard('admin')->user()->can('subscribe.menu')) --}}
-                            <div class="menu-item">
-                                <a class="menu-link {{ Request::routeIs('all.subscribe') ? 'active' : '' }}"
-                                    href="{{ route('all.subscribe') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Subscribe</span>
-                                </a>
-                            </div>
+                        <div class="menu-item">
+                            <a class="menu-link {{ Request::routeIs('all.subscribe') ? 'active' : '' }}"
+                                href="{{ route('all.subscribe') }}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title">Subscribe</span>
+                            </a>
+                        </div>
                         {{-- @endif --}}
 
                         {{-- About --}}
@@ -557,7 +557,7 @@
                                         <span class="menu-bullet">
                                             <span class="bullet bullet-dot"></span>
                                         </span>
-                                        <span class="menu-title">All Faq</span>
+                                        <span class="menu-title">Faq</span>
                                     </a>
                                 @endif
                             </div>
@@ -576,6 +576,32 @@
                                 </a>
                             </div>
                         @endif
+
+                        {{-- Privacy & Policy  --}}
+                        {{-- @if (Auth::guard('admin')->user()->can('term.menu')) --}}
+                        <div class="menu-item">
+                            <a class="menu-link {{ Request::routeIs('admin.privacy-policy.index') ? 'active' : '' }}"
+                                href="{{ route('admin.privacy-policy.index') }}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title">Privacy & Policy</span>
+                            </a>
+                        </div>
+                        {{-- @endif --}}
+
+                        {{-- Return & Policy  --}}
+                        {{-- @if (Auth::guard('admin')->user()->can('term.menu')) --}}
+                        <div class="menu-item">
+                            <a class="menu-link {{ Request::routeIs('admin.return-policy.index') ? 'active' : '' }}"
+                                href="{{ route('admin.return-policy.index') }}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title">Return & Policy</span>
+                            </a>
+                        </div>
+                        {{-- @endif --}}
 
                     </div>
                 </div>

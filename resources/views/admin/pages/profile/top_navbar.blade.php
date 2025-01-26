@@ -128,7 +128,7 @@
                                 </svg>
                             </span>
                             <!--end::Svg Icon-->
-                            
+
                             <!--begin::Indicator-->
                             <span class="indicator-label">Follow</span>
                             <span class="indicator-progress">Please wait...
@@ -160,11 +160,13 @@
                     href="{{ route('admin.profile') }}">Overview</a>
             </li>
             <!--end::Nav item-->
+
             <!--begin::Nav item-->
-            <li class="nav-item mt-2">
+            {{-- <li class="nav-item mt-2">
                 <a class="nav-link text-active-primary ms-0 me-10 py-5" href="">Settings</a>
-            </li>
+            </li> --}}
             <!--end::Nav item-->
+
             <!--begin::Nav item-->
             <li class="nav-item mt-2">
                 <a class="nav-link text-active-primary ms-0 me-10 py-5 {{ $routes == 'admin.password.page' ? 'active' : '' }}"
@@ -176,10 +178,11 @@
                 <a class="nav-link text-active-primary ms-0 me-10 py-5 {{ $routes == 'all.smtp' ? 'active' : '' }}" href="{{ route('all.smtp') }}">SMTP</a>
             </li>
             <!--end::Nav item-->
+
             <!--begin::Nav item-->
-            <li class="nav-item mt-2">
+            {{-- <li class="nav-item mt-2">
                 <a class="nav-link text-active-primary ms-0 me-10 py-5" href="">SEO</a>
-            </li>
+            </li> --}}
             <!--end::Nav item-->
 
         </ul>

@@ -61,9 +61,9 @@
         <!--end::Toolbar-->
 
         <!--begin::Post-->
-        <div class="post d-flex flex-column-fluid" id="kt_post">
+        {{-- <div class="post d-flex flex-column-fluid" id="kt_post">
             <!--begin::Container-->
-            <div id="kt_content_container" class="container-xxl">
+            <div id="kt_content_container" class="container-xxl"> --}}
 
                 <!--begin::Navbar-->
                 @include('admin.pages.profile.top_navbar')
@@ -279,10 +279,10 @@
                 <!--begin::Row-->
 
 
-            </div>
+            {{-- </div>
             <!--end::Container-->
         </div>
-        <!--end::Post-->
+        <!--end::Post--> --}}
 
     </div>
 
