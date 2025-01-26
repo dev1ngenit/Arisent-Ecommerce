@@ -1,5 +1,6 @@
 @extends('admin.admin_dashboard')
 @section('admin')
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
@@ -11,6 +12,7 @@
     <div class="toolbar" id="kt_toolbar">
         <!--begin::Container-->
         <div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
+
             <!--begin::Page title-->
             <div data-kt-swapper="true" data-kt-swapper-mode="prepend"
                 data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}"
@@ -135,8 +137,7 @@
                                         <a href="{{ route('admin.order.invoice', $order->id) }}" target="_blank"><i
                                                 class="fa fa-download text-success"></i></a>
 
-                                        <a href="{{ route('admin.order.delete', $order->id) }}" id="delete"><i
-                                                class="fa fa-close text-danger"></i></a>
+                                        <a href="{{ route('admin.order.delete', $order->id) }}" id="delete"><i class="bi bi-trash3-fill fs-5 text-danger"></i></a>
                                     </td>
                                 </tr>
                             @endforeach

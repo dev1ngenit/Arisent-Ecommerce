@@ -84,6 +84,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 Route::post('/add-to-wishlist/{product_id}', [TemplateOneCartController::class, 'AddToWishList']);
 
 Route::get('brand/related-product-search', [TemplateOneController::class, 'BrandRelatedProductSearch'])->name('brand.related.product.search');
+
 // Template One Controller
 Route::controller(TemplateOneController::class)->group(function () {
 

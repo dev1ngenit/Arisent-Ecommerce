@@ -114,28 +114,16 @@
                     <!--begin::Actions-->
                     <div class="d-flex my-4">
 
-                        {{-- <a href="#" class="btn btn-sm btn-light me-2" id="kt_user_follow_button">
-                            <!--begin::Svg Icon | path: icons/duotune/arrows/arr012.svg-->
-                            <span class="svg-icon svg-icon-3 d-none">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                    viewBox="0 0 24 24" fill="none">
-                                    <path opacity="0.3"
-                                        d="M10 18C9.7 18 9.5 17.9 9.3 17.7L2.3 10.7C1.9 10.3 1.9 9.7 2.3 9.3C2.7 8.9 3.29999 8.9 3.69999 9.3L10.7 16.3C11.1 16.7 11.1 17.3 10.7 17.7C10.5 17.9 10.3 18 10 18Z"
-                                        fill="currentColor" />
-                                    <path
-                                        d="M10 18C9.7 18 9.5 17.9 9.3 17.7C8.9 17.3 8.9 16.7 9.3 16.3L20.3 5.3C20.7 4.9 21.3 4.9 21.7 5.3C22.1 5.7 22.1 6.30002 21.7 6.70002L10.7 17.7C10.5 17.9 10.3 18 10 18Z"
-                                        fill="currentColor" />
-                                </svg>
-                            </span>
-                            <!--end::Svg Icon-->
-
+                        <a href="{{ route('download') }}" class="btn btn-sm btn-light me-2" target="" id="downloadBtn">
                             <!--begin::Indicator-->
-                            <span class="indicator-label">Follow</span>
-                            <span class="indicator-progress">Please wait...
-                                <span
-                                    class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                            <span class="indicator-label" id="indicatorLabel">DataBase</span>
+                            <span class="indicator-progress" id="indicatorProgress" style="display: none;">
+                                Please wait...
+                                <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                            </span>
                             <!--end::Indicator-->
-                        </a> --}}
+                        </a>
+
 
                         <a href="{{ route('add.employee.details') }}" class="btn btn-sm btn-light-primary me-2">Employee
                             Information</a>
@@ -175,7 +163,8 @@
             <!--end::Nav item-->
             <!--begin::Nav item-->
             <li class="nav-item mt-2">
-                <a class="nav-link text-active-primary ms-0 me-10 py-5 {{ $routes == 'all.smtp' ? 'active' : '' }}" href="{{ route('all.smtp') }}">SMTP</a>
+                <a class="nav-link text-active-primary ms-0 me-10 py-5 {{ $routes == 'all.smtp' ? 'active' : '' }}"
+                    href="{{ route('all.smtp') }}">SMTP</a>
             </li>
             <!--end::Nav item-->
 
@@ -190,3 +179,20 @@
 
     </div>
 </div>
+
+<script>
+    document.getElementById('downloadBtn').addEventListener('click', function(event) {
+    // Show the "Please wait..." message and spinner
+    document.getElementById('indicatorLabel').style.display = 'none'; // Hide the DataBase label
+    document.getElementById('indicatorProgress').style.display = 'inline-block'; // Show the "Please wait..." with spinner
+
+    // You can use a small delay to simulate waiting, since we can't track the download directly
+    setTimeout(function() {
+        // After the delay (simulate waiting for download), let the spinner disappear
+        // For instant downloads, this will be right before the browser starts the download
+        document.getElementById('indicatorLabel').style.display = 'inline'; // Show the DataBase label again
+        document.getElementById('indicatorProgress').style.display = 'none'; // Hide the spinner
+    }, 2000); // Adjust the time here based on your expected delay
+});
+
+</script>

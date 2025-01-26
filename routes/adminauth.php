@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\ChildCategoryController;
 use App\Http\Controllers\Admin\ColorController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\CouponCrontroller;
+use App\Http\Controllers\Admin\DataBaseController;
 use App\Http\Controllers\Admin\EmployeeCategoryController;
 use App\Http\Controllers\Admin\EmployeeController;
 use App\Http\Controllers\Admin\FaqController;
@@ -128,7 +129,6 @@ Route::middleware(['auth:admin', 'verified'])->group(function () {
 
         //Order Status Change
         Route::get('/order-status/{id}', 'AdminOrderStatusChange')->name('admin.order.status');
-
         Route::get('/multi-order-status-update-store', 'multuOrderStatusUpdate')->name('multuOrderStatusUpdate');
 
         //Invoice
@@ -477,5 +477,7 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::get('/return-policy/{id}/inactive', [ReturnPolicyController::class, 'inactive'])->name('return-policy.inactive');
     Route::get('/return-policy/{id}/active', [ReturnPolicyController::class, 'active'])->name('return-policy.active');
     Route::get('/return/delete/{id}', [ReturnPolicyController::class, 'DeleteReturn'])->name('delete.return');
+
+    Route::get('/backup', [DataBaseController::class, 'downloadBackup'])->name('download');
 
 });

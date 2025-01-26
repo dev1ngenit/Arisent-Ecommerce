@@ -686,6 +686,8 @@ class TemplateOneCartController extends Controller
 
         ]);
 
+        $carts = Cart::content();
+
         //Send Mail
         $invoice = Order::findOrFail($order_id);
 
@@ -697,6 +699,7 @@ class TemplateOneCartController extends Controller
             'billing_email' => $invoice->billing_email,
             'billing_phone' => $invoice->billing_phone,
             'billing_address_line1' => $invoice->billing_address_line1,
+            'carts' => $carts,
 
         ];
 
@@ -725,7 +728,7 @@ class TemplateOneCartController extends Controller
 
         toastr()->success('Order Successfully');
 
-        return redirect()->route('index');
+        return redirect()->route('template.one.dashboard');
     }
 
     //Add To WishList

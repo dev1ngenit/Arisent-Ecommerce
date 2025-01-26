@@ -406,7 +406,7 @@
                             border-left: 1px solid #eee;
                             color: #3d3d3d;
                           ">
-                                                Tk {{ $order->shipping_charge }}
+                                                Tk {{ $order->shipping_charge }} 0
                                             </td>
                                         </tr>
                                     </table>
@@ -661,7 +661,7 @@
                                                                                 Thank You
                                                                             </p>
                                                                             <p style="color: #ae0a46; margin: 0">
-                                                                                Kawsar Khan
+                                                                                Sales Team
                                                                             </p>
                                                                             <p
                                                                                 style="

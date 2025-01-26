@@ -1,12 +1,8 @@
 <?php
-
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
-use Illuminate\Mail\Mailables\Content;
-use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
 class OrderMail extends Mailable
@@ -21,7 +17,7 @@ class OrderMail extends Mailable
      */
     public function __construct($data)
     {
-       $this->data = $data;
+        $this->data = $data;
     }
 
     /**
@@ -31,9 +27,11 @@ class OrderMail extends Mailable
      */
     public function build()
     {
-        $order = $this->data;
+                                       // Access the data passed to the mailable
+        $order = $this->data;          // The order data passed from the controller
+        $carts = $this->data['carts']; // Access the cart items from the data
 
-        return $this->subject('DadaBhai Ecommerce')->view('mail.order_mail',compact('order'));
-
+        return $this->subject('DadaBhai Ecommerce')
+            ->view('mail.order_mail', compact('order', 'carts')); // Pass both order data and carts to the view
     }
 }

@@ -43,11 +43,11 @@
 
 
     <!--begin::Post-->
-    <div class="container mt-5 mb-5">
+
         <div class="row">
 
             {{-- Billing Address  --}}
-            <div class="col-lg-6">
+            <div class="col-lg-4">
 
                 <div class="card">
                     <div class="pt-3 ps-5" style="height: 50px; text-align: start; background-color: #2d8fc7">
@@ -110,12 +110,76 @@
             </div>
             {{-- Billing Address  --}}
 
-            {{-- Order Info  --}}
-            <div class="col-lg-6">
+            {{-- Shipping Address  --}}
+            <div class="col-lg-4">
 
                 <div class="card">
                     <div class="pt-3 ps-5" style="height: 50px; text-align: start; background-color: #2d8fc7">
                         <h5 class="text-light">Shipping Address</h5>
+                    </div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+
+                                <tr>
+                                    <th class="fw-bold">Name</th>
+                                    <td>{{ $order->shipping_name }}</td>
+                                </tr>
+
+                                <tr>
+                                    <th class="fw-bold">Phone</th>
+                                    <td>{{ $order->shipping_phone }}</td>
+                                </tr>
+
+                                {{-- <tr>
+                                    <th class="fw-bold">Billing Email</th>
+                                    <td>{{ $order->billing_email }}</td>
+                                </tr> --}}
+
+                                <tr>
+                                    <th class="fw-bold">Address One</th>
+                                    <td>{{ $order->shipping_address_line1 }}</td>
+                                </tr>
+
+                                <tr>
+                                    <th class="fw-bold">Address Two</th>
+                                    <td>{{ $order->shipping_address_line2 }}</td>
+                                </tr>
+
+                                <tr>
+                                    <th class="fw-bold">Post Code</th>
+                                    <td>{{ $order->shipping_postal_code }}</td>
+                                </tr>
+
+                                <tr>
+                                    <th class="fw-bold">Shipping City</th>
+                                    <td>{{ $order->shipping_city }}</td>
+                                </tr>
+
+                                <tr>
+                                    <th class="fw-bold">Shipping State</th>
+                                    <td>{{ $order->shipping_state }}</td>
+                                </tr>
+
+                                <tr>
+                                    <th class="fw-bold">Shipping Country</th>
+                                    <td>{{ $order->shipping_country }}</td>
+                                </tr>
+
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+            {{-- Shipping Address  --}}
+
+            {{-- Order Info  --}}
+            <div class="col-lg-4">
+
+                <div class="card">
+                    <div class="pt-3 ps-5" style="height: 50px; text-align: start; background-color: #2d8fc7">
+                        <h5 class="text-light">Order Info</h5>
                     </div>
                     <div class="card-body">
                         <table class="table">
@@ -245,6 +309,6 @@
             {{-- Product Details --}}
 
         </div>
-    </div>
+
     <!--end::Post-->
 @endsection

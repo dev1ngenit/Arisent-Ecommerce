@@ -1,7 +1,8 @@
 @extends('frontend.template_one.frontend_dashboard_template_one')
 @section('index_template_one')
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css">
-    <div class="container mt-5 mb-5 pt-80 pb-80">
+
+    <div class="container mt-5">
         <div class="row">
 
             {{-- Billing Address  --}}
@@ -16,10 +17,10 @@
                             <table class="table mb-0 table-striped table-hover">
                                 <thead class="bg-light">
                                     <tr>
-                                      <th scope="col">Name</th>
-                                      <th scope="col">Details</th>
+                                        <th scope="col">Item</th>
+                                        <th scope="col">Details</th>
                                     </tr>
-                                  </thead>
+                                </thead>
                                 <tbody>
                                     <tr>
                                         <th>Billing Name</th>
@@ -77,46 +78,46 @@
                             <table class="table mb-0 table-striped table-hover">
                                 <thead class="bg-light">
                                     <tr>
-                                      <th scope="col">Name</th>
-                                      <th scope="col">Details</th>
+                                        <th scope="col">Item</th>
+                                        <th scope="col">Details</th>
                                     </tr>
-                                  </thead>
+                                </thead>
                                 <tbody>
                                     <tr>
                                         <th>Shipping Name</th>
-                                        <td>{{ $order->billing_name }}</td>
+                                        <td>{{ $order->shipping_name }}</td>
                                     </tr>
                                     <tr>
                                         <th>Shipping Phone</th>
-                                        <td>{{ $order->billing_phone }}</td>
+                                        <td>{{ $order->shipping_phone }}</td>
                                     </tr>
-                                    <tr>
+                                    {{-- <tr>
                                         <th>Shipping Email</th>
-                                        <td>{{ $order->billing_email }}</td>
+                                        <td>{{ $order->shipping_email }}</td>
+                                    </tr> --}}
+                                    <tr>
+                                        <th>Address One</th>
+                                        <td>{{ $order->shipping_address_line1 }}</td>
                                     </tr>
                                     <tr>
-                                        <th>Shipping Address One</th>
-                                        <td>{{ $order->billing_address_line1 }}</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Shipping Address Two</th>
-                                        <td>{{ $order->billing_address_line2 }}</td>
+                                        <th>Address Two</th>
+                                        <td>{{ $order->shipping_address_line2 }}</td>
                                     </tr>
                                     <tr>
                                         <th>Shipping Post Code</th>
-                                        <td>{{ $order->billing_postal_code }}</td>
+                                        <td>{{ $order->shipping_postal_code }}</td>
                                     </tr>
                                     <tr>
                                         <th>Shipping City</th>
-                                        <td>{{ $order->billing_city }}</td>
+                                        <td>{{ $order->shipping_city }}</td>
                                     </tr>
                                     <tr>
                                         <th>Shipping State</th>
-                                        <td>{{ $order->billing_state }}</td>
+                                        <td>{{ $order->shipping_state }}</td>
                                     </tr>
                                     <tr>
-                                        <th>Shipping Country</th>
-                                        <td>{{ $order->billing_country }}</td>
+                                        <th>Country</th>
+                                        <td>{{ $order->shipping_country }}</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -138,10 +139,10 @@
                         <table class="table mb-0 table-striped table-hover">
                             <thead class="bg-light">
                                 <tr>
-                                  <th scope="col">Name</th>
-                                  <th scope="col">Details</th>
+                                    <th scope="col">Item</th>
+                                    <th scope="col">Details</th>
                                 </tr>
-                              </thead>
+                            </thead>
                             <tbody>
                                 <tr>
                                     <th class="fw-bold">Invoice No</th>
