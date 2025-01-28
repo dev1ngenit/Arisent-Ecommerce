@@ -12,11 +12,8 @@ use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminOrderController;
 use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Admin\ChargeController;
 use App\Http\Controllers\Admin\ChildCategoryController;
-use App\Http\Controllers\Admin\ColorController;
 use App\Http\Controllers\Admin\ContactController;
-use App\Http\Controllers\Admin\CouponCrontroller;
 use App\Http\Controllers\Admin\DataBaseController;
 use App\Http\Controllers\Admin\EmployeeCategoryController;
 use App\Http\Controllers\Admin\EmployeeController;
@@ -161,30 +158,30 @@ Route::middleware(['auth:admin', 'verified'])->group(function () {
     });
 
     //Shipping Charge
-    Route::controller(ChargeController::class)->prefix('shipping')->group(function () {
+    // Route::controller(ChargeController::class)->prefix('shipping')->group(function () {
 
-        Route::get('/all/charge', 'AllShippingCharge')->name('all.shipping.charge')->middleware('permission:all.shipping');
-        Route::post('/store/charge', 'StoreShippingCharge')->name('store.shipping.charge');
-        Route::post('/update/charge', 'UpdateShippingCharge')->name('update.shipping.charge');
-        Route::get('/delete/charge/{id}', 'DeleteShippingCharge')->name('delete.shipping.charge');
+    //     Route::get('/all/charge', 'AllShippingCharge')->name('all.shipping.charge')->middleware('permission:all.shipping');
+    //     Route::post('/store/charge', 'StoreShippingCharge')->name('store.shipping.charge');
+    //     Route::post('/update/charge', 'UpdateShippingCharge')->name('update.shipping.charge');
+    //     Route::get('/delete/charge/{id}', 'DeleteShippingCharge')->name('delete.shipping.charge');
 
-        //Active Or Inactive
-        Route::get('/shipping-charge-inactive/{id}', 'InactiveShippingCharge')->name('shipping.charge.inactive');
-        Route::get('/shipping-charge-active/{id}', 'ActiveShippingCharge')->name('shipping.charge.active');
-    });
+    //     //Active Or Inactive
+    //     Route::get('/shipping-charge-inactive/{id}', 'InactiveShippingCharge')->name('shipping.charge.inactive');
+    //     Route::get('/shipping-charge-active/{id}', 'ActiveShippingCharge')->name('shipping.charge.active');
+    // });
 
-    //Shipping Charge
-    Route::controller(CouponCrontroller::class)->prefix('coupon')->group(function () {
+    //coupon Charge
+    // Route::controller(CouponCrontroller::class)->prefix('coupon')->group(function () {
 
-        Route::get('/all', 'AllCoupon')->name('all.coupon')->middleware('permission:all.coupon');
-        Route::post('/store', 'StoreCoupon')->name('store.coupon');
-        Route::post('/update', 'UpdateCoupon')->name('update.coupon');
-        Route::get('/delete/{id}', 'DeleteCoupon')->name('delete.coupon');
+    //     Route::get('/all', 'AllCoupon')->name('all.coupon')->middleware('permission:all.coupon');
+    //     Route::post('/store', 'StoreCoupon')->name('store.coupon');
+    //     Route::post('/update', 'UpdateCoupon')->name('update.coupon');
+    //     Route::get('/delete/{id}', 'DeleteCoupon')->name('delete.coupon');
 
-        //Active Or Inactive
-        Route::get('/coupon-inactive/{id}', 'InactiveCoupon')->name('coupon.inactive');
-        Route::get('/coupon-active/{id}', 'ActiveCoupon')->name('coupon.active');
-    });
+    //     //Active Or Inactive
+    //     Route::get('/coupon-inactive/{id}', 'InactiveCoupon')->name('coupon.inactive');
+    //     Route::get('/coupon-active/{id}', 'ActiveCoupon')->name('coupon.active');
+    // });
 
     //Employee Dept Section
     Route::controller(EmployeeController::class)->prefix('employee')->group(function () {
@@ -205,13 +202,13 @@ Route::middleware(['auth:admin', 'verified'])->group(function () {
     });
 
     //Color Section
-    Route::controller(ColorController::class)->prefix('color')->group(function () {
+    // Route::controller(ColorController::class)->prefix('color')->group(function () {
 
-        Route::get('/all', 'AllColor')->name('all.color')->middleware('permission:all.color');
-        Route::post('/store', 'StoreColor')->name('store.color');
-        Route::post('/update', 'UpdateColor')->name('update.color');
-        Route::get('/delete/{id}', 'DeleteColor')->name('delete.color');
-    });
+    //     Route::get('/all', 'AllColor')->name('all.color')->middleware('permission:all.color');
+    //     Route::post('/store', 'StoreColor')->name('store.color');
+    //     Route::post('/update', 'UpdateColor')->name('update.color');
+    //     Route::get('/delete/{id}', 'DeleteColor')->name('delete.color');
+    // });
 
     //Sites Section
     Route::controller(SiteController::class)->prefix('sites')->group(function () {
@@ -478,6 +475,7 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::get('/return-policy/{id}/active', [ReturnPolicyController::class, 'active'])->name('return-policy.active');
     Route::get('/return/delete/{id}', [ReturnPolicyController::class, 'DeleteReturn'])->name('delete.return');
 
+    // Download Backup
     Route::get('/backup', [DataBaseController::class, 'downloadBackup'])->name('download');
 
 });

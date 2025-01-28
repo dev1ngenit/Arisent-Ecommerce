@@ -31,17 +31,17 @@ class Product extends Model
         return $this->belongsTo(Color::class, 'color_id', 'id');
     }
 
-    
+
 
     public function brand()
     {
         return $this->belongsTo(Brand::class, 'brand_id', 'id');
     }
 
-    public function productSinglePage()
-    {
-        return $this->hasOne(ProductSinglePage::class);
-    }
+    // public function productSinglePage()
+    // {
+    //     return $this->hasOne(ProductSinglePage::class);
+    // }
 
-    
+
 }

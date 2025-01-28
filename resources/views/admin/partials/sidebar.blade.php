@@ -342,7 +342,7 @@
                         @endif --}}
 
                         {{-- Coupon --}}
-                        @if (Auth::guard('admin')->user()->can('coupon.menu'))
+                        {{-- @if (Auth::guard('admin')->user()->can('coupon.menu'))
                             <div class="menu-item">
                                 <a class="menu-link {{ Request::routeIs('all.coupon') ? 'active' : '' }}"
                                     href="{{ route('all.coupon') }}">
@@ -352,7 +352,7 @@
                                     <span class="menu-title">Coupon</span>
                                 </a>
                             </div>
-                        @endif
+                        @endif --}}
 
 
 

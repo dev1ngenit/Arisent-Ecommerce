@@ -1,11 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\IndexController;
-use App\Http\Controllers\Frontend\TemplateOneCartController;
 use App\Http\Controllers\Frontend\TemplateOneController;
-use App\Http\Controllers\Frontend\TemplateTwoController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Frontend\TemplateOneCartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +34,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 });
 
+
 require __DIR__ . '/auth.php';
 require __DIR__ . '/adminauth.php';
 
@@ -57,8 +57,8 @@ Route::controller(IndexController::class)->group(function () {
     Route::get('/about', 'AboutPage')->name('about.page');
 
     // lOGIN wITH gOOGLE
-    Route::get('login/google', 'redirectToGoogle')->name('login.google');
-    Route::get('login/google/callback', 'googleCallback');
+    // Route::get('login/google', 'redirectToGoogle')->name('login.google');
+    // Route::get('login/google/callback', 'googleCallback');
 });
 
 Route::middleware(['auth', 'verified'])->group(function () {
@@ -200,37 +200,37 @@ Route::controller(TemplateOneCartController::class)->group(function () {
     Route::post('/cart-checkout-store', 'CheckoutStoreTemplateOne')->name('template.checkout.store');
 
     // ==================================
-    Route::post('/apply-coupon', 'applyCoupon')->name('apply.coupon');
+    // Route::post('/apply-coupon', 'applyCoupon')->name('apply.coupon');
 });
 
 // Template Two Controller
-Route::controller(TemplateTwoController::class)->group(function () {
+// Route::controller(TemplateTwoController::class)->group(function () {
 
-    //Template Two
-    Route::get('/product-single/{id}', 'SingleProductTemplateTwo');
+//     //Template Two
+//     Route::get('/product-single/{id}', 'SingleProductTemplateTwo');
 
-    //All Product
-    Route::get('/all-product-dadabhaai', 'TemplateTwoAllProduct')->name('template.two.all.product');
+//     //All Product
+//     Route::get('/all-product-dadabhaai', 'TemplateTwoAllProduct')->name('template.two.all.product');
 
-    //Faq
-    Route::get('/faq-dadabhaai', 'TemplateTwoFaq')->name('template.two.faq');
+//     //Faq
+//     Route::get('/faq-dadabhaai', 'TemplateTwoFaq')->name('template.two.faq');
 
-    //contact us
-    Route::get('/contact-dadabhaai', 'TemplateTwoContact')->name('template.two.contact');
-    Route::post('/contact/store', 'TemplateTwoContactStore')->name('template.two.contact.store');
+//     //contact us
+//     Route::get('/contact-dadabhaai', 'TemplateTwoContact')->name('template.two.contact');
+//     Route::post('/contact/store', 'TemplateTwoContactStore')->name('template.two.contact.store');
 
-    //Buying Guide
-    Route::get('/buying-guide', 'TemplateTwoBuying')->name('template.two.buying');
+//     //Buying Guide
+//     Route::get('/buying-guide', 'TemplateTwoBuying')->name('template.two.buying');
 
-    //Category Page
-    Route::get('/product/category-dadabhaai/{id}/{category_slug}', 'CategoryWiseProductTemplateTwo');
+//     //Category Page
+//     Route::get('/product/category-dadabhaai/{id}/{category_slug}', 'CategoryWiseProductTemplateTwo');
 
-    // Route for handling the POST request (form submission)
-    Route::post('/product-search-dadabhaai', 'DadabhaaiProductSearch')->name('dadabhaai.product.search');
+//     // Route for handling the POST request (form submission)
+//     Route::post('/product-search-dadabhaai', 'DadabhaaiProductSearch')->name('dadabhaai.product.search');
 
-    // Route for showing search results (GET request)
-    Route::get('/product-search-results', 'showSearchResults')->name('product.search.results');
+//     // Route for showing search results (GET request)
+//     Route::get('/product-search-results', 'showSearchResults')->name('product.search.results');
 
-    // Route for showing search results (GET request)
-    Route::post('/product-store-cart-product', 'AddToCartProductHomeAstell');
-});
+//     // Route for showing search results (GET request)
+//     Route::post('/product-store-cart-product', 'AddToCartProductHomeAstell');
+// });

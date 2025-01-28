@@ -175,7 +175,8 @@
                     </div>
 
                     <div class="row mb-3">
-                        <div class="row align-items-center">
+
+                        {{-- <div class="row align-items-center">
                             <div class="col-xl-12 col-sm-12">
                                 <div class="product-section2 mt-40">
                                     <h6 class="product--section__title2 pb-30" id="releted-tab" data-toggle="tab"
@@ -185,6 +186,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="col-lg-12 px-0">
                             <div class="releted_accessories">
 
@@ -280,8 +282,10 @@
 
 
                             </div>
-                        </div>
+                        </div> --}}
+
                     </div>
+
                 </div>
             </div>
         </div>

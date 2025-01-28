@@ -79,8 +79,8 @@
                     <!-- Filter bar -->
                     <div class="border-b">
                         <div class="row align-items-center mx-0" style="background: #f5f5f5;">
-                            <div class="col-lg-4">
-                                <h4 class="f-800 cod__black-color mb-0">Product/</h4>
+                            <div class="col-lg-5">
+                                <h4 class="f-800 cod__black-color mb-0">Product</h4>
                             </div>
                             <div class="col-lg-7">
                                 <div class="form-group has-search mb-0">
@@ -89,7 +89,8 @@
                                     <span class="fa fa-search form-control-feedback"></span>
                                 </div>
                             </div>
-                            <div class="col-lg-1">
+
+                            {{-- <div class="col-lg-1">
                                 <div class="d-flex justify-content-end">
                                     <select name="sortBy" class="sort-by" onchange="this.form.submit();">
                                         <option selected disabled>Show</option>
@@ -107,7 +108,8 @@
                                         </option>
                                     </select>
                                 </div>
-                            </div>
+                            </div> --}}
+
                         </div>
                     </div>
 
