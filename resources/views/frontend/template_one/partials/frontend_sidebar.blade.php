@@ -18,6 +18,7 @@
     <div class="common-sidebar shop-banner-sidebar">
 
         {{-- Category  --}}
+
         <div class="common-cat">
             <div class="side-title">
                 <h6>Category</h6>
@@ -82,75 +83,8 @@
             </div>
         </div>
 
-        {{-- <div class="common-cat">
-            <div class="side-title">
-                <h6>Category</h6>
-            </div>
-            <div id="accordionBrands" class="accordion">
-                <div class="card border-0 shadow-none mb-0">
-                    @foreach ($categorys as $category)
-                        <!-- Category Header -->
-                        <div class="card-header pl-0 {{ optional($catwiseproduct)->category_id == $category->id ? 'mark-cat active' : '' }}"
-                            data-bs-toggle="collapse" data-bs-target="#cat{{ $category->id }}"
-                            aria-expanded="{{ optional($catwiseproduct)->category_id == $category->id ? 'true' : 'false' }}">
-                            <a class="card-title {{ optional($catwiseproduct)->category_id == $category->id ? 'mark-cat active' : '' }}">
-                                {{ $category->category_name }}
-                            </a>
-                        </div>
-        
-                        <!-- Category Collapsible Body -->
-                        <div id="cat{{ $category->id }}"
-                            class="collapse {{ optional($catwiseproduct)->category_id == $category->id || (optional($catwiseproduct)->subcategory_id && $category->id == optional($catwiseproduct)->subcategory->category_id) ? 'show' : '' }}"
-                            data-bs-parent="#accordionBrands" style="background-color: #f5f5f5;">
-                            @php
-                                $subcategorys = App\Models\Admin\SubCategory::where('status', '1')
-                                    ->where('category_id', $category->id)
-                                    ->latest()
-                                    ->get();
-                            @endphp
-                            <!-- Subcategory Accordion -->
-                            <div id="accordion2" class="accordion pl-3">
-                                @foreach ($subcategorys as $subcategory)
-                                    <div class="card border-0 shadow-none mb-0">
-                                        <!-- Subcategory Header -->
-                                        <div class="card-header category-filter {{ optional($childcatwiseproduct)->subcategory_id == $subcategory->id ? 'mark-sub-cat active' : '' }} pl-0"
-                                            data-bs-toggle="collapse" data-bs-target="#sub{{ $subcategory->id }}"
-                                            aria-expanded="{{ optional($childcatwiseproduct)->subcategory_id == $subcategory->id ? 'true' : 'false' }}">
-                                            <a class="card-title">
-                                                {{ $subcategory->subcategory_name }}
-                                            </a>
-                                        </div>
-        
-                                        <!-- Subcategory Collapsible Body -->
-                                        <div id="sub{{ $subcategory->id }}"
-                                            class="collapse {{ optional($childcatwiseproduct)->subcategory_id == $subcategory->id || (optional($childcatwiseproduct)->childcategory_id && optional($childcatwiseproduct)->childcategory->subcategory_id == $subcategory->id) ? 'show' : '' }}"
-                                            data-bs-parent="#accordion2" style="background-color: #f5f5f5;">
-                                            @php
-                                                $childcategorys = App\Models\Admin\ChildCategory::where('status', '1')
-                                                    ->where('subcategory_id', $subcategory->id)
-                                                    ->latest()
-                                                    ->get();
-                                            @endphp
-                                            @foreach ($childcategorys as $childcategory)
-                                                <div class="card-body p-2 {{ optional($childcatwiseproduct)->id == $childcategory->id ? 'marks active' : '' }}"
-                                                    aria-expanded="{{ optional($childcatwiseproduct)->id == $childcategory->id ? 'true' : 'false' }}">
-                                                    <a href="{{ url('product/childcategory/' . $childcategory->id . '/' . $childcategory->childcategory_slug) }}"
-                                                        class="pl-3 text-muted childcategory-link {{ optional($childcatwiseproduct)->id == $childcategory->id ? 'marks active' : '' }}">
-                                                        {{ $childcategory->childcategory_name }}
-                                                    </a>
-                                                </div>
-                                            @endforeach
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-         --}}
-        
+        {{-- Category  --}}
+
 
         {{-- Brand  --}}
         <div class="common-cat mt-5">
@@ -169,8 +103,8 @@
                 @endforeach
             </div>
         </div>
+        {{-- Brand  --}}
 
     </div>
 
 </div>
-

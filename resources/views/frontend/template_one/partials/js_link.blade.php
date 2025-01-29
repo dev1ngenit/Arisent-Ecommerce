@@ -1698,7 +1698,9 @@
     });
 </script>
 
-<script>
+{{-- ================================= --}}
+
+{{-- <script>
     $(document).ready(function() {
         // Initialize accordion
         $('.card-header').each(function() {
@@ -1752,7 +1754,71 @@
             }
         });
     });
+</script> --}}
+
+{{-- Change Mark Cat   --}}
+<script>
+    $(document).ready(function() {
+        // Initialize accordion on page load
+        function initializeAccordion() {
+            // Loop through each card header to set the collapse behavior
+            $('.card-header').each(function() {
+                const isCategoryMarked = $(this).hasClass('mark-cat');
+                const isSubCategoryMarked = $(this).hasClass('mark-sub-cat');
+                const isChildCategoryMarked = $(this).hasClass('marks');
+
+                // Control Category collapse state
+                if (isCategoryMarked) {
+                    $(this).next('.collapse').collapse('show'); // Show the category
+                } else {
+                    $(this).next('.collapse').collapse('hide'); // Hide the category
+                }
+
+                // Control Subcategory collapse state
+                if (isSubCategoryMarked) {
+                    $(this).next('.collapse').collapse('show'); // Show the subcategory
+                } else {
+                    $(this).next('.collapse').collapse('hide'); // Hide the subcategory
+                }
+
+                // Control Childcategory collapse state
+                if (isChildCategoryMarked) {
+                    $(this).next('.collapse').collapse('show'); // Show the childcategory
+                } else {
+                    $(this).next('.collapse').collapse('hide'); // Hide the childcategory
+                }
+            });
+        }
+
+        // Initialize accordion once page is loaded
+        initializeAccordion();
+
+        // Handle click events to toggle accordion
+        $('.category-filter, .card-header').click(function() {
+            // Toggling collapse for the clicked section
+            $(this).toggleClass('collapsed').next('.collapse').collapse('toggle');
+        });
+
+        // Update the 'marks' class on childcategory-link click
+        $('.childcategory-link').click(function() {
+            // Remove "marks" class from all links
+            $('.childcategory-link').removeClass('marks');
+            // Add "marks" class to the clicked link
+            $(this).addClass('marks');
+        });
+
+        // Handle checkbox change event for hiding/showing elements
+        $('#defaultCheck1').change(function() {
+            if ($(this).is(':checked')) {
+                $('.on-check-show').hide();
+            } else {
+                $('.on-check-show').show();
+            }
+        });
+    });
 </script>
+
+{{-- ================================= --}}
 
 <script>
     $(window).load(function() {

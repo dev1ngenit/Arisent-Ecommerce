@@ -56,7 +56,7 @@
                         <div class="col-lg-1">
                             <div class="d-flex justify-content-end">
                                 <select name="" class="text-end" id="sortBy">
-                                    <option selected disabled>SortBy Product</option>
+                                    <option selected disabled>SortBy</option>
                                     <option value="nameAtoZ" {{ $sort == 'nameAtoZ' ? 'selected' : '' }}>Product
                                         Name: A to Z
                                     </option>
