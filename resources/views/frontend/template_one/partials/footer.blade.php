@@ -29,6 +29,8 @@
                                     <li><a href="{{ route('template.one.about') }}">About Us</a></li>
                                     <li><a href="{{ route('template_one.contact') }}">Contact Us</a></li>
                                     <li><a href="{{ route('template.one.term') }}">Terms</a></li>
+                                    <li><a href="{{ route('privacy.policy') }}">PrivacyPolicy</a></li>
+                                    <li><a href="{{ route('return-policy') }}">ReturnPolicy</a></li>
 
                                     @if (Auth::user())
                                         <li><a href="{{ route('template.one.dashboard') }}">DashBoard</a></li>
@@ -53,6 +55,7 @@
                                     <li><a href="{{ $site->skype_url }}">Skype</a></li>
                                     <li><a href="{{ $site->youtube_url }}">Youtube</a></li>
                                     <li><a href="{{ $site->linkedin_url }}">Linkdin</a></li>
+                                    <li><a href="{{ route('template.one.faq') }}">Faq</a></li>
                                 </ul>
                             </div>
                         </div>

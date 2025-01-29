@@ -1,10 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\IndexController;
-use App\Http\Controllers\Frontend\TemplateOneController;
 use App\Http\Controllers\Frontend\TemplateOneCartController;
+use App\Http\Controllers\Frontend\TemplateOneController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +33,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // Route::get('/user/logout', [UserController::class, 'UserLogout'])->name('user.logout');
 
 });
-
 
 require __DIR__ . '/auth.php';
 require __DIR__ . '/adminauth.php';
@@ -122,10 +121,12 @@ Route::controller(TemplateOneController::class)->group(function () {
 
     //Faq
     Route::get('/faq', 'TemplateOneFaq')->name('template.one.faq');
-
+    //Privacy
+    Route::get('/privacy-policy', 'privacyPolicy')->name('privacy.policy');
+    //Policy
+    Route::get('/return-policy', 'returnPolicy')->name('return-policy');
     //Trems
     Route::get('/terms', 'TemplateOneTerm')->name('template.one.term');
-
     //About Us
     Route::get('/about-us', 'TemplateOneAboutUs')->name('template.one.about');
 
@@ -167,7 +168,6 @@ Route::controller(TemplateOneCartController::class)->group(function () {
 
     //Buy To Cart
     Route::post('/product/buy/store/{id}', 'BuyToCartTemplateOne');
-
 
     //Add To Cart
     Route::post('/product/store/{id}', 'AddToCartTemplateOne');

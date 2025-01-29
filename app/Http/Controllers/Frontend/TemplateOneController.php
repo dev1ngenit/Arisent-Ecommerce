@@ -2,26 +2,28 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Http\Controllers\Controller;
-use App\Models\Admin\About;
-use App\Models\Admin\Category;
-use App\Models\Admin\ChildCategory;
-use App\Models\Admin\Contact;
-use App\Models\Admin\Faq;
-use App\Models\Admin\Offer;
-use App\Models\Admin\OfferCategory;
-use App\Models\Admin\Product;
-use App\Models\Admin\Terms;
+use App\Models\User;
 use App\Models\Brand;
 use App\Models\Sites;
-use App\Models\User;
+use App\Models\Privacy;
+use App\Models\Admin\Faq;
 use App\Models\User\Order;
-use App\Models\User\OrderItem;
-use Gloudemans\Shoppingcart\Facades\Cart;
+use App\Models\Admin\About;
+use App\Models\Admin\Offer;
+use App\Models\Admin\Terms;
+use App\Models\ReturnPolicy;
 use Illuminate\Http\Request;
+use App\Models\Admin\Contact;
+use App\Models\Admin\Product;
+use App\Models\Admin\Category;
+use App\Models\User\OrderItem;
+use Illuminate\Validation\Rules;
+use App\Models\Admin\ChildCategory;
+use App\Models\Admin\OfferCategory;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rules;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 class TemplateOneController extends Controller
 {
@@ -353,6 +355,20 @@ class TemplateOneController extends Controller
     {
         $faqs = Faq::where('status', '1')->orderBy('order', 'ASC')->latest()->get();
         return view('frontend.template_one.faq.faq', compact('faqs'));
+    }
+
+    //privacyPolicy
+    public function privacyPolicy()
+    {
+        $privacy = Privacy::where('status', 'active')->latest('id')->first();
+        return view('frontend.template_one.privacy-policy', compact('privacy'));
+    }
+
+    //returnPolicy
+    public function returnPolicy()
+    {
+        $return = ReturnPolicy::where('status', 'active')->latest('id')->first();
+        return view('frontend.template_one.return-policy', compact('return'));
     }
 
     //Template One About
