@@ -138,7 +138,8 @@ Route::middleware(['auth:admin', 'verified'])->group(function () {
     //Product Section
     Route::controller(ProductController::class)->group(function () {
 
-        Route::get('/all/product', 'AllProduct')->name('all.product')->middleware('permission:all.product');
+        // Route::get('/all/product', 'AllProduct')->name('all.product')->middleware('permission:all.product');
+        Route::get('/all/product', 'AllProduct')->name('all.product');
         Route::get('/add/product', 'AddProduct')->name('add.product');
         Route::post('/store/product', 'StoreProduct')->name('store.product');
         Route::get('/edit/product/{id}', 'EditProduct')->name('edit.product');
@@ -342,7 +343,8 @@ Route::middleware(['auth:admin', 'verified'])->group(function () {
     //Category Section
     Route::controller(CategoryController::class)->prefix('category')->group(function () {
 
-        Route::get('/all', 'AllCategory')->name('all.category')->middleware('permission:all.category');
+        // Route::get('/all', 'AllCategory')->name('all.category')->middleware('permission:all.category');
+        Route::get('/all', 'AllCategory')->name('all.category');
         Route::post('/store', 'StoreCategory')->name('store.category');
         Route::post('/update', 'UpdateCategory')->name('update.category');
         Route::get('/delete/{id}', 'DeleteCategory')->name('delete.category');
@@ -355,7 +357,8 @@ Route::middleware(['auth:admin', 'verified'])->group(function () {
     //SubCategory Section
     Route::controller(SubCategoryController::class)->group(function () {
 
-        Route::get('/all', 'AllSubCategory')->name('all.subcategory')->middleware('permission:all.subcategory');
+        Route::get('/all', 'AllSubCategory')->name('all.subcategory');
+        // Route::get('/all', 'AllSubCategory')->name('all.subcategory')->middleware('permission:all.subcategory');
         Route::post('/store', 'StoreSubCategory')->name('store.subcategory');
         Route::post('/update', 'UpdateSubCategory')->name('update.subcategory');
         Route::get('/delete/{id}', 'DeleteSubCategory')->name('delete.subcategory');
@@ -371,7 +374,8 @@ Route::middleware(['auth:admin', 'verified'])->group(function () {
     //ChildCategory Section
     Route::controller(ChildCategoryController::class)->prefix('ChildCategory')->group(function () {
 
-        Route::get('/all', 'AllChildCategory')->name('all.childcategory')->middleware('permission:all.childcategory');
+        // Route::get('/all', 'AllChildCategory')->name('all.childcategory')->middleware('permission:all.childcategory');
+        Route::get('/all', 'AllChildCategory')->name('all.childcategory');
         Route::post('/store', 'StoreChildCategory')->name('store.childcategory');
         Route::post('/update', 'UpdateChildCategory')->name('update.childcategory');
         Route::get('/delete/{id}', 'DeleteChildCategory')->name('delete.childcategory');
@@ -384,7 +388,8 @@ Route::middleware(['auth:admin', 'verified'])->group(function () {
     //Banner Section
     Route::controller(BannerController::class)->prefix('banner')->group(function () {
 
-        Route::get('/all', 'AllBanner')->name('all.banner')->middleware('permission:all.banner');
+        // Route::get('/all', 'AllBanner')->name('all.banner')->middleware('permission:all.banner');
+        Route::get('/all', 'AllBanner')->name('all.banner');
         Route::post('/store', 'StoreBanner')->name('store.banner');
         Route::post('/update', 'UpdateBanner')->name('update.banner');
         Route::get('/delete/{id}', 'DeleteBanner')->name('delete.banner');
@@ -397,7 +402,8 @@ Route::middleware(['auth:admin', 'verified'])->group(function () {
     //Brand Section
     Route::controller(BrandController::class)->prefix('brand')->group(function () {
 
-        Route::get('/all', 'AllBrand')->name('all.brand')->middleware('permission:all.brand');
+        // Route::get('/all', 'AllBrand')->name('all.brand')->middleware('permission:all.brand');
+        Route::get('/all', 'AllBrand')->name('all.brand');
         Route::post('/store', 'StoreBrand')->name('store.brand');
         Route::post('/update', 'UpdateBrand')->name('update.brand');
         Route::get('/delete/{id}', 'DeleteBrand')->name('delete.brand');
