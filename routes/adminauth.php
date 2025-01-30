@@ -112,7 +112,8 @@ Route::middleware(['auth:admin', 'verified'])->group(function () {
     //Order Section
     Route::controller(AdminOrderController::class)->prefix('admin-order')->group(function () {
 
-        Route::get('/order', 'AdminAllOrder')->name('admin.all.order')->middleware('permission:all.order');
+        Route::get('/order', 'AdminAllOrder')->name('admin.all.order');
+        // Route::get('/order', 'AdminAllOrder')->name('admin.all.order')->middleware('permission:all.order');
         Route::get('/order-details/{id}', 'AdminOrderDetails')->name('admin.order.details');
 
         //Processing
@@ -187,7 +188,8 @@ Route::middleware(['auth:admin', 'verified'])->group(function () {
     //Employee Dept Section
     Route::controller(EmployeeController::class)->prefix('employee')->group(function () {
 
-        Route::get('/all', 'AllDept')->name('all.dept')->middleware('permission:all.dept');
+        Route::get('/all', 'AllDept')->name('all.dept');
+        // Route::get('/all', 'AllDept')->name('all.dept')->middleware('permission:all.dept');
         Route::post('/store', 'StoreDept')->name('store.dept');
         Route::post('/update', 'UpdateDept')->name('update.dept');
         Route::get('/delete/{id}', 'DeleteDept')->name('delete.dept');
@@ -196,7 +198,8 @@ Route::middleware(['auth:admin', 'verified'])->group(function () {
     //Employee Category Section
     Route::controller(EmployeeCategoryController::class)->prefix('employee-category')->group(function () {
 
-        Route::get('/all', 'AllEmployeeCategory')->name('all.employcat')->middleware('permission:all.dept');
+        Route::get('/all', 'AllEmployeeCategory')->name('all.employcat');
+        // Route::get('/all', 'AllEmployeeCategory')->name('all.employcat')->middleware('permission:all.dept');
         Route::post('/store', 'StoreEmployeeCategory')->name('store.employcat');
         Route::post('/update', 'UpdateEmployeeCategory')->name('update.employcat');
         Route::get('/delete/{id}', 'DeleteEmployeeCategory')->name('delete.employcat');
@@ -214,7 +217,8 @@ Route::middleware(['auth:admin', 'verified'])->group(function () {
     //Sites Section
     Route::controller(SiteController::class)->prefix('sites')->group(function () {
 
-        Route::get('/all', 'AllSite')->name('all.sites')->middleware('permission:all.setting');
+        Route::get('/all', 'AllSite')->name('all.sites');
+        // Route::get('/all', 'AllSite')->name('all.sites')->middleware('permission:all.setting');
         Route::post('/update', 'UpdateSite')->name('update.site');
         Route::get('/edit/{id}', 'EditSite')->name('edit.site');
     });
@@ -222,7 +226,8 @@ Route::middleware(['auth:admin', 'verified'])->group(function () {
     //Contact Section
     Route::controller(ContactController::class)->prefix('contact')->group(function () {
 
-        Route::get('/all', 'AllContact')->name('all.contact')->middleware('permission:all.contact');
+        // Route::get('/all', 'AllContact')->name('all.contact')->middleware('permission:all.contact');
+        Route::get('/all', 'AllContact')->name('all.contact');
         // Route::post('/store', 'StoreContact')->name('contact.add');
         // Route::post('/update', 'UpdateContact')->name('update.contact');
         Route::get('/delete/{id}', 'DeleteContact')->name('delete.contact');
@@ -294,7 +299,8 @@ Route::middleware(['auth:admin', 'verified'])->group(function () {
     //About Section
     Route::controller(AboutController::class)->prefix('about')->group(function () {
 
-        Route::get('/all', 'AllAbout')->name('all.about')->middleware('permission:all.about');
+        Route::get('/all', 'AllAbout')->name('all.about');
+        // Route::get('/all', 'AllAbout')->name('all.about')->middleware('permission:all.about');
         Route::get('/edit/{id}', 'EditAbout')->name('edit.about');
         Route::post('/update', 'UpdateAbout')->name('update.about');
         Route::get('/delete/{id}', 'DeleteAbout')->name('delete.about');
@@ -303,7 +309,8 @@ Route::middleware(['auth:admin', 'verified'])->group(function () {
     //Faq Section
     Route::controller(FaqController::class)->prefix('faq')->group(function () {
 
-        Route::get('/all', 'AllFaq')->name('all.faq')->middleware('permission:all.faq');
+        // Route::get('/all', 'AllFaq')->name('all.faq')->middleware('permission:all.faq');
+        Route::get('/all', 'AllFaq')->name('all.faq');
         Route::post('/store', 'StoreFaq')->name('store.faq');
         Route::post('/update', 'UpdateFaq')->name('update.faq');
         Route::get('/delete/{id}', 'DeleteFaq')->name('delete.faq');
@@ -328,7 +335,8 @@ Route::middleware(['auth:admin', 'verified'])->group(function () {
     //Terms Section
     Route::controller(TermController::class)->prefix('terms')->group(function () {
 
-        Route::get('/all', 'AllTerm')->name('all.term')->middleware('permission:all.term');
+        // Route::get('/all', 'AllTerm')->name('all.term')->middleware('permission:all.term');
+        Route::get('/all', 'AllTerm')->name('all.term');
         Route::get('/add', 'AddTerm')->name('add.term');
         Route::post('/store', 'StoreTerm')->name('store.term');
         Route::get('/edit/{id}', 'EditTerm')->name('edit.term');

@@ -279,7 +279,7 @@
                     <div class="menu-sub menu-sub-accordion menu-active-bg">
 
                         {{-- Order Section  --}}
-                        @if (Auth::guard('admin')->user()->can('order.menu'))
+                        {{-- @if (Auth::guard('admin')->user()->can('order.menu')) --}}
                             <div class="menu-item">
                                 <a class="menu-link {{ Request::routeIs('admin.all.order') ? 'active' : '' }}"
                                     href="{{ route('admin.all.order') }}">
@@ -289,7 +289,7 @@
                                     <span class="menu-title">Order Manage</span>
                                 </a>
                             </div>
-                        @endif
+                        {{-- @endif --}}
 
                         {{-- Shipping Charge  --}}
                         {{-- @if (Auth::guard('admin')->user()->can('shipping.menu'))
@@ -357,9 +357,9 @@
                     <div class="menu-sub menu-sub-accordion menu-active-bg">
 
                         {{-- All Admin --}}
-                        @if (Auth::guard('admin')->user()->can('admin.menu'))
+                        {{-- @if (Auth::guard('admin')->user()->can('admin.menu')) --}}
                             <div class="menu-item">
-                                @if (Auth::guard('admin')->user()->can('all.admin'))
+                                {{-- @if (Auth::guard('admin')->user()->can('all.admin')) --}}
                                     <a class="menu-link {{ Request::routeIs('all.admin.permission') ? 'active' : '' }}"
                                         href="{{ route('all.admin.permission') }}">
                                         <span class="menu-bullet">
@@ -367,9 +367,9 @@
                                         </span>
                                         <span class="menu-title">All Admin</span>
                                     </a>
-                                @endif
+                                {{-- @endif --}}
                             </div>
-                        @endif
+                        {{-- @endif --}}
 
                         {{-- Department --}}
                         {{-- @if (Auth::guard('admin')->user()->can('dept.menu')) --}}
@@ -403,7 +403,7 @@
                 {{-- Employee Section --}}
 
                 {{-- User Section --}}
-                @if (Auth::guard('admin')->user()->can('user.menu'))
+                {{-- @if (Auth::guard('admin')->user()->can('user.menu')) --}}
                     <div class="menu-item">
                         <a class="menu-link {{ request()->routeIs('all.user') ? 'active' : '' }}"
                             href="{{ route('all.user') }}" title="All User" data-bs-toggle="tooltip"
@@ -432,7 +432,7 @@
                             <span class="menu-title">User Manage</span>
                         </a>
                     </div>
-                @endif
+                {{-- @endif --}}
                 {{-- User Section --}}
 
                 {{-- Contact Management Section --}}
@@ -470,7 +470,7 @@
 
 
                         {{-- Contact --}}
-                        @if (Auth::guard('admin')->user()->can('contact.menu'))
+                        {{-- @if (Auth::guard('admin')->user()->can('contact.menu')) --}}
                             <div class="menu-item">
                                 <a class="menu-link {{ Request::routeIs('all.contact') ? 'active' : '' }}"
                                     href="{{ route('all.contact') }}">
@@ -480,7 +480,7 @@
                                     <span class="menu-title">Contact</span>
                                 </a>
                             </div>
-                        @endif
+                        {{-- @endif --}}
 
                         {{-- Subscribe --}}
                         {{-- @if (Auth::guard('admin')->user()->can('subscribe.menu')) --}}
@@ -496,9 +496,9 @@
                         {{-- @endif --}}
 
                         {{-- About --}}
-                        @if (Auth::guard('admin')->user()->can('about.menu'))
+                        {{-- @if (Auth::guard('admin')->user()->can('about.menu')) --}}
                             <div class="menu-item">
-                                @if (Auth::guard('admin')->user()->can('all.about'))
+                                {{-- @if (Auth::guard('admin')->user()->can('all.about')) --}}
                                     <a class="menu-link {{ Request::routeIs('all.about') ? 'active' : '' }}"
                                         href="{{ route('all.about') }}">
                                         <span class="menu-bullet">
@@ -506,15 +506,15 @@
                                         </span>
                                         <span class="menu-title">About</span>
                                     </a>
-                                @endif
+                                {{-- @endif --}}
                             </div>
-                        @endif
+                        {{-- @endif --}}
 
                         {{-- Faq  --}}
                         {{-- @if (Auth::guard('admin')->user()->can('faq.menu')) --}}
-                        @if (Auth::guard('admin')->user()->can('faq.menu'))
+                        {{-- @if (Auth::guard('admin')->user()->can('faq.menu')) --}}
                             <div class="menu-item">
-                                @if (Auth::guard('admin')->user()->can('all.faq'))
+                                {{-- @if (Auth::guard('admin')->user()->can('all.faq')) --}}
                                     <a class="menu-link {{ Request::routeIs('all.faq') ? 'active' : '' }}"
                                         href="{{ route('all.faq') }}">
                                         <span class="menu-bullet">
@@ -522,13 +522,13 @@
                                         </span>
                                         <span class="menu-title">Faq</span>
                                     </a>
-                                @endif
+                                {{-- @endif --}}
                             </div>
-                        @endif
+                        {{-- @endif --}}
                         {{-- @endif --}}
 
                         {{-- Term  --}}
-                        @if (Auth::guard('admin')->user()->can('term.menu'))
+                        {{-- @if (Auth::guard('admin')->user()->can('term.menu')) --}}
                             <div class="menu-item">
                                 <a class="menu-link {{ Request::routeIs('all.term') ? 'active' : '' }}"
                                     href="{{ route('all.term') }}">
@@ -538,7 +538,7 @@
                                     <span class="menu-title">Terms & Condition</span>
                                 </a>
                             </div>
-                        @endif
+                        {{-- @endif --}}
 
                         {{-- Privacy & Policy  --}}
                         {{-- @if (Auth::guard('admin')->user()->can('term.menu')) --}}
@@ -571,9 +571,9 @@
                 {{-- Content Management Section --}}
 
                 {{-- Setting Section --}}
-                @if (Auth::guard('admin')->user()->can('setting.menu'))
+                {{-- @if (Auth::guard('admin')->user()->can('setting.menu')) --}}
                     <div class="menu-item">
-                        @if (Auth::guard('admin')->user()->can('all.setting'))
+                        {{-- @if (Auth::guard('admin')->user()->can('all.setting')) --}}
                             <a class="menu-link {{ request()->routeIs('all.sites') ? 'active' : '' }}"
                                 href="{{ route('all.sites') }}" title="Setting Page" data-bs-toggle="tooltip"
                                 data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
@@ -600,9 +600,9 @@
                                 </span>
                                 <span class="menu-title">Setting</span>
                             </a>
-                        @endif
+                        {{-- @endif --}}
                     </div>
-                @endif
+                {{-- @endif --}}
                 {{-- Setting Section --}}
 
                 {{-- Role & Permission Section --}}
