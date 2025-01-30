@@ -32,17 +32,17 @@
             <div class="d-flex align-items-center gap-2 gap-lg-3">
 
                 <!--begin::Primary button-->
-                @if (Auth::guard('admin')->user()->can('all.category'))
+                {{-- @if (Auth::guard('admin')->user()->can('all.category')) --}}
                     <a href="{{ route('all.category') }}" class="btn btn-sm btn-light-primary">Category</a>
-                @endif
+                {{-- @endif
 
-                @if (Auth::guard('admin')->user()->can('all.subcategory'))
+                @if (Auth::guard('admin')->user()->can('all.subcategory')) --}}
                     <a href="{{ route('all.subcategory') }}" class="btn btn-sm btn-light-info">Sub Category</a>
-                @endif
+                {{-- @endif
 
-                @if (Auth::guard('admin')->user()->can('all.childcategory'))
+                @if (Auth::guard('admin')->user()->can('all.childcategory')) --}}
                     <a href="{{ route('all.childcategory') }}" class="btn btn-sm btn-light-dark">Child Category</a>
-                @endif
+                {{-- @endif --}}
                 <!--end::Primary button-->
 
             </div>

@@ -245,7 +245,8 @@ Route::middleware(['auth:admin', 'verified'])->group(function () {
     //Offer Category & offer Section
     Route::controller(OfferCategoryController::class)->prefix('offer')->group(function () {
 
-        Route::get('/all', 'AllOffer')->name('all.offer')->middleware('permission:all.offer');
+        Route::get('/all', 'AllOffer')->name('all.offer');
+        // Route::get('/all', 'AllOffer')->name('all.offer')->middleware('permission:all.offer');
         Route::post('/store', 'StoreOffer')->name('store.offer');
         Route::post('/update', 'UpdateOffer')->name('update.offer');
         Route::get('/delete/{id}', 'DeleteOffer')->name('delete.offer');

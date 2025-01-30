@@ -32,10 +32,10 @@
             <!--begin::Actions-->
             <div class="d-flex align-items-center gap-2 gap-lg-3">
 
-                @if (Auth::guard('admin')->user()->can('add.dept'))
+                {{-- @if (Auth::guard('admin')->user()->can('add.dept')) --}}
                     <a data-bs-toggle="modal" data-bs-target="#addModal" class="btn btn-light-primary btn-sm">Add
                         Employee Category</a>
-                @endif
+                {{-- @endif --}}
 
             </div>
             <!--end::Actions-->
@@ -71,11 +71,11 @@
 
                                     <td>
 
-                                        @if (Auth::guard('admin')->user()->can('edit.dept'))
+                                        {{-- @if (Auth::guard('admin')->user()->can('edit.dept')) --}}
                                             <a href="" data-bs-toggle="modal"
                                                 data-bs-target="#editModal{{ $employcat->id }}" class="ms-1"
                                                 title="Edit"><i class="bi bi-pencil-square fs-3 text-primary"></i></a>
-                                        @endif
+                                        {{-- @endif --}}
 
                                         {{-- Edit Modal --}}
 
@@ -290,11 +290,11 @@
                                         </div>
 
                                         {{-- Delete --}}
-                                        @if (Auth::guard('admin')->user()->can('delete.dept'))
+                                        {{-- @if (Auth::guard('admin')->user()->can('delete.dept')) --}}
                                             <a href="{{ route('delete.employcat', $employcat->id) }}" class="ms-1"
                                                 id="delete" title="Delete"><i
                                                     class="bi bi-trash3-fill fs-3 text-danger"></i></a>
-                                        @endif
+                                        {{-- @endif --}}
 
                                     </td>
                                 </tr>

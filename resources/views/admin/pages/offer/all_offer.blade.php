@@ -33,11 +33,11 @@
             <!--begin::Actions-->
             <div class="d-flex align-items-center gap-2 gap-lg-3">
 
-                @if (Auth::guard('admin')->user()->can('add.offer'))
+                {{-- @if (Auth::guard('admin')->user()->can('add.offer')) --}}
                     <a href="" class="btn btn-light-primary btn-sm" data-bs-toggle="modal"
                         data-bs-target="#addModal">Add
                         Offer</a>
-                @endif
+                {{-- @endif --}}
 
             </div>
             <!--end::Actions-->
@@ -104,11 +104,11 @@
                                             @endif
                                         @endif
 
-                                        @if (Auth::guard('admin')->user()->can('edit.offer'))
+                                        {{-- @if (Auth::guard('admin')->user()->can('edit.offer')) --}}
                                             <a href="" data-bs-toggle="modal"
                                                 data-bs-target="#editModal{{ $offer->id }}" class="ms-1"
                                                 title="Edit"><i class="bi bi-pencil-square fs-3 text-primary"></i></a>
-                                        @endif
+                                        {{-- @endif --}}
 
                                         {{-- Edit Modal --}}
 
@@ -300,11 +300,11 @@
                                             </div>
                                         </div>
 
-                                        @if (Auth::guard('admin')->user()->can('delete.offer'))
+                                        {{-- @if (Auth::guard('admin')->user()->can('delete.offer')) --}}
                                             <a href="{{ route('delete.offer', $offer->id) }}" class="ms-1"
                                                 id="delete" title="Delete"><i
                                                     class="bi bi-trash3-fill fs-3 text-danger"></i></a>
-                                        @endif
+                                        {{-- @endif --}}
 
 
                                     </td>

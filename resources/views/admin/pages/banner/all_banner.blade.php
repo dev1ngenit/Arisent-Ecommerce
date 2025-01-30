@@ -33,11 +33,11 @@
             <div class="d-flex align-items-center gap-2 gap-lg-3">
 
                 <!--begin::Primary button-->
-                @if (Auth::guard('admin')->user()->can('add.banner'))
+                {{-- @if (Auth::guard('admin')->user()->can('add.banner')) --}}
                     <a href="" data-bs-toggle="modal" data-bs-target="#addModal"
                         class="btn btn-light-primary btn-sm">Add
                         Banner</a>
-                @endif
+                {{-- @endif --}}
 
                 <!--end::Primary button-->
 
@@ -97,11 +97,11 @@
                                 @endif
 
                                 {{-- Edit Modal  --}}
-                                @if (Auth::guard('admin')->user()->can('edit.banner'))
+                                {{-- @if (Auth::guard('admin')->user()->can('edit.banner')) --}}
                                     <a href="" data-bs-toggle="modal" data-bs-target="#editModal{{ $banner->id }}"
                                         class="ms-1" title="Edit"><i
                                             class="bi bi-pencil-square fs-3 text-primary"></i></a>
-                                @endif
+                                {{-- @endif --}}
 
 
                                 {{-- Edit Modal  --}}
@@ -178,10 +178,10 @@
                                 </div>
 
                                 {{-- Delete --}}
-                                @if (Auth::guard('admin')->user()->can('delete.banner'))
+                                {{-- @if (Auth::guard('admin')->user()->can('delete.banner')) --}}
                                     <a href="{{ route('delete.banner', $banner->id) }}" class="ms-1" id="delete"
                                         title="Delete"><i class="bi bi-trash3-fill fs-3 text-danger"></i></a>
-                                @endif
+                                {{-- @endif --}}
 
                             </td>
                         </tr>
