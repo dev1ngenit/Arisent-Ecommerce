@@ -1549,7 +1549,7 @@ ul.dept__menu--dropdown li:hover ul.sub__menu.sub__dept--menu {
     width: 100%;
     height: 100%;
     z-index: 11111;
-    background: url("https://i.ibb.co/5K59gm9/dadavi-loading-slow-small.gif")
+    background: url("")
         50% 50% no-repeat white;
 }
 
