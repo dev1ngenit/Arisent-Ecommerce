@@ -6,7 +6,7 @@
         <nav class="navbar navbar-expand-lg navbar-transparent">
             <a class="navbar-brand py-3 pr-4" href="{{ route('index') }}">
 
-                <img class="" width="145px" src="{{ asset('upload/logo_black/' . $site->logo_black) }}"
+                <img class="" width="145px" src="{{ asset('upload/logo_black/' . optional($site)->logo_black) }}"
                     alt="" />
             </a>
 

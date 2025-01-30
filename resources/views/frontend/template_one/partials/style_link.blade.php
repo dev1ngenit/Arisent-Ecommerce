@@ -1,7 +1,7 @@
 <head>
 
     @php
-        optional($site) = App\Models\Sites::find(1);
+        $site = App\Models\Sites::find(1);
     @endphp
 
     <meta charset="utf-8" />

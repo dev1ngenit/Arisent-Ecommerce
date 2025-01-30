@@ -1,6 +1,7 @@
 @php
     $heros = App\Models\Banner::where('status', '1')->orderBy('id', 'ASC')->get();
 @endphp
+
 <section class="hero hero__area">
     <div class="hero__active slider-active">
 
@@ -12,7 +13,7 @@
                 </div>
             @endforeach
         @else
-            <p class="text-center text-danger">No Image Avaiable</p>
+            
         @endif
     </div>
 

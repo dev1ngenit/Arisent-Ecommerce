@@ -5,7 +5,7 @@
 <footer class="footer--area">
     <div class="footer--top pt-50 pb-25">
         <div class="footer-topbar">
-            <p class="mb-0 text-center text-white p-3">Discover a wide range of products at {{ $site->site_name }}, your one-stop
+            <p class="mb-0 text-center text-white p-3">Discover a wide range of products at {{ optional($site)->site_name }}, your one-stop
                 e-commerce destination. Enjoy seamless shopping, great deals, and excellent customer service.</p>
         </div>
         <div class="contaner-fluid footer-bg">
@@ -14,9 +14,9 @@
                     <div class="col-xl-4 col-lg-6 col-md-8 mb-30 order-md-3 order-lg-2">
                         <div>
                             <a class="logo__link" href="{{ route('index') }}"><img class="" width="250px"
-                                    src="{{ asset('upload/logo_black/' . $site->logo_black) }}" alt=""></a>
+                                    src="{{ asset('upload/logo_black/' .optional($site)->logo_black) }}" alt=""></a>
 
-                            <p class="pt-3">{{ $site->site_slogan }}</p>
+                            <p class="pt-3">{{ optional($site)->site_slogan }}</p>
                         </div>
                     </div>
                     <div class="col-xl-2 col-lg-6 col-md-8 mb-30 order-md-3 order-lg-2">
@@ -51,10 +51,10 @@
                             </div>
                             <div class="footer-menu h1foote-menu2">
                                 <ul>
-                                    <li><a href="{{ $site->facebook_url }}">Facebook</a></li>
-                                    <li><a href="{{ $site->skype_url }}">Skype</a></li>
-                                    <li><a href="{{ $site->youtube_url }}">Youtube</a></li>
-                                    <li><a href="{{ $site->linkedin_url }}">Linkdin</a></li>
+                                    <li><a href="{{ optional($site)->facebook_url }}">Facebook</a></li>
+                                    <li><a href="{{ optional($site)->skype_url }}">Skype</a></li>
+                                    <li><a href="{{ optional($site)->youtube_url }}">Youtube</a></li>
+                                    <li><a href="{{ optional($site)->linkedin_url }}">Linkdin</a></li>
                                     <li><a href="{{ route('template.one.faq') }}">Faq</a></li>
                                 </ul>
                             </div>
@@ -72,7 +72,7 @@
                                 </script>
 
                                 <div class="fb-wrap">
-                                    <div class="fb-page" data-href="{{ $site->facebook_url }}"
+                                    <div class="fb-page" data-href="{{ optional($site)->facebook_url }}"
                                         data-tabs="timeline" data-width="500" data-height="135"
                                         data-small-header="false" data-adapt-container-width="true"
                                         data-hide-cover="false" data-show-facepile="true"></div>
@@ -91,7 +91,7 @@
                     <div class="footer-copyright text-center">
                         <a class="m-0 text-center text-muted" href="{{ route('index') }}">
                             Copyright 2024
-                            <span class="grenadier-color">{{ $site->site_name }}</span> All Rights
+                            <span class="grenadier-color">{{ optional($site)->site_name }}</span> All Rights
                             Reserved.
                         </a>
                     </div>
