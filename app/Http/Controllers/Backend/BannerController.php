@@ -50,6 +50,7 @@ class BannerController extends Controller
 
     // }
 
+    //Store Banner
     public function StoreBanner(Request $request)
     {
         $request->validate(
