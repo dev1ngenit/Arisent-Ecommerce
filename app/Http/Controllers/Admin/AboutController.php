@@ -153,6 +153,8 @@ class AboutController extends Controller
             $choose_us_three_image = $fileName;
         }
 
+
+
         $abouts->update([
 
             'breadcrumb_title'            => $request->breadcrumb_title,
