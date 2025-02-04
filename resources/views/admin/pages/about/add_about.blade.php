@@ -4,7 +4,6 @@
 
     <!--begin::Content-->
 
-
     <!--begin::Toolbar-->
     <div class="toolbar" id="kt_toolbar">
         <!--begin::Container-->
@@ -14,7 +13,7 @@
                 data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}"
                 class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
                 <!--begin::Title-->
-                <h1 class="d-flex text-dark fw-bolder fs-3 align-items-center my-1">Contact</h1>
+                <h1 class="d-flex text-dark fw-bolder fs-3 align-items-center my-1">About</h1>
                 <!--end::Title-->
                 <!--begin::Separator-->
                 <span class="h-20px border-gray-300 border-start mx-4"></span>
@@ -23,198 +22,421 @@
                 <ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
 
                     <!--begin::Item-->
-                    <li class="breadcrumb-item text-muted">Total Contact<span
-                            class="ms-2 badge bg-danger">{{ count($contacts) }}</span></li>
+                    <li class="breadcrumb-item text-muted">Add About</li>
                     <!--end::Item-->
 
                 </ul>
                 <!--end::Breadcrumb-->
             </div>
             <!--end::Page title-->
+
             <!--begin::Actions-->
             <div class="d-flex align-items-center gap-2 gap-lg-3">
 
-                <a href="" data-bs-toggle="modal" data-bs-target="#addModal" class="btn btn-light-primary btn-sm">Add
-                    Contact</a>
+                <a href="{{ route('all.about') }}" class="btn btn-light-primary btn-sm">Back</a>
 
             </div>
             <!--end::Actions-->
+
         </div>
         <!--end::Container-->
     </div>
     <!--end::Toolbar-->
 
     <!--begin::Post-->
+
     <div class="row">
         <div class="col-12">
             <div class="card">
+
+                <div class="" style="background: #6196A6;height: 50px;">
+                    <h6 class="float-end mt-4 text-white me-3 fw-bolder">About Us Edit From</h6>
+                </div>
+
                 <div class="card-body">
-                    <!--begin::Table-->
 
-                    <table id="kt_datatable_example_5" class="table table-striped" style="width:100%">
-                        <thead>
-                            <tr>
-                                <th>Sl No</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Phone</th>
-                                <th>Message</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($contacts as $key => $contact)
-                                <tr>
-
-                                    <td>{{ $key + 1 }}</td>
-                                    <td>{{ $contact->name }}</td>
-                                    <td>{{ $contact->email }}</td>
-                                    <td>{{ $contact->phone }}</td>
-                                    <td>{{ $contact->message }}</td>
-
-                                    <td>
-                                        <a href="" class="ms-1" title="Edit"><i
-                                                class="bi bi-pencil-square fs-3 text-primary"></i></a>
-
-                                        <a href="{{ route('delete.contact', $contact->id) }}" class="ms-1" id="delete"
-                                            title="Delete"><i class="bi bi-trash3-fill fs-3 text-danger"></i></a>
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-
-                    <!--end::Table-->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--end::Post-->
-
-    <!-- Add Modal -->
-
-    <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add Contact</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <form action="{{ route('store.contact') }}" method="POST" enctype="multipart/form-data">
-
-                    @csrf
-
-                    <div class="modal-body">
+                    <form action="{{ route('store.about') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
 
                         <div class="row">
 
-                            <div class="col-4">
+                            {{-- Breadcrumb & Section --}}
+                            <div class="col-6 shadow-sm bg-white border-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="fw-bolder">Breadcrumb & Section</h4>
+                                        <hr>
+                                        <div class="row">
 
-                                <div class="form-group mb-3">
-                                    <label for="" class="mb-2">Name</label>
-                                    <input type="text" name="name"
-                                        class="form-control @error('name') is-invalid @enderror" placeholder="Name"
-                                        autocomplete="off">
+                                            <div class="col-6 mb-2">
+                                                <div class="form-group">
+                                                    <label for="">Breadcrumb Title</label>
+                                                    <input type="text" class="form-control form-control-sm mt-2"
+                                                        name="breadcrumb_title" required>
+                                                </div>
+                                            </div>
 
-                                    @error('name')
-                                        <div class="text-danger">{{ $message }}</div>
-                                    @enderror
+                                            <div class="col-6 mb-2">
+                                                <div class="form-group">
+                                                    <label for="">Breadcrumb Sub Title</label>
+                                                    <input type="text" required class="form-control form-control-sm mt-2"
+                                                        name="breadcrumb_sub_title">
+                                                </div>
+                                            </div>
 
+                                            <div class="col-6 mb-2">
+                                                <div class="form-group">
+                                                    <label for="">Section One Badge</label>
+                                                    <input type="text" required class="form-control form-control-sm mt-2"
+                                                        name="section_one_badge">
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-6 mb-2">
+                                                <div class="form-group">
+                                                    <label for="">Section One Title</label>
+                                                    <input type="text" required class="form-control form-control-sm mt-2"
+                                                        name="section_one_title">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-6 mb-2">
+                                                <div class="form-group">
+                                                    <label for="">Section One Sub Title</label>
+                                                    <input type="text" required class="form-control form-control-sm mt-2"
+                                                        name="section_one_sub_title">
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="col-4">
+                            {{-- CEO Section --}}
+                            <div class="col-6 shadow-sm bg-white border-3">
 
-                                <div class="form-group mb-3">
-                                    <label for="" class="mb-2">Email</label>
-                                    <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email"
-                                        autocomplete="off">
-                                        @error('email')
-                                        <div class="text-danger">{{ $message }}</div>
-                                    @enderror
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="fw-bolder">CEO Section</h4>
+                                        <hr>
+                                        <div class="row">
 
-                                </div>
+                                            <div class="col-6 mb-2">
+                                                <div class="form-group">
+                                                    <label for="">CEO Section Badge</label>
+                                                    <input type="text" class="form-control form-control-sm mt-2"
+                                                        name="ceo_section_badge">
+                                                </div>
+                                            </div>
 
-                            </div>
+                                            <div class="col-6 mb-2">
+                                                <div class="form-group">
+                                                    <label for="">CEO Section Title</label>
+                                                    <input type="text" class="form-control form-control-sm mt-2"
+                                                        name="ceo_section_title">
+                                                </div>
+                                            </div>
 
-                            <div class="col-4">
+                                            <div class="col-4 mb-2">
+                                                <div class="form-group">
+                                                    <label for="">CEO Sub Title</label>
+                                                    <input type="text" class="form-control form-control-sm mt-2"
+                                                        name="ceo_section_sub_title">
+                                                </div>
+                                            </div>
 
-                                <div class="form-group mb-3">
-                                    <label for="" class="mb-2">Phone</label>
-                                    <input type="tel" name="phone" class="form-control @error('phone') is-invalid @enderror" placeholder="Phone"
-                                        autocomplete="off">
-                                        @error('phone')
-                                        <div class="text-danger">{{ $message }}</div>
-                                    @enderror
+                                            <div class="col-4 mb-2">
+                                                <div class="form-group">
+                                                    <label for="">CEO Name</label>
+                                                    <input type="text" class="form-control form-control-sm mt-2"
+                                                        name="ceo_section_ceo_name">
+                                                </div>
+                                            </div>
 
-                                </div>
+                                            <div class="col-4 mb-2">
+                                                <div class="form-group">
+                                                    <label for="">Designation</label>
+                                                    <input type="text" class="form-control form-control-sm mt-2"
+                                                        name="ceo_section_ceo_designation">
+                                                </div>
+                                            </div>
 
-                            </div>
 
-                            <div class="col-4">
+                                        </div>
 
-                                <div class="form-group mb-3">
-                                    <label for="" class="mb-2">Address</label>
-                                    <input type="text" name="address" class="form-control @error('address') is-invalid @enderror" placeholder="Address"
-                                        autocomplete="off">
-                                        @error('address')
-                                        <div class="text-danger">{{ $message }}</div>
-                                    @enderror
-
-                                </div>
-
-                            </div>
-
-                            <div class="col-4">
-
-                                <div class="form-group mb-3">
-                                    <label for="" class="mb-2">Ip Address</label>
-                                    <input type="text" name="ip_address" class="form-control" placeholder="Ip Address"
-                                        autocomplete="off">
-
-                                </div>
-
-                            </div>
-
-                            <div class="col-12">
-                                <div class="form-group mb-3">
-                                    <label for="" class="mb-2">Message</label>
-                                    <textarea class="form-control @error('message') is-invalid @enderror" placeholder="Write Message Here...." name="message"></textarea>
-                                    @error('message')
-                                        <div class="text-danger">{{ $message }}</div>
-                                    @enderror
+                                    </div>
                                 </div>
                             </div>
+
+                            {{-- Description --}}
+                            <div class="col-12 shadow-sm bg-white border-3 mt-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row">
+
+                                            <div class="col-12 mb-2">
+                                                <div class="form-group">
+                                                    <label for="" class="mb-3">Section One
+                                                        Description</label>
+                                                    <textarea name="section_one_description" class="tinymce_metronic" id=""></textarea>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12 mb-2">
+                                                <div class="form-group">
+                                                    <label for="" class="mb-3">Section Two
+                                                        Description</label>
+                                                    <textarea name="section_two_description" class="tinymce_metronic" id=""></textarea>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12 mb-2">
+                                                <div class="form-group">
+                                                    <label for="" class="mb-3">CEO Description</label>
+                                                    <textarea name="ceo_section_description" class="tinymce_metronic"> </textarea>
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            {{-- Why Choose Us --}}
+                            <div class="col-12 mt-4">
+                                <h4 class="fw-bolder">Why Choose Us</h5>
+                                    <hr>
+                            </div>
+
+                            <div class="card shadow-sm">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <label for="" class="mb-2">Choose Us Section Title</label>
+                                                <input type="text" value="" name="choose_us_section_title"
+                                                    class="form-control form-control-sm">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {{-- Contact Section --}}
+                            <div class="col-12 mt-4">
+                                <h4 class="fw-bolder">Contact Section</h5>
+                                    <hr>
+                            </div>
+
+                            <div class="card shadow-sm">
+                                <div class="card-body">
+                                    <div class="row">
+
+                                        <div class="col-12 mb-2">
+                                            <div class="form-group">
+                                                <label for="" class="mb-2">Contact Section Title</label>
+                                                <input type="text" value="" name="contact_section_title"
+                                                    class="form-control form-control-sm">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-3 mb-2">
+                                            <div class="form-group">
+                                                <label for="">Head Office Title</label>
+                                                <input type="text" class="form-control form-control-sm mt-2"
+                                                    name="head_office_title" value="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-3 mb-2">
+                                            <div class="form-group">
+                                                <label for="">Head Office Address</label>
+                                                <input type="text" class="form-control form-control-sm mt-2"
+                                                    name="head_office_address" value="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-3 mb-2">
+                                            <div class="form-group">
+                                                <label for="">Head Office Email</label>
+                                                <input type="email" class="form-control form-control-sm mt-2"
+                                                    name="head_office_email" value="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-3 mb-2">
+                                            <div class="form-group">
+                                                <label for="">Head Office Phone</label>
+                                                <input type="tel" class="form-control form-control-sm mt-2"
+                                                    name="head_office_phone" value="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-3 mb-2">
+                                            <div class="form-group">
+                                                <label for="">Sub Office One Title</label>
+                                                <input type="text" class="form-control form-control-sm mt-2"
+                                                    name="sub_office_one_title" value="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-3 mb-2">
+                                            <div class="form-group">
+                                                <label for="">Sub Office One Address</label>
+                                                <input type="text" class="form-control form-control-sm mt-2"
+                                                    name="sub_office_one_address" value="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-3 mb-2">
+                                            <div class="form-group">
+                                                <label for="">Sub Office One Email</label>
+                                                <input type="email" class="form-control form-control-sm mt-2"
+                                                    name="sub_office_one_email" value="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-3 mb-2">
+                                            <div class="form-group">
+                                                <label for="">Sub Office One Phone</label>
+                                                <input type="tel" class="form-control form-control-sm mt-2"
+                                                    name="sub_office_one_phone" value="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-3 mb-2">
+                                            <div class="form-group">
+                                                <label for="">Sub Office Two Title</label>
+                                                <input type="text" class="form-control form-control-sm mt-2"
+                                                    name="sub_office_two_title" value="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-3 mb-2">
+                                            <div class="form-group">
+                                                <label for="">Sub Office Two Address</label>
+                                                <input type="text" class="form-control form-control-sm mt-2"
+                                                    name="sub_office_two_address" value="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-3 mb-2">
+                                            <div class="form-group">
+                                                <label for="">Sub Office Two Email</label>
+                                                <input type="email" class="form-control form-control-sm mt-2"
+                                                    name="sub_office_two_email" value="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-3 mb-2">
+                                            <div class="form-group">
+                                                <label for="">Sub Office Two Phone</label>
+                                                <input type="tel" class="form-control form-control-sm mt-2"
+                                                    name="sub_office_two_phone" value="">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-3 mb-2">
+                                            <div class="form-group">
+                                                <label for="">Sub Office Three Title</label>
+                                                <input type="text" class="form-control form-control-sm mt-2"
+                                                    name="sub_office_three_title" value="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-3 mb-2">
+                                            <div class="form-group">
+                                                <label for="">Sub Office Three Address</label>
+                                                <input type="text" class="form-control form-control-sm mt-2"
+                                                    name="sub_office_three_address" value="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-3 mb-2">
+                                            <div class="form-group">
+                                                <label for="">Sub Office Three Email</label>
+                                                <input type="email" class="form-control form-control-sm mt-2"
+                                                    name="sub_office_three_email" value="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-3 mb-2">
+                                            <div class="form-group">
+                                                <label for="">Sub Office Three Phone</label>
+                                                <input type="tel" class="form-control form-control-sm mt-2"
+                                                    name="sub_office_three_phone" value="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-3 mb-2">
+                                            <div class="form-group">
+                                                <label for="">Sub Office Four Title</label>
+                                                <input type="text" class="form-control form-control-sm mt-2"
+                                                    name="sub_office_four_title" value="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-3 mb-2">
+                                            <div class="form-group">
+                                                <label for="">Sub Office Four Address</label>
+                                                <input type="text" class="form-control form-control-sm mt-2"
+                                                    name="sub_office_four_address" value="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-3 mb-2">
+                                            <div class="form-group">
+                                                <label for="">Sub Office Four Email</label>
+                                                <input type="email" class="form-control form-control-sm mt-2"
+                                                    name="sub_office_four_email" value="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-3 mb-2">
+                                            <div class="form-group">
+                                                <label for="">Sub Office Four Phone</label>
+                                                <input type="tel" class="form-control form-control-sm mt-2"
+                                                    name="sub_office_four_phone" value="">
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr>
+
+
 
 
                         </div>
 
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary btn-sm">Add Contact</button>
-                    </div>
-                </form>
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-light-primary btn-sm float-end">Add
+                                    About</button>
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+
             </div>
         </div>
+
     </div>
 
-    {{-- Data Table  --}}
-    <script>
-        $("#kt_datatable_example_5").DataTable({
-            "language": {
-                "lengthMenu": "Show _MENU_",
-            },
-            "dom": "<'row'" +
-                "<'col-sm-6 d-flex align-items-center justify-conten-start'l>" +
-                "<'col-sm-6 d-flex align-items-center justify-content-end'f>" +
-                ">" +
 
-                "<'table-responsive'tr>" +
-
-                "<'row'" +
-                "<'col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start'i>" +
-                "<'col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end'p>" +
-                ">"
-        });
-    </script>
+    <!--end::Post-->
 @endsection

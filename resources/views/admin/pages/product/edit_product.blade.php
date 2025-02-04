@@ -632,7 +632,7 @@
                                             </div>
 
                                             {{-- refurbished --}}
-                                            <div class="col-lg-3 col-12 mb-3">
+                                            {{-- <div class="col-lg-3 col-12 mb-3">
                                                 <label class="form-label"></label>
                                                 <div class="form-check form-check-custom form-check-solid mb-5">
 
@@ -647,7 +647,7 @@
                                                             Refurbished</div>
                                                     </label>
                                                 </div>
-                                            </div>
+                                            </div> --}}
 
                                             {{-- deal --}}
                                             {{-- <div class="col-lg-2 mb-3">
@@ -662,7 +662,7 @@
                                                 </div>
                                             </div> --}}
 
-                                            <div class="col-lg-3 col-4 mb-3" id="">
+                                            {{-- <div class="col-lg-3 col-4 mb-3" id="">
                                                 <label class="form-label">Deal
                                                     Price</label>
                                                 <input type="number" step="0.01"
@@ -670,7 +670,7 @@
                                                     value="{{ $editProduct->deal }}"
                                                     {{ $editProduct->deal == '1' ? 'checked' : '' }} name="deal"
                                                     placeholder="Enter Deal" />
-                                            </div>
+                                            </div> --}}
 
                                         </div>
 

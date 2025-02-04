@@ -304,6 +304,8 @@ Route::middleware(['auth:admin', 'verified'])->group(function () {
 
         Route::get('/all', 'AllAbout')->name('all.about');
         // Route::get('/all', 'AllAbout')->name('all.about')->middleware('permission:all.about');
+        Route::get('/add', 'AddAbout')->name('add.about');
+        Route::post('/store', 'StoreAbout')->name('store.about');
         Route::get('/edit/{id}', 'EditAbout')->name('edit.about');
         Route::post('/update', 'UpdateAbout')->name('update.about');
         Route::get('/delete/{id}', 'DeleteAbout')->name('delete.about');

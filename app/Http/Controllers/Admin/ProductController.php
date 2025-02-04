@@ -129,9 +129,9 @@ class ProductController extends Controller
             'parent_id'                 => $request->parent_id,
             // 'pdiscount_price' => $request->pdiscount_price,
             'child_id'                  => $child_ids,
-            'refurbished'               => $request->refurbished,
+            // 'refurbished'               => $request->refurbished,
             'feature'                   => $request->feature,
-            'deal'                      => $request->deal,
+            // 'deal'                      => $request->deal,
 
             'short_desc'                => $request->short_desc,
             'overview'                  => $request->overview,
@@ -333,9 +333,9 @@ class ProductController extends Controller
 
                 'parent_id'                 => $request->parent_id,
                 'child_id'                  => $child_ids,
-                'refurbished'               => $request->refurbished,
+                // 'refurbished'               => $request->refurbished,
                 'feature'                   => $request->feature,
-                'deal'                      => $request->deal,
+                // 'deal'                      => $request->deal,
 
                 'short_desc'                => $request->short_desc,
                 'overview'                  => $request->overview,
@@ -408,8 +408,8 @@ class ProductController extends Controller
 
                 'parent_id'                 => $request->parent_id,
                 'child_id'                  => $child_ids,
-                'refurbished'               => $request->refurbished,
-                'deal'                      => $request->deal,
+                // 'refurbished'               => $request->refurbished,
+                // 'deal'                      => $request->deal,
                 'feature'                   => $request->feature,
 
                 'short_desc'                => $request->short_desc,

@@ -61,7 +61,7 @@
 
                         <input type="hidden" name="id" value="{{ $about->id }}">
 
-                        <div class="row mb-4">
+                        {{-- <div class="row mb-4">
                             <div class="col-4 shadow-sm bg-white p-3">
 
                                 <label for="" class="mb-3">Status</label>
@@ -71,16 +71,11 @@
                                     <option value="tamplate_one" {{ $about->status == 'tamplate_one' ? 'selected' : '' }}>
                                         About Us One</option>
 
-                                    {{-- <option value="tamplate_two"
-                                        {{ $about->status == 'tamplate_two' ? 'selected' : '' }}>Template Two</option>
 
-                                    <option value="tamplate_three"
-                                        {{ $about->status == 'tamplate_three' ? 'selected' : '' }}>Template Three
-                                    </option> --}}
 
                                 </select>
                             </div>
-                        </div>
+                        </div> --}}
 
                         <div class="row">
 

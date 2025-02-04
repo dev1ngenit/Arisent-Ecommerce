@@ -31,12 +31,12 @@
             </div>
             <!--end::Page title-->
             <!--begin::Actions-->
-            {{-- <div class="d-flex align-items-center gap-2 gap-lg-3">
+            <div class="d-flex align-items-center gap-2 gap-lg-3">
 
-                <a href="" class="btn btn-light-primary btn-sm">Add
+                <a href="{{ route('add.about') }}" class="btn btn-light-primary btn-sm">Add
                     Contact</a>
 
-            </div> --}}
+            </div>
             <!--end::Actions-->
         </div>
         <!--end::Container-->
@@ -76,10 +76,10 @@
 
                                         <td>
 
-                                            @if (Auth::guard('admin')->user()->can('edit.about'))
-                                                <a href="{{ route('edit.about', $about->id) }}" class="ms-1"
-                                                    title="Edit"><i class="bi bi-pencil-square fs-3 text-primary"></i></a>
-                                            @endif
+                                            {{-- @if (Auth::guard('admin')->user()->can('edit.about')) --}}
+                                            <a href="{{ route('edit.about', $about->id) }}" class="ms-1" title="Edit"><i
+                                                    class="bi bi-pencil-square fs-3 text-primary"></i></a>
+                                            {{-- @endif --}}
 
                                             @if (Auth::guard('admin')->user()->can('delete.about'))
                                                 <a href="{{ route('delete.about', $about->id) }}" class="ms-1"

@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
@@ -15,6 +14,12 @@ class AboutController extends Controller
         return view('admin.pages.about.all_about', compact('abouts'));
     }
 
+    //AddAbout
+    public function AddAbout()
+    {
+        return view('admin.pages.about.add_about');
+    }
+
     //Edit About
     public function EditAbout($id)
     {
@@ -22,14 +27,63 @@ class AboutController extends Controller
         return view('admin.pages.about.edit_about', compact('about'));
     }
 
+    public function StoreAbout(Request $request)
+    {
+        // 1. Validate the incoming request
+        $validatedData = $request->validate([
+            'breadcrumb_title'            => 'nullable|string|max:255',
+            'breadcrumb_sub_title'        => 'nullable|string|max:255',
+            'section_one_badge'           => 'nullable|string|max:255',
+            'section_one_title'           => 'nullable|string|max:255',
+            'section_one_sub_title'       => 'nullable|string|max:255',
+            'ceo_section_badge'           => 'nullable|string|max:255',
+            'ceo_section_title'           => 'nullable|string|max:255',
+            'ceo_section_sub_title'       => 'nullable|string|max:255',
+            'ceo_section_ceo_name'        => 'nullable|string|max:255',
+            'ceo_section_ceo_designation' => 'nullable|string|max:255',
+            'section_one_description'     => 'nullable|string',
+            'section_two_description'     => 'nullable|string',
+            'ceo_section_description'     => 'nullable|string',
+            'choose_us_section_title'     => 'nullable|string|max:255',
+            'contact_section_title'       => 'nullable|string|max:255',
+            // Add validation rules for all other fields like offices if needed
+        ]);
+
+                                                           // 2. Save data to the database (you can create a model for 'About' or use a direct query)
+        $about                              = new About(); // Assuming you have an 'About' model
+        $about->breadcrumb_title            = $validatedData['breadcrumb_title'];
+        $about->breadcrumb_sub_title        = $validatedData['breadcrumb_sub_title'];
+        $about->section_one_badge           = $validatedData['section_one_badge'];
+        $about->section_one_title           = $validatedData['section_one_title'];
+        $about->section_one_sub_title       = $validatedData['section_one_sub_title'];
+        $about->ceo_section_badge           = $validatedData['ceo_section_badge'];
+        $about->ceo_section_title           = $validatedData['ceo_section_title'];
+        $about->ceo_section_sub_title       = $validatedData['ceo_section_sub_title'];
+        $about->ceo_section_ceo_name        = $validatedData['ceo_section_ceo_name'];
+        $about->ceo_section_ceo_designation = $validatedData['ceo_section_ceo_designation'];
+        $about->section_one_description     = $validatedData['section_one_description'];
+        $about->section_two_description     = $validatedData['section_two_description'];
+        $about->ceo_section_description     = $validatedData['ceo_section_description'];
+        $about->choose_us_section_title     = $validatedData['choose_us_section_title'];
+        $about->contact_section_title       = $validatedData['contact_section_title'];
+        // Save any other fields like office locations if included
+
+        // Save the record in the database
+        $about->save();
+
+        // 3. Return success message and redirect
+        toastr()->success('About Created Successfully');
+        return redirect()->route('all.about');
+    }
+
     //Update About
     public function UpdateAbout(Request $request)
     {
-        $uid = $request->id;
+        $uid    = $request->id;
         $abouts = About::findOrFail($uid);
 
         //section_one_image
-        if (!empty($request->file('section_one_image'))) {
+        if (! empty($request->file('section_one_image'))) {
             $file = $request->file('section_one_image');
 
             @unlink(public_path('upload/about/' . $abouts->section_one_image));
@@ -40,7 +94,7 @@ class AboutController extends Controller
         }
 
         //ceo_section_image
-        if (!empty($request->file('ceo_section_image'))) {
+        if (! empty($request->file('ceo_section_image'))) {
 
             $file = $request->file('ceo_section_image');
 
@@ -52,7 +106,7 @@ class AboutController extends Controller
         }
 
         //ceo_section_signature_image
-        if (!empty($request->file('ceo_section_signature_image'))) {
+        if (! empty($request->file('ceo_section_signature_image'))) {
 
             $file = $request->file('ceo_section_signature_image');
 
@@ -64,7 +118,7 @@ class AboutController extends Controller
         }
 
         //choose_us_one_image
-        if (!empty($request->file('choose_us_one_image'))) {
+        if (! empty($request->file('choose_us_one_image'))) {
 
             $file = $request->file('choose_us_one_image');
 
@@ -76,7 +130,7 @@ class AboutController extends Controller
         }
 
         //choose_us_two_image
-        if (!empty($request->file('choose_us_two_image'))) {
+        if (! empty($request->file('choose_us_two_image'))) {
 
             $file = $request->file('choose_us_two_image');
 
@@ -88,7 +142,7 @@ class AboutController extends Controller
         }
 
         //choose_us_three_image
-        if (!empty($request->file('choose_us_three_image'))) {
+        if (! empty($request->file('choose_us_three_image'))) {
 
             $file = $request->file('choose_us_three_image');
 
@@ -101,89 +155,89 @@ class AboutController extends Controller
 
         $abouts->update([
 
-            'breadcrumb_title' => $request->breadcrumb_title,
-            'breadcrumb_sub_title' => $request->breadcrumb_sub_title,
+            'breadcrumb_title'            => $request->breadcrumb_title,
+            'breadcrumb_sub_title'        => $request->breadcrumb_sub_title,
 
-            'section_one_title' => $request->section_one_title,
-            'section_one_badge' => $request->section_one_badge,
-            'section_one_sub_title' => $request->section_one_sub_title,
-            'section_one_description' => $request->section_one_description,
+            'section_one_title'           => $request->section_one_title,
+            'section_one_badge'           => $request->section_one_badge,
+            'section_one_sub_title'       => $request->section_one_sub_title,
+            'section_one_description'     => $request->section_one_description,
 
-            'section_two_title' => $request->section_two_title,
-            'section_two_badge' => $request->section_two_badge,
-            'section_two_sub_title' => $request->section_two_sub_title,
-            'section_two_description' => $request->section_two_description,
+            'section_two_title'           => $request->section_two_title,
+            'section_two_badge'           => $request->section_two_badge,
+            'section_two_sub_title'       => $request->section_two_sub_title,
+            'section_two_description'     => $request->section_two_description,
 
-            'ceo_section_badge' => $request->ceo_section_badge,
-            'ceo_section_title' => $request->ceo_section_title,
-            'ceo_section_sub_title' => $request->ceo_section_sub_title,
-            'ceo_section_description' => $request->ceo_section_description,
-            'ceo_section_ceo_name' => $request->ceo_section_ceo_name,
+            'ceo_section_badge'           => $request->ceo_section_badge,
+            'ceo_section_title'           => $request->ceo_section_title,
+            'ceo_section_sub_title'       => $request->ceo_section_sub_title,
+            'ceo_section_description'     => $request->ceo_section_description,
+            'ceo_section_ceo_name'        => $request->ceo_section_ceo_name,
             'ceo_section_ceo_designation' => $request->ceo_section_ceo_designation,
 
-            'choose_us_section_title' => $request->choose_us_section_title,
+            'choose_us_section_title'     => $request->choose_us_section_title,
 
-            'choose_us_one_title' => $request->choose_us_one_title,
-            'choose_us_one_description' => $request->choose_us_one_description,
+            'choose_us_one_title'         => $request->choose_us_one_title,
+            'choose_us_one_description'   => $request->choose_us_one_description,
 
-            'choose_us_two_title' => $request->choose_us_two_title,
-            'choose_us_two_description' => $request->choose_us_two_description,
+            'choose_us_two_title'         => $request->choose_us_two_title,
+            'choose_us_two_description'   => $request->choose_us_two_description,
 
-            'choose_us_three_title' => $request->choose_us_three_title,
+            'choose_us_three_title'       => $request->choose_us_three_title,
             'choose_us_three_description' => $request->choose_us_three_description,
 
-            'contact_section_title' => $request->contact_section_title,
-            
-            'head_office_title' => $request->head_office_title,
-            'head_office_address' => $request->head_office_address,
-            'head_office_email' => $request->head_office_email,
-            'head_office_phone' => $request->head_office_phone,
+            'contact_section_title'       => $request->contact_section_title,
 
-            'sub_office_one_title' => $request->sub_office_one_title,
-            'sub_office_one_address' => $request->sub_office_one_address,
-            'sub_office_one_email' => $request->sub_office_one_email,
-            'sub_office_one_phone' => $request->sub_office_one_phone,
+            'head_office_title'           => $request->head_office_title,
+            'head_office_address'         => $request->head_office_address,
+            'head_office_email'           => $request->head_office_email,
+            'head_office_phone'           => $request->head_office_phone,
 
-            'sub_office_two_title' => $request->sub_office_two_title,
-            'sub_office_two_address' => $request->sub_office_two_address,
-            'sub_office_two_email' => $request->sub_office_two_email,
-            'sub_office_two_phone' => $request->sub_office_two_phone,
+            'sub_office_one_title'        => $request->sub_office_one_title,
+            'sub_office_one_address'      => $request->sub_office_one_address,
+            'sub_office_one_email'        => $request->sub_office_one_email,
+            'sub_office_one_phone'        => $request->sub_office_one_phone,
 
-            'sub_office_three_title' => $request->sub_office_three_title,
-            'sub_office_three_address' => $request->sub_office_three_address,
-            'sub_office_three_email' => $request->sub_office_three_email,
-            'sub_office_three_phone' => $request->sub_office_three_phone,
+            'sub_office_two_title'        => $request->sub_office_two_title,
+            'sub_office_two_address'      => $request->sub_office_two_address,
+            'sub_office_two_email'        => $request->sub_office_two_email,
+            'sub_office_two_phone'        => $request->sub_office_two_phone,
 
-            'sub_office_four_title' => $request->sub_office_four_title,
-            'sub_office_four_address' => $request->sub_office_four_address,
-            'sub_office_four_email' => $request->sub_office_four_email,
-            'sub_office_four_phone' => $request->sub_office_four_phone,
+            'sub_office_three_title'      => $request->sub_office_three_title,
+            'sub_office_three_address'    => $request->sub_office_three_address,
+            'sub_office_three_email'      => $request->sub_office_three_email,
+            'sub_office_three_phone'      => $request->sub_office_three_phone,
 
-            'counter_one_value' => $request->counter_one_value,
-            'counter_one_title' => $request->counter_one_title,
+            'sub_office_four_title'       => $request->sub_office_four_title,
+            'sub_office_four_address'     => $request->sub_office_four_address,
+            'sub_office_four_email'       => $request->sub_office_four_email,
+            'sub_office_four_phone'       => $request->sub_office_four_phone,
 
-            'counter_two_value' => $request->counter_two_value,
-            'counter_two_title' => $request->counter_two_title,
+            'counter_one_value'           => $request->counter_one_value,
+            'counter_one_title'           => $request->counter_one_title,
 
-            'counter_three_value' => $request->counter_three_value,
-            'counter_three_title' => $request->counter_three_title,
+            'counter_two_value'           => $request->counter_two_value,
+            'counter_two_title'           => $request->counter_two_title,
 
-            'counter_four_value' => $request->counter_four_value,
-            'counter_four_title' => $request->counter_four_title,
+            'counter_three_value'         => $request->counter_three_value,
+            'counter_three_title'         => $request->counter_three_title,
 
-            'status' => $request->status,
+            'counter_four_value'          => $request->counter_four_value,
+            'counter_four_title'          => $request->counter_four_title,
 
-            'section_one_image' => (!empty($section_one_image) ? $section_one_image : $abouts->section_one_image),
+            'status'                      => $request->status,
 
-            'ceo_section_image' => (!empty($ceo_section_image) ? $ceo_section_image : $abouts->ceo_section_image),
+            'section_one_image'           => (! empty($section_one_image) ? $section_one_image : $abouts->section_one_image),
 
-            'ceo_section_signature_image' => (!empty($ceo_section_signature_image) ? $ceo_section_signature_image : $abouts->ceo_section_signature_image),
+            'ceo_section_image'           => (! empty($ceo_section_image) ? $ceo_section_image : $abouts->ceo_section_image),
 
-            'choose_us_one_image' => (!empty($choose_us_one_image) ? $choose_us_one_image : $abouts->choose_us_one_image),
+            'ceo_section_signature_image' => (! empty($ceo_section_signature_image) ? $ceo_section_signature_image : $abouts->ceo_section_signature_image),
 
-            'choose_us_two_image' => (!empty($choose_us_two_image) ? $choose_us_two_image : $abouts->choose_us_two_image),
+            'choose_us_one_image'         => (! empty($choose_us_one_image) ? $choose_us_one_image : $abouts->choose_us_one_image),
 
-            'choose_us_three_image' => (!empty($choose_us_three_image) ? $choose_us_three_image : $abouts->choose_us_three_image),
+            'choose_us_two_image'         => (! empty($choose_us_two_image) ? $choose_us_two_image : $abouts->choose_us_two_image),
+
+            'choose_us_three_image'       => (! empty($choose_us_three_image) ? $choose_us_three_image : $abouts->choose_us_three_image),
 
         ]);
 

@@ -359,14 +359,14 @@
 
                                                     <select class="form-select form-select-solid form-select-sm"
                                                         name="subcategory_id" data-control="select2"
-                                                        data-placeholder="SubCategory Name" data-allow-clear="true" required>
+                                                        data-placeholder="SubCategory Name" data-allow-clear="true">
                                                         <option></option>
 
                                                     </select>
-                                                    <div class="invalid-feedback">
+                                                    {{-- <div class="invalid-feedback">
                                                         Please Enter
                                                         SubCategory Name.
-                                                    </div>
+                                                    </div> --}}
                                                 </div>
                                             </div>
 
@@ -378,14 +378,14 @@
 
                                                     <select class="form-select form-select-solid form-select-sm"
                                                         name="childcategory_id" data-control="select2"
-                                                        data-placeholder="ChildCategory Name" data-allow-clear="true" required>
+                                                        data-placeholder="ChildCategory Name" data-allow-clear="true">
                                                         <option></option>
 
                                                     </select>
-                                                    <div class="invalid-feedback">
+                                                    {{-- <div class="invalid-feedback">
                                                         Please Enter
                                                         ChildCategory Name.
-                                                    </div>
+                                                    </div> --}}
                                                 </div>
                                             </div>
 
@@ -556,7 +556,7 @@
                                                 <label class="form-label"></label>
                                                 <div class="form-check form-check-custom form-check-solid mb-5">
                                                     <input class="form-check-input me-3" name="feature" type="checkbox"
-                                                        value="1" id="kt_docs_formvalidation_checkbox_option_1" />
+                                                        value="1" checked id="kt_docs_formvalidation_checkbox_option_1" />
                                                     <label class="form-check-label"
                                                         for="kt_docs_formvalidation_checkbox_option_1">
                                                         <div class="fw-bolder text-gray-800">Is
@@ -566,11 +566,11 @@
                                             </div>
 
                                             {{-- refurbished --}}
-                                            <div class="col-lg-2 mb-3">
+                                            {{-- <div class="col-lg-2 mb-3">
                                                 <label class="form-label"></label>
                                                 <div class="form-check form-check-custom form-check-solid mb-5">
                                                     <input class="form-check-input me-3" name="refurbished"
-                                                        type="checkbox" value="1"
+                                                        type="checkbox" required value="1"
                                                         id="kt_docs_formvalidation_checkbox_option_1" />
                                                     <label class="form-check-label"
                                                         for="kt_docs_formvalidation_checkbox_option_1">
@@ -578,10 +578,10 @@
                                                             Refurbished</div>
                                                     </label>
                                                 </div>
-                                            </div>
+                                            </div> --}}
 
                                             {{-- deal --}}
-                                            <div class="col-lg-2 mb-3">
+                                            {{-- <div class="col-lg-2 mb-3">
                                                 <label class="form-label"></label>
                                                 <div class="form-check form-check-custom form-check-solid mb-5">
                                                     <input class="form-check-input me-3" name="deal" type="checkbox"
@@ -599,7 +599,7 @@
                                                 <input type="number" step="0.01"
                                                     class="form-control form-select-sm form-control-solid" name="deal"
                                                     placeholder="Enter Deal" />
-                                            </div>
+                                            </div> --}}
 
                                         </div>
 
