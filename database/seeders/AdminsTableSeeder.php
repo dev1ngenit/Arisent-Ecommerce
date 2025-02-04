@@ -19,8 +19,8 @@ class AdminsTableSeeder extends Seeder
             //admin
             [
                 'name' => 'admin',
-                'email' => 'admin@gmail.com',
-                'password' => Hash::make('111'),
+                'email' => 'dev2.ngenit@gmail.com',
+                'password' => Hash::make('Pa$$w0rd!'),
             ],
 
 
