@@ -171,7 +171,7 @@
                                             </div>
 
                                             {{-- product_type --}}
-                                            <div class="col-4 mb-3">
+                                            {{-- <div class="col-4 mb-3">
                                                 <div class="fv-row mb-3">
                                                     <label class="form-label required">Product
                                                         Type</label>
@@ -203,7 +203,7 @@
                                                         Type.</div>
                                                 </div>
 
-                                            </div>
+                                            </div> --}}
 
                                             {{-- stock --}}
                                             <div class="col-4 mb-3">
