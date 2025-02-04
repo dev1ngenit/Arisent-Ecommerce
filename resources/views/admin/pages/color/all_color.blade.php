@@ -78,13 +78,13 @@
 
 
                                         {{-- Edit Category Modal --}}
-                                        @if (Auth::guard('admin')->user()->can('edit.color'))
+                                        {{-- @if (Auth::guard('admin')->user()->can('edit.color')) --}}
                                             <a href="" class="ms-1" title="Edit" data-bs-toggle="modal"
                                                 data-bs-target="#editModal{{ $color->id }}"
                                                 class="btn btn-primary btn-sm"><i
                                                     class="bi bi-pencil-square fs-3 text-primary"></i>
                                             </a>
-                                        @endif
+                                        {{-- @endif --}}
 
                                         <!-- EditModal -->
                                         <div class="modal fade" id="editModal{{ $color->id }}" tabindex="-1"
@@ -164,10 +164,10 @@
                                         </div>
                                         {{-- Edit Category Modal --}}
 
-                                        @if (Auth::guard('admin')->user()->can('delete.color'))
+                                        {{-- @if (Auth::guard('admin')->user()->can('delete.color')) --}}
                                             <a href="{{ route('delete.color', $color->id) }}" class="ms-1" id="delete"
                                                 title="Delete"><i class="bi bi-trash3-fill fs-3 text-danger"></i></a>
-                                        @endif
+                                        {{-- @endif --}}
                                     </td>
                                 </tr>
                             @endforeach
@@ -178,7 +178,7 @@
 
         </div>
 
-        @if (Auth::guard('admin')->user()->can('add.color'))
+        {{-- @if (Auth::guard('admin')->user()->can('add.color')) --}}
             <div class="col-4">
 
                 <div class="card">
@@ -219,7 +219,7 @@
                 </div>
 
             </div>
-        @endif
+        {{-- @endif --}}
 
     </div>
 

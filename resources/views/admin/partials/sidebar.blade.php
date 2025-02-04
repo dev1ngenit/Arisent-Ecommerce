@@ -228,9 +228,9 @@
 
 
                         {{-- Color --}}
-                        {{-- @if (Auth::guard('admin')->user()->can('color.menu'))
+                        {{-- @if (Auth::guard('admin')->user()->can('color.menu')) --}}
                             <div class="menu-item">
-                                @if (Auth::guard('admin')->user()->can('all.color'))
+                                {{-- @if (Auth::guard('admin')->user()->can('all.color')) --}}
                                     <a class="menu-link {{ Request::routeIs('all.color') ? 'active' : '' }}"
                                         href="{{ route('all.color') }}">
                                         <span class="menu-bullet">
@@ -238,9 +238,9 @@
                                         </span>
                                         <span class="menu-title">Color</span>
                                     </a>
-                                @endif
+                                {{-- @endif --}}
                             </div>
-                        @endif --}}
+                        {{-- @endif --}}
 
                     </div>
                 </div>

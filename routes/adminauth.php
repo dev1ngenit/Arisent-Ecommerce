@@ -1,36 +1,37 @@
 <?php
 
-use App\Http\Controllers\AdminAuth\AuthenticatedSessionController;
-use App\Http\Controllers\AdminAuth\ConfirmablePasswordController;
-use App\Http\Controllers\AdminAuth\EmailVerificationNotificationController;
-use App\Http\Controllers\AdminAuth\EmailVerificationPromptController;
-use App\Http\Controllers\AdminAuth\NewPasswordController;
-use App\Http\Controllers\AdminAuth\PasswordController;
-use App\Http\Controllers\AdminAuth\PasswordResetLinkController;
-use App\Http\Controllers\AdminAuth\VerifyEmailController;
-use App\Http\Controllers\Admin\AboutController;
-use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Admin\AdminOrderController;
-use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Admin\ChildCategoryController;
-use App\Http\Controllers\Admin\ContactController;
-use App\Http\Controllers\Admin\DataBaseController;
-use App\Http\Controllers\Admin\EmployeeCategoryController;
-use App\Http\Controllers\Admin\EmployeeController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\FaqController;
-use App\Http\Controllers\Admin\OfferCategoryController;
-use App\Http\Controllers\Admin\PrivacyPolicyController;
-use App\Http\Controllers\Admin\ProductController;
-use App\Http\Controllers\Admin\ReturnPolicyController;
 use App\Http\Controllers\Admin\SiteController;
 use App\Http\Controllers\Admin\SmtpController;
-use App\Http\Controllers\Admin\SubCategoryController;
-use App\Http\Controllers\Admin\SubscribeController;
 use App\Http\Controllers\Admin\TermController;
-use App\Http\Controllers\Backend\BannerController;
-use App\Http\Controllers\Backend\BrandController;
+use App\Http\Controllers\Admin\AboutController;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\ColorController;
 use App\Http\Controllers\Backend\RoleController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Backend\BrandController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\DataBaseController;
+use App\Http\Controllers\Admin\EmployeeController;
+use App\Http\Controllers\Backend\BannerController;
+use App\Http\Controllers\Admin\SubscribeController;
+use App\Http\Controllers\Admin\AdminOrderController;
+use App\Http\Controllers\Admin\SubCategoryController;
+use App\Http\Controllers\Admin\ReturnPolicyController;
+use App\Http\Controllers\AdminAuth\PasswordController;
+use App\Http\Controllers\Admin\ChildCategoryController;
+use App\Http\Controllers\Admin\OfferCategoryController;
+use App\Http\Controllers\Admin\PrivacyPolicyController;
+use App\Http\Controllers\AdminAuth\NewPasswordController;
+use App\Http\Controllers\AdminAuth\VerifyEmailController;
+use App\Http\Controllers\Admin\EmployeeCategoryController;
+use App\Http\Controllers\AdminAuth\PasswordResetLinkController;
+use App\Http\Controllers\AdminAuth\ConfirmablePasswordController;
+use App\Http\Controllers\AdminAuth\AuthenticatedSessionController;
+use App\Http\Controllers\AdminAuth\EmailVerificationPromptController;
+use App\Http\Controllers\AdminAuth\EmailVerificationNotificationController;
 
 Route::middleware('guest:admin')->group(function () {
 
@@ -206,13 +207,14 @@ Route::middleware(['auth:admin', 'verified'])->group(function () {
     });
 
     //Color Section
-    // Route::controller(ColorController::class)->prefix('color')->group(function () {
+    Route::controller(ColorController::class)->prefix('color')->group(function () {
 
-    //     Route::get('/all', 'AllColor')->name('all.color')->middleware('permission:all.color');
-    //     Route::post('/store', 'StoreColor')->name('store.color');
-    //     Route::post('/update', 'UpdateColor')->name('update.color');
-    //     Route::get('/delete/{id}', 'DeleteColor')->name('delete.color');
-    // });
+        // Route::get('/all', 'AllColor')->name('all.color')->middleware('permission:all.color');
+        Route::get('/all', 'AllColor')->name('all.color');
+        Route::post('/store', 'StoreColor')->name('store.color');
+        Route::post('/update', 'UpdateColor')->name('update.color');
+        Route::get('/delete/{id}', 'DeleteColor')->name('delete.color');
+    });
 
     //Sites Section
     Route::controller(SiteController::class)->prefix('sites')->group(function () {

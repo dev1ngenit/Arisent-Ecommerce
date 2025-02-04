@@ -124,12 +124,12 @@
                                 @endif
 
                                 {{-- Edit Category Modal --}}
-                                @if (Auth::guard('admin')->user()->can('edit.category'))
+                                {{-- @if (Auth::guard('admin')->user()->can('edit.category')) --}}
                                     <a href="" class="ms-1" title="Edit" data-bs-toggle="modal"
                                         data-bs-target="#editModal{{ $category->id }}" class="btn btn-primary btn-sm"><i
                                             class="bi bi-pencil-square fs-3 text-primary"></i>
                                     </a>
-                                @endif
+                                {{-- @endif --}}
 
 
                                 <!-- EditModal -->
@@ -225,11 +225,11 @@
                                 </div>
                                 {{-- Edit Category Modal --}}
 
-                                @if (Auth::guard('admin')->user()->can('delete.category'))
+                                {{-- @if (Auth::guard('admin')->user()->can('delete.category')) --}}
                                     <a href="{{ route('delete.category', $category->id) }}" class="ms-1"
                                         id="delete" title="Delete"><i
                                             class="bi bi-trash3-fill fs-3 text-danger"></i></a>
-                                @endif
+                                {{-- @endif --}}
 
                             </td>
                         </tr>
