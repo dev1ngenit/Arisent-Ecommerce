@@ -67,10 +67,10 @@
             <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
 
                 <!--begin::Add product-->
-                @if (Auth::guard('admin')->user()->can('add.subcategory'))
+                {{-- @if (Auth::guard('admin')->user()->can('add.subcategory')) --}}
                     <a data-bs-toggle="modal" data-bs-target="#addModal" class="btn btn-light-primary btn-sm">Add
                         SubCategory</a>
-                @endif
+                {{-- @endif --}}
 
                 <!--end::Add product-->
 
@@ -125,12 +125,12 @@
                                 @endif
 
                                 {{-- Edit Category Modal --}}
-                                @if (Auth::guard('admin')->user()->can('edit.subcategory'))
+                                {{-- @if (Auth::guard('admin')->user()->can('edit.subcategory')) --}}
                                     <a href="" class="ms-1" title="Edit" data-bs-toggle="modal"
                                         data-bs-target="#editModal{{ $subcategory->id }}" class="btn btn-primary btn-sm"><i
                                             class="bi bi-pencil-square fs-3 text-primary"></i>
                                     </a>
-                                @endif
+                                {{-- @endif --}}
 
 
                                 <!-- EditModal -->
@@ -238,11 +238,11 @@
 
                                 {{-- Edit Category Modal --}}
 
-                                @if (Auth::guard('admin')->user()->can('delete.subcategory'))
+                                {{-- @if (Auth::guard('admin')->user()->can('delete.subcategory')) --}}
                                     <a href="{{ route('delete.subcategory', $subcategory->id) }}" class="ms-1"
                                         id="delete" title="Delete"><i
                                             class="bi bi-trash3-fill fs-3 text-danger"></i></a>
-                                @endif
+                                {{-- @endif --}}
 
                             </td>
                         </tr>

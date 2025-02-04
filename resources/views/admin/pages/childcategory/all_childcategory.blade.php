@@ -66,10 +66,10 @@
             <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
 
                 <!--begin::Add product-->
-                @if (Auth::guard('admin')->user()->can('add.childcategory'))
+                {{-- @if (Auth::guard('admin')->user()->can('add.childcategory')) --}}
                     <a data-bs-toggle="modal" data-bs-target="#addModal" class="btn btn-light-primary btn-sm">Add
                         ChildCategory</a>
-                @endif
+                {{-- @endif --}}
                 <!--end::Add product-->
 
             </div>
@@ -121,12 +121,12 @@
                                 @endif
 
                                 {{-- Edit Category Modal --}}
-                                @if (Auth::guard('admin')->user()->can('edit.childcategory'))
+                                {{-- @if (Auth::guard('admin')->user()->can('edit.childcategory')) --}}
                                     <a href="" class="ms-1" title="Edit" data-bs-toggle="modal"
                                         data-bs-target="#editModal{{ $childcategory->id }}"
                                         class="btn btn-primary btn-sm"><i class="bi bi-pencil-square fs-3 text-primary"></i>
                                     </a>
-                                @endif
+                                {{-- @endif --}}
 
 
 
@@ -259,11 +259,11 @@
                                 </div>
 
                                 {{-- Edit Category Modal --}}
-                                @if (Auth::guard('admin')->user()->can('delete.childcategory'))
+                                {{-- @if (Auth::guard('admin')->user()->can('delete.childcategory')) --}}
                                     <a href="{{ route('delete.childcategory', $childcategory->id) }}" class="ms-1"
                                         id="delete" title="Delete"><i
                                             class="bi bi-trash3-fill fs-3 text-danger"></i></a>
-                                @endif
+                                {{-- @endif --}}
 
 
                             </td>

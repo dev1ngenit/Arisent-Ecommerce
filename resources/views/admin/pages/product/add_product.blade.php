@@ -359,14 +359,14 @@
 
                                                     <select class="form-select form-select-solid form-select-sm"
                                                         name="subcategory_id" data-control="select2"
-                                                        data-placeholder="SubCategory Name" data-allow-clear="true">
+                                                        data-placeholder="SubCategory Name" data-allow-clear="true" required>
                                                         <option></option>
 
                                                     </select>
-                                                    {{-- <div class="invalid-feedback">
+                                                    <div class="invalid-feedback">
                                                         Please Enter
                                                         SubCategory Name.
-                                                    </div> --}}
+                                                    </div>
                                                 </div>
                                             </div>
 
@@ -378,14 +378,14 @@
 
                                                     <select class="form-select form-select-solid form-select-sm"
                                                         name="childcategory_id" data-control="select2"
-                                                        data-placeholder="ChildCategory Name" data-allow-clear="true">
+                                                        data-placeholder="ChildCategory Name" data-allow-clear="true" required>
                                                         <option></option>
 
                                                     </select>
-                                                    {{-- <div class="invalid-feedback">
+                                                    <div class="invalid-feedback">
                                                         Please Enter
                                                         ChildCategory Name.
-                                                    </div> --}}
+                                                    </div>
                                                 </div>
                                             </div>
 

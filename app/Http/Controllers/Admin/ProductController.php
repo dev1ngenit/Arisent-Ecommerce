@@ -108,7 +108,7 @@ class ProductController extends Controller
             'notification_days' => $request->notification_days,
             'product_slug' => Str::slug($request->product_name, "-"),
 
-            'product_type' => $request->product_type,
+            // 'product_type' => $request->product_type,
             'stock' => $request->stock,
             'price_status' => $request->price_status,
             'brand_id' => $request->brand_id,
@@ -124,7 +124,7 @@ class ProductController extends Controller
             'color_id' => $colors,
 
             'parent_id' => $request->parent_id,
-            'pdiscount_price' => $request->pdiscount_price,
+            // 'pdiscount_price' => $request->pdiscount_price,
             'child_id' => $child_ids,
             'refurbished' => $request->refurbished,
             'feature' => $request->feature,
@@ -283,7 +283,7 @@ class ProductController extends Controller
                 'notification_days' => $request->notification_days,
                 'product_slug' => Str::slug($request->product_name, "-"),
 
-                'product_type' => $request->product_type,
+                // 'product_type' => $request->product_type,
                 'stock' => $request->stock,
                 'price_status' => $request->price_status,
                 'brand_id' => $request->brand_id,
@@ -298,7 +298,7 @@ class ProductController extends Controller
                 'tags' => $request->tags,
                 'color_id' => $colors,
 
-                'pdiscount_price' => $request->pdiscount_price,
+                // 'pdiscount_price' => $request->pdiscount_price,
 
                 'parent_id' => $request->parent_id,
                 'child_id' => $child_ids,
@@ -360,7 +360,7 @@ class ProductController extends Controller
                 'notification_days' => $request->notification_days,
                 'product_slug' => strtolower(str_replace(' ', '-', $request->product_name)),
 
-                'product_type' => $request->product_type,
+                // 'product_type' => $request->product_type,
                 'stock' => $request->stock,
                 'price_status' => $request->price_status,
                 'brand_id' => $request->brand_id,

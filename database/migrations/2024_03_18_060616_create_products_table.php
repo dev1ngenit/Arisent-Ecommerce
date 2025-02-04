@@ -15,25 +15,25 @@ return new class extends Migration
             $table->id();
 
             $table->unsignedBigInteger('brand_id');
-            $table->foreign('brand_id')->references('id')->on('brands')->onDelete('cascade');
+            $table->foreign('brand_id')->references('id')->on('brands')->onDelete('cascade')->nullable();
 
             $table->unsignedBigInteger('category_id');
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade')->nullable();
 
             $table->unsignedBigInteger('subcategory_id');
-            $table->foreign('subcategory_id')->references('id')->on('sub_categories')->onDelete('cascade');
+            $table->foreign('subcategory_id')->references('id')->on('sub_categories')->onDelete('cascade')->nullable();
 
             $table->unsignedBigInteger('childcategory_id');
-            $table->foreign('childcategory_id')->references('id')->on('child_categories')->onDelete('cascade');
+            $table->foreign('childcategory_id')->references('id')->on('child_categories')->onDelete('cascade')->nullable();
 
-            $table->string('product_name');
-            $table->string('product_slug');
+            $table->string('product_name')->nullable();
+            $table->string('product_slug')->nullable();
 
             $table->string('sku_code')->nullable();
             $table->string('mf_code')->nullable();
             $table->string('product_code')->nullable();
             $table->string('tags')->nullable();
-            
+
             $table->string('color_id')->nullable();
             $table->string('parent_id')->nullable();
             $table->string('child_id')->nullable();
@@ -54,13 +54,13 @@ return new class extends Migration
 
             $table->json('industry')->nullable();
             $table->json('solution')->nullable();
-            $table->string('refurbished')->default('1');
-            $table->string('feature');
+            $table->string('refurbished')->default('1')->nullable();
+            $table->string('feature')->nullable();
 
             $table->string('price_status')->nullable();
-            
-            $table->string('product_type');
-            $table->enum('product_status', ['sourcing', 'product'])->default('sourcing');
+
+            $table->string('product_type')->nullable();
+            $table->enum('product_status', ['sourcing', 'product'])->default('sourcing')->nullable();
 
             $table->double('source_one_price')->nullable();
             $table->double('source_two_price')->nullable();
@@ -96,7 +96,7 @@ return new class extends Migration
             $table->string('source_one_location', 255)->nullable();
             $table->string('source_one_country', 100)->nullable();
             $table->string('source_two_estimate_time',100)->nullable();
-            
+
             $table->string('source_two_principal_time',100)->nullable();
             $table->string('source_two_shipping_time',100)->nullable();
             $table->string('source_two_location', 255)->nullable();
