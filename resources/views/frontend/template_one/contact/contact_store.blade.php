@@ -85,12 +85,12 @@
                 <div class="contact-text">
                     <div class="single-text mb-30">
                         <i class="icofont-telephone"></i>
-                        
+
                         <h5>Contact customer service</h5>
 
                         <p>Need assistance? Our customer service team is here to help you. For any support, you can contact us at for prompt assistance.</p>
 
-                        <h5>{{ $sites->phone_two }}</h5>
+                        <h5>{{ optional($sites)->phone_two }}</h5>
                     </div>
                 </div>
             </div>
