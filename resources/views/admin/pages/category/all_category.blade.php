@@ -69,10 +69,10 @@
             <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
 
                 <!--begin::Add product-->
-                @if (Auth::guard('admin')->user()->can('add.category'))
+                {{-- @if (Auth::guard('admin')->user()->can('add.category')) --}}
                     <a data-bs-toggle="modal" data-bs-target="#addModal" class="btn btn-light-primary btn-sm">Add
                         Category</a>
-                @endif
+                {{-- @endif --}}
                 <!--end::Add product-->
 
             </div>

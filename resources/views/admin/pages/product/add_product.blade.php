@@ -187,14 +187,14 @@
                                             </div>
 
                                             {{-- product_type --}}
-                                            <div class="col-4 mb-3">
+                                            {{-- <div class="col-4 mb-3">
                                                 <div class="fv-row mb-3">
                                                     <label class="form-label required">Product
                                                         Type</label>
                                                     <select class="form-select form-select-solid form-select-sm"
                                                         name="product_type" data-control="select2"
                                                         data-hide-search="true" data-placeholder="Select an Product Type"
-                                                        data-allow-clear="true" required>
+                                                        data-allow-clear="true" >
                                                         <option></option>
                                                         <option value="software">Software</option>
                                                         <option value="hardware">Hardware</option>
@@ -206,7 +206,7 @@
                                                         Type.</div>
                                                 </div>
 
-                                            </div>
+                                            </div> --}}
 
                                             {{-- stock --}}
                                             <div class="col-4 mb-3">
