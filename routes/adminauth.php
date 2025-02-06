@@ -101,6 +101,8 @@ Route::middleware(['auth:admin', 'verified'])->group(function () {
 
     //All User
     Route::get('/all-user', [AdminController::class, 'AllUser'])->name('all.user');
+    // Route::get('/all-add', [AdminController::class, 'AddUser'])->name('add.user');
+    Route::post('/store-user', [AdminController::class, 'StoreUser'])->name('store.user');
     Route::get('/delete-user/{id}', [AdminController::class, 'DeleteUser'])->name('delete.user');
 
     //Active Or Inactive

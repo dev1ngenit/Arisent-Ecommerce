@@ -575,6 +575,30 @@ class AdminController extends Controller
         return view('admin.pages.user.all_user', compact('users'));
     }
 
+    //All User
+    // public function AddUser()
+    // {
+    //     return view('admin.pages.user.add_user');
+    // }
+
+    public function StoreUser(Request $request)
+    {
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->phone = $request->phone;
+        $user->address = $request->address;
+        $user->status = '1';
+        $user->save();
+
+
+        toastr()->success('New User Inserted Successfully');
+
+        return redirect()->route('all.user');
+
+    }
+
     //Inactive User
     public function InactiveUserAdmin($id)
     {

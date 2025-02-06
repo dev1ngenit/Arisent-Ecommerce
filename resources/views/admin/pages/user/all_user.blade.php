@@ -38,6 +38,10 @@
                 <a href="{{ route('all.childcategory') }}" class="btn btn-sm btn-light-dark">Child Category</a> --}}
                 <!--end::Primary button-->
 
+                <a href="" class="btn btn-light-primary btn-sm" data-bs-toggle="modal"
+                        data-bs-target="#addModal">Add
+                        User</a>
+
             </div>
             <!--end::Actions-->
         </div>
@@ -59,7 +63,7 @@
             <table id="kt_datatable_example_5" class="table table-striped" style="width:100%">
                 <thead class="bg-dark text-light">
                     <tr>
-                        <th class="text-center">No</th>
+                        <th class="text-center" style="width: 60px">No</th>
                         <th>Name</th>
                         <th>Phone</th>
                         <th>Email</th>
@@ -96,10 +100,10 @@
                                     @endif
                                 @endif
 
-                                @if (Auth::guard('admin')->user()->can('delete.user'))
+                                {{-- @if (Auth::guard('admin')->user()->can('delete.user')) --}}
                                     <a href="{{ route('delete.user', $user->id) }}" class="ms-1" id="delete"
                                         title="Delete"><i class="bi bi-trash3-fill fs-3 text-danger"></i></a>
-                                @endif
+                                {{-- @endif --}}
 
 
                             </td>
@@ -119,6 +123,96 @@
     <!--end::Post--> --}}
 
 
+    <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+
+                <div class="modal-header" style="background: #6196A6;height: 50px;">
+                    <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">Add User</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <form action="{{ route('store.user') }}" method="POST" id="myForm">
+
+                    @csrf
+
+                    <div class="modal-body">
+
+                        <div class="row">
+
+                            <div class="col-4">
+                                <div class="form-group mb-3">
+                                    <label for="">Name</label>
+                                    <input type="text" name="name" autocomplete="off" placeholder="Name"
+                                        class="form-control form-control-sm">
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-4">
+                                <div class="form-group mb-3">
+                                    <label for="">Email</label>
+                                    <input type="email" name="email" autocomplete="off" placeholder="Email"
+                                        class="form-control form-control-sm">
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <div class="form-group mb-3">
+                                    <label for="">Phone</label>
+                                    <input type="tel" name="phone" autocomplete="off" placeholder="Phone"
+                                        class="form-control form-control-sm">
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                <div class="form-group mb-3">
+                                    <label for="">Address</label>
+                                    <input type="text" name="address" autocomplete="off" placeholder="Address"
+                                        class="form-control form-control-sm">
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                <div class="form-group mb-3">
+                                    <label for="">Password</label>
+                                    <input type="password" name="password" autocomplete="off" placeholder="******"
+                                        class="form-control form-control-sm">
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="row">
+
+
+
+                            <div class="col-6">
+                                <label for="">Status</label>
+                                <select name="status" id="" class="form-select form-select-sm">
+                                    <option selected disabled>Select Status</option>
+                                    <option value="1">Active</option>
+                                    <option value="0">Inactive</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="modal-footer">
+
+                        <button type="submit" class="btn btn-primary btn-sm">Save changes</button>
+
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
 
 
 
