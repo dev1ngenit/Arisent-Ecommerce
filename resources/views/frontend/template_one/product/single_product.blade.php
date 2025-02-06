@@ -156,7 +156,7 @@
 
                                     <a onclick="buyToCartOne()" class="cart-button w-100">Add Cart</a>
 
-                                    <a class="cart-button w-100 ml-3 mt-0">Buy</a>
+                                    {{-- <a class="cart-button w-100 ml-3 mt-0">Buy</a> --}}
 
                                 </div>
 

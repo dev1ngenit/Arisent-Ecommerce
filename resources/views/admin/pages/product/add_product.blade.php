@@ -327,7 +327,7 @@
 
 
                                             {{-- category_id --}}
-                                            <div class="col-4 mb-3">
+                                            {{-- <div class="col-4 mb-3">
                                                 <div class="fv-row mb-3">
                                                     <label class="form-label required">Category
                                                         Name</label>
@@ -349,10 +349,10 @@
                                                         Category Name.
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> --}}
 
                                             {{-- subcategory_id --}}
-                                            <div class="col-4 mb-3">
+                                            {{-- <div class="col-4 mb-3">
                                                 <div class="fv-row mb-3">
                                                     <label class="form-label">SubCategory
                                                         Name</label>
@@ -363,15 +363,12 @@
                                                         <option></option>
 
                                                     </select>
-                                                    {{-- <div class="invalid-feedback">
-                                                        Please Enter
-                                                        SubCategory Name.
-                                                    </div> --}}
+
                                                 </div>
-                                            </div>
+                                            </div> --}}
 
                                             {{-- childcategory_id --}}
-                                            <div class="col-4 mb-3">
+                                            {{-- <div class="col-4 mb-3">
                                                 <div class="fv-row mb-3">
                                                     <label class="form-label">ChildCategory
                                                         Name</label>
@@ -382,10 +379,52 @@
                                                         <option></option>
 
                                                     </select>
-                                                    {{-- <div class="invalid-feedback">
-                                                        Please Enter
-                                                        ChildCategory Name.
-                                                    </div> --}}
+
+                                                </div>
+                                            </div> --}}
+
+                                            {{-- Category Dropdown --}}
+                                            <div class="col-4 mb-3">
+                                                <div class="fv-row mb-3">
+                                                    <label class="form-label required">Category Name</label>
+                                                    <select class="form-select form-select-solid form-select-sm"
+                                                        name="category_id" data-control="select2"
+                                                        data-placeholder="Category Name" data-allow-clear="true" required>
+                                                        <option></option>
+                                                        @if (count($categorys) > 0)
+                                                            @foreach ($categorys as $category)
+                                                                <option value="{{ $category->id }}">
+                                                                    {{ $category->category_name }}</option>
+                                                            @endforeach
+                                                        @endif
+                                                    </select>
+                                                    <div class="invalid-feedback">
+                                                        Please Enter Category Name.
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            {{-- Subcategory Dropdown --}}
+                                            <div class="col-4 mb-3">
+                                                <div class="fv-row mb-3">
+                                                    <label class="form-label"> SubCategory</label>
+                                                    <select class="form-select form-select-solid form-select-sm"
+                                                        name="subcategory_id" data-control="select2"
+                                                        data-placeholder="Select SubCategory" data-allow-clear="true">
+                                                        <option></option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            {{-- Childcategory Dropdown --}}
+                                            <div class="col-4 mb-3">
+                                                <div class="fv-row mb-3">
+                                                    <label class="form-label">Select ChildCategory</label>
+                                                    <select class="form-select form-select-solid form-select-sm"
+                                                        name="childcategory_id" data-control="select2"
+                                                        data-placeholder="Select ChildCategory" data-allow-clear="true">
+                                                        <option></option>
+                                                    </select>
                                                 </div>
                                             </div>
 
@@ -556,7 +595,8 @@
                                                 <label class="form-label"></label>
                                                 <div class="form-check form-check-custom form-check-solid mb-5">
                                                     <input class="form-check-input me-3" name="feature" type="checkbox"
-                                                        value="1" checked id="kt_docs_formvalidation_checkbox_option_1" />
+                                                        value="1" checked
+                                                        id="kt_docs_formvalidation_checkbox_option_1" />
                                                     <label class="form-check-label"
                                                         for="kt_docs_formvalidation_checkbox_option_1">
                                                         <div class="fw-bolder text-gray-800">Is
@@ -1342,7 +1382,7 @@
     </script>
 
     {{-- Category & Subcategory --}}
-    <script type="text/javascript">
+    {{-- <script type="text/javascript">
         $(document).ready(function() {
             $('select[name="category_id"]').on('change', function() {
                 var category_id = $(this).val();
@@ -1394,6 +1434,63 @@
                     //}
                 } else {
                     alert('danger');
+                }
+            });
+        });
+    </script> --}}
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // Load subcategories when category is selected
+            $('select[name="category_id"]').on('change', function() {
+                var category_id = $(this).val();
+                if (category_id) {
+                    // Clear previous subcategory and childcategory options
+                    $('select[name="subcategory_id"]').empty().append('<option></option>');
+                    $('select[name="childcategory_id"]').empty().append('<option></option>');
+
+                    // Make AJAX request to fetch subcategories
+                    $.ajax({
+                        url: "{{ url('/district-get/ajax') }}/" + category_id,
+                        type: "GET",
+                        dataType: "json",
+                        success: function(data) {
+                            $.each(data, function(key, value) {
+                                $('select[name="subcategory_id"]').append(
+                                    '<option value="' + value.id + '">' + value
+                                    .subcategory_name + '</option>');
+                            });
+                        },
+                        error: function() {
+                            alert('Error loading subcategories');
+                        }
+                    });
+                }
+            });
+
+            // Load childcategories when subcategory is selected
+            $('select[name="subcategory_id"]').on('change', function() {
+                var subcategory_id = $(this).val();
+                if (subcategory_id) {
+                    // Clear previous childcategory options
+                    $('select[name="childcategory_id"]').empty().append('<option></option>');
+
+                    // Make AJAX request to fetch childcategories
+                    $.ajax({
+                        url: "{{ url('/state-get/ajax') }}/" + subcategory_id,
+                        type: "GET",
+                        dataType: "json",
+                        success: function(data) {
+                            $.each(data, function(key, value) {
+                                $('select[name="childcategory_id"]').append(
+                                    '<option value="' + value.id + '">' + value
+                                    .childcategory_name + '</option>');
+                            });
+                        },
+                        error: function() {
+                            alert('Error loading childcategories');
+                        }
+                    });
                 }
             });
         });

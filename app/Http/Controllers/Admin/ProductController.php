@@ -15,20 +15,34 @@ use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
+    // public function GetCheckDistrict($category_id)
+    // {
+
+    //     $subcat = SubCategory::where('category_id', $category_id)->orderBy('subcategory_name', 'ASC')->get();
+
+    //     return json_encode($subcat);
+    // }
+
+    // public function StateGetAjax($subcategory_id)
+    // {
+
+    //     $ship = ChildCategory::where('subcategory_id', $subcategory_id)->orderBy('childcategory_name', 'ASC')->get();
+
+    //     return json_encode($ship);
+    // }
+
+    // Fetch subcategories based on the selected category
     public function GetCheckDistrict($category_id)
     {
-
-        $subcat = SubCategory::where('category_id', $category_id)->orderBy('subcategory_name', 'ASC')->get();
-
-        return json_encode($subcat);
+        $subcategories = SubCategory::where('category_id', $category_id)->orderBy('subcategory_name', 'ASC')->get();
+        return response()->json($subcategories); // Return as JSON
     }
 
+// Fetch childcategories based on the selected subcategory
     public function StateGetAjax($subcategory_id)
     {
-
-        $ship = ChildCategory::where('subcategory_id', $subcategory_id)->orderBy('childcategory_name', 'ASC')->get();
-
-        return json_encode($ship);
+        $childcategories = ChildCategory::where('subcategory_id', $subcategory_id)->orderBy('childcategory_name', 'ASC')->get();
+        return response()->json($childcategories); // Return as JSON
     }
 
     //All Product
@@ -83,7 +97,7 @@ class ProductController extends Controller
 
         // Sku Code
         $typePrefix = 'DB';
-        $lastCode = Product::where('sku_code', 'like', $typePrefix . '-' . '%')
+        $lastCode   = Product::where('sku_code', 'like', $typePrefix . '-' . '%')
             ->orderBy('id', 'desc')
             ->first();
 
@@ -96,7 +110,7 @@ class ProductController extends Controller
             // Start with 1 if there's no existing code
             $newNumber = 1;
         }
-        
+
         // Format the new number with leading zeros, assuming you want a total of 6 digits
         $newNumberFormatted = str_pad($newNumber, 6, '0', STR_PAD_LEFT);
         // Construct the new code
@@ -309,7 +323,7 @@ class ProductController extends Controller
             Product::findOrFail($update)->update([
 
                 'product_name'              => $request->product_name,
-                'sku_code' => $request->sku_code,
+                'sku_code'                  => $request->sku_code,
                 'mf_code'                   => $request->mf_code,
                 'notification_days'         => $request->notification_days,
                 'product_slug'              => Str::slug($request->product_name, "-"),

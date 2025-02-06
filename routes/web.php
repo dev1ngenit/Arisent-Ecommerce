@@ -49,7 +49,7 @@ Route::controller(IndexController::class)->group(function () {
     //Contact Frontend
     Route::get('/contact-user', 'ContactUser')->name('contact.user');
     Route::post('/send-message', 'SendMessage')->name('send.message');
-    
+
     //Brand Page
     Route::get('/brand', 'BrandPage')->name('brand.page');
     Route::get('/brand-wise-product/{id}', 'BrandWiseProduct')->name('brand.wise.product');
@@ -197,7 +197,7 @@ Route::controller(TemplateOneCartController::class)->group(function () {
     Route::post('/cart-checkout-store', 'CheckoutStoreTemplateOne')->name('template.checkout.store');
 
     // ==================================
-    // Route::post('/apply-coupon', 'applyCoupon')->name('apply.coupon');
+    Route::post('/apply-coupon', 'applyCoupon')->name('apply.coupon');
 });
 
 // Template Two Controller
