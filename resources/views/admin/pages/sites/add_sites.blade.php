@@ -4,7 +4,6 @@
 
     <!--begin::Content-->
 
-
     <!--begin::Toolbar-->
     <div class="toolbar" id="kt_toolbar">
         <!--begin::Container-->
@@ -49,11 +48,11 @@
                 <div class="card-body">
                     <!--begin::Table-->
 
-                    <form action="{{ route('update.site') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('store.site') }}" method="POST" enctype="multipart/form-data">
 
                         @csrf
 
-                        <input type="hidden" name="id" value="{{ $site->id }}">
+                        {{-- <input type="hidden" name="id" value="{{ $site->id }}"> --}}
 
                         <div class="modal-body">
 
@@ -65,7 +64,7 @@
                                         <label for="" class="mb-2">Site
                                             Name</label>
                                         <input type="text" name="site_name" class="form-control form-control-sm"
-                                            placeholder="Site Name" value="{{ $site->site_name }}" autocomplete="off">
+                                            placeholder="Site Name" value="" autocomplete="off">
                                     </div>
                                 </div>
 
@@ -75,7 +74,7 @@
                                         <label for="" class="mb-2">Site
                                             Slogan</label>
                                         <input type="text" name="site_slogan" class="form-control form-control-sm"
-                                            placeholder="Site Slogan" value="{{ $site->site_slogan }}" autocomplete="off">
+                                            placeholder="Site Slogan" value="" autocomplete="off">
                                     </div>
                                 </div>
 
@@ -85,7 +84,7 @@
                                         <label for="" class="mb-2">Company
                                             Name</label>
                                         <input type="text" name="company_name" class="form-control form-control-sm"
-                                            placeholder="Company Name" value="{{ $site->company_name }}" autocomplete="off">
+                                            placeholder="Company Name" value="" autocomplete="off">
 
                                     </div>
                                 </div>
@@ -96,7 +95,7 @@
                                         <label for="" class="mb-2">Phone
                                             One</label>
                                         <input type="text" name="phone_one" class="form-control form-control-sm"
-                                            placeholder="Phone One" value="{{ $site->phone_one }}" autocomplete="off">
+                                            placeholder="Phone One" value="" autocomplete="off">
                                     </div>
 
                                 </div>
@@ -107,7 +106,7 @@
                                         <label for="" class="mb-2">Phone
                                             Two</label>
                                         <input type="tel" name="phone_two" class="form-control form-control-sm"
-                                            placeholder="Phone Two" value="{{ $site->phone_two }}" autocomplete="off">
+                                            placeholder="Phone Two" value="" autocomplete="off">
 
                                     </div>
 
@@ -119,8 +118,7 @@
                                         <label for="" class="mb-2">Whatsapp
                                             Number</label>
                                         <input type="tel" name="whatsapp_number" class="form-control form-control-sm"
-                                            placeholder="Whatsapp Number" value="{{ $site->whatsapp_number }}"
-                                            autocomplete="off">
+                                            placeholder="Whatsapp Number" value="" autocomplete="off">
                                     </div>
 
                                 </div>
@@ -130,20 +128,17 @@
                                     <div class="form-group mb-3">
                                         <label for="" class="mb-2">Address</label>
                                         <input type="text" name="address" class="form-control form-control-sm"
-                                            placeholder="Address" value="{{ $site->address }}" autocomplete="off">
+                                            placeholder="Address" value="" autocomplete="off">
                                     </div>
 
                                 </div>
-
-
 
                                 <div class="col-3">
                                     <div class="form-group mb-3">
                                         <label for="" class="mb-2">Contact
                                             Email</label>
                                         <input type="email" name="contact_email" class="form-control form-control-sm"
-                                            placeholder="Contact Email" value="{{ $site->contact_email }}"
-                                            autocomplete="off">
+                                            placeholder="Contact Email" value="" autocomplete="off">
                                     </div>
                                 </div>
 
@@ -152,7 +147,7 @@
                                         <label for="" class="mb-2">Info
                                             Email</label>
                                         <input type="email" name="info_email" class="form-control form-control-sm"
-                                            placeholder="Info Email" value="{{ $site->info_email }}" autocomplete="off">
+                                            placeholder="Info Email" value="" autocomplete="off">
                                     </div>
                                 </div>
 
@@ -161,8 +156,7 @@
                                         <label for="" class="mb-2">Support
                                             Email</label>
                                         <input type="email" name="support_email" class="form-control form-control-sm"
-                                            placeholder="Support Email" value="{{ $site->support_email }}"
-                                            autocomplete="off">
+                                            placeholder="Support Email" value="" autocomplete="off">
                                     </div>
                                 </div>
 
@@ -171,8 +165,7 @@
                                         <label for="" class="mb-2">Sales
                                             Email</label>
                                         <input type="email" name="sales_email" class="form-control form-control-sm"
-                                            placeholder="Sales Email" value="{{ $site->sales_email }}"
-                                            autocomplete="off">
+                                            placeholder="Sales Email" value="" autocomplete="off">
                                     </div>
                                 </div>
 
@@ -181,8 +174,7 @@
                                         <label for="" class="mb-2">Facebook
                                             Url</label>
                                         <input type="text" name="facebook_url" class="form-control form-control-sm"
-                                            placeholder="Facebook Url" value="{{ $site->facebook_url }}"
-                                            autocomplete="off">
+                                            placeholder="Facebook Url" value="" autocomplete="off">
                                     </div>
                                 </div>
 
@@ -191,7 +183,7 @@
                                         <label for="" class="mb-2">Skype
                                             Url</label>
                                         <input type="text" name="skype_url" class="form-control form-control-sm"
-                                            placeholder="Skype Url" value="{{ $site->skype_url }}" autocomplete="off">
+                                            placeholder="Skype Url" value="" autocomplete="off">
                                     </div>
                                 </div>
 
@@ -200,7 +192,7 @@
                                         <label for="" class="mb-2">Twitter
                                             Url</label>
                                         <input type="text" name="twitter_url" class="form-control form-control-sm"
-                                            placeholder="Skype Url" value="{{ $site->twitter_url }}" autocomplete="off">
+                                            placeholder="Skype Url" value="" autocomplete="off">
                                     </div>
                                 </div>
 
@@ -209,8 +201,7 @@
                                         <label for="" class="mb-2">Instragram
                                             Url</label>
                                         <input type="text" name="instagram_url" class="form-control form-control-sm"
-                                            placeholder="Instragram Url" value="{{ $site->instagram_url }}"
-                                            autocomplete="off">
+                                            placeholder="Instragram Url" value="" autocomplete="off">
                                     </div>
                                 </div>
 
@@ -219,8 +210,7 @@
                                         <label for="" class="mb-2">Linedin
                                             Url</label>
                                         <input type="text" name="linkedin_url" class="form-control form-control-sm"
-                                            placeholder="Linedin Url" value="{{ $site->linkedin_url }}"
-                                            autocomplete="off">
+                                            placeholder="Linedin Url" value="" autocomplete="off">
                                     </div>
                                 </div>
 
@@ -229,8 +219,7 @@
                                         <label for="" class="mb-2">Youtube
                                             Url</label>
                                         <input type="text" name="youtube_url" class="form-control form-control-sm"
-                                            placeholder="Youtube Url" value="{{ $site->youtube_url }}"
-                                            autocomplete="off">
+                                            placeholder="Youtube Url" value="" autocomplete="off">
                                     </div>
                                 </div>
 
@@ -239,7 +228,7 @@
                                         <label for="" class="mb-2">Github
                                             Url</label>
                                         <input type="text" name="github_url" class="form-control form-control-sm"
-                                            placeholder="Github Url" value="{{ $site->github_url }}" autocomplete="off">
+                                            placeholder="Github Url" value="" autocomplete="off">
                                     </div>
                                 </div>
 
@@ -248,8 +237,7 @@
                                         <label for="" class="mb-2">Portfolio
                                             Url</label>
                                         <input type="text" name="portfolio_url" class="form-control form-control-sm"
-                                            placeholder="Portfolio Url" value="{{ $site->portfolio_url }}"
-                                            autocomplete="off">
+                                            placeholder="Portfolio Url" value="" autocomplete="off">
                                     </div>
                                 </div>
 
@@ -258,7 +246,7 @@
                                         <label for="" class="mb-2">Fiver
                                             Url</label>
                                         <input type="text" name="fiver_url" class="form-control form-control-sm"
-                                            placeholder="Fiver Url" value="{{ $site->fiver_url }}" autocomplete="off">
+                                            placeholder="Fiver Url" value="" autocomplete="off">
                                     </div>
                                 </div>
 
@@ -267,7 +255,7 @@
                                         <label for="" class="mb-2">Upword
                                             Url</label>
                                         <input type="text" name="upwork_url" class="form-control form-control-sm"
-                                            placeholder="Fiver Url" value="{{ $site->upwork_url }}" autocomplete="off">
+                                            placeholder="Fiver Url" value="" autocomplete="off">
                                     </div>
                                 </div>
 
@@ -276,8 +264,7 @@
                                         <label for="" class="mb-2">Service Day
                                             Url</label>
                                         <input type="text" name="service_days" class="form-control form-control-sm"
-                                            placeholder="Service Day" value="{{ $site->service_days }}"
-                                            autocomplete="off">
+                                            placeholder="Service Day" value="" autocomplete="off">
                                     </div>
                                 </div>
 
@@ -286,30 +273,31 @@
                                         <label for="" class="mb-2">Service Time
                                             Url</label>
                                         <input type="text" name="service_time" class="form-control form-control-sm"
-                                            placeholder="Service Time" value="{{ $site->service_time }}"
-                                            autocomplete="off">
+                                            placeholder="Service Time" value="" autocomplete="off">
                                     </div>
                                 </div>
 
                                 <div class="col-4">
                                     <div class="form-group mb-3">
-                                        <label for="" class="mb-2">White
-                                            Logo</label>
+                                        <label for="" class="mb-2">White Logo</label>
                                         <input type="file" name="logo_white" class="form-control form-control-sm"
-                                            autocomplete="off">
-                                        <img src="{{ asset('upload/logo_white/' . $site->logo_white) }}" alt=""
-                                            style="width: 73px;height:70px;" class="mt-2">
+                                            autocomplete="off" onchange="previewImage(event, 'white-logo-preview')">
+                                    </div>
+                                    <div id="white-logo-preview-container" style="margin-top: 10px;">
+                                        <img id="white-logo-preview" src="" alt="White Logo Preview"
+                                            style="display:none; max-width: 30%; height: auto;">
                                     </div>
                                 </div>
 
                                 <div class="col-4">
                                     <div class="form-group mb-3">
-                                        <label for="" class="mb-2">Black
-                                            Logo</label>
+                                        <label for="" class="mb-2">Black Logo</label>
                                         <input type="file" name="logo_black" class="form-control form-control-sm"
-                                            autocomplete="off">
-                                        <img src="{{ asset('upload/logo_black/' . $site->logo_black) }}" alt=""
-                                            style="width: 73px;height:70px;" class="mt-2">
+                                            autocomplete="off" onchange="previewImage(event, 'black-logo-preview')">
+                                    </div>
+                                    <div id="black-logo-preview-container" style="margin-top: 10px;">
+                                        <img id="black-logo-preview" src="" alt="Black Logo Preview"
+                                            style="display:none; max-width: 30%; height: auto;">
                                     </div>
                                 </div>
 
@@ -317,9 +305,11 @@
                                     <div class="form-group mb-3">
                                         <label for="" class="mb-2">Favicon</label>
                                         <input type="file" name="favicon" class="form-control form-control-sm"
-                                            autocomplete="off">
-                                        <img src="{{ asset('upload/favicon/' . $site->favicon) }}" alt=""
-                                            style="width: 73px;height:70px;" class="mt-2">
+                                            autocomplete="off" onchange="previewImage(event, 'favicon-preview')">
+                                    </div>
+                                    <div id="favicon-preview-container" style="margin-top: 10px;">
+                                        <img id="favicon-preview" src="" alt="Favicon Preview"
+                                            style="display:none; max-width: 30%; height: auto;">
                                     </div>
                                 </div>
 
@@ -340,7 +330,20 @@
     </div>
     <!--end::Post-->
 
-    {{-- Modal --}}
+    <script>
+        function previewImage(event, previewId) {
+            var preview = document.getElementById(previewId);
+            var file = event.target.files[0];
+            var reader = new FileReader();
 
-    <!-- Button trigger modal -->
+            reader.onload = function(e) {
+                preview.src = e.target.result;
+                preview.style.display = 'block'; // Show image when loaded
+            }
+
+            if (file) {
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
 @endsection

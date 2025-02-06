@@ -1,37 +1,37 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\FaqController;
-use App\Http\Controllers\Admin\SiteController;
-use App\Http\Controllers\Admin\SmtpController;
-use App\Http\Controllers\Admin\TermController;
+use App\Http\Controllers\AdminAuth\AuthenticatedSessionController;
+use App\Http\Controllers\AdminAuth\ConfirmablePasswordController;
+use App\Http\Controllers\AdminAuth\EmailVerificationNotificationController;
+use App\Http\Controllers\AdminAuth\EmailVerificationPromptController;
+use App\Http\Controllers\AdminAuth\NewPasswordController;
+use App\Http\Controllers\AdminAuth\PasswordController;
+use App\Http\Controllers\AdminAuth\PasswordResetLinkController;
+use App\Http\Controllers\AdminAuth\VerifyEmailController;
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Admin\ColorController;
-use App\Http\Controllers\Backend\RoleController;
-use App\Http\Controllers\Admin\ContactController;
-use App\Http\Controllers\Admin\ProductController;
-use App\Http\Controllers\Backend\BrandController;
-use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Admin\DataBaseController;
-use App\Http\Controllers\Admin\EmployeeController;
-use App\Http\Controllers\Backend\BannerController;
-use App\Http\Controllers\Admin\SubscribeController;
 use App\Http\Controllers\Admin\AdminOrderController;
-use App\Http\Controllers\Admin\SubCategoryController;
-use App\Http\Controllers\Admin\ReturnPolicyController;
-use App\Http\Controllers\AdminAuth\PasswordController;
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ChildCategoryController;
+use App\Http\Controllers\Admin\ColorController;
+use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Admin\DataBaseController;
+use App\Http\Controllers\Admin\EmployeeCategoryController;
+use App\Http\Controllers\Admin\EmployeeController;
+use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\OfferCategoryController;
 use App\Http\Controllers\Admin\PrivacyPolicyController;
-use App\Http\Controllers\AdminAuth\NewPasswordController;
-use App\Http\Controllers\AdminAuth\VerifyEmailController;
-use App\Http\Controllers\Admin\EmployeeCategoryController;
-use App\Http\Controllers\AdminAuth\PasswordResetLinkController;
-use App\Http\Controllers\AdminAuth\ConfirmablePasswordController;
-use App\Http\Controllers\AdminAuth\AuthenticatedSessionController;
-use App\Http\Controllers\AdminAuth\EmailVerificationPromptController;
-use App\Http\Controllers\AdminAuth\EmailVerificationNotificationController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\ReturnPolicyController;
+use App\Http\Controllers\Admin\SiteController;
+use App\Http\Controllers\Admin\SmtpController;
+use App\Http\Controllers\Admin\SubCategoryController;
+use App\Http\Controllers\Admin\SubscribeController;
+use App\Http\Controllers\Admin\TermController;
+use App\Http\Controllers\Backend\BannerController;
+use App\Http\Controllers\Backend\BrandController;
+use App\Http\Controllers\Backend\RoleController;
+use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest:admin')->group(function () {
 
@@ -223,6 +223,8 @@ Route::middleware(['auth:admin', 'verified'])->group(function () {
 
         Route::get('/all', 'AllSite')->name('all.sites');
         // Route::get('/all', 'AllSite')->name('all.sites')->middleware('permission:all.setting');
+        Route::get('/add', 'AddSite')->name('add.sites');
+        Route::post('/store', 'StoreSite')->name('store.site');
         Route::post('/update', 'UpdateSite')->name('update.site');
         Route::get('/edit/{id}', 'EditSite')->name('edit.site');
     });

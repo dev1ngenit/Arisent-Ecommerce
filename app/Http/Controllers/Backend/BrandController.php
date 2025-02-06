@@ -11,8 +11,6 @@ use Illuminate\Support\Str;
 
 class BrandController extends Controller
 {
-
-    
     //All Brand
     public function AllBrand()
     {
@@ -65,7 +63,7 @@ class BrandController extends Controller
                 ]);
             } else {
 
-                $globalFunImg = Helper::customUpload($mainFile, $imgPath, 20, 20);
+                $globalFunImg = Helper::customUpload($mainFile, $imgPath);
 
                 if ($globalFunImg['status'] == 1) {
                     Brand::create([
@@ -115,7 +113,7 @@ class BrandController extends Controller
             $iconimgPath = storage_path('app/public/brand'); //////
 
             if (isset($mainFile)) {
-                $globalFunImg = Helper::customUpload($mainFile, $uploadPath, 200, 200);
+                $globalFunImg = Helper::customUpload($mainFile, $uploadPath);
             } else {
                 $globalFunImg['status'] = 0;
             }
@@ -220,7 +218,6 @@ class BrandController extends Controller
         ]);
 
         toastr()->success('Brand Active Successfully');
-
         return redirect()->back();
     }
 

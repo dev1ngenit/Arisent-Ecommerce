@@ -32,11 +32,11 @@
             </div>
             <!--end::Page title-->
             <!--begin::Actions-->
-            {{-- <div class="d-flex align-items-center gap-2 gap-lg-3">
+            <div class="d-flex align-items-center gap-2 gap-lg-3">
 
-                <a href="" class="btn btn-light-primary btn-sm">Contact</a>
+                <a href="{{ route('add.sites') }}" class="btn btn-light-primary btn-sm">Add Sitting</a>
 
-            </div> --}}
+            </div>
             <!--end::Actions-->
         </div>
         <!--end::Container-->
@@ -51,9 +51,10 @@
                     <!--begin::Table-->
 
                     <table id="kt_datatable_example_5" class="table table-striped" style="width:100%">
+
                         <thead>
-                            <tr>
-                                <th style="width:35px;">No</th>
+                            <tr class="bg-dark text-light">
+                                <th style="width:35px;" class="text-center">No</th>
                                 <th>Logo White</th>
                                 {{-- <th>Logo Black</th> --}}
                                 <th>Favicon</th>
@@ -64,11 +65,12 @@
                                 <th>Action</th>
                             </tr>
                         </thead>
+
                         <tbody>
                             @foreach ($sites as $key => $site)
                                 <tr>
 
-                                    <td>{{ $key + 1 }}</td>
+                                    <td class="text-center">{{ $key + 1 }}</td>
                                     <td>
                                         <img src="{{ asset('upload/logo_white/' . $site->logo_white) }}"
                                             style="width: 40px;height:40px;" alt="">
@@ -88,10 +90,10 @@
 
                                     <td>
 
-                                        @if (Auth::guard('admin')->user()->can('edit.setting'))
+                                        {{-- @if (Auth::guard('admin')->user()->can('edit.setting')) --}}
                                             <a href="{{ route('edit.site', $site->id) }}" class="ms-1" title="Edit"><i
                                                     class="bi bi-pencil-square fs-3 text-primary"></i></a>
-                                        @endif
+                                        {{-- @endif --}}
 
                                         {{-- Edit Modal --}}
 
