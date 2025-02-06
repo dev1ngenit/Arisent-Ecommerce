@@ -83,7 +83,6 @@ class ProductController extends Controller
 
         // Sku Code
         $typePrefix = 'DB';
-        // Find the most recent code for the given type and year
         $lastCode = Product::where('sku_code', 'like', $typePrefix . '-' . '%')
             ->orderBy('id', 'desc')
             ->first();
@@ -97,6 +96,7 @@ class ProductController extends Controller
             // Start with 1 if there's no existing code
             $newNumber = 1;
         }
+        
         // Format the new number with leading zeros, assuming you want a total of 6 digits
         $newNumberFormatted = str_pad($newNumber, 6, '0', STR_PAD_LEFT);
         // Construct the new code
@@ -309,7 +309,7 @@ class ProductController extends Controller
             Product::findOrFail($update)->update([
 
                 'product_name'              => $request->product_name,
-                // 'sku_code' => $request->sku_code,
+                'sku_code' => $request->sku_code,
                 'mf_code'                   => $request->mf_code,
                 'notification_days'         => $request->notification_days,
                 'product_slug'              => Str::slug($request->product_name, "-"),
