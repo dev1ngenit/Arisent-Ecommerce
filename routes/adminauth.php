@@ -481,9 +481,7 @@ Route::middleware(['auth:admin'])->prefix('admin')->name('admin.')->group(functi
             'privacy-policy' => PrivacyPolicyController::class,
             'return-policy'  => ReturnPolicyController::class,
         ],
-
     );
-
 });
 
 Route::middleware(['auth:admin'])->group(function () {

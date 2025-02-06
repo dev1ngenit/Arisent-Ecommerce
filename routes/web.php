@@ -49,15 +49,12 @@ Route::controller(IndexController::class)->group(function () {
     //Contact Frontend
     Route::get('/contact-user', 'ContactUser')->name('contact.user');
     Route::post('/send-message', 'SendMessage')->name('send.message');
+    
     //Brand Page
     Route::get('/brand', 'BrandPage')->name('brand.page');
     Route::get('/brand-wise-product/{id}', 'BrandWiseProduct')->name('brand.wise.product');
     //About Page
     Route::get('/about', 'AboutPage')->name('about.page');
-
-    // lOGIN wITH gOOGLE
-    // Route::get('login/google', 'redirectToGoogle')->name('login.google');
-    // Route::get('login/google/callback', 'googleCallback');
 });
 
 Route::middleware(['auth', 'verified'])->group(function () {
