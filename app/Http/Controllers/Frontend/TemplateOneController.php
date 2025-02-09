@@ -374,7 +374,7 @@ class TemplateOneController extends Controller
     //Template One About
     public function TemplateOneAboutUs()
     {
-        $about = About::where('status', 'tamplate_one')->find(1);
+        $about = About::latest('id')->first();
         return view('frontend.template_one.about.about_us', compact('about'));
     }
 

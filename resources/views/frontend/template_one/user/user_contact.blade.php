@@ -46,7 +46,7 @@
 
                 <div class="col-lg-3">
                     <div class="mb-3">
-                        <label for="" class="form-label">City <span class="text-danger">*</span></label> <br>
+                        <label for="" class="form-label">City</label> <br>
                         <input type="text" name="city" value="{{ $profileData->city }}" id=""
                             class="form-control" placeholder="City" aria-describedby="helpId" />
                     </div>
@@ -54,7 +54,7 @@
 
                 <div class="col-lg-3">
                     <div class="mb-3">
-                        <label for="" class="form-label">Zip Code <span class="text-danger">*</span></label>
+                        <label for="" class="form-label">Zip Code</label>
                         <input type="text" name="postal_code" value="{{ $profileData->postal_code }}" id=""
                             class="form-control" placeholder="Zip Code" aria-describedby="helpId" />
                     </div>
@@ -185,7 +185,7 @@
                 </div>
             </div>
         </form>
-        
+
     </div> --}}
-    
+
 </div>

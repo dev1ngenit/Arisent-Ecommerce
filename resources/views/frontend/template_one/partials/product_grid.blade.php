@@ -17,12 +17,12 @@
                 </div>
                 <div class="price font-weight-bold pr-2">
                     @if ($product->price_status == 'rfq' && !is_null($product->sas_price))
-                        <h6 class="grenadier-color mb-0 font-weight-bold">$ {{ $product->sas_price }}</h6>
+                        <h6 class="grenadier-color mb-0 font-weight-bold">Tk {{ $product->sas_price }}</h6>
                     @elseif ($product->price_status == 'offer_price' && !is_null($product->price) && !is_null($product->discount_price))
-                        <del>$ {{ $product->price }}</del>
-                        <h6 class="grenadier-color mb-0 font-weight-bold">$ {{ $product->discount_price }}</h6>
+                        <del>Tk {{ $product->price }}</del>
+                        <h6 class="grenadier-color mb-0 font-weight-bold">Tk {{ $product->discount_price }}</h6>
                     @elseif ($product->price_status == 'price' && !is_null($product->price))
-                        <h6 class="grenadier-color mb-0 font-weight-bold">$ {{ $product->price }}</h6>
+                        <h6 class="grenadier-color mb-0 font-weight-bold">Tk {{ $product->price }}</h6>
                     @endif
                 </div>
             </div>

@@ -103,7 +103,7 @@
 
                                             @if ($product->discount_price !== null)
                                                 <h5 class="grenadier-color mb-0 fw-bold">
-                                                    $ {{ $product->discount_price }}
+                                                    Tk {{ $product->discount_price }}
                                                 </h5>
                                             @endif
 

@@ -2,7 +2,7 @@
 
 @section('index_template_one')
 @section('title')
-    DadaBhaai | Product
+    Arisent | Product
 @endsection
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

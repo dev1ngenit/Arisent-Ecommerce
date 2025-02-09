@@ -62,23 +62,18 @@ Route::middleware(['auth', 'verified'])->group(function () {
     //User Dashboard
     Route::get('/dashboard', [TemplateOneController::class, 'TemplateOneDashboard'])->name('template.one.dashboard');
     Route::post('/user/profile-update', [TemplateOneController::class, 'TemplateOneProfileUpdate'])->name('template.one.user.profile.update');
-
     //User Password
     Route::post('/user/password-update', [TemplateOneController::class, 'TemplateOnePasswordUpdate'])->name('template.one.user.password.update');
-
     //Template One Order Details
     Route::get('/user/order-details/{id}', [TemplateOneController::class, 'TemplateOneOrderDetails'])->name('template.one.user.order.details');
-
     //Invoice
     Route::get('/user/order-invoice/{id}', [TemplateOneController::class, 'TemplateOneOrderInvoice'])->name('template.one.user.invoice');
-
     //User Logout
     Route::get('/user-logout', [TemplateOneController::class, 'TemplateOneUserLogout'])->name('template.one.user.logout');
 });
 
 //Add To WishList
 Route::post('/add-to-wishlist/{product_id}', [TemplateOneCartController::class, 'AddToWishList']);
-
 Route::get('brand/related-product-search', [TemplateOneController::class, 'BrandRelatedProductSearch'])->name('brand.related.product.search');
 
 // Template One Controller
@@ -87,35 +82,26 @@ Route::controller(TemplateOneController::class)->group(function () {
     //All Product
     Route::get('/all-product', 'TemplateOneAllProduct')->name('template.one.all_product');
     Route::post('/shop-filter', 'shopFilter')->name('shop.filter');
-
     //user login
     Route::post('/user-login', 'userLogin')->name('user.login');
-
     //Brand Wise
     Route::get('/product/brand/{id}/{brand_slug}', 'BrandRelatedProductOne');
-
     //Category Page
     Route::get('/home-category', 'HomeAllCategory')->name('home.all.category.page');
     Route::get('/product/category/{id}/{category_slug}', 'CategoryRelatedProductOne');
-
     //Offer Category Page
     Route::get('/offer-categorywise/product/{id}', 'OfferCategoryRelatedProductOne')->name('offer-categorywise.product');
     Route::get('/offerwise/product/{id}', 'OfferWiseProductOne')->name('offerwise.product');
-
     //Child Category
     Route::get('/product/childcategory/{id}/{childcategory_slug}', 'ChilldCategoryRelatedProductOne');
-
     //Contact
     Route::get('/contact', 'TemplateOneContact')->name('template_one.contact');
     Route::post('/user-contact/send', 'TemplateOneContactStore')->name('template_one.contact.store');
-
     //Product Search
     Route::post('/search', 'ProductSearch')->name('product.search');
     // Route::post('/search-product', 'SearchProduct');
-
     //Login
-    Route::get('/dadabhai-login', 'TemplateOneLogin')->name('template.one.login');
-
+    Route::get('/arisent-login', 'TemplateOneLogin')->name('template.one.login');
     //Faq
     Route::get('/faq', 'TemplateOneFaq')->name('template.one.faq');
     //Privacy
@@ -126,7 +112,6 @@ Route::controller(TemplateOneController::class)->group(function () {
     Route::get('/terms', 'TemplateOneTerm')->name('template.one.term');
     //About Us
     Route::get('/about-us', 'TemplateOneAboutUs')->name('template.one.about');
-
     // Track Order
     Route::get('/user/tracking/order', 'TemplateOneTackOrder')->name('template.one.track.order');
     Route::post('/tracking-order', 'TemplateOneTackOrderSearch')->name('track.order.search');
@@ -152,32 +137,25 @@ Route::controller(TemplateOneController::class)->group(function () {
 
 //Cart Controller
 Route::controller(CartController::class)->group(function () {
-
     Route::get('/product-cart', 'TotalCart')->name('product.cart');
 
 });
 
 //Template One Cart Controller
 Route::controller(TemplateOneCartController::class)->group(function () {
-
     //Offer To Cart
     Route::post('/product/offer/store', 'OfferToCartTemplateOne');
-
     //Buy To Cart
     Route::post('/product/buy/store/{id}', 'BuyToCartTemplateOne');
-
     //Add To Cart
     Route::post('/product/store/{id}', 'AddToCartTemplateOne');
     Route::get('/product/mini-cart', 'AddMiniCartTemplateOne');
     Route::get('/minicart/product/remove/{rowId}', 'RemoveMiniCartTemplateOne');
-
     Route::post('/fcart/data/store/{id}', 'AddToCartTemplateOneFrontend');
-
     //AddToCartOfferProductTemplateOne
     Route::post('/offer-product-store', 'AddToCartOfferProductTemplateOne');
     Route::post('/product-store-cart', 'AddToCartProductHome');
     Route::post('/product-store-cart-single', 'AddToCartProductHomeSingle');
-
     Route::post('/product/store/related/{id}', 'AddToCartTemplateOneRelated');
     Route::get('/product/mini/cart/related', 'AddMiniCartTemplateOneRelated');
     Route::get('/mini-cart/increase/{rowId}', 'IncreaseMiniCartTemplateOneRelated');
@@ -188,7 +166,6 @@ Route::controller(TemplateOneCartController::class)->group(function () {
     Route::get('/view-cart', 'ViewCartTemplateOne')->name('template.one.view.cart');
     Route::get('/get-cart-product', 'GetCartProduct');
     Route::get('/cart-remove/{rowId}', 'CartRemove');
-
     Route::get('/cart-decrement/{rowId}', 'CartDecrement');
     Route::get('/cart-increment/{rowId}', 'CartIncrement');
 

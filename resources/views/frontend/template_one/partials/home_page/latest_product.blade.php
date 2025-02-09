@@ -56,7 +56,7 @@
                                                 class="fas fa-random"></i></a></li>
                                 </ul>
                             </div>
-                            
+
                             <div class="product-content d-flex justify-content-between align-items-center">
                                 <div>
 
@@ -90,15 +90,15 @@
                                     @if ($product->sas_price !== null || $product->price !== null || $product->discount_price !== null)
                                         @if ($product->price_status == 'rfq' && $product->sas_price !== null)
                                             <h6 class="grenadier-color mb-0 font-weight-bold">
-                                                $ {{ $product->sas_price }}
+                                                Tk {{ $product->sas_price }}
                                             </h6>
                                         @elseif ($product->price_status == 'offer_price' && $product->price !== null && $product->discount_price !== null)
-                                            <del>$ {{ $product->price }}</del>
-                                            <h6 class="grenadier-color mb-0 font-weight-bold">$
+                                            <del>Tk {{ $product->price }}</del>
+                                            <h6 class="grenadier-color mb-0 font-weight-bold">Tk
                                                 {{ $product->discount_price }}</h6>
                                         @elseif ($product->price_status == 'price' && $product->price !== null)
                                             <h6 class="grenadier-color mb-0 font-weight-bold">
-                                                $ {{ $product->price }}
+                                                Tk {{ $product->price }}
                                             </h6>
                                         @endif
                                     @endif

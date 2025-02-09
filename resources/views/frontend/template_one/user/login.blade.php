@@ -1,6 +1,6 @@
 @extends('frontend.template_one.frontend_dashboard_template_one')
 @section('index_template_one')
-@section('title', 'Dada Bhaai | Login')
+@section('title', 'Arisent | Login')
 
 <style>
     .password-strength-sidebar {
@@ -218,7 +218,7 @@
                                 <div class="col-lg-12">
                                     <div class="form-group form-check">
                                         <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
-                                        <label class="form-check-label pt-0" for="exampleCheck1">I agree on DadaBhaai
+                                        <label class="form-check-label pt-0" for="exampleCheck1">I agree on Arisent
                                             Term & Condition.</label>
                                     </div>
                                 </div>

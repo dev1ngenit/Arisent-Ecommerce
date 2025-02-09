@@ -199,15 +199,15 @@
                                                     ($product->price_status == 'price' && !is_null($product->price)))
                                                 @if ($product->price_status == 'rfq')
                                                     <h6 class="grenadier-color mb-0 font-weight-bold">
-                                                        $ {{ $product->sas_price }}
+                                                        Tk {{ $product->sas_price }}
                                                     </h6>
                                                 @elseif ($product->price_status == 'offer_price')
-                                                    <del>$ {{ $product->price }}</del>
-                                                    <h6 class="grenadier-color mb-0 font-weight-bold">$
+                                                    <del>Tk {{ $product->price }}</del>
+                                                    <h6 class="grenadier-color mb-0 font-weight-bold">Tk
                                                         {{ $product->discount_price }}</h6>
                                                 @elseif ($product->price_status == 'price')
                                                     <h6 class="grenadier-color mb-0 font-weight-bold">
-                                                        $ {{ $product->price }}
+                                                        Tk {{ $product->price }}
                                                     </h6>
                                                 @endif
                                             @endif

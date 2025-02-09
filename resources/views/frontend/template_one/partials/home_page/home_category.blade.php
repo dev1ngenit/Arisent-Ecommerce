@@ -8,8 +8,6 @@
         <div class="container">
             <div class="row">
 
-
-
                 <div class="col-xl-2 slider-category">
                     <div class="top__featured--title">
                         <span class="dusty__gray-color text-uppercase">Top Featured</span>

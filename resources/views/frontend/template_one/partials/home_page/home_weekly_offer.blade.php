@@ -60,10 +60,10 @@
                                                                     id="opname">{{ $offer_cat->offer->products->product_name }}</a>
                                                             </h6>
 
-                                                            <span>$ </span><span
+                                                            <span>Tk</span><span
                                                                 class="price-old">{{ $offer_cat->offer->price }}</span>
 
-                                                            <span class="f-600 grenadier-color">$<span
+                                                            <span class="f-600 grenadier-color">Tk<span
                                                                     class="price-new f-600 grenadier-color"
                                                                     id="">{{ $offer_cat->offer->discount_price }}</span></span>
 

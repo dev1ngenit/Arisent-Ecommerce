@@ -1,6 +1,6 @@
 @extends('frontend.template_one.frontend_dashboard_template_one')
 @section('index_template_one')
-@section('title', 'Dada Bhaai')
+@section('title', 'Arisent')
 <!-- hero  -->
 @include('frontend.template_one.partials.home_page.hero')
 <!-- Hero end -->
@@ -28,7 +28,6 @@
 <!-- Featured  -->
 @include('frontend.template_one.partials.home_page.home_feature')
 <!-- Featured end -->
-
 
 <!-- Latest Offer  -->
 @include('frontend.template_one.partials.home_page.latest_offer')

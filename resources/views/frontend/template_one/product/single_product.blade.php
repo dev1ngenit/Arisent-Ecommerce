@@ -110,11 +110,11 @@
                                         @if ($product->price_status == 'rfq')
                                             <h5 class="text-danger mb-0">
                                                 <span id="productPrice"
-                                                    style="color: #CD3301; font-weight: bold; margin-bottom: 0;">$
+                                                    style="color: #CD3301; font-weight: bold; margin-bottom: 0;">Tk
                                                     {{ $product->sas_price }}</span>
                                             </h5>
                                         @elseif ($product->price_status == 'offer_price')
-                                            <p class="mb-0"><del>$ <span
+                                            <p class="mb-0"><del>Tk <span
                                                         id="originalPrice">{{ $product->price }}</span></del>
                                             </p>
                                             <h5 class="text-danger mb-0">
@@ -408,16 +408,16 @@
                                     <div class="price font-weight-bold pr-2">
                                         @if ($relative_product->price_status == 'rfq')
                                             <h6 class="grenadier-color mb-0 font-weight-bold">
-                                                $ {{ $relative_product->sas_price }}
+                                                Tk {{ $relative_product->sas_price }}
                                             </h6>
                                         @elseif ($relative_product->price_status == 'offer_price')
-                                            <del>$ {{ $relative_product->price }}</del>
-                                            <h6 class="grenadier-color mb-0 font-weight-bold">$
+                                            <del>Tk {{ $relative_product->price }}</del>
+                                            <h6 class="grenadier-color mb-0 font-weight-bold">Tk
                                                 {{ $relative_product->discount_price }}
                                             </h6>
                                         @elseif ($relative_product->price_status == 'price')
                                             <h6 class="grenadier-color mb-0 font-weight-bold">
-                                                $ {{ $relative_product->price }}
+                                                Tk {{ $relative_product->price }}
                                             </h6>
                                         @endif
                                     </div>
