@@ -241,7 +241,7 @@
 
                                 </tr>
 
-                                @if (Auth::guard('admin')->user()->can('status.order'))
+                                {{-- @if (Auth::guard('admin')->user()->can('status.order')) --}}
                                     <tr>
                                         <td>
                                             <form action="{{ route('admin.order.status', $order->id) }}">
@@ -259,7 +259,7 @@
                                             </form>
                                         </td>
                                     </tr>
-                                @endif
+                                {{-- @endif --}}
 
                             </thead>
                         </table>

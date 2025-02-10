@@ -1,6 +1,5 @@
 @extends('admin.admin_dashboard')
 @section('admin')
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
@@ -137,7 +136,8 @@
                                         <a href="{{ route('admin.order.invoice', $order->id) }}" target="_blank"><i
                                                 class="fa fa-download text-success"></i></a>
 
-                                        <a href="{{ route('admin.order.delete', $order->id) }}" id="delete"><i class="bi bi-trash3-fill fs-5 text-danger"></i></a>
+                                        <a href="{{ route('admin.order.delete', $order->id) }}" id="delete"><i
+                                                class="bi bi-trash3-fill fs-5 text-danger"></i></a>
                                     </td>
                                 </tr>
                             @endforeach
