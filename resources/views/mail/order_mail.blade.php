@@ -147,7 +147,7 @@
                                                         <tbody>
                                                             <tr>
                                                                 <td align="left"> <img
-                                                                        src="https://dadabhaai.com/upload/logo_black/202405200404Dadabhai%20Logo.png"
+                                                                        src=""
                                                                         width="160" height="32" alt="logo"
                                                                         border="0" /></td>
                                                             </tr>

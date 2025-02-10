@@ -37,6 +37,7 @@
                     <div class="row">
                         <div class="col-lg-12 col-md-6 order-1 order-lg-1">
                             <div class="pro-img">
+
                                 <div class="tab-content" id="myTabContent">
                                     @forelse ($multiImages as $key => $multiImage)
                                         <div class="tab-pane fade show {{ $key == 0 ? 'active' : '' }}"
@@ -50,6 +51,7 @@
                                             alt="" style="width:100%; height: 400px;" />
                                     @endforelse
                                 </div>
+
                                 <ul class="nav" id="myTab1" role="tablist">
                                     @forelse ($multiImages as $key => $multiImage)
                                         <li class="nav-item">
@@ -111,11 +113,13 @@
 
                                     <div class="mr-3 w-50">
                                         @if ($product->price_status == 'rfq')
+
                                             <h5 class="text-danger mb-0">
                                                 <span id="productPrice"
                                                     style="color: #CD3301; font-weight: bold; margin-bottom: 0;">Tk
                                                     {{ $product->sas_price }}</span>
                                             </h5>
+
                                         @elseif ($product->price_status == 'offer_price')
                                             <p class="mb-0"><del>Tk <span
                                                         id="originalPrice">{{ $product->price }}</span></del>
@@ -558,7 +562,7 @@
                     break;
             }
 
-            productPriceElement.innerText = '$ ' + totalPrice.toFixed(2);
+            productPriceElement.innerText = 'Tk ' + totalPrice.toFixed(2);
         }
     });
 </script>

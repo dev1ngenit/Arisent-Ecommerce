@@ -235,15 +235,18 @@
                                                 </div>
                                                 <div class="card-body border-0">
                                                     <div class="row mb-5">
-                                                        @foreach ($carts as $item)
-                                                            <div class="col-12">
-                                                                <table>
-                                                                    <tr style="background: #dfdddd; padding: 10px;">
-                                                                        <th class="py-3 pl-2 text-start" width="30%">Image</th>
-                                                                        <th class="py-3 text-start" width="45%">Name</th>
-                                                                        <th class="py-3 text-start" width="15$">Qty</th>
-                                                                        <th class="py-3 pr-2 text-start" width="10%">Price</th>
-                                                                    </tr>
+
+                                                        <div class="col-12">
+                                                            <table>
+                                                                <tr style="background: #dfdddd; padding: 10px;">
+                                                                    <th class="py-3 pl-2 text-start" width="30%">Image
+                                                                    </th>
+                                                                    <th class="py-3 text-start" width="45%">Name</th>
+                                                                    <th class="py-3 text-start" width="15$">Qty</th>
+                                                                    <th class="py-3 pr-2 text-start" width="10%">Price
+                                                                    </th>
+                                                                </tr>
+                                                                @foreach ($carts as $item)
                                                                     <tr style="border-bottom: 1px solid #dfdddd;">
                                                                         <td>
                                                                             <img src="{{ asset($item->options->image) }}"
@@ -261,13 +264,14 @@
                                                                         </td>
                                                                         <td>
                                                                             <div>
-                                                                                ${{ $item->price }}
+                                                                                Tk{{ $item->price }}
                                                                             </div>
                                                                         </td>
                                                                     </tr>
-                                                                </table>
-                                                            </div>
-                                                        @endforeach
+                                                                @endforeach
+                                                            </table>
+                                                        </div>
+
                                                     </div>
                                                     <div class="table-responsive border-0">
                                                         <table class="table border-0">
@@ -280,7 +284,7 @@
                                                             <tbody>
                                                                 <tr class="">
                                                                     <td>Price:</td>
-                                                                    <td class="text-right">$ {{ $cartTotal }}</td>
+                                                                    <td class="text-right">Tk {{ $cartTotal }}</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <th scope="col">Grand Total</th>
@@ -289,7 +293,7 @@
                                                                         <input class="" type="hidden"
                                                                             name="total_amount"
                                                                             value="{{ $cartTotal }}">
-                                                                        $ <b class="amount grandTotal">
+                                                                        Tk <b class="amount grandTotal">
                                                                             {{ $cartTotal }}</b>
                                                                     </th>
                                                                 </tr>

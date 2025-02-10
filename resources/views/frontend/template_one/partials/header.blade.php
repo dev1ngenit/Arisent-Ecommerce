@@ -408,7 +408,7 @@
 
                                             <div class="total-text d-flex justify-content-between pt-2 mb-3">
                                                 <span class="f-800 cod__black-color">Total Price</span>
-                                                <span class="f-800 cod__black-color">$ <span
+                                                <span class="f-800 cod__black-color">Tk <span
                                                         id="cartSubTotal"></span></span>
                                             </div>
 

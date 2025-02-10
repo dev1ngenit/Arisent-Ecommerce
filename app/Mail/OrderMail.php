@@ -31,7 +31,7 @@ class OrderMail extends Mailable
         $order = $this->data;          // The order data passed from the controller
         $carts = $this->data['carts']; // Access the cart items from the data
 
-        return $this->subject('DadaBhai Ecommerce')
+        return $this->subject('Arisent Ecommerce')
             ->view('mail.order_mail', compact('order', 'carts')); // Pass both order data and carts to the view
     }
 }
