@@ -55,9 +55,8 @@
                         padding: 15px;
                       ">
                                         <td>
-                                            <a href="www.dadabhaai.com" target="_blank">
-                                                <img src="https://www.dadabhaai.com/storage/main/jaragroups404413.png"
-                                                    alt="DadaBhai" title="DadaBhai"
+                                            <a href="www.arisent.com" target="_blank">
+                                                <img src="" alt="arisent" title="arisent"
                                                     style="
                               outline: none;
                               text-decoration: none;
@@ -80,7 +79,7 @@
                             margin-bottom: 0;
                             color: #fff;
                           ">
-                                                NGEN IT PTE. LTD.
+                                                arisent ltd
                                             </p>
                                             <p style="font-size: 16px; margin-bottom: 3px">
                                                 <span style="color: #eee">REG-NO: 20437861K</span>
@@ -119,11 +118,11 @@
                                 font-family: 'Poppins', sans-serif;
                                 color: #ae0a46;
                               ">
-                                                        Kawsar Khan
+                                                        {{ $order->billing_name }}
                                                     </h3>
-                                                    <p style="font-size: 13px; color: #3d3d3d">
+                                                    {{-- <p style="font-size: 13px; color: #3d3d3d">
                                                         Samsung
-                                                    </p>
+                                                    </p> --}}
                                                     <div>
                                                         <p
                                                             style="
@@ -132,7 +131,7 @@
                                 ">
                                                             <a href="mailto:khandkershahed23@gmail.com"
                                                                 style="color: #3d3d3d; text-decoration: none">
-                                                                <span>khandker@gmail.com</span>
+                                                                <span>{{ $order->billing_email }}</span>
                                                             </a>
                                                         </p>
                                                         <p
@@ -142,7 +141,7 @@
                                 ">
                                                             <a href="tel:01754348949"
                                                                 style="color: #3d3d3d; text-decoration: none">
-                                                                <span> 01754348949</span>
+                                                                <span> {{ $order->billing_phone }}</span>
                                                             </a>
                                                         </p>
                                                         <p
@@ -152,7 +151,7 @@
                                 ">
                                                             <a href="tel:01754348949"
                                                                 style="color: #3d3d3d; text-decoration: none">
-                                                                <span>Dhaka, Bangladesh</span>
+                                                                <span>{{ $order->billing_address_line1 }}</span>
                                                             </a>
                                                         </p>
                                                     </div>
@@ -276,7 +275,7 @@
                         padding: 0.5rem;
                         font-weight: 400;
                       ">
-                                        Total ($)
+                                        Total (Tk)
                                     </th>
                                 </tr>
                                 <!-- Table Header End -->
@@ -679,7 +678,7 @@
                                             margin-bottom: 0.5rem;
                                           ">
                                                                                 <p style="margin: 0; color: #ae0a46">
-                                                                                    sales@ngenitltd.com
+                                                                                    sales@arisent.com
                                                                                     <i
                                                                                         class="fa-solid fa-paper-plane"></i>
                                                                                 </p>
@@ -695,7 +694,7 @@
                                               padding: 0;
                                               color: #ae0a46;
                                             ">
-                                                                                    +880 156845 986
+
                                                                                 </p>
                                                                             </div>
                                                                             <div style="font-size: 0.9375rem">
@@ -705,7 +704,7 @@
                                               padding: 0;
                                               color: #ae0a46;
                                             ">
-                                                                                    +880 156845 987
+
                                                                                 </p>
                                                                             </div>
                                                                         </td>
@@ -743,13 +742,13 @@
                           background-color: #ae0a46;
                           padding: 0.9375rem;
                         ">
-                                            <a class="" href="www.dadabhaai.com"
+                                            <a class="" href="www.arisent.com"
                                                 style="
                             color: #ffff;
                             font-size: 1.125rem;
                             text-align: center;
                             letter-spacing: 4px;
-                          ">www.dadabhaai.com</a>
+                          ">www.arisent.com</a>
                                         </div>
                                     </tr>
                                 </tbody>

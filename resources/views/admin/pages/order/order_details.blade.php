@@ -44,271 +44,271 @@
 
     <!--begin::Post-->
 
-        <div class="row">
+    <div class="row">
 
-            {{-- Billing Address  --}}
-            <div class="col-lg-4">
+        {{-- Billing Address  --}}
+        <div class="col-lg-4">
 
-                <div class="card">
-                    <div class="pt-3 ps-5" style="height: 50px; text-align: start; background-color: #2d8fc7">
-                        <h5 class="text-light">Billing Address</h5>
-                    </div>
-                    <div class="card-body">
-                        <table class="table">
-                            <thead>
-
-                                <tr>
-                                    <th class="fw-bold">Billing Name</th>
-                                    <td>{{ $order->billing_name }}</td>
-                                </tr>
-
-                                <tr>
-                                    <th class="fw-bold">Billing Phone</th>
-                                    <td>{{ $order->billing_phone }}</td>
-                                </tr>
-
-                                <tr>
-                                    <th class="fw-bold">Billing Email</th>
-                                    <td>{{ $order->billing_email }}</td>
-                                </tr>
-
-                                <tr>
-                                    <th class="fw-bold">Billing Address One</th>
-                                    <td>{{ $order->billing_address_line1 }}</td>
-                                </tr>
-
-                                <tr>
-                                    <th class="fw-bold">Billing Address Two</th>
-                                    <td>{{ $order->billing_address_line2 }}</td>
-                                </tr>
-
-                                <tr>
-                                    <th class="fw-bold">Billing Post Code</th>
-                                    <td>{{ $order->billing_postal_code }}</td>
-                                </tr>
-
-                                <tr>
-                                    <th class="fw-bold">Billing City</th>
-                                    <td>{{ $order->billing_city }}</td>
-                                </tr>
-
-                                <tr>
-                                    <th class="fw-bold">Billing State</th>
-                                    <td>{{ $order->billing_state }}</td>
-                                </tr>
-
-                                <tr>
-                                    <th class="fw-bold">Billing Country</th>
-                                    <td>{{ $order->billing_country }}</td>
-                                </tr>
-
-                            </thead>
-                        </table>
-                    </div>
+            <div class="card">
+                <div class="pt-3 ps-5" style="height: 50px; text-align: start; background-color: #2d8fc7">
+                    <h5 class="text-light">Billing Address</h5>
                 </div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
 
+                            <tr>
+                                <th class="fw-bold">Billing Name</th>
+                                <td>{{ $order->billing_name }}</td>
+                            </tr>
+
+                            <tr>
+                                <th class="fw-bold">Billing Phone</th>
+                                <td>{{ $order->billing_phone }}</td>
+                            </tr>
+
+                            <tr>
+                                <th class="fw-bold">Billing Email</th>
+                                <td>{{ $order->billing_email }}</td>
+                            </tr>
+
+                            <tr>
+                                <th class="fw-bold">Billing Address One</th>
+                                <td>{{ $order->billing_address_line1 }}</td>
+                            </tr>
+
+                            <tr>
+                                <th class="fw-bold">Billing Address Two</th>
+                                <td>{{ $order->billing_address_line2 }}</td>
+                            </tr>
+
+                            <tr>
+                                <th class="fw-bold">Billing Post Code</th>
+                                <td>{{ $order->billing_postal_code }}</td>
+                            </tr>
+
+                            <tr>
+                                <th class="fw-bold">Billing City</th>
+                                <td>{{ $order->billing_city }}</td>
+                            </tr>
+
+                            <tr>
+                                <th class="fw-bold">Billing State</th>
+                                <td>{{ $order->billing_state }}</td>
+                            </tr>
+
+                            <tr>
+                                <th class="fw-bold">Billing Country</th>
+                                <td>{{ $order->billing_country }}</td>
+                            </tr>
+
+                        </thead>
+                    </table>
+                </div>
             </div>
-            {{-- Billing Address  --}}
 
-            {{-- Shipping Address  --}}
-            <div class="col-lg-4">
+        </div>
+        {{-- Billing Address  --}}
 
-                <div class="card">
-                    <div class="pt-3 ps-5" style="height: 50px; text-align: start; background-color: #2d8fc7">
-                        <h5 class="text-light">Shipping Address</h5>
-                    </div>
-                    <div class="card-body">
-                        <table class="table">
-                            <thead>
+        {{-- Shipping Address  --}}
+        <div class="col-lg-4">
 
-                                <tr>
-                                    <th class="fw-bold">Name</th>
-                                    <td>{{ $order->shipping_name }}</td>
-                                </tr>
+            <div class="card">
+                <div class="pt-3 ps-5" style="height: 50px; text-align: start; background-color: #2d8fc7">
+                    <h5 class="text-light">Shipping Address</h5>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
 
-                                <tr>
-                                    <th class="fw-bold">Phone</th>
-                                    <td>{{ $order->shipping_phone }}</td>
-                                </tr>
+                            <tr>
+                                <th class="fw-bold">Name</th>
+                                <td>{{ $order->shipping_name }}</td>
+                            </tr>
 
-                                {{-- <tr>
+                            <tr>
+                                <th class="fw-bold">Phone</th>
+                                <td>{{ $order->shipping_phone }}</td>
+                            </tr>
+
+                            {{-- <tr>
                                     <th class="fw-bold">Billing Email</th>
                                     <td>{{ $order->billing_email }}</td>
                                 </tr> --}}
 
-                                <tr>
-                                    <th class="fw-bold">Address One</th>
-                                    <td>{{ $order->shipping_address_line1 }}</td>
-                                </tr>
-
-                                <tr>
-                                    <th class="fw-bold">Address Two</th>
-                                    <td>{{ $order->shipping_address_line2 }}</td>
-                                </tr>
-
-                                <tr>
-                                    <th class="fw-bold">Post Code</th>
-                                    <td>{{ $order->shipping_postal_code }}</td>
-                                </tr>
-
-                                <tr>
-                                    <th class="fw-bold">Shipping City</th>
-                                    <td>{{ $order->shipping_city }}</td>
-                                </tr>
-
-                                <tr>
-                                    <th class="fw-bold">Shipping State</th>
-                                    <td>{{ $order->shipping_state }}</td>
-                                </tr>
-
-                                <tr>
-                                    <th class="fw-bold">Shipping Country</th>
-                                    <td>{{ $order->shipping_country }}</td>
-                                </tr>
-
-                            </thead>
-                        </table>
-                    </div>
-                </div>
-
-            </div>
-            {{-- Shipping Address  --}}
-
-            {{-- Order Info  --}}
-            <div class="col-lg-4">
-
-                <div class="card">
-                    <div class="pt-3 ps-5" style="height: 50px; text-align: start; background-color: #2d8fc7">
-                        <h5 class="text-light">Order Info</h5>
-                    </div>
-                    <div class="card-body">
-                        <table class="table">
-                            <thead>
-
-                                <tr>
-                                    <th class="fw-bold">Invoice No</th>
-                                    <td class="text-danger">{{ $order->invoice_number }}</td>
-                                </tr>
-
-                                <tr>
-                                    <th class="fw-bold">Order Number</th>
-                                    <td>{{ $order->order_number }}</td>
-                                </tr>
-
-                                <tr>
-                                    <th class="fw-bold">Payment Method</th>
-                                    <td>{{ $order->payment_method }}</td>
-                                </tr>
-
-                                <tr>
-                                    <th class="fw-bold">Transcation Number</th>
-                                    <td>{{ $order->transaction_number }}</td>
-                                </tr>
-
-                                <tr>
-                                    <th class="fw-bold">Total Amount</th>
-                                    <td>Tk {{ $order->total_amount }}</td>
-                                </tr>
-
-                                <tr>
-                                    <th class="fw-bold">Payment Status</th>
-                                    <td>{{ $order->payment_status }}</td>
-                                </tr>
-
-                                <tr>
-                                    <th class="fw-bold">Order Date</th>
-                                    <td>{{ $order->order_date }}</td>
-                                </tr>
-
-                                <tr>
-                                    <th class="fw-bold">Status</th>
-
-                                    <td class="px-3 text-white">
-                                        @if ($order->status == 'pending')
-                                            <span class="badge badge-danger">{{ $order->status }}</span>
-                                        @elseif($order->status == 'processing')
-                                            <span class="badge badge-primary">{{ $order->status }}</span>
-                                        @elseif($order->status == 'shipped')
-                                            <span class="badge badge-info">{{ $order->status }}</span>
-                                        @elseif($order->status == 'delivered')
-                                            <span class="badge badge-danger">{{ $order->status }}</span>
-                                        @elseif($order->status == 'cancelled')
-                                            <span class="badge badge-danger">{{ $order->status }}</span>
-                                        @else
-                                            <span class="badge badge-danger">{{ $order->status }}</span>
-                                        @endif
-                                    </td>
-
-                                </tr>
-
-                                {{-- @if (Auth::guard('admin')->user()->can('status.order')) --}}
-                                    <tr>
-                                        <td>
-                                            <form action="{{ route('admin.order.status', $order->id) }}">
-                                                @csrf
-                                                <label for="" class="mb-2">Status Change</label>
-                                                <select name="status" class="form-select form-select-sm" class="mx-3">
-                                                    <option selected disabled>Change Status</option>
-                                                    <option value="pending">Pending</option>
-                                                    <option value="processing">Processing</option>
-                                                    <option value="shipped">Shipped</option>
-                                                    <option value="delivered">Delivered</option>
-                                                    <option value="cancelled">Cancel</option>
-                                                </select>
-                                                <button class="btn btn-light-primary btn-sm mt-3 float-end">Submit</button>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                {{-- @endif --}}
-
-                            </thead>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            {{-- Order Info  --}}
-
-
-            {{-- Product Details --}}
-            <div class="col-lg-12 mt-5">
-
-                <table id="" class="table table-striped" style="width:100%">
-                    <thead class="">
-                        <tr style="background-color: #2d8fc7;color:white">
-                            <th scope="col" class="text-center">No</th>
-                            <th scope="col">Image</th>
-                            <th scope="col">Product Name</th>
-                            <th scope="col">Amount</th>
-                            <th scope="col">Qty</th>
-                            <th scope="col">Total Amount</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                        @foreach ($orderitem as $key => $item)
                             <tr>
-                                <th class="text-center">{{ $key + 1 }}</th>
-
-                                <td>
-                                    <img src="{{ asset($item->product->product_image) }}" alt=""
-                                        style="width: 50px;height: 50px;">
-                                </td>
-
-                                <td>{{ $item->product->product_name }}</td>
-                                <td>Tk {{ $item->price }}</td>
-                                <td>{{ $item->qty }}</td>
-                                <td>Tk {{ $item->qty * $item->price }}</td>
-
+                                <th class="fw-bold">Address One</th>
+                                <td>{{ $order->shipping_address_line1 }}</td>
                             </tr>
-                        @endforeach
 
-                    </tbody>
-                </table>
+                            <tr>
+                                <th class="fw-bold">Address Two</th>
+                                <td>{{ $order->shipping_address_line2 }}</td>
+                            </tr>
 
+                            <tr>
+                                <th class="fw-bold">Post Code</th>
+                                <td>{{ $order->shipping_postal_code }}</td>
+                            </tr>
+
+                            <tr>
+                                <th class="fw-bold">Shipping City</th>
+                                <td>{{ $order->shipping_city }}</td>
+                            </tr>
+
+                            <tr>
+                                <th class="fw-bold">Shipping State</th>
+                                <td>{{ $order->shipping_state }}</td>
+                            </tr>
+
+                            <tr>
+                                <th class="fw-bold">Shipping Country</th>
+                                <td>{{ $order->shipping_country }}</td>
+                            </tr>
+
+                        </thead>
+                    </table>
+                </div>
             </div>
-            {{-- Product Details --}}
 
         </div>
+        {{-- Shipping Address  --}}
+
+        {{-- Order Info  --}}
+        <div class="col-lg-4">
+
+            <div class="card">
+                <div class="pt-3 ps-5" style="height: 50px; text-align: start; background-color: #2d8fc7">
+                    <h5 class="text-light">Order Info</h5>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+
+                            <tr>
+                                <th class="fw-bold">Invoice No</th>
+                                <td class="text-danger">{{ $order->invoice_number }}</td>
+                            </tr>
+
+                            <tr>
+                                <th class="fw-bold">Order Number</th>
+                                <td>{{ $order->order_number }}</td>
+                            </tr>
+
+                            <tr>
+                                <th class="fw-bold">Payment Method</th>
+                                <td>{{ $order->payment_method }}</td>
+                            </tr>
+
+                            <tr>
+                                <th class="fw-bold">Transcation Number</th>
+                                <td>{{ $order->transaction_number }}</td>
+                            </tr>
+
+                            <tr>
+                                <th class="fw-bold">Total Amount</th>
+                                <td>Tk {{ $order->total_amount }}</td>
+                            </tr>
+
+                            <tr>
+                                <th class="fw-bold">Payment Status</th>
+                                <td>{{ $order->payment_status }}</td>
+                            </tr>
+
+                            <tr>
+                                <th class="fw-bold">Order Date</th>
+                                <td>{{ $order->order_date }}</td>
+                            </tr>
+
+                            <tr>
+                                <th class="fw-bold">Status</th>
+
+                                <td class="px-3 text-white">
+                                    @if ($order->status == 'pending')
+                                        <span class="badge badge-danger">{{ $order->status }}</span>
+                                    @elseif($order->status == 'processing')
+                                        <span class="badge badge-primary">{{ $order->status }}</span>
+                                    @elseif($order->status == 'shipped')
+                                        <span class="badge badge-info">{{ $order->status }}</span>
+                                    @elseif($order->status == 'delivered')
+                                        <span class="badge badge-danger">{{ $order->status }}</span>
+                                    @elseif($order->status == 'cancelled')
+                                        <span class="badge badge-danger">{{ $order->status }}</span>
+                                    @else
+                                        <span class="badge badge-danger">{{ $order->status }}</span>
+                                    @endif
+                                </td>
+
+                            </tr>
+
+                            {{-- @if (Auth::guard('admin')->user()->can('status.order')) --}}
+                            <tr>
+                                <td>
+                                    <form action="{{ route('admin.order.status', $order->id) }}">
+                                        @csrf
+                                        <label for="" class="mb-2">Status Change</label>
+                                        <select name="status" class="form-select form-select-sm" class="mx-3">
+                                            <option selected disabled>Change Status</option>
+                                            <option value="pending">Pending</option>
+                                            <option value="processing">Processing</option>
+                                            <option value="shipped">Shipped</option>
+                                            <option value="delivered">Delivered</option>
+                                            <option value="cancelled">Cancel</option>
+                                        </select>
+                                        <button class="btn btn-light-primary btn-sm mt-3 float-end">Submit</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            {{-- @endif --}}
+
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+        {{-- Order Info  --}}
+
+
+        {{-- Product Details --}}
+        <div class="col-lg-12 mt-5">
+
+            <table id="" class="table table-striped" style="width:100%">
+                <thead class="">
+                    <tr style="background-color: #2d8fc7;color:white">
+                        <th scope="col" class="text-center">No</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Qty</th>
+                        <th scope="col">Total Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach ($orderitem as $key => $item)
+                        <tr>
+                            <th class="text-center">{{ $key + 1 }}</th>
+
+                            <td>
+                                <img src="{{ asset($item->product->product_image) }}" alt=""
+                                    style="width: 50px;height: 50px;">
+                            </td>
+
+                            <td>{{ $item->product->product_name }}</td>
+                            <td>Tk {{ $item->price }}</td>
+                            <td>{{ $item->qty }}</td>
+                            <td>Tk {{ $item->qty * $item->price }}</td>
+
+                        </tr>
+                    @endforeach
+
+                </tbody>
+            </table>
+
+        </div>
+        {{-- Product Details --}}
+
+    </div>
 
     <!--end::Post-->
 @endsection

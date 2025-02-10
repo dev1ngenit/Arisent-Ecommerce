@@ -99,12 +99,12 @@
                                                         <tbody>
                                                             <tr class="">
                                                                 <td>Sub Total:</td>
-                                                                <td class="text-right">$ <span id="cartSubTotal"></span></td>
+                                                                <td class="text-right">Tk <span id="cartSubTotal"></span></td>
                                                             </tr>
 
                                                             <tr>
                                                                 <th scope="col">ORDER TOTAL</th>
-                                                                <th class="text-right">$ <span id="cartTotal"></span></th>
+                                                                <th class="text-right">Tk <span id="cartTotal"></span></th>
                                                             </tr>
                                                         </tbody>
 
@@ -130,7 +130,7 @@
         </div>
     </div>
 
-    
+
 
     <script>
         // Get the necessary elements

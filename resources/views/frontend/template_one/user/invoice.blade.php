@@ -50,9 +50,9 @@
                         padding: 15px;
                       ">
                     <td>
-                      <a href="www.dadabhaai.com" target="_blank">
-                        <img src="https://www.dadabhaai.com/storage/main/jaragroups404413.png"
-                                                    alt="DadaBhai" title="DadaBhai"
+                      <a href="" target="_blank">
+                        <img src=""
+                                                    alt="Arisent" title="Arisent
                                                     style="
                               outline: none;
                               text-decoration: none;
@@ -74,7 +74,7 @@
                             margin-bottom: 0;
                             color: #fff;
                           ">
-                        Ngenit Ltd.
+                        Arisent.
                       </p>
                       <p style="font-size: 16px; margin-bottom: 3px">
                         {{-- <span style="color: #eee">REG-NO: 20437861K</span> --}}
@@ -112,7 +112,7 @@
                               ">
                             {{ $order->billing_name }}
                           </h3>
-                        
+
                           <div>
                             <p style="
                                   padding-bottom: 0.3125rem;
@@ -246,7 +246,7 @@
                         padding: 0.5rem;
                         font-weight: 400;
                       ">
-                    Total ($)
+                    Total (Tk)
                   </th>
                 </tr>
                 <!-- Table Header End -->
@@ -281,14 +281,14 @@
                    padding: 0.5rem;
                    text-align: center;
                  ">
-                    $ {{ $item->price }}
+                    Tk {{ $item->price }}
                   </td>
                   <td style="
                    border: 1px solid #eee;
                    padding: 0.5rem;
                    text-align: center;
                  ">
-                    $ {{ $item->qty * $item->price }}
+                    Tk {{ $item->qty * $item->price }}
                   </td>
                 </tr>
                 @endforeach
@@ -328,7 +328,7 @@
                           text-align: end;
                           font-weight: 400;
                         ">
-                      $ {{ $order->total_amount - $order->shipping_charge }}.00
+                      Tk {{ $order->total_amount - $order->shipping_charge }}.00
                     </th>
                   </tr>
                 </table>
@@ -363,7 +363,8 @@
                             border-left: 1px solid #eee;
                             color: #3d3d3d;
                           ">
-                        $ {{ $order->shipping_charge }}
+                        {{-- Tk {{ $order->shipping_charge }} --}}
+                        Tk 0
                       </td>
                     </tr>
                   </table>
@@ -403,7 +404,7 @@
                           text-align: end;
                           border-left: 1px solid #eee;
                         ">
-                      $ {{ $order->total_amount }}
+                      Tk {{ $order->total_amount }}
                     </th>
                   </tr>
                 </table>
@@ -594,11 +595,11 @@
                                         Thank You
                                       </p>
                                       <p style="color: #ae0a46; margin: 0">
-                                        DadaBhaai Team
+                                        Arisent Team
                                       </p>
-                                      
+
                                     </td>
-                                    
+
                                   </tr>
                                 </tbody>
                               </table>
@@ -630,7 +631,7 @@
                           background-color: #ae0a46;
                           padding: 0.9375rem;
                         ">
-                      <a class="" href="www.ngenitltd.com" style="
+                      <a class="" href="www.arisent.com" style="
                             color: #ffff;
                             font-size: 1.125rem;
                             text-align: center;

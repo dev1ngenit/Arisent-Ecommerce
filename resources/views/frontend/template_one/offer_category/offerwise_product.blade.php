@@ -94,7 +94,7 @@
                                             <div class="price text-end">
 
                                                 <h6 class="grenadier-color f-600" id="">
-                                                    $ {{ $product->discount_price }}
+                                                    Tk {{ $product->discount_price }}
                                                 </h6>
 
                                             </div>

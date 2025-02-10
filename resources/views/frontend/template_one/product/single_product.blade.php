@@ -108,6 +108,7 @@
                                     </h6>
                                 </div>
                                 <div class="price mt-15 mb-20 d-flex align-items-center">
+
                                     <div class="mr-3 w-50">
                                         @if ($product->price_status == 'rfq')
                                             <h5 class="text-danger mb-0">

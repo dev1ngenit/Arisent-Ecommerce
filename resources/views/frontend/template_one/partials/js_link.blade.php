@@ -202,7 +202,7 @@
                                 </td>
 
                                 <td>
-                                    $ ${value.price}
+                                    Tk ${value.price}
                                 </td>
 
                                 <td class="">
@@ -414,7 +414,7 @@
                                     <li>
                                         <h3 class="compare-title" title="${value.name}">${value.name.length > 15 ? `${value.name.substring(0, 15)}...` : value.name}</h3>
                                     </li>
-                                    <li>$ ${value.price}</li>
+                                    <li>Tk ${value.price}</li>
 
                                     <li>
                                         <a type="submit" style="cursor:pointer" id="${value.id}" onclick="addToCartCompare(this.id)"> Add To Cart</a>
@@ -696,7 +696,7 @@
 
                                                         <p class="mb-0" style="color: #000">
 
-                                                            <span class="pe-3">${value.qty} x $ ${value.price}</span>
+                                                            <span class="pe-3">${value.qty} x Tk ${value.price}</span>
 
                                                             <span style="cursor:pointer">
 
@@ -1234,7 +1234,7 @@
                             <span class="pr-2">${serialNumber++}.</span>
                             <input type="text" class="form-control form-control-sm accesories-title" placeholder="${value.name.length > 16 ? value.name.substring(0, 16) + '' : value.name}">
                             <input type="text" class="form-control form-control-sm accesories-qty" placeholder="x ${value.qty}">
-                            <input type="text" class="form-control form-control-sm accesories-amount" placeholder="$ ${value.price * value.qty}">
+                            <input type="text" class="form-control form-control-sm accesories-amount" placeholder="Tk ${value.price * value.qty}">
                             <div class="accesories-remove">
                                 <a type="submit" style="cursor:pointer" class="" id="${value.rowId}" onclick="miniCartRelatedRemove(this.id)">
 
@@ -1481,7 +1481,7 @@
                                     </div>
                                 </td>
                                 <td>${value.name}</td>
-                                <td>$${value.price}</td>
+                                <td>Tk ${value.price}</td>
                                 <td>
                                     <div>
                                         <div class="input-group mb-3">
@@ -1502,7 +1502,7 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td>$${value.subtotal}</td>
+                                <td>Tk ${value.subtotal}</td>
                                 <td class="text-center">
                                     <div>
                                         <a type="submit" style="cursor: pointer" id="${value.rowId}" onclick="cartRemove(this.id)">
