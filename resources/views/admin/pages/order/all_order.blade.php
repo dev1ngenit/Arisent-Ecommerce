@@ -81,7 +81,7 @@
 
                         <thead>
 
-                            <tr>
+                            <tr class="bg-dark text-light">
                                 <th style="width: 60px;">
                                     <input type="checkbox" autocomplete="off" class="check_all" value="">
                                 </th>
