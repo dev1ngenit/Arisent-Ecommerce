@@ -1,6 +1,6 @@
 @extends('frontend.template_one.frontend_dashboard_template_one')
 @section('index_template_one')
-@section('title', 'Dada Bhaai | Product Details')
+@section('title', 'Arisent | Product Details')
 <!-- Main -->
 <main class="main--wrapper">
 
@@ -11,21 +11,23 @@
                 <div class="col-sm-12">
                     <div class="shop-bred pt-35 pb-35">
                         <nav aria-label="breadcrumb">
+
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item">
                                     <a href="{{ route('index') }}">Home</a>
                                 </li>
                                 <li class="breadcrumb-item">
-                                    <a href="javascript:;">{{ optional($product->category)->category_name }}</a>
+                                    <a href="{{ route('index') }}">{{ optional($product->category)->category_name }}</a>
                                 </li>
                                 <li class="breadcrumb-item">
-                                    <a href="javascript:;">{{ optional($product->subcategory)->subcategory_name }}</a>
+                                    <a href="{{ route('index') }}">{{ optional($product->subcategory)->subcategory_name }}</a>
                                 </li>
                                 <li class="breadcrumb-item" aria-current="page">
-                                    <a href="javascript:;" class="active"
+                                    <a href="{{ route('index') }}" class="active"
                                         style="color: #CD3301">{{ optional($product->childcategory)->childcategory_name }}</a>
                                 </li>
                             </ol>
+
                         </nav>
                     </div>
                 </div>
@@ -119,13 +121,13 @@
                                             </p>
                                             <h5 class="text-danger mb-0">
                                                 <span id="productPrice"
-                                                    style="color: #CD3301; font-weight: bold; margin-bottom: 0;">{{ $product->discount_price }}</span>
+                                                    style="color: #CD3301; font-weight: bold; margin-bottom: 0;">Tk {{ $product->discount_price }}</span>
                                             </h5>
                                         @elseif ($product->price_status == 'price')
                                             <h5 class="text-danger mb-0">
                                                 <span id="productPrice"
                                                     style="color: #CD3301; font-weight: bold; margin-bottom: 0;">
-                                                    {{ $product->price }}</span>
+                                                    Tk {{ $product->price }}</span>
                                             </h5>
                                         @endif
 

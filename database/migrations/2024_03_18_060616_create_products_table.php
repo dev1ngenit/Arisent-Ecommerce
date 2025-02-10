@@ -40,7 +40,7 @@ return new class extends Migration
             $table->longText('short_desc')->nullable();
             $table->longText('overview')->nullable();
 
-            $table->string('specification')->nullable();
+            $table->longText('specification')->nullable();
             $table->longText('accessories')->nullable();
             $table->longText('warranty')->nullable();
             $table->string('product_image')->nullable();

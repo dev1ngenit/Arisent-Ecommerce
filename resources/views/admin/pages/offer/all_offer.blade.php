@@ -94,7 +94,7 @@
 
                                     <td style="width: 70px;">
 
-                                        @if (Auth::guard('admin')->user()->can('status.offer'))
+                                        {{-- @if (Auth::guard('admin')->user()->can('status.offer')) --}}
                                             @if ($offer->status == 1)
                                                 <a href="{{ route('offer.inactive', $offer->id) }}" title="Inactive"><i
                                                         class="bi bi-hand-thumbs-down text-danger fs-3"></i></a>
@@ -102,7 +102,7 @@
                                                 <a href="{{ route('offer.active', $offer->id) }}" title="Active"><i
                                                         class="bi bi-hand-thumbs-up text-success fs-3"></i></a>
                                             @endif
-                                        @endif
+                                        {{-- @endif --}}
 
                                         {{-- @if (Auth::guard('admin')->user()->can('edit.offer')) --}}
                                             <a href="" data-bs-toggle="modal"
