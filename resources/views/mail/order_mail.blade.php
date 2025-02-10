@@ -395,7 +395,7 @@
                                                                     <tr>
                                                                         <td
                                                                             style="font-size: 12px; font-family: 'Open Sans', sans-serif; color: #5b5b5b; line-height: 20px; vertical-align: top; ">
-                                                                            {{ $order['payment_method'] }}
+                                                                            {{-- {{ $order['payment_method'] }} --}}Cash On Delivery
                                                                         </td>
                                                                     </tr>
                                                                 </tbody>
