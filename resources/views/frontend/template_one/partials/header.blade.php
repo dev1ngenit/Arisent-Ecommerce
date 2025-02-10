@@ -20,8 +20,9 @@
             @endphp
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown position-static">
-                    <a class="nav-link dropdown-toggle card-title cod__gray-color mb-0 main-menu-link" href="#" id="navbarDropdownFeatures"
-                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle card-title cod__gray-color mb-0 main-menu-link" href="#"
+                        id="navbarDropdownFeatures" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
                         <i class="fa-solid fa-bars pr-2"></i>
 
                         Category
@@ -121,10 +122,16 @@
 
             <!-- Navbar Collapse -->
             <div class="collapse navbar-collapse" id="navbarNav">
+
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link main-menu-link" href="{{ route('index') }}">Home <span
-                                class="sr-only">(current)</span></a>
+
+                    {{-- <li class="nav-item">
+                        <a class="nav-link main-menu-link active" href="{{ route('index') }}">Home</a>
+                    </li> --}}
+
+                    <li class="nav-item">
+                        <a class="nav-link main-menu-link {{ Request::is('index') ? 'active' : '' }}"
+                            href="{{ route('index') }}">Home</a>
                     </li>
 
                     {{-- All Brands Menu --}}
@@ -137,11 +144,12 @@
 
                         @php
                             // $categories = DB::table('categories')->inRandomOrder()->limit(4)->get();
-                            $categories = DB::table('categories')->where('status','1')->limit(4)->get();
+                            $categories = DB::table('categories')->where('status', '1')->limit(4)->get();
                         @endphp
 
                         <div class="dropdown-menu w-100 mt-0 rounded-0 border-bottom-0 main-menu-drop"
-                            style="border-top: 2px solid #cd3301;border-bottom: 1px solid #d9d9d9 !important" aria-labelledby="navbarDropdown">
+                            style="border-top: 2px solid #cd3301;border-bottom: 1px solid #d9d9d9 !important"
+                            aria-labelledby="navbarDropdown">
                             <div class="container">
                                 <div class="row">
                                     @foreach ($categories as $category)
@@ -165,7 +173,7 @@
                                                 @endphp
                                                 @forelse ($brands as $brandId)
                                                     @php
-                                                        $brand = App\Models\Brand::where('status','1')->find($brandId);
+                                                        $brand = App\Models\Brand::where('status', '1')->find($brandId);
                                                     @endphp
 
                                                     @if ($brand)
@@ -407,10 +415,12 @@
                                             <div class="d-flex justify-content-between">
 
                                                 <a href="{{ route('template.one.checkout') }}"
-                                                    class="checkout bg-transparent p-0 text-black" style="text-decoration: underline">Checkout</a>
+                                                    class="checkout bg-transparent p-0 text-black"
+                                                    style="text-decoration: underline">Checkout</a>
 
                                                 <a href="{{ route('template.one.view.cart') }}"
-                                                    class="viewcart bg-transparent p-0 text-black" style="text-decoration: underline">View
+                                                    class="viewcart bg-transparent p-0 text-black"
+                                                    style="text-decoration: underline">View
                                                     Cart</a>
 
                                             </div>
