@@ -30,7 +30,7 @@
         <div class="row">
             <div class="col-xl-7 col-lg-7">
                 <div class="">
-                    <h4 class="title mb-3">Send A Message</h4>
+                    <h4 class="title mb-3">Message</h4>
                     <form action="{{ route('template_one.contact.store') }}" method="POST">
                         @csrf
                         @if (session('status'))
