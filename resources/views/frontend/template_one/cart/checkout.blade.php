@@ -307,7 +307,7 @@
                                                                 <li class="payment_method_bacs">
                                                                     <div class="">
                                                                         <label class="radio-inline">
-                                                                            <input type="radio" value="cod"
+                                                                            <input type="radio" checked value="cod"
                                                                                 name="payment_method" />
                                                                             <span>Cash On Delivery</span>
                                                                         </label>
@@ -368,12 +368,21 @@
                     billing_name: {
                         required: true,
                     },
+                    shipping_name: {
+                        required: true,
+                    },
 
                     billing_phone: {
                         required: true,
                     },
+                    shipping_phone: {
+                        required: true,
+                    },
 
                     billing_city: {
+                        required: true,
+                    },
+                    shipping_city: {
                         required: true,
                     },
 
@@ -384,8 +393,14 @@
                     billing_state: {
                         required: true,
                     },
+                    shipping_state: {
+                        required: true,
+                    },
 
                     billing_address_line1: {
+                        required: true,
+                    },
+                    shipping_address_line1: {
                         required: true,
                     },
 
@@ -401,13 +416,26 @@
                     billing_name: {
                         required: 'Please Enter Name',
                     },
+                    shipping_name: {
+                        required: 'Please Shipping Name',
+                    },
 
                     billing_phone: {
                         required: 'Please Enter Phone Number',
                     },
 
+                    shipping_phone: {
+                        required: 'Please Enter Phone Number',
+                    },
+
                     billing_city: {
                         required: 'Please Enter City Name',
+                    },
+                    shipping_city: {
+                        required: 'Please Enter City Name',
+                    },
+                    shipping_state: {
+                        required: 'Please Enter State Name',
                     },
 
                     billing_country: {
@@ -419,6 +447,9 @@
                     },
 
                     billing_address_line1: {
+                        required: 'Please Enter Address Name',
+                    },
+                    shipping_address_line1: {
                         required: 'Please Enter Address Name',
                     },
 
