@@ -27,7 +27,7 @@
                 </div>
                 <div class="border-b">
                     <div class="row align-items-center mx-0" style="background: #f5f5f5;">
-                        <div class="col-lg-4">
+                        <div class="col-lg-5">
                             <div class="shop-bar d-flex align-items-center">
                                 <h4 class="f-800 cod__black-color mb-0">Product</h4>
                                 <nav aria-label="breadcrumb">
@@ -41,14 +41,15 @@
                         </div>
 
                         {{-- New Section  --}}
-                        <div class="col-lg-6">
+                        <div class="col-lg-7">
                             <!-- Actual search box -->
                             <div class="form-group has-search mb-0">
                                 <input type="text" class="form-control" placeholder="Search">
                                 <span class="fa fa-search form-control-feedback"></span>
                             </div>
                         </div>
-                        <div class="col-lg-2">
+
+                        {{-- <div class="col-lg-2">
                             <div class="d-flex justify-content-end">
                                 <select name="" id="sortBy">
                                     <option selected disabled>Sort By Product</option>
@@ -60,7 +61,8 @@
                                     </option>
                                 </select>
                             </div>
-                        </div>
+                        </div> --}}
+
                         {{-- New Setion  --}}
                     </div>
                 </div>
@@ -119,14 +121,14 @@
 
                                     <div class="price font-weight-bold pr-2">
                                         @if ($product->price_status == 'rfq' && !is_null($product->sas_price))
-                                            <h6 class="grenadier-color mb-0 font-weight-bold">$
+                                            <h6 class="grenadier-color mb-0 font-weight-bold">Tk
                                                 {{ $product->sas_price }}</h6>
                                         @elseif ($product->price_status == 'offer_price' && !is_null($product->price) && !is_null($product->discount_price))
-                                            <del>$ {{ $product->price }}</del>
-                                            <h6 class="grenadier-color mb-0 font-weight-bold">$
+                                            <del>Tk {{ $product->price }}</del>
+                                            <h6 class="grenadier-color mb-0 font-weight-bold">Tk
                                                 {{ $product->discount_price }}</h6>
                                         @elseif ($product->price_status == 'price' && !is_null($product->price))
-                                            <h6 class="grenadier-color mb-0 font-weight-bold">$ {{ $product->price }}
+                                            <h6 class="grenadier-color mb-0 font-weight-bold">Tk {{ $product->price }}
                                             </h6>
                                         @endif
                                     </div>

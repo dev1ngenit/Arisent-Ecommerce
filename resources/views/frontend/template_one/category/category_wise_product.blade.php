@@ -30,7 +30,7 @@
                 </div>
                 <div class="border-b">
                     <div class="row align-items-center mx-0" style="background: #f5f5f5;">
-                        <div class="col-lg-4">
+                        <div class="col-lg-5">
                             <div class="shop-bar d-flex align-items-center">
                                 <h4 class="f-800 cod__black-color mb-0">Product</h4>
                                 <nav aria-label="breadcrumb">
@@ -53,7 +53,7 @@
 
                         </div>
 
-                        <div class="col-lg-1">
+                        {{-- <div class="col-lg-1">
                             <div class="d-flex justify-content-end">
                                 <select name="" class="text-end" id="sortBy">
                                     <option selected disabled>SortBy</option>
@@ -66,7 +66,7 @@
 
                                 </select>
                             </div>
-                        </div>
+                        </div> --}}
                         {{-- New Setion  --}}
 
                     </div>
@@ -110,16 +110,16 @@
                                     <div class="price font-weight-bold pr-2">
                                         @if ($product->price_status == 'rfq')
                                             <h6 class="grenadier-color mb-0 font-weight-bold">
-                                                $ {{ $product->sas_price }}
+                                                Tk {{ $product->sas_price }}
                                             </h6>
                                         @elseif ($product->price_status == 'offer_price')
-                                            <del>$ {{ $product->price }}</del>
-                                            <h6 class="grenadier-color mb-0 font-weight-bold">$
+                                            <del>Tk {{ $product->price }}</del>
+                                            <h6 class="grenadier-color mb-0 font-weight-bold">Tk
                                                 {{ $product->discount_price }}
                                             </h6>
                                         @elseif ($product->price_status == 'price')
                                             <h6 class="grenadier-color mb-0 font-weight-bold">
-                                                $ {{ $product->price }}
+                                                Tk {{ $product->price }}
                                             </h6>
                                         @endif
                                     </div>
