@@ -5,10 +5,7 @@
 @if (count($offercats) > 0)
     <div class="product pt-60 fix">
         <div class="container">
-
             <div class="row">
-
-
                 @foreach ($offercats as $offercat)
                     <div class="col-lg-6">
                         <div class="offers-banner">
