@@ -12,7 +12,6 @@
                         @foreach ($brands as $brand)
                             <div class="single-brand">
                                 <a href="{{ url('product/brand/' . $brand->id . '/' . $brand->brand_slug) }}">
-
                                     @if ($brand->icon)
                                         <img src="{{ asset('storage/brand/' . $brand->icon) }}"
                                             style="width: 157px; height: 56px;" alt="" />
@@ -20,8 +19,6 @@
                                         <img src="{{ url('https://ui-avatars.com/api/?size=80&color=fff&rounded=false&name=' . urlencode($brand->brand_name) . '&font-size=0.3') }}"
                                             alt="" style="width: 157px; height: 56px;" />
                                     @endif
-
-
                                 </a>
                             </div>
                         @endforeach

@@ -191,37 +191,38 @@
             {{-- Order Info  --}}
 
             {{-- Product Details --}}
-            <div class="col-lg-12 mt-4">
-                <table class="table table-striped  table-bordered">
-                    <thead class="grenadier-bg text-white">
-                        <tr>
-                            <th scope="col" class="text-center">No</th>
-                            <th scope="col">Image</th>
-                            <th scope="col">Product Name</th>
-                            <th scope="col">Amount</th>
-                            <th scope="col">Qty</th>
-                            <th scope="col">Total Amount</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                        @foreach ($orderitem as $key => $item)
+            <div class="mt-4 col-lg-12">
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered">
+                        <thead class="text-white grenadier-bg">
                             <tr>
-                                <th class="text-center">{{ $key + 1 }}</th>
-                                <td>
-                                    <img src="{{ asset($item->product->product_image) }}" alt=""
-                                        style="width: 40px;">
-                                </td>
-                                <td>{{ $item->product->product_name }}</td>
-                                <td>$ {{ $item->price }}</td>
-                                <td>{{ $item->qty }}</td>
-                                <td>$ {{ $item->qty * $item->price }}</td>
+                                <th scope="col" class="text-center">No</th>
+                                <th scope="col">Image</th>
+                                <th scope="col">Product Name</th>
+                                <th scope="col">Amount</th>
+                                <th scope="col">Qty</th>
+                                <th scope="col">Total Amount</th>
                             </tr>
-                        @endforeach
+                        </thead>
+                        <tbody>
 
-                    </tbody>
-                </table>
+                            @foreach ($orderitem as $key => $item)
+                                <tr>
+                                    <th class="text-center">{{ $key + 1 }}</th>
+                                    <td>
+                                        <img src="{{ asset($item->product->product_image) }}" alt=""
+                                            style="width: 40px;">
+                                    </td>
+                                    <td>{{ $item->product->product_name }}</td>
+                                    <td>$ {{ $item->price }}</td>
+                                    <td>{{ $item->qty }}</td>
+                                    <td>$ {{ $item->qty * $item->price }}</td>
+                                </tr>
+                            @endforeach
 
+                        </tbody>
+                    </table>
+                </div>
             </div>
             {{-- Product Details --}}
 

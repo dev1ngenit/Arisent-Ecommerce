@@ -18,11 +18,14 @@
         });
 
         // Close minicart on click outside (excluding minicart itself)
-        $(document).on('click', function(event) {
-            if (!$(event.target).closest('.mini__cart--box, #navbarDropdown').length) {
-              $(".mini__cart--box").slideUp();
+        $(document).on("click", function (event) {
+            if (
+                !$(event.target).closest(".mini__cart--box, #navbarDropdown")
+                    .length
+            ) {
+                $(".mini__cart--box").slideUp();
             }
-          });
+        });
 
         // Prevent clicks within the mini cart from closing it
         $(".mini__cart--box").on("click", function (event) {
@@ -469,8 +472,6 @@
         ],
     });
 
-
-
     //slick-activation
 
     $(".product__active-three").slick({
@@ -533,57 +534,37 @@
 
     $(".brand-active").slick({
         dots: false,
-
-        infinite: true,
-
+        infinite: true,  // Ensures the loop functionality is enabled
         speed: 600,
-
-        slidesToShow: 7,
-
+        slidesToShow: 7,  // Default for larger screens
         slidesToScroll: 1,
-
         arrows: false,
-
+        autoplay: true,  // Enables autoplay
+        autoplaySpeed: 2000,  // Sets the autoplay speed (in milliseconds)
         responsive: [
             {
                 breakpoint: 1024,
-
                 settings: {
                     slidesToShow: 5,
-
                     slidesToScroll: 1,
-
                     infinite: true,
-
                     dots: false,
                 },
             },
-
             {
-                breakpoint: 600,
-
+                breakpoint: 600, // Adjust this breakpoint for small screens
                 settings: {
-                    slidesToShow: 4,
-
+                    slidesToShow: 2,  // Show 2 items on small screens
                     slidesToScroll: 1,
                 },
             },
-
             {
                 breakpoint: 480,
-
                 settings: {
-                    slidesToShow: 3,
-
+                    slidesToShow: 2,  // Show 2 items on even smaller screens
                     slidesToScroll: 1,
                 },
             },
-
-            // You can unslick at a given breakpoint now by adding:
-
-            // settings: "unslick"
-
-            // instead of a settings object
         ],
     });
 

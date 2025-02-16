@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 col-sm-12">
-                    <div class="banner-text text-center pt-90 pb-90">
+                    <div class="text-center banner-text pt-90 pb-90">
                         <h2 class="f-800 cod__black-color">My Dashboard</h2>
 
                         <nav aria-label="breadcrumb">
@@ -38,7 +38,7 @@
                                 aria-labelledby="dashboard-tab">
                                 <div>
                                     <div class="heading-2">
-                                        <h3 class="title-3 fsz-15 grenadier-color">All Details</h3>
+                                        <h3 class="pt-5 title-3 fsz-15 grenadier-color pt-lg-0">All Details</h3>
                                     </div>
 
                                     {{-- Dashboard Cards --}}
@@ -119,8 +119,8 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <table class="table table-striped  table-bordered">
-                                                <thead class="grenadier-bg text-white">
+                                            <table class="table table-striped table-bordered">
+                                                <thead class="text-white grenadier-bg">
                                                     <tr>
                                                         <th scope="col" class="text-center">Order No</th>
                                                         <th scope="col">Product Name</th>
@@ -146,7 +146,7 @@
                                                         <td class="text-center">$1150</td>
                                                         <td class="text-center">
                                                             <a href=""><i
-                                                                    class="fa fa fa-pencil text-muted pr-2"></i></a>
+                                                                    class="pr-2 fa fa-pencil text-muted"></i></a>
                                                             <a href=""><i class="fa fa-close text-danger"></i></a>
                                                         </td>
                                                     </tr>
@@ -162,8 +162,8 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <table class="table table-striped  table-bordered">
-                                                <thead class="grenadier-bg text-white">
+                                            <table class="table table-striped table-bordered">
+                                                <thead class="text-white grenadier-bg">
                                                     <tr>
                                                         <th scope="col" class="text-center">Order No</th>
                                                         <th scope="col">Product Name</th>
@@ -189,7 +189,7 @@
                                                         <td class="text-center">$1150</td>
                                                         <td class="text-center">
                                                             <a href=""><i
-                                                                    class="fa fa fa-pencil text-muted pr-2"></i></a>
+                                                                    class="pr-2 fa fa-pencil text-muted"></i></a>
                                                             <a href=""><i class="fa fa-close text-danger"></i></a>
                                                         </td>
                                                     </tr>

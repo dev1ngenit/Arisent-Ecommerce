@@ -1549,8 +1549,7 @@ ul.dept__menu--dropdown li:hover ul.sub__menu.sub__dept--menu {
     width: 100%;
     height: 100%;
     z-index: 11111;
-    background: url("")
-        50% 50% no-repeat white;
+    background: url("") 50% 50% no-repeat white;
 }
 
 .userlogin-header.active,
@@ -4546,7 +4545,6 @@ html .ui-button.ui-state-disabled:active {
     right: -17px;
 } */
 
-
 .shop-details-desc {
     background: #f7f7f7;
     padding: 75px 105px 20px 105px;
@@ -4836,7 +4834,6 @@ html .ui-button.ui-state-disabled:active {
 .accesories-title {
     width: 45%;
     border: 0;
-
 }
 .accesories-qty {
     width: 15%;
@@ -4849,17 +4846,16 @@ html .ui-button.ui-state-disabled:active {
     margin-right: 5px;
     border: 0;
 }
-.accesories-remove{
+.accesories-remove {
     width: 10%;
     border: 0;
 }
 
-.accesories-img{
+.accesories-img {
     width: 100%;
     height: 220px;
     object-fit: contain;
 }
-
 
 .has-search .form-control {
     padding-right: 2.375rem;
@@ -4881,4 +4877,12 @@ html .ui-button.ui-state-disabled:active {
 
 .nice-select .option {
     min-width: 140px;
+}
+
+@media only screen and (max-width: 600px) {
+    /* Categories Slider */
+    .single-categories {
+        padding: 0;
+        margin-top: 10px;
+    }
 }

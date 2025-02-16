@@ -2,97 +2,123 @@
     $site = App\Models\Sites::find(1);
 @endphp
 
-<footer class="footer--area">
-    <div class="footer--top pt-50 pb-25">
-        <div class="footer-topbar">
-            <p class="mb-0 text-center text-white p-3">Discover a wide range of products at {{ optional($site)->site_name }}, your one-stop
-                e-commerce destination. Enjoy seamless shopping, great deals, and excellent customer service.</p>
+<style>
+    .footer-icons {
+        font-size: 20px;
+        padding-right: 10px;
+        color: #252525;
+        border: 1px solid #eee;
+        text-align: center;
+        padding: 8px;
+        transition: color 0.3s ease;
+    }
+    .footer-icons:hover {
+        color: #007bff;
+    }
+    .footer-menu li{
+        padding-top: 5px;
+        padding-bottom: 10px;
+    }
+    .footer-menu a{
+        color: #252525;
+
+    }
+    .footer-bg{
+        text-align: center;
+    }
+</style>
+
+<footer class="footer-area">
+    <div class="footer-top pt-50 pb-25">
+        <div class="text-center footer-topbar">
+            <p class="p-3 mb-0 text-white">
+                Discover a wide range of products at {{ optional($site)->site_name }}, your one-stop e-commerce destination. Enjoy seamless shopping, great deals, and excellent customer service.
+            </p>
         </div>
-        <div class="contaner-fluid footer-bg">
+        <div class="container-fluid footer-bg">
             <div class="container">
-                <div class="row gx-0 pt-5">
-                    <div class="col-xl-4 col-lg-6 col-md-8 mb-30 order-md-3 order-lg-2">
-                        <div>
-                            <a class="logo__link" href="{{ route('index') }}"><img class="" width="250px"
-                                    src="{{ asset('upload/logo_black/' .optional($site)->logo_black) }}" alt=""></a>
-
+                <div class="pt-5 row gx-0">
+                    <!-- Logo and Social Links -->
+                    <div class="col-xl-4 col-lg-6 col-md-8 mb-30">
+                        <div class="footer-logo">
+                            <a href="{{ route('index') }}" class="logo__link">
+                                <img width="250px" src="{{ asset('upload/logo_black/' . optional($site)->logo_black) }}" alt="Logo">
+                            </a>
                             <p class="pt-3">{{ optional($site)->site_slogan }}</p>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-6 col-md-8 mb-30 order-md-3 order-lg-2">
-                        <div class="footer-widget">
-                            <div class="footer-title">
-                                <h6 class="f-800">Inquery</h6>
-                            </div>
-                            <div class="footer-menu">
-                                <ul>
-                                    <li><a href="{{ route('template.one.about') }}">About Us</a></li>
-                                    <li><a href="{{ route('template_one.contact') }}">Contact Us</a></li>
-                                    <li><a href="{{ route('template.one.term') }}">Terms</a></li>
-                                    <li><a href="{{ route('privacy.policy') }}">PrivacyPolicy</a></li>
-                                    <li><a href="{{ route('return-policy') }}">ReturnPolicy</a></li>
-
-                                    @if (Auth::user())
-                                        <li><a href="{{ route('template.one.dashboard') }}">DashBoard</a></li>
-                                    @else
-                                        <li><a href="{{ route('template.one.login') }}">Login</a></li>
-                                    @endif
-
-
-
-                                </ul>
+                            <div class="pt-3 social-icons">
+                                <a href="{{ optional($site)->facebook_url }}" class="social-icon">
+                                    <i class="fab fa-facebook-f footer-icons"></i>
+                                </a>
+                                <a href="{{ optional($site)->skype_url }}" class="social-icon">
+                                    <i class="fab fa-skype footer-icons"></i>
+                                </a>
+                                <a href="{{ optional($site)->youtube_url }}" class="social-icon">
+                                    <i class="fab fa-youtube footer-icons"></i>
+                                </a>
+                                <a href="{{ optional($site)->linkedin_url }}" class="social-icon">
+                                    <i class="fab fa-linkedin-in footer-icons"></i>
+                                </a>
+                                <a href="{{ route('template.one.faq') }}" class="faq-icon">
+                                    <i class="fas fa-question-circle footer-icons"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-2 col-lg-6 col-md-8 mb-30 order-md-3 order-lg-2">
+
+                    <!-- Company Links -->
+                    <div class="col-xl-2 col-lg-6 col-md-8 mb-30">
                         <div class="footer-widget">
-                            <div class="footer-title">
-                                <h6 class="f-800">Social Platform</h6>
-                            </div>
-                            <div class="footer-menu h1foote-menu2">
-                                <ul>
-                                    <li><a href="{{ optional($site)->facebook_url }}">Facebook</a></li>
-                                    <li><a href="{{ optional($site)->skype_url }}">Skype</a></li>
-                                    <li><a href="{{ optional($site)->youtube_url }}">Youtube</a></li>
-                                    <li><a href="{{ optional($site)->linkedin_url }}">Linkdin</a></li>
-                                    <li><a href="{{ route('template.one.faq') }}">Faq</a></li>
-                                </ul>
-                            </div>
+                            <h6 class="f-800">Company</h6>
+                            <ul class="footer-menu">
+                                <li><a href="{{ route('template.one.about') }}">About Us</a></li>
+                                <li><a href="{{ route('template_one.contact') }}">Contact Us</a></li>
+                                @auth
+                                    <li><a href="{{ route('template.one.dashboard') }}">Dashboard</a></li>
+                                @else
+                                    <li><a href="{{ route('template.one.login') }}">Login</a></li>
+                                @endauth
+                            </ul>
                         </div>
                     </div>
-                    <div class="col-xl-4 col-lg-6 col-md-8 mb-30 order-md-3 order-lg-2">
-                        <div class="footer-widget">
-                            <div class="footer-title">
-                                <h6 class="f-800">Connect With Us</h6>
-                            </div>
-                            <div>
-                                <div id="fb-root"></div>
-                                <script async defer crossorigin="anonymous"
-                                    src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v19.0&appId=1071946983902795" nonce="2wAZemwC">
-                                </script>
 
-                                <div class="fb-wrap">
-                                    <div class="fb-page" data-href="{{ optional($site)->facebook_url }}"
-                                        data-tabs="timeline" data-width="500" data-height="135"
-                                        data-small-header="false" data-adapt-container-width="true"
-                                        data-hide-cover="false" data-show-facepile="true"></div>
+                    <!-- Inquiry Links -->
+                    <div class="col-xl-2 col-lg-6 col-md-8 mb-30">
+                        <div class="footer-widget">
+                            <h6 class="f-800">Inquiry</h6>
+                            <ul class="footer-menu">
+                                <li><a href="{{ route('template.one.term') }}">Terms</a></li>
+                                <li><a href="{{ route('privacy.policy') }}">Privacy Policy</a></li>
+                                <li><a href="{{ route('return-policy') }}">Return Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Join Us Section -->
+                    <div class="col-xl-4 col-lg-6 col-md-8 mb-30">
+                        <div class="footer-widget">
+                            <h6 class="f-800">Join Us</h6>
+                            <div class="mb-3 input-group">
+                                <input type="text" class="form-control" placeholder="Enter your email" aria-label="Recipient's username">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" style="background-color: #ef4416" type="button">Subscribe</button>
                                 </div>
                             </div>
+                            <p>Join our community to stay updated with the latest news, exclusive offers, and exciting updates.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="footer-bottom gray-bg pt-20 pb-20">
+
+    <!-- Footer Bottom -->
+    <div class="pt-20 pb-20 footer-bottom gray-bg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="footer-copyright text-center">
-                        <a class="m-0 text-center text-muted" href="{{ route('index') }}">
-                            Copyright 2025
-                            <span class="grenadier-color">{{ optional($site)->site_name }}</span> All Rights
-                            Reserved.
+                    <div class="text-center footer-copyright">
+                        <a href="{{ route('index') }}" class="text-muted">
+                            Copyright 2025 <span class="grenadier-color">{{ optional($site)->site_name }}</span> All Rights Reserved.
                         </a>
                     </div>
                 </div>

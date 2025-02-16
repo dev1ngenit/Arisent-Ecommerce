@@ -40,22 +40,26 @@
                                             <div class="row align-items-center">
                                                 <div class="col-xl-4 col-lg-4">
 
-                                                    <h2>{{ $offer_cat->offer_category_name }}</h2>
-                                                    <h6 class="mb-3">{{ $offer_cat->offer->name }}</h6>
+                                                    <div class="weekly-box">
+                                                        <h2>{{ $offer_cat->offer_category_name }}</h2>
+                                                        <h6 class="mb-3">{{ $offer_cat->offer->name }}</h6>
 
-                                                    <p>Hurry Up Before Offer Will End</p>
+                                                        <p>Hurry Up Before Offer Will End</p>
+                                                    </div>
 
                                                 </div>
                                                 <div class="col-xl-4 col-lg-4">
-                                                    <img class="img-fluid"
-                                                        src="{{ asset('storage/offer_image/' . $offer_cat->offer->offer_image) }}"
-                                                        alt="" style="height: 280px; width: 300px;">
+
+                                                    <div class="weekly-box">
+                                                        <img class="img-fluid"
+                                                            src="{{ asset('storage/offer_image/' . $offer_cat->offer->offer_image) }}"
+                                                            alt="" style="height: 280px; width: 300px;">
+                                                    </div>
                                                 </div>
                                                 <div class="col-xl-4 col-lg-4">
                                                     <div class="offer--deals__products mb-30 mt-30">
-
                                                         <div class="products--deals__content mb-35">
-                                                            <h6 class="f-700 mb-20">
+                                                            <h6 class="mb-20 f-700">
                                                                 <a href="javascript:void(0)"
                                                                     id="opname">{{ $offer_cat->offer->products->product_name }}</a>
                                                             </h6>
@@ -67,11 +71,11 @@
                                                                     class="price-new f-600 grenadier-color"
                                                                     id="">{{ $offer_cat->offer->discount_price }}</span></span>
 
-                                                            {{-- <input type="hidden" class="mb-0  border-1" name=""
+                                                            {{-- <input type="hidden" class="mb-0 border-1" name=""
                                                                 value="{{ $offer_cat->offer->discount_price }}"
                                                                 min="1" id="opprice" style="width: 50px" />
 
-                                                            <input type="hidden" class="mb-0  border-1" name=""
+                                                            <input type="hidden" class="mb-0 border-1" name=""
                                                                 value="1" min="1" id="oqty"
                                                                 style="width: 50px" /> --}}
 
