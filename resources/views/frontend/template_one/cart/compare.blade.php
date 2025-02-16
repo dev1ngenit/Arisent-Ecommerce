@@ -2,7 +2,7 @@
 
 @section('index_template_one')
 @section('title')
-    DadaBhaai | Compare
+    Arisent | Compare
 @endsection
 <style>
     .cd-features-list li {

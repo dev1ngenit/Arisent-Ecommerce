@@ -184,7 +184,7 @@
 
                     tableHtml = `
 
-                        <h3 class="">Wishlist List is Empty</h3>
+                        <h3 class="text-center">Wishlist List is Empty</h3>
                     `;
 
                     $('#wishlistLink').hide();
@@ -397,7 +397,7 @@
 
                     tableHtml = `
                         <div>
-                            <img class="img-fluid" style="width: 50%;" src="https://i.ibb.co/xzzr9zs/f59ed80d5c527e2461d8ba49adc36160.gif" alt="">
+                            <img class="img-fluid" style="width: 50%;" src="" alt="">
                         </div>
                         <h3 class="">Compare List is Empty</h3>
                     `;
