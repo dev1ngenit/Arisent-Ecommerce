@@ -399,7 +399,7 @@
                         <div>
                             <img class="img-fluid" style="width: 50%;" src="" alt="">
                         </div>
-                        <h3 class="">Compare List is Empty</h3>
+                        <h3 class="text-center">Compare List is Empty</h3>
                     `;
 
                     $('#compareLink').hide();
