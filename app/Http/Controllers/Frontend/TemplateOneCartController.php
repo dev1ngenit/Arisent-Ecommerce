@@ -703,7 +703,8 @@ class TemplateOneCartController extends Controller
 
         ];
 
-        Mail::to($request->billing_email)->send(new OrderMail($data));
+        // Mail::to($request->billing_email)->send(new OrderMail($data));
+        
         //End Send Mail
 
         //Notification
