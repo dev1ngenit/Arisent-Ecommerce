@@ -199,7 +199,7 @@ class OfferCategoryController extends Controller
     {
         $offers = Offer::latest()->get();
         $products = Product::latest()->get();
-        $offercats = OfferCategory::latest()->get();
+        $offercats = OfferCategory::where('status','1')->latest()->get();
         return view('admin.pages.offer.all_offer', compact('offers', 'offercats', 'products'));
     }
 

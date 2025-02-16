@@ -2,6 +2,7 @@
 @section('admin')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
+
     <!--begin::Content-->
 
     <!--begin::Toolbar-->
@@ -249,8 +250,7 @@
 
                                                     <select class="form-select form-select-solid form-select-sm"
                                                         name="brand_id" data-control="select2"
-                                                        data-placeholder="Select an Brand Name" data-allow-clear="true"
-                                                        >
+                                                        data-placeholder="Select an Brand Name" data-allow-clear="true">
                                                         <option></option>
 
                                                         @foreach ($brands as $brand)
@@ -379,8 +379,7 @@
 
                                                     <select class="form-select form-select-solid form-select-sm"
                                                         name="subcategory_id" data-control="select2"
-                                                        data-placeholder="SubCategory Name" data-allow-clear="true"
-                                                        >
+                                                        data-placeholder="SubCategory Name" data-allow-clear="true">
                                                         <option></option>
 
                                                         @foreach ($subcategorys as $subcategory)
@@ -406,8 +405,7 @@
 
                                                     <select class="form-select form-select-solid form-select-sm"
                                                         name="childcategory_id" data-control="select2"
-                                                        data-placeholder="ChildCategory Name" data-allow-clear="true"
-                                                        >
+                                                        data-placeholder="ChildCategory Name" data-allow-clear="true">
                                                         <option></option>
 
                                                         @foreach ($childcategorys as $childcategory)
@@ -712,24 +710,28 @@
 
                                             <div class="col-lg-12 mb-2">
                                                 <label class="form-label mb-0">Short Desc</label>
-                                                <textarea name="short_desc" class="editor form-control" placeholder="">
+
+                                                {{-- <textarea name="short_desc" class="editor form-control" placeholder="">
                                                     {{ $editProduct->short_desc }}
-                                                </textarea>
+                                                </textarea> --}}
+
+                                                <textarea id="" name="short_desc" class="form-control summernote" name="content">{{ $editProduct->short_desc }}</textarea>
+
                                             </div>
 
                                             <div class="col-lg-12 mb-2">
                                                 <label class="form-label mb-0">Overview</label>
-                                                <textarea name="overview" placeholder="" class="editor form-control">{{ $editProduct->overview }}</textarea>
+                                                <textarea name="overview" placeholder="" class="summernote form-control">{{ $editProduct->overview }}</textarea>
                                             </div>
 
                                             <div class="col-lg-12 mb-2">
                                                 <label class="form-label mb-0">Specification</label>
-                                                <textarea name="specification" placeholder="" class="editor form-control">{{ $editProduct->specification }}</textarea>
+                                                <textarea name="specification" placeholder="" class="summernote form-control">{{ $editProduct->specification }}</textarea>
                                             </div>
 
                                             <div class="col-lg-12 mb-2">
                                                 <label class="form-label mb-0">Accessories</label>
-                                                <textarea name="accessories" placeholder="" class="editor form-control">{{ $editProduct->accessories }}</textarea>
+                                                <textarea name="accessories" placeholder="" class="summernote form-control">{{ $editProduct->accessories }}</textarea>
                                             </div>
 
                                         </div>
@@ -1332,6 +1334,8 @@
 
     </div>
 
+
+
     {{-- Multi Image Script --}}
     <script>
         $(document).ready(function() {
@@ -1589,5 +1593,6 @@
             });
         });
     </script>
+
 
 @endsection

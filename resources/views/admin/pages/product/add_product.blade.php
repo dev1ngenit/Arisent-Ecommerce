@@ -682,24 +682,24 @@
 
                                             <div class="col-lg-12 mb-2">
                                                 <label class="form-label mb-0">Short Desc</label>
-                                                <textarea name="short_desc" class="editor form-control" placeholder="">
+                                                <textarea name="short_desc" class="summernote form-control" placeholder="">
                                                     {{ old('short_desc') }}
                                                 </textarea>
                                             </div>
 
                                             <div class="col-lg-12 mb-2">
                                                 <label class="form-label mb-0">Overview</label>
-                                                <textarea name="overview" placeholder="" class="editor form-control">{{ old('overview') }}</textarea>
+                                                <textarea name="overview" placeholder="" class="summernote form-control">{{ old('overview') }}</textarea>
                                             </div>
 
                                             <div class="col-lg-12 mb-2">
                                                 <label class="form-label mb-0">Specification</label>
-                                                <textarea name="specification" placeholder="" class="editor form-control">{{ old('specification') }}</textarea>
+                                                <textarea name="specification" placeholder="" class="summernote form-control">{{ old('specification') }}</textarea>
                                             </div>
 
                                             <div class="col-lg-12 mb-2">
                                                 <label class="form-label mb-0">Accessories</label>
-                                                <textarea name="accessories" placeholder="" class="editor form-control">{{ old('specification') }}</textarea>
+                                                <textarea name="accessories" placeholder="" class="summernote form-control">{{ old('specification') }}</textarea>
                                             </div>
 
                                         </div>

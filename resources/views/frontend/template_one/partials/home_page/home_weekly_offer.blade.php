@@ -76,20 +76,33 @@
                                                                 style="width: 50px" /> --}}
 
                                                         </div>
-                                                        <div class="product-countdown mb-15">
+
+
+                                                        {{-- <div class="product-countdown mb-15">
                                                             <div class="time-count-deal">
                                                                 <div class="countdown-list"
                                                                     data-countdown="{{ $offer_cat->offer->end_date }}">
                                                                 </div>
                                                             </div>
-                                                        </div>
+                                                        </div> --}}
+
+                                                        @if (Carbon\Carbon::now()->gte($offer_cat->offer->start_date))
+                                                            <div class="product-countdown mb-15">
+                                                                <div class="time-count-deal">
+                                                                    <div class="countdown-list"
+                                                                        data-countdown="{{ $offer_cat->offer->end_date }}">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        @endif
+
 
                                                         {{-- <input type="hidden" id="offerproduct_id"
                                                             value="{{ $offer_cat->offer->id }}"> --}}
 
                                                         <div class="product--footer__deals">
 
-                                                            @if ($offer_cat->offer->end_date >= Carbon\Carbon::now())
+                                                            {{-- @if ($offer_cat->offer->end_date >= Carbon\Carbon::now())
                                                                 <a type="submit" style="cursor:pointer;"
                                                                     data-product_id="{{ $offer_cat->offer->products->id }}"
                                                                     data-discount_price="{{ $offer_cat->offer->discount_price }}"
@@ -98,6 +111,16 @@
                                                             @else
                                                                 <p class="add-link f-700 add_to_offer_btn">Offer Ended
                                                                 </p>
+                                                            @endif --}}
+
+                                                            @if ($offer_cat->offer->end_date >= Carbon\Carbon::now() && Carbon\Carbon::now()->gte($offer_cat->offer->start_date))
+                                                                <a type="submit" style="cursor:pointer;"
+                                                                    data-product_id="{{ $offer_cat->offer->products->id }}"
+                                                                    data-discount_price="{{ $offer_cat->offer->discount_price }}"
+                                                                    class="add-link f-700 add_to_offer_btn">+ Add
+                                                                    To Cart</a>
+                                                            @else
+                                                                <p class="add-link f-700 add_to_offer_btn"></p>
                                                             @endif
 
                                                         </div>

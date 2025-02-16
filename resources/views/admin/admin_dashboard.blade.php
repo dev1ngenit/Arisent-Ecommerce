@@ -40,6 +40,9 @@
     <link href="{{ asset('backend/assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('backend/assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
 
+    <!-- Summernote CSS -->
+
+
 </head>
 
 
@@ -135,6 +138,7 @@
     <script src="{{ asset('backend/assets/js/validate.min.js') }}"></script>
     <script src="{{ asset('backend/assets/js/custom.js') }}"></script>
 
+
     @yield('barChart')
 
     <!--end::Javascript-->
@@ -156,7 +160,16 @@
         });
     </script>
 
-
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.summernote').summernote({
+                height: 200, // Set editor height
+            });
+        });
+    </script>
 
 
 </body>
