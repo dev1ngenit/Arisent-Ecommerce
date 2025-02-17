@@ -78,12 +78,12 @@
                 <div class="col-lg-9 order-1 order-lg-2 px-0">
                     <!-- Filter bar -->
                     <div class="border-b">
-                        <div class="row align-items-center mx-0" style="background: #f5f5f5;">
+                        <div class="row align-items-center mx-0 py-lg-0 py-3" style="background: #f5f5f5;">
                             <div class="col-lg-5">
                                 <h4 class="f-800 cod__black-color mb-0">Product</h4>
                             </div>
                             <div class="col-lg-7">
-                                <div class="form-group has-search mb-0">
+                                <div class="form-group has-search mb-0 py-lg-3 py-2 ">
                                     <input type="text" class="form-control product-search" name="product_search"
                                         placeholder="Search" value="{{ request()->get('product_search') }}">
                                     <span class="fa fa-search form-control-feedback"></span>

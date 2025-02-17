@@ -10,7 +10,7 @@
 
             @include('frontend.template_one.partials.frontend_sidebar')
 
-            <div class="col-lg-9 order-1 order-lg-2">
+            <div class="order-1 col-lg-9 order-lg-2">
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="shop-banner-bg pt-120 pb-120 mb-50"
@@ -20,10 +20,10 @@
                     </div>
                 </div>
                 <div class="border-b">
-                    <div class="row align-items-center mx-0" style="background: #f5f5f5;">
+                    <div class="mx-0 row align-items-center" style="background: #f5f5f5;">
                         <div class="col-lg-5">
                             <div class="shop-bar d-flex align-items-center">
-                                <h4 class="f-800 cod__black-color mb-0">Product</h4>
+                                <h4 class="mb-0 f-800 cod__black-color">Product</h4>
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
@@ -36,7 +36,7 @@
 
                         <!-- Search Box -->
                         <div class="col-lg-7">
-                            <div class="form-group has-search mb-0">
+                            <div class="py-2 mb-0 form-group has-search py-lg-3 ">
                                 <input type="text" class="form-control" id="category_product_search"
                                     placeholder="Search">
                                 <span class="fa fa-search form-control-feedback"></span>
@@ -80,16 +80,16 @@
                                                 href="{{ url('product' . '/' . $product->id . '/' . $product->product_slug) }}">{{ substr($product->product_name, 0, 25) }}</a>
                                         </h3>
                                     </div>
-                                    <div class="price font-weight-bold pr-2">
+                                    <div class="pr-2 price font-weight-bold">
                                         @if ($product->price_status == 'rfq' && !is_null($product->sas_price))
-                                            <h6 class="grenadier-color mb-0 font-weight-bold">Tk
+                                            <h6 class="mb-0 grenadier-color font-weight-bold">Tk
                                                 {{ $product->sas_price }}</h6>
                                         @elseif ($product->price_status == 'offer_price' && !is_null($product->price) && !is_null($product->discount_price))
                                             <del>Tk {{ $product->price }}</del>
-                                            <h6 class="grenadier-color mb-0 font-weight-bold">Tk
+                                            <h6 class="mb-0 grenadier-color font-weight-bold">Tk
                                                 {{ $product->discount_price }}</h6>
                                         @elseif ($product->price_status == 'price' && !is_null($product->price))
-                                            <h6 class="grenadier-color mb-0 font-weight-bold">Tk {{ $product->price }}
+                                            <h6 class="mb-0 grenadier-color font-weight-bold">Tk {{ $product->price }}
                                             </h6>
                                         @endif
                                     </div>
@@ -111,7 +111,7 @@
                 </div>
 
                 <!-- Pagination -->
-                <div class="row mt-10">
+                <div class="mt-10 row">
                     <div class="col-sm-12">
                         <div class="common-pagination">
                             {{ $products->links('vendor.pagination.template_one') }}
