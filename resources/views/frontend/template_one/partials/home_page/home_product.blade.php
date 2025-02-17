@@ -94,19 +94,19 @@
                                                     <div class="price font-weight-bold pr-2">
                                                         @if ($cat_product->price_status == 'rfq' && !is_null($cat_product->sas_price))
                                                             <h6 class="grenadier-color mb-0 font-weight-bold">
-                                                                Tk{{ $cat_product->sas_price }}
+                                                                Tk {{ $cat_product->sas_price }}
                                                             </h6>
                                                         @elseif (
                                                             $cat_product->price_status == 'offer_price' &&
                                                                 !is_null($cat_product->discount_price) &&
                                                                 !is_null($cat_product->price))
-                                                            <del>Tk{{ $cat_product->price }}</del>
+                                                            <del>Tk {{ $cat_product->price }}</del>
                                                             <h6 class="grenadier-color mb-0 font-weight-bold">
-                                                                Tk{{ $cat_product->discount_price }}
+                                                                Tk {{ $cat_product->discount_price }}
                                                             </h6>
                                                         @elseif ($cat_product->price_status == 'price' && !is_null($cat_product->price))
                                                             <h6 class="grenadier-color mb-0 font-weight-bold">
-                                                                Tk{{ $cat_product->price }}
+                                                                Tk {{ $cat_product->price }}
                                                             </h6>
                                                         @else
                                                             <!-- Optional: Show a default message if no price is available -->
@@ -200,19 +200,19 @@
                                                     <div class="price font-weight-bold pr-2">
                                                         @if ($cat_product->price_status == 'rfq' && !is_null($cat_product->sas_price))
                                                             <h6 class="grenadier-color mb-0 font-weight-bold">
-                                                                Tk{{ $cat_product->sas_price }}
+                                                                Tk {{ $cat_product->sas_price }}
                                                             </h6>
                                                         @elseif (
                                                             $cat_product->price_status == 'offer_price' &&
                                                                 !is_null($cat_product->discount_price) &&
                                                                 !is_null($cat_product->price))
-                                                            <del>Tk{{ $cat_product->price }}</del>
+                                                            <del>Tk {{ $cat_product->price }}</del>
                                                             <h6 class="grenadier-color mb-0 font-weight-bold">
-                                                                Tk{{ $cat_product->discount_price }}
+                                                                Tk {{ $cat_product->discount_price }}
                                                             </h6>
                                                         @elseif ($cat_product->price_status == 'price' && !is_null($cat_product->price))
                                                             <h6 class="grenadier-color mb-0 font-weight-bold">
-                                                                Tk{{ $cat_product->price }}
+                                                                Tk {{ $cat_product->price }}
                                                             </h6>
                                                         @else
                                                             <!-- Optional: Display something else if all prices are null -->
