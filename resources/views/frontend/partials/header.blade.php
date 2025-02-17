@@ -1,4 +1,4 @@
-<header id="masthead" class="clearfix overflow-auto-header" >
+<header id="masthead" class="clearfix overflow-auto-header">
     <div class="site-subheader site-header">
         <div class="container theme-container">
             <!-- Language & Currency Switcher -->
@@ -820,7 +820,6 @@
                                                                         </div>
                                                                     </div>
                                                                 @else
-
                                                                 @endif
 
 

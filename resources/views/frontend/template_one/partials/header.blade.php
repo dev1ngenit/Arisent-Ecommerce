@@ -261,21 +261,17 @@
                 </ul>
             </div>
 
-            <!-- Search Form -->
-            {{-- <form class="my-2 ml-auto form-inline my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="my-2 btn btn-outline-light my-sm-0" type="submit">
-                    <i class="fas fa-search"></i>
-                </button>
-            </form> --}}
 
+            {{-- Ashiquzzaman  --}}
             <form class="ml-auto mr-3 searchbox" action="{{ route('product.search') }}" method="POST">
                 @csrf
-                <input type="search" placeholder="Search......" name="search" class="searchbox-input"
-                    id="search" autocomplete="off" name="search" onkeyup="buttonUp();" required>
+                <input type="search" placeholder="Product Search......" name="search" class="searchbox-input"
+                    id="search" autocomplete="off" onkeyup="buttonUp();" required>
                 <button class="searchbox-submit" value="GO"><i class="icofont-search-2"></i></button>
                 <span class="searchbox-icon"><i class="icofont-search-2"></i></span>
             </form>
+            {{-- Ashiquzzaman  --}}
+
 
             <div class="cart--header__middle d-none d-md-block">
                 <div class="cart--header__list">
@@ -700,6 +696,7 @@
                 <button class="searchbox-submit" value="GO"><i class="icofont-search-2"></i></button>
                 <span class="searchbox-icon"><i class="icofont-search-2"></i></span>
             </form>
+
             <div>
                 @if (Auth::user())
                     <a href="javascript:void(0);" id="userIcon" class="border-0 bg-none text-muted" type="button"

@@ -1,29 +1,28 @@
 <?php
-
 namespace App\Http\Controllers\Frontend;
 
-use App\Models\User;
-use App\Models\Brand;
-use App\Models\Sites;
-use App\Models\Privacy;
-use App\Models\Admin\Faq;
-use App\Models\User\Order;
-use App\Models\Admin\About;
-use App\Models\Admin\Offer;
-use App\Models\Admin\Terms;
-use App\Models\ReturnPolicy;
-use Illuminate\Http\Request;
-use App\Models\Admin\Contact;
-use App\Models\Admin\Product;
-use App\Models\Admin\Category;
-use App\Models\User\OrderItem;
-use Illuminate\Validation\Rules;
-use App\Models\Admin\ChildCategory;
-use App\Models\Admin\OfferCategory;
 use App\Http\Controllers\Controller;
+use App\Models\Admin\About;
+use App\Models\Admin\Category;
+use App\Models\Admin\ChildCategory;
+use App\Models\Admin\Contact;
+use App\Models\Admin\Faq;
+use App\Models\Admin\Offer;
+use App\Models\Admin\OfferCategory;
+use App\Models\Admin\Product;
+use App\Models\Admin\Terms;
+use App\Models\Brand;
+use App\Models\Privacy;
+use App\Models\ReturnPolicy;
+use App\Models\Sites;
+use App\Models\User;
+use App\Models\User\Order;
+use App\Models\User\OrderItem;
+use Gloudemans\Shoppingcart\Facades\Cart;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Gloudemans\Shoppingcart\Facades\Cart;
+use Illuminate\Validation\Rules;
 
 class TemplateOneController extends Controller
 {
@@ -33,34 +32,34 @@ class TemplateOneController extends Controller
         $products = Product::query();
 
         // Apply category filter
-        if (!empty($request->get('category'))) {
+        if (! empty($request->get('category'))) {
             $categorySlugs = explode(',', $request->get('category'));
-            $categoryIds = Category::whereIn('category_slug', $categorySlugs)->pluck('id')->toArray();
-            $products = $products->whereIn('category_id', $categoryIds);
+            $categoryIds   = Category::whereIn('category_slug', $categorySlugs)->pluck('id')->toArray();
+            $products      = $products->whereIn('category_id', $categoryIds);
         }
 
         // Apply brand filter
-        if (!empty($request->get('brand'))) {
+        if (! empty($request->get('brand'))) {
             $brandSlugs = explode(',', $request->get('brand'));
-            $brandIds = Brand::whereIn('brand_slug', $brandSlugs)->pluck('id')->toArray();
-            $products = $products->whereIn('brand_id', $brandIds);
+            $brandIds   = Brand::whereIn('brand_slug', $brandSlugs)->pluck('id')->toArray();
+            $products   = $products->whereIn('brand_id', $brandIds);
         }
 
         // Apply search filter
-        if (!empty($request->get('product_search'))) {
+        if (! empty($request->get('product_search'))) {
             $products = $products->where('product_name', 'like', '%' . $request->get('product_search') . '%');
         }
 
         // Apply sorting
-        if (!empty($request->get('sortBy'))) {
-            $perPage = (int) $request->get('sortBy');
+        if (! empty($request->get('sortBy'))) {
+            $perPage  = (int) $request->get('sortBy');
             $products = $products->orderBy('product_name', 'ASC')->paginate($perPage);
         } else {
             $products = $products->orderBy('id', 'DESC')->paginate(18);
         }
 
         // Fetch the brands and categories for filters
-        $brands = Brand::where('status', 1)->orderBy('brand_name', 'ASC')->get();
+        $brands    = Brand::where('status', 1)->orderBy('brand_name', 'ASC')->get();
         $categorys = Category::where('status', 1)->orderBy('category_name', 'ASC')->get();
 
         return view('frontend.template_one.product.template_one_all_product', compact('products', 'brands', 'categorys'));
@@ -74,27 +73,27 @@ class TemplateOneController extends Controller
         $products = Product::query();
 
         // Apply category filter
-        if (!empty($data['category'])) {
+        if (! empty($data['category'])) {
             $categorySlugs = $data['category'];
-            $categoryIds = Category::whereIn('category_slug', $categorySlugs)->pluck('id')->toArray();
-            $products = $products->whereIn('category_id', $categoryIds);
+            $categoryIds   = Category::whereIn('category_slug', $categorySlugs)->pluck('id')->toArray();
+            $products      = $products->whereIn('category_id', $categoryIds);
         }
 
         // Apply brand filter
-        if (!empty($data['brand'])) {
+        if (! empty($data['brand'])) {
             $brandSlugs = $data['brand'];
-            $brandIds = Brand::whereIn('brand_slug', $brandSlugs)->pluck('id')->toArray();
-            $products = $products->whereIn('brand_id', $brandIds);
+            $brandIds   = Brand::whereIn('brand_slug', $brandSlugs)->pluck('id')->toArray();
+            $products   = $products->whereIn('brand_id', $brandIds);
         }
 
         // Apply search filter
-        if (!empty($data['product_search'])) {
+        if (! empty($data['product_search'])) {
             $products = $products->where('product_name', 'like', '%' . $data['product_search'] . '%');
         }
 
         // Apply sorting
-        if (!empty($data['sortBy'])) {
-            $perPage = (int) $data['sortBy'];
+        if (! empty($data['sortBy'])) {
+            $perPage  = (int) $data['sortBy'];
             $products = $products->orderBy('product_name', 'ASC')->paginate($perPage);
         } else {
             $products = $products->orderBy('id', 'DESC')->paginate(18);
@@ -103,22 +102,20 @@ class TemplateOneController extends Controller
         // Prepare the response for AJAX
         if ($request->ajax()) {
             $productsHtml = view('frontend.template_one.product.product_grid', compact('products'))->render();
-            $pagination = $products->appends($data)->links('vendor.pagination.template_one')->render();
+            $pagination   = $products->appends($data)->links('vendor.pagination.template_one')->render();
 
             return response()->json([
                 'productsHtml' => $productsHtml,
-                'pagination' => $pagination,
+                'pagination'   => $pagination,
             ]);
         }
 
         // Fetch brands and categories for non-AJAX response
-        $brands = Brand::where('status', 1)->orderBy('brand_name', 'ASC')->get();
+        $brands    = Brand::where('status', 1)->orderBy('brand_name', 'ASC')->get();
         $categorys = Category::where('status', 1)->orderBy('category_name', 'ASC')->get();
 
         return view('frontend.template_one.product.template_one_all_product', compact('products', 'brands', 'categorys'));
     }
-
-
 
     //Brand Wise Product One
     public function BrandRelatedProductOne(Request $request, $id, $brand_slug)
@@ -142,12 +139,12 @@ class TemplateOneController extends Controller
             }
         }
 
-        $brandwiseproduct = Brand::find($id);
-        $catwiseproduct = '';
+        $brandwiseproduct    = Brand::find($id);
+        $catwiseproduct      = '';
         $childcatwiseproduct = '';
 
-        $route = 'product/brand';
-        $brandId = $id;
+        $route     = 'product/brand';
+        $brandId   = $id;
         $brandSlug = $brand_slug;
 
         return view('frontend.template_one.brand.brand_wise_product', compact('products', 'brandwiseproduct', 'route', 'brandId', 'brandSlug', 'sort', 'catwiseproduct', 'childcatwiseproduct'));
@@ -158,8 +155,8 @@ class TemplateOneController extends Controller
     public function BrandRelatedProductSearch(Request $request)
     {
         $searchQuery = $request->query('query');
-        $brandId = $request->query('brand_id');
-        $sort = $request->query('sort');
+        $brandId     = $request->query('brand_id');
+        $sort        = $request->query('sort');
 
         $query = Product::where('status', 1)->where('brand_id', $brandId);
 
@@ -178,7 +175,6 @@ class TemplateOneController extends Controller
         // Return the updated product grid view
         return view('frontend.template_one.partials.product_grid', compact('products'));
     }
-
 
     //Home All Category
     public function HomeAllCategory()
@@ -210,11 +206,11 @@ class TemplateOneController extends Controller
             }
         }
 
-        $catwiseproduct = Category::find($id);
+        $catwiseproduct      = Category::find($id);
         $childcatwiseproduct = '';
-        $route = 'product/category';
-        $catId = $id;
-        $catSlug = $category_slug;
+        $route               = 'product/category';
+        $catId               = $id;
+        $catSlug             = $category_slug;
 
         return view('frontend.template_one.category.category_wise_product', compact('products', 'catwiseproduct', 'route', 'catId', 'catSlug', 'sort', 'childcatwiseproduct'));
     }
@@ -263,12 +259,12 @@ class TemplateOneController extends Controller
             }
         }
 
-        $route = 'product/childcategory';
-        $childcatId = $id;
+        $route        = 'product/childcategory';
+        $childcatId   = $id;
         $childcatSlug = $childcategory_slug;
 
         $childcatwiseproduct = ChildCategory::find($id);
-        $catwiseproduct = Category::find($childcatwiseproduct->category_id);
+        $catwiseproduct      = Category::find($childcatwiseproduct->category_id);
 
         return view('frontend.template_one.childcategory.childcategory_wise_product', compact('products', 'childcatwiseproduct', 'childcatId', 'childcatSlug', 'sort', 'route', 'catwiseproduct'));
     }
@@ -286,15 +282,15 @@ class TemplateOneController extends Controller
         $validator = $request->validate(
 
             [
-                'name' => 'required|max:120',
-                'email' => 'required|email',
+                'name'    => 'required|max:120',
+                'email'   => 'required|email',
                 'subject' => 'required',
                 'message' => 'required',
             ],
 
             [
-                'name.required' => 'Name is required',
-                'email.required' => 'Email is required',
+                'name.required'    => 'Name is required',
+                'email.required'   => 'Email is required',
                 'subject.required' => 'Subject is required',
                 'message.required' => 'Message is required',
             ],
@@ -318,13 +314,13 @@ class TemplateOneController extends Controller
 
             Contact::insert([
 
-                'name' => $request->name,
-                'email' => $request->email,
+                'name'    => $request->name,
+                'email'   => $request->email,
                 // 'phone' => $request->phone,
                 // 'address' => $request->address,
                 'subject' => $request->subject,
                 'message' => $request->message,
-                'code' => $code,
+                'code'    => $code,
                 // 'ip_address' => $request->ip_address,
 
             ]);
@@ -343,12 +339,10 @@ class TemplateOneController extends Controller
 
         $products = Product::where('product_name', 'LIKE', "%$item%")
             ->orWhere('short_desc', "LIKE", "%$item%")
-            ->paginate(12);
+            ->paginate(100);
 
         return view('frontend.template_one.search.product_search', compact('products', 'item'));
     }
-
-
 
     //Template One Faq
     public function TemplateOneFaq()
@@ -387,7 +381,7 @@ class TemplateOneController extends Controller
     //TemplateOneDashboard
     public function TemplateOneDashboard()
     {
-        $id = Auth::user()->id;
+        $id          = Auth::user()->id;
         $profileData = User::find($id);
 
         return view('frontend.template_one.user.dashboard', compact('profileData'));
@@ -397,17 +391,17 @@ class TemplateOneController extends Controller
     public function TemplateOneProfileUpdate(Request $request)
     {
 
-        $id = Auth::user()->id;
+        $id     = Auth::user()->id;
         $update = User::findOrFail($id);
 
-        $update->name = $request->name;
-        $update->email = $request->email;
-        $update->phone = $request->phone;
-        $update->address = $request->address;
+        $update->name        = $request->name;
+        $update->email       = $request->email;
+        $update->phone       = $request->phone;
+        $update->address     = $request->address;
         $update->address_two = $request->address_two;
 
-        $update->country = $request->country;
-        $update->city = $request->city;
+        $update->country     = $request->country;
+        $update->city        = $request->city;
         $update->postal_code = $request->postal_code;
 
         $update->save();
@@ -433,7 +427,7 @@ class TemplateOneController extends Controller
         ]);
 
         //Match Old Password
-        if (!Hash::check($request->old_password, auth::user()->password)) {
+        if (! Hash::check($request->old_password, auth::user()->password)) {
 
             toastr()->error('Old Password Not Match');
 
@@ -467,7 +461,7 @@ class TemplateOneController extends Controller
     //Template One OrderDetails
     public function TemplateOneOrderDetails($id)
     {
-        $order = Order::where('id', $id)->where('user_id', Auth::id())->first();
+        $order     = Order::where('id', $id)->where('user_id', Auth::id())->first();
         $orderitem = OrderItem::with('product')->where('order_id', $id)->orderBy('id', 'DESC')->get();
 
         return view('frontend.template_one.user.order_details', compact('order', 'orderitem'));
@@ -476,7 +470,7 @@ class TemplateOneController extends Controller
     //Template One OrderDetails
     public function TemplateOneOrderInvoice($id)
     {
-        $order = Order::where('id', $id)->where('user_id', Auth::id())->first();
+        $order     = Order::where('id', $id)->where('user_id', Auth::id())->first();
         $orderitem = OrderItem::with('product')->where('order_id', $id)->orderBy('id', 'DESC')->get();
 
         return view('frontend.template_one.user.invoice', compact('order', 'orderitem'));
@@ -618,11 +612,11 @@ class TemplateOneController extends Controller
         $existingCompareItems = Cart::instance('compare')->content();
 
         // Check if there are items in compare
-        if (!$existingCompareItems->isEmpty()) {
+        if (! $existingCompareItems->isEmpty()) {
             // Get the category of the first item in compare (assuming all items are in the same category)
-            $firstCompareItem = $existingCompareItems->first();
+            $firstCompareItem    = $existingCompareItems->first();
             $firstCompareProduct = Product::findOrFail($firstCompareItem->id);
-            $compareCategory = $firstCompareProduct->category_id;
+            $compareCategory     = $firstCompareProduct->category_id;
 
             // Check if the product being added is in the same category
             if ($product->category_id != $compareCategory) {
@@ -635,11 +629,11 @@ class TemplateOneController extends Controller
 
         // Add the product to compare
         Cart::instance('compare')->add([
-            'id' => $id,
-            'name' => $product->product_name,
-            'qty' => 1,
-            'price' => $price,
-            'weight' => 1,
+            'id'      => $id,
+            'name'    => $product->product_name,
+            'qty'     => 1,
+            'price'   => $price,
+            'weight'  => 1,
             'options' => [
                 'image' => $product->product_image,
             ],
@@ -657,15 +651,15 @@ class TemplateOneController extends Controller
     //GetCompare
     public function GetCompare()
     {
-        $cartCompare = Cart::instance('compare')->content()->take(4); // Limiting to 3 products
+        $cartCompare    = Cart::instance('compare')->content()->take(4); // Limiting to 3 products
         $cartCompareQty = Cart::instance('compare')->count();
-        $cartTotal = Cart::instance('compare')->total();
+        $cartTotal      = Cart::instance('compare')->total();
 
-        return response()->json(array(
-            'cartCompare' => $cartCompare,
+        return response()->json([
+            'cartCompare'    => $cartCompare,
             'cartCompareQty' => $cartCompareQty,
-            'cartTotal' => $cartTotal,
-        ));
+            'cartTotal'      => $cartTotal,
+        ]);
     }
 
     public function AddToCartCompare(Request $request, $id)
@@ -685,11 +679,11 @@ class TemplateOneController extends Controller
 
             Cart::add([
 
-                'id' => $id,
-                'name' => $product->product_name,
-                'qty' => 1,
-                'price' => $product->sas_price,
-                'weight' => 1,
+                'id'      => $id,
+                'name'    => $product->product_name,
+                'qty'     => 1,
+                'price'   => $product->sas_price,
+                'weight'  => 1,
                 'options' => [
                     'image' => $product->product_image,
 
@@ -701,11 +695,11 @@ class TemplateOneController extends Controller
 
             Cart::add([
 
-                'id' => $id,
-                'name' => $product->product_name,
-                'qty' => 1,
-                'price' => $product->discount_price,
-                'weight' => 1,
+                'id'      => $id,
+                'name'    => $product->product_name,
+                'qty'     => 1,
+                'price'   => $product->discount_price,
+                'weight'  => 1,
                 'options' => [
                     'image' => $product->product_image,
 
@@ -717,11 +711,11 @@ class TemplateOneController extends Controller
 
             Cart::add([
 
-                'id' => $id,
-                'name' => $product->product_name,
-                'qty' => 1,
-                'price' => $product->price,
-                'weight' => 1,
+                'id'      => $id,
+                'name'    => $product->product_name,
+                'qty'     => 1,
+                'price'   => $product->price,
+                'weight'  => 1,
                 'options' => [
                     'image' => $product->product_image,
 
@@ -762,12 +756,12 @@ class TemplateOneController extends Controller
 
             Cart::instance('wishlist')->add([
 
-                'id' => $id,
+                'id'      => $id,
 
-                'name' => $product->product_name,
-                'qty' => 1,
-                'price' => $product->sas_price,
-                'weight' => 1,
+                'name'    => $product->product_name,
+                'qty'     => 1,
+                'price'   => $product->sas_price,
+                'weight'  => 1,
 
                 'options' => [
                     'image' => $product->product_image,
@@ -781,12 +775,12 @@ class TemplateOneController extends Controller
 
             Cart::instance('wishlist')->add([
 
-                'id' => $id,
+                'id'      => $id,
 
-                'name' => $product->product_name,
-                'qty' => 1,
-                'price' => $product->discount_price,
-                'weight' => 1,
+                'name'    => $product->product_name,
+                'qty'     => 1,
+                'price'   => $product->discount_price,
+                'weight'  => 1,
 
                 'options' => [
                     'image' => $product->product_image,
@@ -799,12 +793,12 @@ class TemplateOneController extends Controller
 
             Cart::instance('wishlist')->add([
 
-                'id' => $id,
+                'id'      => $id,
 
-                'name' => $product->product_name,
-                'qty' => 1,
-                'price' => $product->price,
-                'weight' => 1,
+                'name'    => $product->product_name,
+                'qty'     => 1,
+                'price'   => $product->price,
+                'weight'  => 1,
 
                 'options' => [
                     'image' => $product->product_image,
@@ -825,15 +819,15 @@ class TemplateOneController extends Controller
     //GetCompare
     public function GetWishlist()
     {
-        $cartWishlist = Cart::instance('wishlist')->content(); // Limiting to 3 products
+        $cartWishlist    = Cart::instance('wishlist')->content(); // Limiting to 3 products
         $cartWishlistQty = Cart::instance('wishlist')->count();
-        $cartTotal = Cart::instance('wishlist')->total();
+        $cartTotal       = Cart::instance('wishlist')->total();
 
-        return response()->json(array(
-            'cartWishlist' => $cartWishlist,
+        return response()->json([
+            'cartWishlist'    => $cartWishlist,
             'cartWishlistQty' => $cartWishlistQty,
-            'cartTotal' => $cartTotal,
-        ));
+            'cartTotal'       => $cartTotal,
+        ]);
     }
 
     public function AddToCartWishlist(Request $request, $id)
@@ -853,11 +847,11 @@ class TemplateOneController extends Controller
 
             Cart::add([
 
-                'id' => $id,
-                'name' => $product->product_name,
-                'qty' => 1,
-                'price' => $product->sas_price,
-                'weight' => 1,
+                'id'      => $id,
+                'name'    => $product->product_name,
+                'qty'     => 1,
+                'price'   => $product->sas_price,
+                'weight'  => 1,
                 'options' => [
                     'image' => $product->product_image,
 
@@ -869,11 +863,11 @@ class TemplateOneController extends Controller
 
             Cart::add([
 
-                'id' => $id,
-                'name' => $product->product_name,
-                'qty' => 1,
-                'price' => $product->discount_price,
-                'weight' => 1,
+                'id'      => $id,
+                'name'    => $product->product_name,
+                'qty'     => 1,
+                'price'   => $product->discount_price,
+                'weight'  => 1,
                 'options' => [
                     'image' => $product->product_image,
 
@@ -885,11 +879,11 @@ class TemplateOneController extends Controller
 
             Cart::add([
 
-                'id' => $id,
-                'name' => $product->product_name,
-                'qty' => 1,
-                'price' => $product->price,
-                'weight' => 1,
+                'id'      => $id,
+                'name'    => $product->product_name,
+                'qty'     => 1,
+                'price'   => $product->price,
+                'weight'  => 1,
                 'options' => [
                     'image' => $product->product_image,
 
@@ -912,13 +906,13 @@ class TemplateOneController extends Controller
     {
         // Validate the form input
         $request->validate([
-            'email' => 'required|email|exists:users,email', // Ensure the email exists in the 'users' table
-            'password' => 'required|string|min:8', // Password validation
+            'email'    => 'required|email|exists:users,email', // Ensure the email exists in the 'users' table
+            'password' => 'required|string|min:8',             // Password validation
         ]);
 
         // Attempt to log the user in
         if (Auth::attempt($request->only('email', 'password'), $request->has('remember'))) {
-            // If successful, redirect to the cart or dashboard
+                                                               // If successful, redirect to the cart or dashboard
             return redirect()->route('template.one.checkout'); // Adjust this as needed
         }
 

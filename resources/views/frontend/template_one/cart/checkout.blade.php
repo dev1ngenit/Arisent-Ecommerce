@@ -389,6 +389,9 @@
                     billing_country: {
                         required: true,
                     },
+                    shipping_country: {
+                        required: true,
+                    },
 
                     billing_state: {
                         required: true,
@@ -439,6 +442,9 @@
                     },
 
                     billing_country: {
+                        required: 'Please Enter Country Name',
+                    },
+                    shipping_country: {
                         required: 'Please Enter Country Name',
                     },
 

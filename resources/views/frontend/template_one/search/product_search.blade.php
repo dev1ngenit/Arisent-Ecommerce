@@ -2,7 +2,7 @@
 @section('index_template_one')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- shop area start -->
-    <div class="product shop-page pt-30 pb-80" style="margin-top: 60px;">
+    <div class="product shop-page pb-80" style="margin-top: 30px;">
         <div class="container">
             <div class="row">
 
@@ -98,18 +98,20 @@
                     </div>
 
                 </div>
+                {{-- Brand  --}}
 
                 <div class="col-lg-9 order-1 order-lg-2">
-                    <div class="row">
+
+                    {{-- <div class="row">
                         <div class="col-sm-12">
                             <div class="shop-banner-bg pt-120 pb-120 mb-50"
                                 data-background="{{ asset('frontend/template_one/assets/img/bg/shop-banner-bg.jpg') }}">
 
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
-                    <div class="border-b">
+                    <div class="border-b p-2" style="background-color: #968f8f0e;">
 
                         <div class="row">
 
@@ -118,8 +120,9 @@
                                     <h4 class="f-800 cod__black-color">Product</h4>
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
-                                            <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
-                                            <li class="breadcrumb-item active" aria-current="page">
+                                            <li class="breadcrumb-item cod__black-color"><a
+                                                    href="{{ route('index') }}">Home</a></li>
+                                            <li class="breadcrumb-item active cod__black-color" aria-current="page">
                                                 {{ $item }}</li>
                                         </ol>
                                     </nav>
@@ -128,8 +131,7 @@
 
                             <div class="col-lg-4 col-md-2">
                                 <div class="text-center" style="margin-top: 10px;">
-                                    {{-- <span>Showing {{ count($products) }} of {{ $products->total() }} Results</span> --}}
-                                    {{-- <span>Search By Product Name </span> --}}
+
 
                                 </div>
                             </div>
@@ -235,7 +237,7 @@
 
                     {{-- Pagination Section  --}}
 
-                    <div class="row mt-10">
+                    {{-- <div class="row mt-10">
                         <div class="col-sm-12">
                             <div class="common-pagination">
 
@@ -243,7 +245,7 @@
 
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
                     {{-- Pagination Section  --}}
 
