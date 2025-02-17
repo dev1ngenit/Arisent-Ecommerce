@@ -330,36 +330,36 @@ class TemplateOneController extends Controller
     }
 
     //ProductSearch
-    // public function ProductSearch(Request $request)
-    // {
-
-    //     $request->validate(['search' => "required"]);
-
-    //     $item = $request->search;
-
-    //     $products = Product::where('product_name', 'LIKE', "%$item%")
-    //         ->orWhere('short_desc', "LIKE", "%$item%")
-    //         ->paginate(100);
-
-    //     return view('frontend.template_one.search.product_search', compact('products', 'item'));
-    // }
-
     public function ProductSearch(Request $request)
     {
+
         $request->validate(['search' => "required"]);
 
         $item = $request->search;
 
         $products = Product::where('product_name', 'LIKE', "%$item%")
-            ->orWhere('short_desc', 'LIKE', "%$item%")
-            ->paginate(10);
-
-        if ($request->ajax()) {
-            return view('frontend.template_one.search.product_search_results', compact('products', 'item'));
-        }
+            ->orWhere('short_desc', "LIKE", "%$item%")
+            ->paginate(100);
 
         return view('frontend.template_one.search.product_search', compact('products', 'item'));
     }
+
+    // public function ProductSearch(Request $request)
+    // {
+    //     $request->validate(['search' => "required"]);
+
+    //     $item = $request->search;
+
+    //     $products = Product::where('product_name', 'LIKE', "%$item%")
+    //         ->orWhere('short_desc', 'LIKE', "%$item%")
+    //         ->paginate(10);
+
+    //     if ($request->ajax()) {
+    //         return view('frontend.template_one.search.product_search_results', compact('products', 'item'));
+    //     }
+
+    //     return view('frontend.template_one.search.product_search', compact('products', 'item'));
+    // }
 
     //Template One Faq
     public function TemplateOneFaq()

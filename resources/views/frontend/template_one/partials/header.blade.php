@@ -262,15 +262,15 @@
             </div>
 
             {{-- Ashiquzzaman  --}}
-            {{-- <form class="ml-auto mr-3 searchbox" action="{{ route('product.search') }}" method="POST">
+            <form class="ml-auto mr-3 searchbox" action="{{ route('product.search') }}" method="POST">
                 @csrf
                 <input type="search" placeholder="Product Search......" name="search" class="searchbox-input"
                     id="search" autocomplete="off" onkeyup="buttonUp();" required>
                 <button class="searchbox-submit" value="GO"><i class="icofont-search-2"></i></button>
                 <span class="searchbox-icon"><i class="icofont-search-2"></i></span>
-            </form> --}}
+            </form>
 
-            <form class="ml-auto mr-3 searchbox" action="{{ route('product.search') }}" method="POST"
+            {{-- <form class="ml-auto mr-3 searchbox" action="{{ route('product.search') }}" method="POST"
                 id="searchForm">
                 @csrf
                 <input type="search" placeholder="Product Search......" name="search" id="search"
@@ -278,12 +278,12 @@
                 <button type="button" class="searchbox-submit" value="GO"><i
                         class="icofont-search-2"></i></button>
                 <span class="searchbox-icon"><i class="icofont-search-2"></i></span>
-            </form>
+            </form> --}}
 
             <!-- Here we'll display the live search results -->
-            <div id="searchResults" class="mt-5"></div>
+            {{-- <div id="searchResults" class="mt-5"></div> --}}
 
-            <script>
+            {{-- <script>
                 function liveSearch() {
                     var searchQuery = $('#search').val();
 
@@ -304,7 +304,7 @@
                         $('#searchResults').html(''); // Clear results if input is too short
                     }
                 }
-            </script>
+            </script> --}}
 
             {{-- Ashiquzzaman  --}}
 
