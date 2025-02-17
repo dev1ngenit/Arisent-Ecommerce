@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row mt-30">
+        @forelse ($products as $product)
+            <div class="col-lg-3 col-md-6">
+                <div class="product-grid mb-4">
+                    <div class="product-image">
+                        <a href="{{ url('product' . '/' . $product->id . '/' . $product->product_slug) }}" class="image">
+                            <img title="{{ $product->product_name }}" src="{{ asset($product->product_image) }}"
+                                style="width:100%; height: 300px;">
+                        </a>
+                    </div>
+                    <div class="product-content d-flex justify-content-between align-items-center">
+                        <div>
+                            <span><a class="text-muted"
+                                    href="{{ url('product' . '/' . $product->id . '/' . $product->product_slug) }}">{{ $product->brand->brand_name }}</a></span>
+                            <h3 class="title font-weight-bold"><a
+                                    href="{{ url('product' . '/' . $product->id . '/' . $product->product_slug) }}">{{ substr($product->product_name, 0, 25) }}</a>
+                            </h3>
+                        </div>
+                        <div class="price font-weight-bold pr-2">
+                            @if ($product->price_status == 'rfq')
+                                <h6 class="grenadier-color mb-0 font-weight-bold">Tk {{ $product->sas_price }}</h6>
+                            @elseif ($product->price_status == 'offer_price')
+                                <del>Tk {{ $product->price }}</del>
+                                <h6 class="grenadier-color mb-0 font-weight-bold">Tk {{ $product->discount_price }}</h6>
+                            @elseif ($product->price_status == 'price')
+                                <h6 class="grenadier-color mb-0 font-weight-bold">Tk {{ $product->price }}</h6>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @empty
+            <p class="text-danger">No products available</p>
+        @endforelse
+    </div>
+</div>

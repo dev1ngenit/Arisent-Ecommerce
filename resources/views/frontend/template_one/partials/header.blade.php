@@ -79,7 +79,7 @@
                                                         @endphp
                                                         <div class="row">
                                                             @forelse ($catwissubcat as $subcat)
-                                                                <div class="col-lg-4">
+                                                                <div class="col-lg-3">
                                                                     <div>
                                                                         <h5 class="" style="color: #ef4416;">
                                                                             {{ $subcat->subcategory_name }}
@@ -261,15 +261,51 @@
                 </ul>
             </div>
 
-
             {{-- Ashiquzzaman  --}}
-            <form class="ml-auto mr-3 searchbox" action="{{ route('product.search') }}" method="POST">
+            {{-- <form class="ml-auto mr-3 searchbox" action="{{ route('product.search') }}" method="POST">
                 @csrf
                 <input type="search" placeholder="Product Search......" name="search" class="searchbox-input"
                     id="search" autocomplete="off" onkeyup="buttonUp();" required>
                 <button class="searchbox-submit" value="GO"><i class="icofont-search-2"></i></button>
                 <span class="searchbox-icon"><i class="icofont-search-2"></i></span>
+            </form> --}}
+
+            <form class="ml-auto mr-3 searchbox" action="{{ route('product.search') }}" method="POST"
+                id="searchForm">
+                @csrf
+                <input type="search" placeholder="Product Search......" name="search" id="search"
+                    class="searchbox-input" autocomplete="off" onkeyup="liveSearch();" required>
+                <button type="button" class="searchbox-submit" value="GO"><i
+                        class="icofont-search-2"></i></button>
+                <span class="searchbox-icon"><i class="icofont-search-2"></i></span>
             </form>
+
+            <!-- Here we'll display the live search results -->
+            <div id="searchResults" class="mt-5"></div>
+
+            <script>
+                function liveSearch() {
+                    var searchQuery = $('#search').val();
+
+                    if (searchQuery.length >= 2) { // Trigger the search after 3 characters
+                        $.ajax({
+                            url: "{{ route('product.search') }}", // URL for the search route
+                            type: "POST",
+                            data: {
+                                _token: "{{ csrf_token() }}",
+                                search: searchQuery
+                            },
+                            success: function(response) {
+                                // Update the search results
+                                $('#searchResults').html(response);
+                            }
+                        });
+                    } else {
+                        $('#searchResults').html(''); // Clear results if input is too short
+                    }
+                }
+            </script>
+
             {{-- Ashiquzzaman  --}}
 
 
@@ -446,9 +482,17 @@
                     </ul>
                 </div>
             </div>
+
         </nav>
+
     </div>
+
+
+
 </section>
+
+
+
 <section class="sticky-navbar desktop-none">
     <div class="container px-0 mx-0 w-100">
         @php
@@ -884,7 +928,13 @@
             </div>
         </nav>
     </div>
+
+
+
+
 </section>
+
+
 
 @push('scripts')
 @endpush
