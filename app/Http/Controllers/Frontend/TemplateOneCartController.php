@@ -628,14 +628,13 @@ class TemplateOneCartController extends Controller
                 return view('frontend.template_one.cart.checkout', compact('carts', 'cartQty', 'cartTotal'));
             } else {
 
-                toastr()->error('At least add to Cart One Product');
+                toastr()->warning('At least add to Cart One Product');
 
                 return redirect()->to('/');
             }
         } else {
 
-            toastr()->error('You Need to Login First');
-
+            toastr()->warning('You Need to Login First');
             return redirect()->route('template.one.login');
         }
     }
@@ -704,7 +703,7 @@ class TemplateOneCartController extends Controller
         ];
 
         // Mail::to($request->billing_email)->send(new OrderMail($data));
-        
+
         //End Send Mail
 
         //Notification

@@ -278,6 +278,48 @@
 
 {{-- Wishlist Remove --}}
 <script>
+    // function wishlistRemove(rowId) {
+
+    //     $.ajax({
+    //         type: 'GET',
+    //         url: '/wishlist/product/remove/' + rowId,
+    //         dataType: 'json',
+    //         success: function(data) {
+    //             miniCart();
+    //             wishlist();
+
+    //             // Start Message
+
+    //             const Toast = Swal.mixin({
+    //                 toast: true,
+    //                 position: 'top-end',
+    //                 icon: 'success',
+    //                 showConfirmButton: false,
+    //                 timer: 3000
+    //             })
+    //             if ($.isEmptyObject(data.error)) {
+
+    //                 Toast.fire({
+    //                     type: 'success',
+    //                     title: data.success,
+    //                 })
+
+    //             } else {
+
+    //                 Toast.fire({
+    //                     type: 'error',
+    //                     title: data.error,
+    //                 })
+    //             }
+
+    //             // End Message
+
+    //         }
+
+
+    //     })
+    // }
+
     function wishlistRemove(rowId) {
 
         $.ajax({
@@ -289,35 +331,32 @@
                 wishlist();
 
                 // Start Message
-
                 const Toast = Swal.mixin({
                     toast: true,
                     position: 'top-end',
                     icon: 'success',
                     showConfirmButton: false,
                     timer: 3000
-                })
-                if ($.isEmptyObject(data.error)) {
+                });
 
+                if ($.isEmptyObject(data.error)) {
                     Toast.fire({
                         type: 'success',
                         title: data.success,
-                    })
+                    });
+
+                    // Redirect to wishlist page after success
+                    window.location.href = '/wishlist-product'; // Redirect to the wishlist route
 
                 } else {
-
                     Toast.fire({
                         type: 'error',
                         title: data.error,
-                    })
+                    });
                 }
-
                 // End Message
-
             }
-
-
-        })
+        });
     }
 </script>
 

@@ -830,7 +830,10 @@ class TemplateOneController extends Controller
     //Compare Product
     public function WishlistProduct()
     {
-        return view('frontend.template_one.cart.wishlist');
+        $data = [
+            'cartWishlists' => Cart::instance('wishlist')->content(),
+        ];
+        return view('frontend.template_one.cart.wishlist', $data);
     }
 
     //GetCompare
