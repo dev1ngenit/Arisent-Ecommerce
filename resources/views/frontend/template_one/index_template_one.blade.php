@@ -14,15 +14,15 @@
 <!-- Discover All Product end -->
 
 <!-- Weekly Deals -->
-@include('frontend.template_one.partials.home_page.home_weekly_offer')
+{{-- @include('frontend.template_one.partials.home_page.home_weekly_offer') --}}
 <!-- Weekly Deals end -->
 
 <!-- Latest Items   -->
-@include('frontend.template_one.partials.home_page.latest_product')
+{{-- @include('frontend.template_one.partials.home_page.latest_product') --}}
 <!-- Latest Items  end -->
 
 <!-- Offer Banner  -->
-@include('frontend.template_one.partials.home_page.offer_banner')
+{{-- @include('frontend.template_one.partials.home_page.offer_banner') --}}
 <!-- Offer Banner -->
 
 <!-- Featured  -->
@@ -34,8 +34,7 @@
 <!-- Latest Offer end -->
 
 <!-- Brand -->
-@include('frontend.template_one.partials.home_page.home_brand')
+{{-- @include('frontend.template_one.partials.home_page.home_brand') --}}
 <!-- Brand End -->
-
 
 @endsection
