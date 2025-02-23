@@ -11,7 +11,7 @@
                     <div class="row">
 
                         <div class="col-lg-4">
-                            <input type="text" class="form-control" placeholder="Enter Mobile Number" name="code"
+                            <input type="text" class="form-control" placeholder="Enter Invoice Number" name="code"
                                 required>
                         </div>
 

@@ -9,7 +9,7 @@
                     <div>
                         <div class="banner-text text-center pt-80 pb-80">
                             <h2 class="f-800 cod__black-color">
-                                DadaBhaai <span class="grenadier-color">Product</span>
+                                Arisent <span class="grenadier-color">Product</span>
                             </h2>
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb pt-3">
@@ -57,8 +57,9 @@
                             <div class="card-body p-0">
                                 <div class="row">
                                     <div class="col-lg-8">
+
                                         {{-- Billing Info --}}
-                                        <div class="card border-0 shadow-none mb-5">
+                                        <div class="card border-0 shadow-none mb-3">
                                             <div class="card-header checkout-page-form" style="background: #dfdddd;">
                                                 <a class="card-title">Billing Info</a>
                                             </div>
@@ -68,36 +69,69 @@
                                                     <div class="bg-light p-3">
                                                         <div class="row">
                                                             <div class="form-group col-sm-4">
-                                                                <label for="user_id">User Name
+                                                                <label for="user_id">Billing Name <span
+                                                                        class="text-danger">*</span>
                                                                 </label>
                                                                 <input type="text" class="form-control"
                                                                     placeholder="Billing Name"
                                                                     value="{{ Auth::user()->name }}" name="billing_name" />
                                                             </div>
+
                                                             <div class="form-group col-sm-4">
-                                                                <label for="phone">Phone
-                                                                </label>
+                                                                <label for="phone">Phone <span
+                                                                        class="text-danger">*</span></label>
                                                                 <input type="text" class="form-control"
-                                                                    placeholder="Billing Phone"
-                                                                    value="{{ Auth::user()->phone }}"
-                                                                    name="billing_phone" />
+                                                                    placeholder="eg: 01728459652"
+                                                                    value="{{ Auth::user()->phone }}" name="billing_phone"
+                                                                    id="billing_phone" />
+                                                                <small id="phoneError" class="text-danger"
+                                                                    style="display:none;">Please enter a valid phone
+                                                                    number.</small>
                                                             </div>
+
+                                                            <script>
+                                                                // Get the phone input field and the error message element
+                                                                const phoneInput = document.getElementById('billing_phone');
+                                                                const phoneError = document.getElementById('phoneError');
+
+                                                                // Bangladesh phone number regex pattern (starts with 01 and followed by 9 digits)
+                                                                const phonePattern = /^01\d{9}$/;
+
+                                                                // Add event listener for input events
+                                                                phoneInput.addEventListener('input', function() {
+                                                                    const phoneValue = phoneInput.value;
+
+                                                                    // Test if the phone number matches the pattern
+                                                                    if (phonePattern.test(phoneValue)) {
+                                                                        phoneError.style.display = 'none'; // Hide error message
+                                                                        phoneInput.classList.remove('is-invalid'); // Optional: remove invalid class
+                                                                    } else {
+                                                                        phoneError.style.display = 'block'; // Show error message
+                                                                        phoneInput.classList.add('is-invalid'); // Optional: add invalid class
+                                                                    }
+                                                                });
+                                                            </script>
+
+
                                                             <div class="form-group col-sm-4">
-                                                                <label for="email">Email
+                                                                <label for="email">Email <span
+                                                                        class="text-danger">*</span>
                                                                 </label>
                                                                 <input type="email" class="form-control"
                                                                     value="{{ Auth::user()->email }}"
                                                                     placeholder="example@gmail.com" name="billing_email" />
                                                             </div>
                                                             <div class="form-group col-sm-4">
-                                                                <label for="city">City
+                                                                <label for="city">City <span
+                                                                        class="text-danger">*</span>
                                                                 </label>
                                                                 <input type="text" class="form-control"
                                                                     value="{{ Auth::user()->city }}" name="billing_city"
                                                                     placeholder="City Name" />
                                                             </div>
                                                             <div class="form-group col-sm-4">
-                                                                <label for="state">State
+                                                                <label for="state">State <span
+                                                                        class="text-danger">*</span>
                                                                 </label>
                                                                 <input type="text" class="form-control"
                                                                     value="{{ old('billing_state') }}" name="billing_state"
@@ -111,22 +145,16 @@
                                                                     name="billing_postal_code" placeholder="Postal Code" />
                                                             </div>
                                                             <div class="form-group col-sm-4">
-                                                                <label for="city">Country
+                                                                <label for="city">Country <span
+                                                                        class="text-danger">*</span>
                                                                 </label>
-                                                                {{-- <select name="billing_country"
-                                                                    class="form-control form-control-sm w-100 border" id="">
-                                                                    <option disabled>Default select</option>
-                                                                    @foreach ($countries as $country)
-                                                                        <option value="{{ $country->name }}">
-                                                                            {{ $country->name }}</option>
-                                                                    @endforeach
-                                                                </select> --}}
                                                                 <input type="text" class="form-control"
                                                                     value="{{ Auth::user()->country }}"
                                                                     name="billing_country" placeholder="Country Name" />
                                                             </div>
                                                             <div class="form-group col-sm-4">
-                                                                <label for="address_line1">Address 1
+                                                                <label for="address_line1">Address 1 <span
+                                                                        class="text-danger">*</span>
                                                                 </label>
                                                                 <input type="text" class="form-control"
                                                                     value="{{ Auth::user()->address }}"
@@ -154,8 +182,10 @@
                                         </div>
                                         {{-- Billing Info --}}
 
+                                        <input type="checkbox" id="myCheckbox" name="terms"> Same As billing Address
+
                                         {{-- Shipping Info --}}
-                                        <div class="card border-0 shadow-none mb-0">
+                                        <div class="card border-0 shadow-none mb-0 mt-2">
                                             <div class="card-header checkout-page-form" style="background: #dfdddd;">
                                                 <a class="card-title">Shipping Info</a>
                                             </div>
@@ -225,6 +255,7 @@
                                             </div>
                                         </div>
                                         {{-- Shipping Info --}}
+
                                     </div>
                                     <!-- Check Out Content -->
                                     <div class="col-lg-4">
@@ -368,44 +399,44 @@
                     billing_name: {
                         required: true,
                     },
-                    shipping_name: {
-                        required: true,
-                    },
+                    // shipping_name: {
+                    //     required: true,
+                    // },
 
                     billing_phone: {
                         required: true,
                     },
-                    shipping_phone: {
-                        required: true,
-                    },
+                    // shipping_phone: {
+                    //     required: true,
+                    // },
 
                     billing_city: {
                         required: true,
                     },
-                    shipping_city: {
-                        required: true,
-                    },
+                    // shipping_city: {
+                    //     required: true,
+                    // },
 
                     billing_country: {
                         required: true,
                     },
-                    shipping_country: {
-                        required: true,
-                    },
+                    // shipping_country: {
+                    //     required: true,
+                    // },
 
                     billing_state: {
                         required: true,
                     },
-                    shipping_state: {
-                        required: true,
-                    },
+                    // shipping_state: {
+                    //     required: true,
+                    // },
 
                     billing_address_line1: {
                         required: true,
                     },
-                    shipping_address_line1: {
-                        required: true,
-                    },
+                    // shipping_address_line1: {
+                    //     required: true,
+                    // },
 
                     shipping_charge: {
                         required: true,
@@ -419,34 +450,34 @@
                     billing_name: {
                         required: 'Please Enter Name',
                     },
-                    shipping_name: {
-                        required: 'Please Shipping Name',
-                    },
+                    // shipping_name: {
+                    //     required: 'Please Shipping Name',
+                    // },
 
                     billing_phone: {
                         required: 'Please Enter Phone Number',
                     },
 
-                    shipping_phone: {
-                        required: 'Please Enter Phone Number',
-                    },
+                    // shipping_phone: {
+                    //     required: 'Please Enter Phone Number',
+                    // },
 
                     billing_city: {
                         required: 'Please Enter City Name',
                     },
-                    shipping_city: {
-                        required: 'Please Enter City Name',
-                    },
-                    shipping_state: {
-                        required: 'Please Enter State Name',
-                    },
+                    // shipping_city: {
+                    //     required: 'Please Enter City Name',
+                    // },
+                    // shipping_state: {
+                    //     required: 'Please Enter State Name',
+                    // },
 
                     billing_country: {
                         required: 'Please Enter Country Name',
                     },
-                    shipping_country: {
-                        required: 'Please Enter Country Name',
-                    },
+                    // shipping_country: {
+                    //     required: 'Please Enter Country Name',
+                    // },
 
                     billing_state: {
                         required: 'Please Enter State Name',
@@ -455,9 +486,9 @@
                     billing_address_line1: {
                         required: 'Please Enter Address Name',
                     },
-                    shipping_address_line1: {
-                        required: 'Please Enter Address Name',
-                    },
+                    // shipping_address_line1: {
+                    //     required: 'Please Enter Address Name',
+                    // },
 
                     shipping_charge: {
                         required: 'Please Select Shipping Charge',
@@ -548,6 +579,42 @@
                     $appliedCoupon = true; // Update the appliedCoupon variable
                 }
             });
+        });
+    </script>
+
+    <script>
+        document.getElementById('myCheckbox').addEventListener('change', function() {
+            const isChecked = this.checked;
+
+            if (isChecked) {
+                // Copy billing address to shipping address
+                document.querySelector('[name="shipping_name"]').value = document.querySelector(
+                    '[name="billing_name"]').value;
+                document.querySelector('[name="shipping_phone"]').value = document.querySelector(
+                    '[name="billing_phone"]').value;
+                document.querySelector('[name="shipping_city"]').value = document.querySelector(
+                    '[name="billing_city"]').value;
+                document.querySelector('[name="shipping_state"]').value = document.querySelector(
+                    '[name="billing_state"]').value;
+                document.querySelector('[name="shipping_postal_code"]').value = document.querySelector(
+                    '[name="billing_postal_code"]').value;
+                document.querySelector('[name="shipping_country"]').value = document.querySelector(
+                    '[name="billing_country"]').value;
+                document.querySelector('[name="shipping_address_line1"]').value = document.querySelector(
+                    '[name="billing_address_line1"]').value;
+                document.querySelector('[name="shipping_address_line2"]').value = document.querySelector(
+                    '[name="billing_address_line2"]').value;
+            } else {
+                // Clear shipping address fields if unchecked
+                document.querySelector('[name="shipping_name"]').value = '';
+                document.querySelector('[name="shipping_phone"]').value = '';
+                document.querySelector('[name="shipping_city"]').value = '';
+                document.querySelector('[name="shipping_state"]').value = '';
+                document.querySelector('[name="shipping_postal_code"]').value = '';
+                document.querySelector('[name="shipping_country"]').value = '';
+                document.querySelector('[name="shipping_address_line1"]').value = '';
+                document.querySelector('[name="shipping_address_line2"]').value = '';
+            }
         });
     </script>
 

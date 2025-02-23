@@ -97,12 +97,18 @@
                     <div class="col-xl-4 col-lg-6 col-md-8 mb-30">
                         <div class="footer-widget">
                             <h6 class="f-800">Join Us</h6>
-                            <div class="mb-3 input-group">
-                                <input type="text" class="form-control" placeholder="Enter your email" aria-label="Recipient's username">
-                                <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary" style="background-color: #ef4416" type="button">Subscribe</button>
+                            <form action="{{ route('submit.email') }}" method="POST">
+                                @csrf
+                                <div class="mb-3 input-group w-100">
+                                    <input type="text" class="form-control" name="email" placeholder="Enter Email Address" required>
+
+                                    <div class="input-group-append">
+                                        <button class="px-3 btn btn-outline-secondary" style="background: #ed2129;" type="submit" id="button-addon2">
+                                            <i class="fa-regular fa-paper-plane"></i>
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
+                            </form>
                             <p>Join our community to stay updated with the latest news, exclusive offers, and exciting updates.</p>
                         </div>
                     </div>

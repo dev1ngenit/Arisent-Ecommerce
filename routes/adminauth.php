@@ -188,6 +188,12 @@ Route::middleware(['auth:admin', 'verified'])->group(function () {
     //     Route::get('/coupon-active/{id}', 'ActiveCoupon')->name('coupon.active');
     // });
 
+
+    Route::controller(SubscribeController::class)->prefix('subscribe')->group(function () {
+        Route::get('/all', 'AllSubscribe')->name('all.subscribe');
+        Route::get('/delete/{id}', 'DeleteSubscribe')->name('delete.subscribe');
+    });
+
     //Employee Dept Section
     Route::controller(EmployeeController::class)->prefix('employee')->group(function () {
 

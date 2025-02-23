@@ -19,11 +19,11 @@
         </li> --}}
         <li class="nav-item">
             <a class="nav-link user-dashboard-menu" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
-                aria-controls="contact" aria-selected="false"><i class="fa fa-user pr-2"></i>Contact Details</a>
+                aria-controls="contact" aria-selected="false"><i class="fa fa-user pr-2"></i>My Profile</a>
         </li>
         <li class="nav-item">
             <a class="nav-link user-dashboard-menu" id="security-tab" data-toggle="tab" href="#security" role="tab"
-                aria-controls="security" aria-selected="false"><i class="fa fa-lock pr-2"></i>Security</a>
+                aria-controls="security" aria-selected="false"><i class="fa fa-lock pr-2"></i>Password</a>
         </li>
         {{-- <li class="nav-item">
             <a class="nav-link user-dashboard-menu" href="{{ route('template.one.user.logout') }}"><i class="fa fa-sign-out pr-1"></i> Log Out</a>

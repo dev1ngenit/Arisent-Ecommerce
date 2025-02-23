@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 col-sm-12">
                     <div class="text-center banner-text pt-90 pb-90">
-                        <h2 class="f-800 cod__black-color">My Dashboard</h2>
+                        <h2 class="f-800 cod__black-color">Dashboard</h2>
 
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">

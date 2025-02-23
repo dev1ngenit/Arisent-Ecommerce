@@ -320,10 +320,6 @@
                                         type="button" id="dropdownMenuButton" data-toggle="dropdown"
                                         aria-haspopup="true" aria-expanded="false" style="font-size: 20px;">
                                         <i class="fa-solid fa-user text-danger userLogin"></i>
-
-                                        {{-- <img src="{{  url('https://ui-avatars.com/api/?name=' . urlencode(Auth::user()->name)) }}"
-                                            style="width: 40px;height:40px;" alt="">
-                                            {{ Auth::user()->name }} --}}
                                     </a>
                                 @else
                                     <a href="javascript:void(0);" id="userIcon" class="border-0 bg-none text-muted"
@@ -441,9 +437,7 @@
 
                                             {{-- Cart Items --}}
 
-                                            <div id="miniCart">
-
-                                            </div>
+                                            <div id="miniCart"></div>
 
                                             {{-- Cart Items --}}
 
@@ -494,7 +488,7 @@
 
 
 <section class="sticky-navbar desktop-none">
-    <div class="container px-0 mx-0 w-100">
+    <div class="container px-0 mx-0 w-100 ms-5">
         @php
             $site = App\Models\Sites::find(1);
         @endphp
@@ -513,7 +507,8 @@
                     ->latest()
                     ->get();
             @endphp
-            <ul class="ml-auto navbar-nav">
+
+            {{-- <ul class="ml-auto navbar-nav">
                 <li class="nav-item dropdown position-static">
                     <a class="mb-0 nav-link dropdown-toggle card-title cod__gray-color main-menu-link" href="#"
                         id="navbarDropdownFeatures" role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -608,7 +603,7 @@
                         </div>
                     </div>
                 </li>
-            </ul>
+            </ul> --}}
             <!-- Navbar Toggler -->
 
             <!-- Navbar Collapse -->
@@ -677,6 +672,7 @@
                                 </div>
                             </div>
                         </div>
+
                     </li>
 
                     {{-- All Offer Menu --}}
@@ -733,13 +729,13 @@
                 </ul>
             </div>
 
-            <form class="ml-auto mr-3 searchbox" action="{{ route('product.search') }}" method="POST">
+            {{-- <form class="ml-auto mr-3 searchbox" action="{{ route('product.search') }}" method="POST">
                 @csrf
                 <input type="search" placeholder="Search......" name="search" class="searchbox-input"
                     id="search" autocomplete="off" name="search" onkeyup="buttonUp();" required>
                 <button class="searchbox-submit" value="GO"><i class="icofont-search-2"></i></button>
                 <span class="searchbox-icon"><i class="icofont-search-2"></i></span>
-            </form>
+            </form> --}}
 
             <div>
                 @if (Auth::user())
