@@ -634,11 +634,11 @@ class TemplateOneController extends Controller
             // Get the category of the first item in compare (assuming all items are in the same category)
             $firstCompareItem    = $existingCompareItems->first();
             $firstCompareProduct = Product::findOrFail($firstCompareItem->id);
-            $compareCategory     = $firstCompareProduct->category_id;
+            $compareCategory     = $firstCompareProduct->childcategory_id;
 
             // Check if the product being added is in the same category
-            if ($product->category_id != $compareCategory) {
-                return response()->json(['error' => 'You can only add products from the same category to compare.']);
+            if ($product->childcategory_id != $compareCategory) {
+                return response()->json(['error' => 'You can only add products from the same type to compare.']);
             }
         }
 
