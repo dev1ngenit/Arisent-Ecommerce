@@ -1,32 +1,3 @@
-/*
-  Theme Name: Shupmax - Multipurpose eCommerce HTML Template
-  Author: Basictheme
-  Support: basictheme400@gmail.com
-  Version: 1.0
-*/
-
-/* CSS Index
------------------------------------
-1. External CSS Import
-2. Theme default css
-2. Theme default css
-3. Header
-4. Hero
-5. Offer
-6. Products
-7. Featured
-9. Brand
-10. Newsletter
-11. Blog
-12. Footer
-13. About
-14. Shop
-15. Banner
-16. Registration
-17. Shop details
-18. Contact
-
-*/
 
 /* 1. External CSS Import */
 @import url(animate.min.css);
@@ -1872,6 +1843,7 @@ ul.sub__menu.sub__dept--menu li:hover ul.sub__menu.level2 {
     margin-top: 4rem;
 } */
 /* Home banner CSS End */
+
 /* 6. Products */
 .all__product--menu .nav-tabs a.nav-link {
     font-size: 14px;
@@ -4898,4 +4870,22 @@ html .ui-button.ui-state-disabled:active {
         right: 20px;
         top: 10px;
     }
+    .all__product--menu {
+        width: 100%; /* Ensure the container takes full width */
+        overflow-x: auto; /* Enable horizontal scrolling */
+        white-space: nowrap; /* Prevent items from wrapping */
+    }
+
+    .all__product--menu .nav-tabs {
+        display: flex !important; /* Flexbox ensures proper scrolling */
+        min-width: 814px !important; /* Ensure it's wider than container */
+        overflow-x: auto !important;
+        white-space: nowrap;
+    }
+
+    .all__product--menu .nav {
+        width: 400px;
+        overflow-x: auto;
+    }
+
 }

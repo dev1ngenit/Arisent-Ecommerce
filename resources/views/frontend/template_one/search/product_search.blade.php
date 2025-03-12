@@ -7,7 +7,7 @@
             <div class="row">
 
                 {{-- Brand  --}}
-                <div class="col-lg-3 order-2 order-lg-1">
+                <div class="order-2 col-lg-3 order-lg-1">
                     @php
                         $brands = App\Models\Brand::where('status', '1')
                             ->orderBy('brand_name', 'ASC')
@@ -28,9 +28,9 @@
                             </div>
                             {{-- Brands Accordion --}}
                             <div id="accordionBrands" class="accordion">
-                                <div class="card border-0 shadow-none mb-0">
+                                <div class="mb-0 border-0 shadow-none card">
                                     @foreach ($categorys as $category)
-                                        <div class="card-header collapsed pl-0" data-toggle="collapse"
+                                        <div class="pl-0 card-header collapsed" data-toggle="collapse"
                                             data-parent="#accordion" href="#cat{{ $category->id }}">
                                             <a class="card-title">
                                                 {{ $category->category_name }}
@@ -46,11 +46,11 @@
                                                     ->get();
                                             @endphp
 
-                                            <div id="accordion2" class="accordion pl-3">
+                                            <div id="accordion2" class="pl-3 accordion">
 
                                                 @forelse ($subcategorys as $subcategory)
-                                                    <div class="card border-0 shadow-none mb-0">
-                                                        <div class="card-header collapsed pl-0" data-toggle="collapse"
+                                                    <div class="mb-0 border-0 shadow-none card">
+                                                        <div class="pl-0 card-header collapsed" data-toggle="collapse"
                                                             data-target="#sub{{ $subcategory->id }}">
                                                             <a class="card-title">
                                                                 {{ $subcategory->subcategory_name }}
@@ -69,7 +69,7 @@
                                                                     ->get();
                                                             @endphp
                                                             @forelse ($childcategorys as $childcategory)
-                                                                <div class="card-body p-2">
+                                                                <div class="p-2 card-body">
                                                                     <a href="{{ url('product/childcategory/' . $childcategory->id . '/' . $childcategory->childcategory_slug) }}"
                                                                         class="pl-3 text-muted">{{ $childcategory->childcategory_name }}</a>
                                                                 </div>
@@ -100,7 +100,7 @@
                 </div>
                 {{-- Brand  --}}
 
-                <div class="col-lg-9 order-1 order-lg-2">
+                <div class="order-1 col-lg-9 order-lg-2">
 
                     {{-- <div class="row">
                         <div class="col-sm-12">
@@ -111,7 +111,7 @@
                         </div>
                     </div> --}}
 
-                    <div class="border-b p-2" style="background-color: #968f8f0e;">
+                    <div class="p-2 border-b" style="background-color: #968f8f0e;">
 
                         <div class="row">
 
@@ -144,7 +144,7 @@
 
                         @forelse ($products as $product)
                             <div class="col-lg-4 col-md-6">
-                                <div class="product-grid mb-4">
+                                <div class="mb-4 product-grid">
                                     <div class="product-image">
                                         <a href="{{ url('product' . '/' . $product->id . '/' . $product->product_slug) }}"
                                             class="image">
@@ -177,38 +177,38 @@
                                             </h3>
                                         </div>
 
-                                        {{-- <div class="price font-weight-bold pr-2">
+                                        {{-- <div class="pr-2 price font-weight-bold">
                                             @if ($product->price_status == 'rfq')
-                                                <h6 class="grenadier-color mb-0 font-weight-bold">
+                                                <h6 class="mb-0 grenadier-color font-weight-bold">
                                                     $ {{ $product->sas_price }}
                                                 </h6>
                                             @elseif ($product->price_status == 'offer_price')
                                                 <del>$ {{ $product->price }}</del>
-                                                <h6 class="grenadier-color mb-0 font-weight-bold">$
+                                                <h6 class="mb-0 grenadier-color font-weight-bold">$
                                                     {{ $product->discount_price }}
                                                 </h6>
                                             @elseif ($product->price_status == 'price')
-                                                <h6 class="grenadier-color mb-0 font-weight-bold">
+                                                <h6 class="mb-0 grenadier-color font-weight-bold">
                                                     $ {{ $product->price }}
                                                 </h6>
                                             @endif
                                         </div> --}}
 
-                                        <div class="price font-weight-bold pr-2">
+                                        <div class="pr-2 price font-weight-bold">
                                             @if (
                                                 ($product->price_status == 'rfq' && !is_null($product->sas_price)) ||
                                                     ($product->price_status == 'offer_price' && !is_null($product->price) && !is_null($product->discount_price)) ||
                                                     ($product->price_status == 'price' && !is_null($product->price)))
                                                 @if ($product->price_status == 'rfq')
-                                                    <h6 class="grenadier-color mb-0 font-weight-bold">
+                                                    <h6 class="mb-0 grenadier-color font-weight-bold">
                                                         Tk {{ $product->sas_price }}
                                                     </h6>
                                                 @elseif ($product->price_status == 'offer_price')
                                                     <del>Tk {{ $product->price }}</del>
-                                                    <h6 class="grenadier-color mb-0 font-weight-bold">Tk
+                                                    <h6 class="mb-0 grenadier-color font-weight-bold">Tk
                                                         {{ $product->discount_price }}</h6>
                                                 @elseif ($product->price_status == 'price')
-                                                    <h6 class="grenadier-color mb-0 font-weight-bold">
+                                                    <h6 class="mb-0 grenadier-color font-weight-bold">
                                                         Tk {{ $product->price }}
                                                     </h6>
                                                 @endif
@@ -228,16 +228,19 @@
 
                                 </div>
                             </div>
-
                         @empty
-                            <p class="text-dander">No Product Avaiable</p>
+                            <div class="col-lg-12"
+                                style="display: flex; justify-content: center; align-items: center; height: 300px;">
+
+                                <p class="text-center text-danger">No Product Available</p>
+                            </div>
                         @endforelse
 
                     </div>
 
                     {{-- Pagination Section  --}}
 
-                    {{-- <div class="row mt-10">
+                    {{-- <div class="mt-10 row">
                         <div class="col-sm-12">
                             <div class="common-pagination">
 
