@@ -737,7 +737,7 @@
                 <span class="searchbox-icon"><i class="icofont-search-2"></i></span>
             </form> --}}
 
-            <div>
+            {{-- <div>
                 @if (Auth::user())
                     <a href="javascript:void(0);" id="userIcon" class="border-0 bg-none text-muted" type="button"
                         id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
@@ -751,9 +751,9 @@
                         <i class="pr-2 fa-solid fa-user text-muted userLogin"></i>
                     </a>
                 @endif
-            </div>
+            </div> --}}
 
-            <div class="cart--header__middle d-none d-md-block">
+            <div class="cart--header__middle">
                 <div class="cart--header__list">
                     <ul class="list-inline">
                         <li>

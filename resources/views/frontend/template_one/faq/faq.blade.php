@@ -51,7 +51,6 @@
     </style>
     <section class="bg-light" style="padding-top: 50px; padding-bottom: 50px;">
         <h3 class="text-center pure__black-color">
-            <span class="f-300">Have Questions?</span> <br />
             <span class="f-800">Frequently Asked Questions</span>
         </h3>
     </section>
