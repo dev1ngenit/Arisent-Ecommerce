@@ -61,7 +61,55 @@
 
                 <!-- Product List -->
                 <div id="products-list" class="row mt-30">
-                    @foreach ($products as $product)
+
+                    {{-- @foreach ($products as $product)
+                        <div class="col-lg-4">
+                            <div class="product-grid">
+                                <div class="product-image">
+                                    <a href="{{ url('product' . '/' . $product->id . '/' . $product->product_slug) }}"
+                                        class="image">
+                                        <img title="{{ $product->product_name }}"
+                                            src=" {{ asset($product->product_image) }}"
+                                            data-tip="{{ $product->product_name }}" style="width:100%; height: 300px;">
+                                    </a>
+                                </div>
+                                <div class="product-content d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <span><a class="text-muted"
+                                                href="{{ url('product' . '/' . $product->id . '/' . $product->product_slug) }}">{{ $product->brand->brand_name }}</a></span>
+                                        <h3 title="{{ $product->product_name }}" class="title font-weight-bold"><a
+                                                href="{{ url('product' . '/' . $product->id . '/' . $product->product_slug) }}">{{ substr($product->product_name, 0, 25) }}</a>
+                                        </h3>
+                                    </div>
+                                    <div class="pr-2 price font-weight-bold">
+                                        @if ($product->price_status == 'rfq' && !is_null($product->sas_price))
+                                            <h6 class="mb-0 grenadier-color font-weight-bold">Tk
+                                                {{ $product->sas_price }}</h6>
+                                        @elseif ($product->price_status == 'offer_price' && !is_null($product->price) && !is_null($product->discount_price))
+                                            <del>Tk {{ $product->price }}</del>
+                                            <h6 class="mb-0 grenadier-color font-weight-bold">Tk
+                                                {{ $product->discount_price }}</h6>
+                                        @elseif ($product->price_status == 'price' && !is_null($product->price))
+                                            <h6 class="mb-0 grenadier-color font-weight-bold">Tk {{ $product->price }}
+                                            </h6>
+                                        @endif
+                                    </div>
+                                </div>
+
+
+
+                                @if ($product->sas_price !== null || $product->price !== null || $product->discount_price !== null)
+                                    <a type="submit" style="cursor:pointer;" class="add-cart add_to_cart_btn_product"
+                                        data-product_id="{{ $product->id }}">Add to cart</a>
+                                @else
+                                    <a href="{{ route('template_one.contact') }}" class="add-cart">Contact Us</a>
+                                @endif
+
+                            </div>
+                        </div>
+                    @endforeach --}}
+
+                    @forelse ($products as $product)
                         <div class="col-lg-4">
                             <div class="product-grid">
                                 <div class="product-image">
@@ -96,7 +144,7 @@
                                 </div>
 
                                 {{-- <a type="submit" style="cursor:pointer;" class="add-cart add_to_cart_btn_product"
-                                    data-product_id="{{ $product->id }}">Add to cart</a> --}}
+                                data-product_id="{{ $product->id }}">Add to cart</a> --}}
 
                                 @if ($product->sas_price !== null || $product->price !== null || $product->discount_price !== null)
                                     <a type="submit" style="cursor:pointer;" class="add-cart add_to_cart_btn_product"
@@ -107,7 +155,9 @@
 
                             </div>
                         </div>
-                    @endforeach
+                    @empty
+                        <p>Brand Wise Product Not Avaiable</p>
+                    @endforelse
                 </div>
 
                 <!-- Pagination -->

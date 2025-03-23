@@ -1,29 +1,30 @@
 <?php
 namespace App\Http\Controllers\Frontend;
 
-use App\Http\Controllers\Controller;
-use App\Models\Admin\About;
-use App\Models\Admin\Category;
-use App\Models\Admin\ChildCategory;
-use App\Models\Admin\Contact;
-use App\Models\Admin\Faq;
-use App\Models\Admin\Offer;
-use App\Models\Admin\OfferCategory;
-use App\Models\Admin\Product;
-use App\Models\Admin\Terms;
-use App\Models\Brand;
-use App\Models\Privacy;
-use App\Models\ReturnPolicy;
-use App\Models\Sites;
-use App\Models\Subscribe;
+use view;
 use App\Models\User;
+use App\Models\Brand;
+use App\Models\Sites;
+use App\Models\Privacy;
+use App\Models\Admin\Faq;
+use App\Models\Subscribe;
 use App\Models\User\Order;
-use App\Models\User\OrderItem;
-use Gloudemans\Shoppingcart\Facades\Cart;
+use App\Models\Admin\About;
+use App\Models\Admin\Offer;
+use App\Models\Admin\Terms;
+use App\Models\ReturnPolicy;
 use Illuminate\Http\Request;
+use App\Models\Admin\Contact;
+use App\Models\Admin\Product;
+use App\Models\Admin\Category;
+use App\Models\User\OrderItem;
+use Illuminate\Validation\Rules;
+use App\Models\Admin\ChildCategory;
+use App\Models\Admin\OfferCategory;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rules;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 class TemplateOneController extends Controller
 {
