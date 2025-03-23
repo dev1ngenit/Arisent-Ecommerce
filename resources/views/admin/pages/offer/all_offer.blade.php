@@ -78,7 +78,7 @@
                                     </td>
 
                                     <td>{{ $offer->name }}</td>
-                                    <td>{{ $offer['category']['offer_category_name'] }}</td>
+                                    <td>{{ optional($offer->category)->offer_category_name }}</td>
                                     <td>{{ $offer->price }}</td>
                                     <td>{{ $offer->discount_price }}</td>
                                     <td>{{ $offer->start_date }}</td>

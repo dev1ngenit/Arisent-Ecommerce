@@ -49,8 +49,8 @@
                     <div class="product__active--small owl-carousel mb-30">
 
                         @forelse ($products as $product)
-                        
-                            @if ($product->products->expiry_date >= Carbon\Carbon::now()->format('Y-m-d'))
+
+                            {{-- @if ($product->products->end_date >= Carbon\Carbon::now()->format('Y-m-d')) --}}
                                 <div class="product-grid mr-4">
                                     <div class="product-image">
                                         <a href="javascript:;" class="image">
@@ -125,7 +125,7 @@
                                     </div>
 
                                 </div>
-                            @endif
+                            {{-- @endif --}}
 
                         @empty
                             <p>No Product Avaiable</p>

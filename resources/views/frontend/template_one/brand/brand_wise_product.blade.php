@@ -156,7 +156,7 @@
                             </div>
                         </div>
                     @empty
-                        <p>Brand Wise Product Not Avaiable</p>
+                        <p class="text-danger">Brand Wise Product Not Avaiable</p>
                     @endforelse
                 </div>
 
