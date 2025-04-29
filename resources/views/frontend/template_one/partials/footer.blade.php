@@ -12,18 +12,22 @@
         padding: 8px;
         transition: color 0.3s ease;
     }
+
     .footer-icons:hover {
         color: #007bff;
     }
-    .footer-menu li{
+
+    .footer-menu li {
         padding-top: 5px;
         padding-bottom: 10px;
     }
-    .footer-menu a{
+
+    .footer-menu a {
         color: #252525;
 
     }
-    .footer-bg{
+
+    .footer-bg {
         text-align: center;
     }
 </style>
@@ -32,7 +36,8 @@
     <div class="footer-top pt-50 pb-25">
         <div class="text-center footer-topbar">
             <p class="p-3 mb-0 text-white">
-                Discover a wide range of products at {{ optional($site)->site_name }}, your one-stop e-commerce destination. Enjoy seamless shopping, great deals, and excellent customer service.
+                Discover a wide range of products at {{ optional($site)->site_name }}, your one-stop e-commerce
+                destination. Enjoy seamless shopping, great deals, and excellent customer service.
             </p>
         </div>
         <div class="container-fluid footer-bg">
@@ -42,26 +47,12 @@
                     <div class="col-xl-4 col-lg-6 col-md-8 mb-30">
                         <div class="footer-logo">
                             <a href="{{ route('index') }}" class="logo__link">
-                                <img width="250px" src="{{ asset('upload/logo_black/' . optional($site)->logo_black) }}" alt="Logo">
+                                <img width="250px"
+                                    src="{{ asset('upload/logo_black/' . optional($site)->logo_black) }}"
+                                    alt="Logo">
                             </a>
                             <p class="pt-3">{{ optional($site)->site_slogan }}</p>
-                            <div class="pt-3 social-icons">
-                                <a href="{{ optional($site)->facebook_url }}" class="social-icon">
-                                    <i class="fab fa-facebook-f footer-icons"></i>
-                                </a>
-                                <a href="{{ optional($site)->skype_url }}" class="social-icon">
-                                    <i class="fab fa-skype footer-icons"></i>
-                                </a>
-                                <a href="{{ optional($site)->youtube_url }}" class="social-icon">
-                                    <i class="fab fa-youtube footer-icons"></i>
-                                </a>
-                                <a href="{{ optional($site)->linkedin_url }}" class="social-icon">
-                                    <i class="fab fa-linkedin-in footer-icons"></i>
-                                </a>
-                                <a href="{{ route('template.one.faq') }}" class="faq-icon">
-                                    <i class="fas fa-question-circle footer-icons"></i>
-                                </a>
-                            </div>
+
                         </div>
                     </div>
 
@@ -96,20 +87,39 @@
                     <!-- Join Us Section -->
                     <div class="col-xl-4 col-lg-6 col-md-8 mb-30">
                         <div class="footer-widget">
-                            <h6 class="f-800">Join Us</h6>
+                            <div class="pt-3 social-icons">
+                                <a href="{{ optional($site)->facebook_url }}" class="social-icon">
+                                    <i class="fab fa-facebook-f footer-icons"></i>
+                                </a>
+                                <a href="{{ optional($site)->skype_url }}" class="social-icon">
+                                    <i class="fab fa-skype footer-icons"></i>
+                                </a>
+                                <a href="{{ optional($site)->youtube_url }}" class="social-icon">
+                                    <i class="fab fa-youtube footer-icons"></i>
+                                </a>
+                                <a href="{{ optional($site)->linkedin_url }}" class="social-icon">
+                                    <i class="fab fa-linkedin-in footer-icons"></i>
+                                </a>
+                                <a href="{{ route('template.one.faq') }}" class="faq-icon">
+                                    <i class="fas fa-question-circle footer-icons"></i>
+                                </a>
+                            </div>
+                            <h6 class="f-800">Join our community to stay updated with the latest products and exclusive offers</h6>
                             <form action="{{ route('submit.email') }}" method="POST">
                                 @csrf
                                 <div class="mb-3 input-group w-100">
-                                    <input type="text" class="form-control" name="email" placeholder="Enter Email Address" required>
+                                    <input type="text" class="form-control" name="email"
+                                        placeholder="Enter Email Address" required>
 
                                     <div class="input-group-append">
-                                        <button class="px-3 btn btn-outline-secondary" style="background: #ed2129;" type="submit" id="button-addon2">
+                                        <button class="px-3 btn btn-outline-secondary" style="background: #ed2129;"
+                                            type="submit" id="button-addon2">
                                             <i class="fa-regular fa-paper-plane"></i>
                                         </button>
                                     </div>
                                 </div>
                             </form>
-                            <p>Join our community to stay updated with the latest news, exclusive offers, and exciting updates.</p>
+                            {{-- <p></p> --}}
                         </div>
                     </div>
                 </div>
@@ -124,7 +134,8 @@
                 <div class="col-lg-12">
                     <div class="text-center footer-copyright">
                         <a href="{{ route('index') }}" class="text-muted">
-                            Copyright 2025 <span class="grenadier-color">{{ optional($site)->site_name }}</span> All Rights Reserved.
+                            Copyright 2025 <span class="grenadier-color">{{ optional($site)->site_name }}</span> All
+                            Rights Reserved.
                         </a>
                     </div>
                 </div>
