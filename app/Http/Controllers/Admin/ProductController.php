@@ -120,7 +120,7 @@ class ProductController extends Controller
         $product_id = Product::insertGetId([
 
             'product_name'              => $request->product_name,
-            'sku_code'                  => $skuCode,
+            'sku_code'                  => $request->sku_code,
             'mf_code'                   => $request->mf_code,
             'notification_days'         => $request->notification_days,
             'product_slug'              => Str::slug($request->product_name, "-"),

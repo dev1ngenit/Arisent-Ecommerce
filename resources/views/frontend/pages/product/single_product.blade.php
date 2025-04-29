@@ -40,23 +40,7 @@
 
                                 {{-- <a class="rsImg" data-rsbigimg="assets/img/products/single-1.jpg"
                                     href="assets/img/products/single-2.jpg" data-rsw="500" data-rsh="500">
-                                    <img class="rsTmb" src="assets/img/products/single-thumb-2.jpg" alt="" /></a>
-
-                                <a class="rsImg" data-rsbigimg="assets/img/products/single-1.jpg"
-                                    href="assets/img/products/single-3.jpg" data-rsw="500" data-rsh="500">
-                                    <img class="rsTmb" src="assets/img/products/single-thumb-3.jpg" alt="" /></a>
-
-                                <a class="rsImg" data-rsbigimg="assets/img/products/single-1.jpg"
-                                    href="assets/img/products/single-1.jpg" data-rsw="500" data-rsh="500">
-                                    <img class="rsTmb" src="assets/img/products/single-thumb-1.jpg" alt="" /></a>
-
-                                <a class="rsImg" data-rsbigimg="assets/img/products/single-1.jpg"
-                                    href="assets/img/products/single-2.jpg" data-rsw="500" data-rsh="500">
-                                    <img class="rsTmb" src="assets/img/products/single-thumb-2.jpg" alt="" /></a>
-
-                                <a class="rsImg" data-rsbigimg="assets/img/products/single-1.jpg"
-                                    href="assets/img/products/single-3.jpg" data-rsw="500" data-rsh="500">
-                                    <img class="rsTmb" src="assets/img/products/single-thumb-3.jpg" alt="" /></a> --}}
+                                    <img class="rsTmb" src="assets/img/products/single-thumb-2.jpg" alt="" /></a> --}}
 
 
                             </div>

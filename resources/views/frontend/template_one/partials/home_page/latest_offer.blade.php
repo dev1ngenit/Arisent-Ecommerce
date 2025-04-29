@@ -31,7 +31,7 @@
                 <div class="col-xl-3 d-none d-xl-block">
                     <div class="small__banner mb-30">
                         <div class="small__banner--thumb position-relative">
-                            <a href="javascript:;">
+                            <a href="javascript:void(0)">
 
                                 <img src="{{ !empty($offercats->icon_image) ? url('storage/offer_category_image/' . $offercats->icon_image) : url('https://ui-avatars.com/api/?size=500&background=random&color=fff&rounded=false&name=' . urlencode($offercats->offer_category_name)) }}"
                                     alt="" width="500" height="300" />
@@ -53,7 +53,7 @@
                             {{-- @if ($product->products->end_date >= Carbon\Carbon::now()->format('Y-m-d')) --}}
                                 <div class="product-grid mr-4">
                                     <div class="product-image">
-                                        <a href="javascript:;" class="image">
+                                        <a href="{{ url('product' . '/' . $product->id . '/' . $product->product_slug) }}" class="image">
 
                                             <img title="{{ $product->products->product_name }}" class="img product_id"
                                                 src="{{ asset($product->products->product_image) }}" alt=""
@@ -90,7 +90,7 @@
 
                                             <h6 title="{{ $product->products->product_name }}"
                                                 class="product__title mine__shaft-color f-700 mb-0 text-start">
-                                                <a href="javascript:;" title="{{ $product->products->product_name }}">
+                                                <a href="{{ url('product' . '/' . $product->id . '/' . $product->product_slug) }}" title="{{ $product->products->product_name }}">
                                                     {{ substr($product->products->product_name, 0, 25) }}
                                                 </a>
                                             </h6>

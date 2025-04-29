@@ -72,7 +72,7 @@
                             <div class="form-group mb-3">
                                 <label for="" class="mb-2">Content</label>
                                 <textarea name="content" rows="3" cols="3"
-                                    class="editor form-control @error('content') is-invalid @enderror">{!! $item->content !!}</textarea>
+                                    class="tinymce_metronic form-control @error('content') is-invalid @enderror">{!! $item->content !!}</textarea>
                                 @error('content')
                                     <span class="text-danger"> {{ $message }} </span>
                                 @enderror
