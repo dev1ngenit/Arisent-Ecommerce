@@ -316,7 +316,7 @@
                                     <a href="javascript:void(0);" id="userIcon" class="border-0 bg-none text-muted"
                                         type="button" id="dropdownMenuButton" data-toggle="dropdown"
                                         aria-haspopup="true" aria-expanded="false" style="font-size: 20px;">
-                                        <i class="fa-solid fa-user text-danger userLogin"></i>
+                                        <i class="fa-solid fa-user primary-color userLogin"></i>
                                     </a>
                                 @else
                                     <a href="javascript:void(0);" id="userIcon" class="border-0 bg-none text-muted"
@@ -348,7 +348,8 @@
 
 
                                         <hr class="mt-3 mb-2">
-                                        <a class="dropdown-item" href="{{ route('template.one.dashboard') }}"><i
+                                        <a class="pl-3 dropdown-item userlogin-header"
+                                            href="{{ route('template.one.dashboard') }}"><i
                                                 class="pr-2 fal fa-star"></i>
                                             My Dashboard</a>
                                         <a class="pl-3 dropdown-item userlogin-header" style="font-size: 12px;"
