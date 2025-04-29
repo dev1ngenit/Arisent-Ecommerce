@@ -1,6 +1,3 @@
-@php
-    $site = App\Models\Sites::find(1);
-@endphp
 
 <style>
     .footer-icons {
@@ -63,8 +60,9 @@
                             <ul class="footer-menu">
                                 <li><a href="{{ route('template.one.about') }}">About Us</a></li>
                                 <li><a href="{{ route('template_one.contact') }}">Contact Us</a></li>
+                                <li><a href="{{ route('template.one.all_product') }}">All Products</a></li>
                                 @auth
-                                    <li><a href="{{ route('template.one.dashboard') }}">Dashboard</a></li>
+                                    <li><a href="{{ route('template.one.dashboard') }}">My Dashboard</a></li>
                                 @else
                                     <li><a href="{{ route('template.one.login') }}">Login</a></li>
                                 @endauth
@@ -78,6 +76,7 @@
                             <h6 class="f-800">Inquiry</h6>
                             <ul class="footer-menu">
                                 <li><a href="{{ route('template.one.term') }}">Terms</a></li>
+                                <li><a href="{{ route('template.one.faq') }}">FAQ</a></li>
                                 <li><a href="{{ route('privacy.policy') }}">Privacy Policy</a></li>
                                 <li><a href="{{ route('return-policy') }}">Return Policy</a></li>
                             </ul>
