@@ -86,7 +86,7 @@
                     <!-- Join Us Section -->
                     <div class="col-xl-4 col-lg-6 col-md-8">
                         <div class="footer-widget">
-                            <div class="pt-3 social-icons">
+                            <div class="pb-4 social-icons">
                                 <a href="{{ optional($site)->facebook_url }}" class="social-icon">
                                     <i class="fab fa-facebook-f footer-icons"></i>
                                 </a>
