@@ -1451,7 +1451,7 @@
 
                     // Make AJAX request to fetch subcategories
                     $.ajax({
-                        url: "{{ url('/district-get/ajax') }}/" + category_id,
+                        url: "{{ url('/admin/get-category/ajax') }}/" + category_id,
                         type: "GET",
                         dataType: "json",
                         success: function(data) {
@@ -1477,7 +1477,7 @@
 
                     // Make AJAX request to fetch childcategories
                     $.ajax({
-                        url: "{{ url('/state-get/ajax') }}/" + subcategory_id,
+                        url: "{{ url('/admin/get-subcategory/ajax') }}/" + subcategory_id,
                         type: "GET",
                         dataType: "json",
                         success: function(data) {

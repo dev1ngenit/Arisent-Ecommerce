@@ -32,14 +32,14 @@ class ProductController extends Controller
     // }
 
     // Fetch subcategories based on the selected category
-    public function GetCheckDistrict($category_id)
+    public function getCategory($category_id)
     {
         $subcategories = SubCategory::where('category_id', $category_id)->orderBy('subcategory_name', 'ASC')->get();
         return response()->json($subcategories); // Return as JSON
     }
 
 // Fetch childcategories based on the selected subcategory
-    public function StateGetAjax($subcategory_id)
+    public function getSubCategory($subcategory_id)
     {
         $childcategories = ChildCategory::where('subcategory_id', $subcategory_id)->orderBy('childcategory_name', 'ASC')->get();
         return response()->json($childcategories); // Return as JSON

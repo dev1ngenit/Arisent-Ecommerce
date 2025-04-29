@@ -151,8 +151,8 @@ Route::middleware(['auth:admin', 'verified'])->prefix('admin')->group(function (
         Route::get('/product-inactive/{id}', 'InactiveProduct')->name('product.inactive');
         Route::get('/product-active/{id}', 'ActiveProduct')->name('product.active');
 
-        Route::get('/district-get/ajax/{category_id}', 'GetCheckDistrict');
-        Route::get('/state-get/ajax/{subcategory_id}', 'StateGetAjax');
+        Route::get('/get-category/ajax/{category_id}', 'getCategory');
+        Route::get('/get-subcategory/ajax/{subcategory_id}', 'getSubCategory');
     });
 
     //Shipping Charge

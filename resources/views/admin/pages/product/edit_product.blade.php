@@ -1543,7 +1543,7 @@
                 var category_id = $(this).val();
                 if (category_id) {
                     $.ajax({
-                        url: "{{ url('/district-get/ajax') }}/" + category_id,
+                        url: "{{ url('/admin/get-category/ajax') }}/" + category_id,
                         type: "GET",
                         dataType: "json",
                         success: function(data) {
@@ -1572,7 +1572,7 @@
                 if (subcategory_id) {
                     //function subcategory() {
                     $.ajax({
-                        url: "{{ url('/state-get/ajax') }}/" + subcategory_id,
+                        url: "{{ url('/admin/get-subcategory/ajax') }}/" + subcategory_id,
                         type: "GET",
                         dataType: "json",
                         success: function(data) {
