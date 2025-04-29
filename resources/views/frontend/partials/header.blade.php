@@ -691,8 +691,6 @@
                                             <div class="col-lg-12 col-md-12 col-sm-12 menu-block">
                                                 <div class="sub-list">
                                                     <ul>
-                                                        {{-- ================================ --}}
-
                                                         @foreach ($categorys as $category)
                                                             <li class="dropdown mega-dropdown category-link">
 

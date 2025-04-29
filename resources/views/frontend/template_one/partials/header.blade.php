@@ -366,9 +366,7 @@
                                         </a>
                                         <hr class="mt-3 mb-2">
                                         <a href="{{ route('template.one.login') }}" class="pl-3 text-muted"
-                                            style="font-size: 12px;">First
-                                            time
-                                            here? <span class="text-danger">Sign Up</span></a>
+                                            style="font-size: 12px;">First time here? <span class="primary-color">Sign Up</span></a>
                                         <hr class="mt-2 mb-2">
                                         <a class="pl-3 dropdown-item userlogin-header" style="font-size: 12px;"
                                             href="{{ route('template.one.dashboard') }}"><i

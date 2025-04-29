@@ -133,7 +133,7 @@
                 <div class="col-lg-12">
                     <div class="text-center footer-copyright">
                         <a href="{{ route('index') }}" class="text-muted">
-                            Copyright 2025 <span class="grenadier-color">{{ optional($site)->site_name }}</span> All
+                            Copyright 2025 <span class="primary-color fw-bold">{{ optional($site)->site_name }}</span> All
                             Rights Reserved.
                         </a>
                     </div>
