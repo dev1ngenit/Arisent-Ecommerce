@@ -110,7 +110,7 @@ Route::middleware(['auth:admin', 'verified'])->prefix('admin')->group(function (
     Route::get('/user-active/{id}', [AdminController::class, 'ActiveUserAdmin'])->name('user.active.admin');
 });
 
-Route::middleware(['auth:admin', 'verified'])->group(function () {
+Route::middleware(['auth:admin', 'verified'])->prefix('admin')->group(function () {
 
     //Order Section
     Route::controller(AdminOrderController::class)->prefix('admin-order')->group(function () {
