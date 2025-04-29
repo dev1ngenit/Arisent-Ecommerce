@@ -348,24 +348,24 @@
 
 
                                         <hr class="mt-3 mb-2">
-                                        <a class="pl-3 dropdown-item userlogin-header"
+                                        <a class="pl-3 dropdown-item userlogin-header" style="font-size: 13px;"
                                             href="{{ route('template.one.dashboard') }}"><i
                                                 class="pr-2 fal fa-star"></i>
                                             My Dashboard</a>
-                                        <a class="pl-3 dropdown-item userlogin-header" style="font-size: 12px;"
+                                        <a class="pl-3 dropdown-item userlogin-header" style="font-size: 13px;"
                                             href="{{ route('template.one.dashboard') }}"><i
                                                 class="pr-2 fal fa-user"></i>
                                             My Profile</a>
 
-                                        <a class="pl-3 dropdown-item userlogin-header" style="font-size: 12px;"
+                                        <a class="pl-3 dropdown-item userlogin-header" style="font-size: 13px;"
                                             href="{{ route('wishlist.product') }}"><i class="pr-2 fal fa-heart"></i>
                                             My Wishlist</a>
 
-                                        <a class="pl-3 dropdown-item userlogin-header" style="font-size: 12px;"
+                                        <a class="pl-3 dropdown-item userlogin-header" style="font-size: 13px;"
                                             href="{{ route('compare.product') }}"><i class="pr-2 fal fa-random"></i>
                                             My Compare</a>
 
-                                        <a class="pl-3 dropdown-item userlogin-header" style="font-size: 12px;"
+                                        <a class="pl-3 dropdown-item userlogin-header" style="font-size: 13px;"
                                             href="{{ route('template.one.dashboard') }}"><i
                                                 class="pr-2 fal fa-box"></i>
                                             My Order</a>
