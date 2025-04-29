@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="{{ asset('frontend/template_one/assets/css/meanmenu.css?v=' . time()) }}" />
     <link rel="stylesheet" href="{{ asset('frontend/template_one/assets/css/style.css?v=' . time()) }}" />
     <link rel="stylesheet" href="{{ asset('frontend/template_one/assets/css/responsive.css?v=' . time()) }}" />
+    <link rel="stylesheet" href="{{ asset('frontend/template_one/assets/css/default.css?v=' . time()) }}" />
 
 
 
