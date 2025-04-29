@@ -21,8 +21,8 @@
  ******************************/
  :root {
      --primary-color: hsl(194.03deg 71.26% 34.12%);
-     /* --secondary-color: #1f1f1f;
-     --tertiary-color: #ffffff;
+     --secondary-color: hsl(192.6deg 87.85% 48.2%);
+     /* --tertiary-color: #ffffff;
      --quaternary-color: #979797;
      --quinary-color: #444444; */
  }
@@ -58,7 +58,7 @@
  }
 
  a:hover, a:focus {
-     color: #ef4416;
+     color: var(--secondary-color);
      text-decoration: none;
      outline: medium none;
  }
@@ -161,9 +161,9 @@
 
  .fancy-btn {
      padding: 8px 30px 10px;
-     background: #ef4416;
-     -webkit-box-shadow: 0 0 0 4px #ef4416;
-     box-shadow: 0 0 0 4px #ef4416;
+     background: var(--secondary-color);
+     -webkit-box-shadow: 0 0 0 4px var(--secondary-color);
+     box-shadow: 0 0 0 4px var(--secondary-color);
      border: 1px solid rgba(255,255,255,0.3);
  }
  .fancy-btn-black {
@@ -361,7 +361,7 @@
  .light-bg {
      background-color: #f7f7f7;
  }
- .thm-clr { color: #ef4416; }
+ .thm-clr { color: var(--secondary-color); }
  .wht-clr { color: #fff; }
  .blk-clr { color: #1f1f1f; }
  .blklt-clr { color: #444; }
@@ -727,7 +727,7 @@
  }
 
  .header-link-search:hover {
-     color: #ef4416;
+     color: var(--secondary-color);
  }
 
  .goshop-menu {
@@ -745,7 +745,7 @@
 
  .goshop-menu > li > a:hover,
  .goshop-menu > li.current-menu-item > a {
-     color: #ef4416;
+     color: var(--secondary-color);
  }
 
  .goshop-menu > li > a:hover::before,
@@ -754,7 +754,7 @@
      bottom: 0;
      left: 0;
      content: "";
-     background: #ef4416;
+     background: var(--secondary-color);
      height: 3px;
      width: 100%;
  }
@@ -778,7 +778,7 @@
  .site-subheader li:hover > a,
  .nav-dropdown:hover > div {
      text-decoration: none;
-     color: #ef4416;
+     color: var(--secondary-color);
  }
 
 
@@ -836,7 +836,7 @@
      margin-left: -48px;
      width: 96px;
      height: 3px;
-     background: #ef4416;
+     background: var(--secondary-color);
  }
 
  .nav-dropdown ul {
@@ -922,7 +922,7 @@
  }
 
  .goshop-dd a:hover {
-     color: #ef4416;
+     color: var(--secondary-color);
  }
 
  .goshop-dd .menu-item-has-children:hover > ul,
@@ -994,7 +994,7 @@
  }
 
  #popup-menu > li > a:hover {color: #666}
- #popup-menu .current-menu-item > a {color: #ef4416}
+ #popup-menu .current-menu-item > a {color: var(--secondary-color)}
 
 
 
@@ -1034,7 +1034,7 @@
      color: #b8b8b8;
  }
  .breadcrumbs a:hover, .breadcrumbs a:focus {
-     color: #ef4416;
+     color: var(--secondary-color);
  }
 
  /*****************************
@@ -1073,7 +1073,7 @@
      color: #393939;
  }
  .entry-title a:hover, .entry-title a:focus{
-     color: #ef4416;
+     color: var(--secondary-color);
  }
  .entry-author, .entry-categories {
      font-size: 13px;
@@ -1118,7 +1118,7 @@
  }
 
  .entry-time {
-     background: #ef4416;
+     background: var(--secondary-color);
  }
 
  .entry-time-date {
@@ -1178,7 +1178,7 @@
  .pager li.current,
  ul.page-numbers li > a:hover,
  ul.page-numbers li span.current {
-     color: #ef4416;
+     color: var(--secondary-color);
      background: transparent;
  }
 
@@ -1309,7 +1309,7 @@
      color: #000;
  }
  .team-detail li a:hover, .team-detail li a:focus{
-     color: #ef4416 ;
+     color: var(--secondary-color) ;
  }
  .team-detail li span{
      color: #999;
@@ -1445,7 +1445,7 @@
      position: relative;
  }
  .comingsoon-media .social-icon li a:hover, .comingsoon-media .social-icon li a:focus {
-     color: #ef4416;
+     color: var(--secondary-color);
  }
  /*---------------- Coming Soon Ends ------------------------- */
 
@@ -1508,7 +1508,7 @@
  }
 
  .comment-author a:hover {
-     color: #ef4416;
+     color: var(--secondary-color);
  }
 
  .comment-author b {
@@ -1530,7 +1530,7 @@
  }
 
  .comment-metadata a:hover {
-     color: #ef4416;
+     color: var(--secondary-color);
  }
 
  .comment-metadata .pull-left, .comment-metadata .pull-right {
@@ -1615,7 +1615,7 @@
      content: "";
      width: 50px;
      height: 3px;
-     background: #ef4416;
+     background: var(--secondary-color);
  }
 
  /*****************************
@@ -1674,7 +1674,7 @@
  .main-sidebar .widget_layered_nav li.chosen a,
  .main-sidebar .widget_layered_nav li a:hover,
  .main-sidebar .widget_layered_nav_filters li a:hover {
-     color: #ef4416;
+     color: var(--secondary-color);
  }
 
  .main-sidebar .widget_categories li:first-child,
@@ -1792,7 +1792,7 @@
  }
 
  .goshop_widget_posts a:hover {
-     color: #ef4416;
+     color: var(--secondary-color);
  }
 
  .goshop_widget_posts .media-lefta {
@@ -1830,7 +1830,7 @@
      line-height: 40px;
      color: #fff;
      font-size: 20px;
-     background: #ef4416 none repeat scroll 0 0;
+     background: var(--secondary-color) none repeat scroll 0 0;
      text-align: center;
  }
  .widget_tweeter li {
@@ -1855,7 +1855,7 @@
  }
 
  .tagcloud a:hover {
-     color: #ef4416;
+     color: var(--secondary-color);
  }
 
  /*Text Widget*/
@@ -1950,7 +1950,7 @@
  }
 
  .mc4wp-form input[type="submit"], .mc4wp-form .submit {
-     background: #ef4416 none repeat scroll 0 0;
+     background: var(--secondary-color) none repeat scroll 0 0;
      border: 0 none;
      border-radius: 3px;
      color: #ffffff;
@@ -2159,10 +2159,10 @@
  .products-number-selector a {
      color: #b6b6b6;
  }
- .products-number-selector a.highlight-selector {color:#ef4416}
+ .products-number-selector a.highlight-selector {color:var(--secondary-color)}
 
  .products-number-selector a:hover {
-     color: #ef4416;
+     color: var(--secondary-color);
  }
 
  .products-number-selector span {
@@ -2266,7 +2266,7 @@
  }
  .view-tabs > li.active > a, .view-tabs > li.active > a:focus, .view-tabs > li.active > a:hover {
      border-color: #ebebeb;
-     color: #ef4416;
+     color: var(--secondary-color);
  }
  .view-tabs li:first-child {
      margin-right: 10px;
@@ -2310,7 +2310,7 @@
      margin-top: 5px;
  }
  .posted_in a {color: #939393}
- .posted_in a:hover {color: #ef4416}
+ .posted_in a:hover {color: var(--secondary-color)}
 
 
  .product_title_wrapper {
@@ -2339,7 +2339,7 @@
      left: 0;
      height: 3px;
      width: 50px;
-     background: #ef4416;
+     background: var(--secondary-color);
  }
 
  .stock-detail li + li {
@@ -2395,7 +2395,7 @@
      content: "";
      width: 50px;
      height: 3px;
-     background: #ef4416;
+     background: var(--secondary-color);
  }
 
  .single-product .images .slick-buttons {
@@ -2467,7 +2467,7 @@
      margin-right: 0;
  }
  .mCS-dark-2.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
-     background-color: #ef4416;
+     background-color: var(--secondary-color);
      border-radius: 10px;
  }
  .mCS-dark-2.mCSB_scrollTools .mCSB_draggerRail {
@@ -2739,7 +2739,7 @@
  .cartView .product-remove a:hover::before,
  .widget_shopping_cart a.remove:hover::before,
  .shop_table .remove::before {
-     border-bottom-color: #ef4416;
+     border-bottom-color: var(--secondary-color);
  }
 
  .shop_table .remove:hover::before {
@@ -2755,7 +2755,7 @@
  }
  .widget_shopping_cart .total .amount {
      float: right;
-     color: #ef4416;
+     color: var(--secondary-color);
  }
 
  .cartView .pull-left {
@@ -2763,7 +2763,7 @@
      font-size: 18px;
  }
  .cartView .pull-right {
-     color: #ef4416;
+     color: var(--secondary-color);
      font-size: 18px;
      font-weight: 900;
  }
@@ -2793,13 +2793,13 @@
  }
  .minicart-buttons a:hover,
  .widget_shopping_cart .buttons a:hover {
-     color: #ef4416;
+     color: var(--secondary-color);
  }
 
  .minicart-buttons .minicart-checkout,
  .widget_shopping_cart .buttons a.checkout {
      color: white;
-     background: #ef4416;
+     background: var(--secondary-color);
      /*line-height: normal;*/
      padding-left: 20px;
      padding-right: 20px;
@@ -2827,7 +2827,7 @@
  .product_list_widget li:first-child {padding-top: 0;}
 
  .product_list_widget a { color: #444; }
- .product_list_widget a:hover { color: #ef4416; }
+ .product_list_widget a:hover { color: var(--secondary-color); }
 
  .product_list_widget img {
      margin-right: 10px;
@@ -2926,7 +2926,7 @@
      bottom: 0;
      left: 0;
      content: "";
-     background: #ef4416;
+     background: var(--secondary-color);
      height: 2px;
      width: 50px;
  }
@@ -3072,7 +3072,7 @@
  }
 
  .shop_table .cart-product-title a:hover {
-     color: #ef4416;
+     color: var(--secondary-color);
  }
 
  .shop_table .cart-star-rating {
@@ -3191,7 +3191,7 @@
  .wc-proceed-to-checkout .checkout-button,
  .woocommerce-checkout-payment .place-order input[type="submit"],
  .woocommerce-checkout .woocommerce input[type="submit"] {
-     background: #ef4416;
+     background: var(--secondary-color);
      border: 0;
      -webkit-border-radius: 3px;
      -moz-border-radius: 3px;
@@ -3561,7 +3561,7 @@
      position: relative;
  }
  .heading-2::before {
-     background-color: #ef4416;
+     background-color: var(--secondary-color);
      border-radius: 2px;
      bottom: 0;
      content: " ";
@@ -3830,7 +3830,7 @@
  }
 
  .gst-countdown {
-     color: #ef4416;
+     color: var(--secondary-color);
      font-style: italic;
      text-transform: uppercase;
      font-weight: 14px;
@@ -3996,7 +3996,7 @@
      right: 0;
      top: 0;
      background: rgba(255, 255, 255, 0.6);
-     border-bottom: 3px solid #ef4416;
+     border-bottom: 3px solid var(--secondary-color);
      opacity: 0;
      visibility: hidden;
      z-index: 1;
@@ -4127,7 +4127,7 @@
      display: inline-block;
  }
  .portfolio-thumb .pop-up-icon i:hover {
-     background-color: #ef4416 !important;
+     background-color: var(--secondary-color) !important;
      color: #ffffff;
  }
 
@@ -4520,7 +4520,7 @@
      font-weight: 700;
  }
  a.compare-add-to-cart {
-     color: #ef4416;
+     color: var(--secondary-color);
      display: inline-block;
      border-left: 1px solid #ccc;
      padding-left: 12px;
@@ -4643,7 +4643,7 @@
      content: '';
      position: absolute;
      z-index: 0;
-     background: #ef4416;
+     background: var(--secondary-color);
      top: -28px;
      left: 0;
      width: 300px;
@@ -5022,7 +5022,7 @@
  }
 
  .popup-cls.close:before{
-     border-color: rgba(0, 0, 0, 0) #ef4416;
+     border-color: rgba(0, 0, 0, 0) var(--secondary-color);
      border-style: solid;
      border-width: 0 60px 60px 0;
      content: "";
@@ -5095,7 +5095,7 @@
      -webkit-transition: all 0.4s ease-in-out;
      -o-transition: all 0.4s ease-in-out;
      transition: all 0.4s ease-in-out;
-     background-color: #ef4416;
+     background-color: var(--secondary-color);
      border-radius: 3px;
      bottom: -150px;
      color: #ffffff;

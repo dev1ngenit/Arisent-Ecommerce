@@ -1,7 +1,13 @@
 /* Deafult Margin & Padding */
 
 /*-- Margin Top --*/
-
+:root {
+    --primary-color: hsl(194.03deg 71.26% 34.12%);
+    --secondary-color: hsl(192.6deg 87.85% 48.2%);
+    /* --tertiary-color: #ffffff;
+    --quaternary-color: #979797;
+    --quinary-color: #444444; */
+}
 .mt-5 {
 
     margin-top: 5px;
@@ -1922,13 +1928,13 @@ ul.list-inline li {
 
 .grenadier-color {
 
-    color: #ed2129;
+    color: var(--primary-color);
 
 }
 
 .grenadier-bg {
 
-    background-color: #ed2129;
+    background-color: var(--primary-color);
 
 }
 

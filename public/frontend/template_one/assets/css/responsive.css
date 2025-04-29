@@ -1,5 +1,11 @@
 /* Normal desktop :1200px. */
-
+:root {
+    --primary-color: hsl(194.03deg 71.26% 34.12%);
+    --secondary-color: hsl(192.6deg 87.85% 48.2%);
+    /* --tertiary-color: #ffffff;
+    --quaternary-color: #979797;
+    --quinary-color: #444444; */
+}
 @media (min-width: 1200px) and (max-width: 1500px) {
     .offer--deals__products {
         padding-left: 60px;
@@ -825,17 +831,17 @@
     }
 
     .shop-banner-bg .product-countdown-three .countdown-list .time-count {
-        color: #cd3301;
+        color: var(--primary-color);
 
         font-weight: 700;
     }
 
     .shop-banner-bg .product-countdown-three {
-        border: 2px dashed #cd3301;
+        border: 2px dashed var(--primary-color);
     }
 
     .shop-banner-bg .product-countdown-three .countdown-list .time-count:after {
-        color: #cd3301;
+        color: var(--primary-color);
     }
 
     .common-pagination nav ul li:last-child a,

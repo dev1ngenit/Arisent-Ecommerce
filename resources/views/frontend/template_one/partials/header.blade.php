@@ -43,7 +43,7 @@
                         Category
                     </a>
                     <div class="p-0 dropdown-menu dropdown-menu-full main-menu-drop"
-                        aria-labelledby="navbarDropdownFeatures" style="border-top: 2px solid #cd3301">
+                        aria-labelledby="navbarDropdownFeatures" style="border-top: 2px solid #hsl(192.6deg 87.85% 48.2%)">
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-12">
@@ -81,7 +81,7 @@
                                                             @forelse ($catwissubcat as $subcat)
                                                                 <div class="col-lg-3">
                                                                     <div>
-                                                                        <h5 class="" style="color: #ef4416;">
+                                                                        <h5 class="" style="color: hsl(192.6deg 87.85% 48.2%);">
                                                                             {{ $subcat->subcategory_name }}
                                                                         </h5>
                                                                         <div class="divider"></div>
@@ -163,7 +163,7 @@
                         @endphp
 
                         <div class="mt-0 dropdown-menu w-100 rounded-0 border-bottom-0 main-menu-drop"
-                            style="border-top: 2px solid #cd3301;border-bottom: 1px solid #d9d9d9 !important"
+                            style="border-top: 2px solid #hsl(192.6deg 87.85% 48.2%);border-bottom: 1px solid #d9d9d9 !important"
                             aria-labelledby="navbarDropdown">
                             <div class="container">
                                 <div class="row">
@@ -221,7 +221,7 @@
                                 ->get();
                         @endphp
                         <div class="dropdown-menu dropdown-menu-full main-menu-drop"
-                            style="border-top: 2px solid #cd3301" aria-labelledby="navbarDropdownPricing">
+                            style="border-top: 2px solid #hsl(192.6deg 87.85% 48.2%)" aria-labelledby="navbarDropdownPricing">
                             <div class="container">
                                 <div class="row">
                                     @foreach ($offers as $offer)
@@ -518,7 +518,7 @@
                         Category
                     </a>
                     <div class="p-0 dropdown-menu dropdown-menu-full main-menu-drop"
-                        aria-labelledby="navbarDropdownFeatures" style="border-top: 2px solid #cd3301">
+                        aria-labelledby="navbarDropdownFeatures" style="border-top: 2px solid #hsl(192.6deg 87.85% 48.2%)">
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-12">
@@ -630,7 +630,7 @@
                         @endphp
 
                         <div class="mt-0 dropdown-menu w-100 rounded-0 border-bottom-0 main-menu-drop"
-                            style="border-top: 2px solid #cd3301;border-bottom: 1px solid #d9d9d9 !important"
+                            style="border-top: 2px solid #hsl(192.6deg 87.85% 48.2%);border-bottom: 1px solid #d9d9d9 !important"
                             aria-labelledby="navbarDropdown">
                             <div class="container">
                                 <div class="row">
@@ -689,7 +689,7 @@
                                 ->get();
                         @endphp
                         <div class="dropdown-menu dropdown-menu-full main-menu-drop"
-                            style="border-top: 2px solid #cd3301" aria-labelledby="navbarDropdownPricing">
+                            style="border-top: 2px solid #hsl(192.6deg 87.85% 48.2%)" aria-labelledby="navbarDropdownPricing">
                             <div class="container">
                                 <div class="row">
                                     @foreach ($offers as $offer)

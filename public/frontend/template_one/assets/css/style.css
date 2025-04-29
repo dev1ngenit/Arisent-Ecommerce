@@ -18,8 +18,8 @@
 
 :root {
     --primary-color: hsl(194.03deg 71.26% 34.12%);
-    /* --secondary-color: #1f1f1f;
-    --tertiary-color: #ffffff;
+    --secondary-color: hsl(192.6deg 87.85% 48.2%);
+    /* --tertiary-color: #ffffff;
     --quaternary-color: #979797;
     --quinary-color: #444444; */
 }
@@ -1567,7 +1567,7 @@ ul.sub__menu.sub__dept--menu li:hover ul.sub__menu.level2 {
 }
 
 .alert-danger {
-    color: #a94442;
+    color: #c00d0a;
     background-color: #f2dede;
     border-color: #ebccd1;
 }
@@ -2828,7 +2828,7 @@ ul.sub__menu.sub__dept--menu li:hover ul.sub__menu.level2 {
 .newsletter--input {
     width: 100%;
     height: 57px;
-    background: #b22e02;
+    background: var(--secondary-color);
     border: 0;
     padding: 0 32px;
     color: rgba(255, 255, 255, 0.6);
@@ -4115,7 +4115,7 @@ html .ui-button.ui-state-disabled:active {
 }
 
 .reg-area .reg-wrapper button:hover {
-    background: #b22e02;
+    background: var(--secondary-color);
 }
 
 .reg-area .reg-wrapper span input.check {
@@ -4239,7 +4239,7 @@ html .ui-button.ui-state-disabled:active {
 }
 
 .modal-wrapper .pro-text button:hover {
-    background: #b22e02;
+    background: var(--secondary-color);
 }
 
 .modal-wrapper .pro-text span {
@@ -4457,7 +4457,7 @@ html .ui-button.ui-state-disabled:active {
 .page-item.active .page-link {
     z-index: 1;
     color: #fff;
-    background-color: #eb2f06;
+    background-color: var(--primary-color);
     border-color: #eeeeee;
 }
 
