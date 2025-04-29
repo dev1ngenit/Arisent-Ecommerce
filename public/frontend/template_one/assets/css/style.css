@@ -838,8 +838,8 @@ cart--header__middle.cart--header__two {
     background-color: var(--primary-color);
 }
 .footer-topbar p{
-    font-size: 1.2rem;
-    letter-spacing: 1px;
+    font-size: 1.1rem;
+    letter-spacing: 0px;
 }
 
 .mini__cart--box:before {

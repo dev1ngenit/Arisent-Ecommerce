@@ -44,7 +44,7 @@
             <div class="container">
                 <div class="pt-5 row gx-0">
                     <!-- Logo and Social Links -->
-                    <div class="col-xl-4 col-lg-6 col-md-8 mb-30">
+                    <div class="col-xl-4 col-lg-6 col-md-8">
                         <div class="footer-logo">
                             <a href="{{ route('index') }}" class="logo__link">
                                 <img width="250px"
@@ -57,7 +57,7 @@
                     </div>
 
                     <!-- Company Links -->
-                    <div class="col-xl-2 col-lg-6 col-md-8 mb-30">
+                    <div class="col-xl-2 col-lg-6 col-md-8">
                         <div class="footer-widget">
                             <h6 class="f-800">Company</h6>
                             <ul class="footer-menu">
@@ -73,7 +73,7 @@
                     </div>
 
                     <!-- Inquiry Links -->
-                    <div class="col-xl-2 col-lg-6 col-md-8 mb-30">
+                    <div class="col-xl-2 col-lg-6 col-md-8">
                         <div class="footer-widget">
                             <h6 class="f-800">Inquiry</h6>
                             <ul class="footer-menu">
@@ -85,7 +85,7 @@
                     </div>
 
                     <!-- Join Us Section -->
-                    <div class="col-xl-4 col-lg-6 col-md-8 mb-30">
+                    <div class="col-xl-4 col-lg-6 col-md-8">
                         <div class="footer-widget">
                             <div class="pt-3 social-icons">
                                 <a href="{{ optional($site)->facebook_url }}" class="social-icon">
@@ -112,7 +112,7 @@
                                         placeholder="Enter Email Address" required>
 
                                     <div class="input-group-append">
-                                        <button class="px-3 btn btn-outline-secondary" style="background: #ed2129;"
+                                        <button class="px-3 btn btn-outline-secondary" style="background: #12a0c6;"
                                             type="submit" id="button-addon2">
                                             <i class="fa-regular fa-paper-plane"></i>
                                         </button>

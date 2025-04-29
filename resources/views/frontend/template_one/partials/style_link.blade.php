@@ -1,33 +1,35 @@
 <head>
 
-    @php
-        $site = App\Models\Sites::find(1);
-    @endphp
-
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-
-
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta charset="utf-8">
-    <meta name="description" content="{{ optional($site)->site_slogan }}" />
-    <meta name="keywords" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="" />
-    <meta property="og:url" content="" />
-    <meta property="og:site_name" content="{{ optional($site)->site_name }}" />
-    <title>{{ optional($site)->site_name }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="title" content="{{ optional($site)->site_name ?: config('app.name', 'Arisent Trade') }}" />
+    <meta name="description" content="{{ optional($site)->site_slogan ?: config('app.name') }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ config('app.url') }}" />
+    <meta property="og:title" content="{{ optional($site)->site_name ?: config('app.name', 'Arisent Trade') }}" />
+    <meta property="og:description" content="{{ optional($site)->site_slogan ?: config('app.name') }}" />
+    <meta property="og:image" content="{{ asset('upload/logo_black/' . optional($site)->logo_black) }}" />
 
-    <link rel="manifest" href="" />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="{{ config('app.url') }}" />
+    <meta property="twitter:title" content="{{ optional($site)->site_name ?: config('app.name', 'Arisent Trade') }}" />
+    <meta property="twitter:description" content="{{ optional($site)->site_slogan ?: config('app.name') }}" />
+    <meta property="twitter:image" content="{{ asset('upload/logo_black/' . optional($site)->logo_black) }}" />
+
+    <link href="{{ asset('upload/favicon/' . optional($site)->favicon) }}" rel="apple-touch-icon-precomposed">
+    <link href="{{ asset('upload/favicon/' . optional($site)->favicon) }}" rel="shortcut icon" type="image/png">
+    <link rel="manifest" href="{{ asset('upload/favicon/' . optional($site)->favicon) }}" />
+
+    <title>
+        {{ optional($site)->site_name ? optional($site)->site_name : config('app.name', 'BioMac Lab') }}
+    </title>
 
 
-
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('upload/favicon/' . optional($site)->favicon) }}" />
 
 
     <!-- CSS here -->
