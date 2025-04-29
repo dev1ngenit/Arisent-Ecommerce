@@ -19,7 +19,7 @@ return new class extends Migration
 
             $table->string('subcategory_name');
             $table->string('subcategory_slug');
-            $table->string('description')->nullable();
+            $table->mediumText('description')->nullable();
             $table->string('subcategory_image')->nullable();
             $table->string('status')->default(1);
 

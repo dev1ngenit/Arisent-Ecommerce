@@ -22,7 +22,7 @@ return new class extends Migration
 
             $table->string('childcategory_name');
             $table->string('childcategory_slug');
-            $table->string('description')->nullable();
+            $table->mediumText('description')->nullable();
             $table->string('childcategory_image')->nullable();
             $table->string('status')->default(1);
 

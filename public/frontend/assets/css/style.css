@@ -1,14 +1,5 @@
 /**
- * Theme Name: GoShop
- * Theme URI: http://themeforest.net/user/youwes
- * Description: A clean WooCommerce theme
- * Version: 1.0
- * Author: Red Chilly Creations
- * Author URI: http://themeforest.net/user/youwes
- * License: GNU General Public License version 3.0
- * License URI: http://www.gnu.org/licenses/gpl-3.0.html
- * Tags: one-column, two-columns, right-sidebar, left-sidebar, fluid-layout, custom-menu, featured-images, post-formats, sticky-post, translation-ready
- * Text Domain: goshop
+  hsl(194.03deg 71.26% 34.12%)
  */
 
 
@@ -44,7 +35,7 @@
 	width: 100%;
 	height: 100%;
 	z-index: 11111;
-	background: url('https://i.ibb.co/NL3yXDf/ezgif-com-video-to-gif.gif') 50% 50%
+	background: url('https://arisent.net/wp-content/uploads/2023/10/Arisent-Logo.png') 50% 50%
                 no-repeat white;
 }
  .theme-container{

@@ -70,14 +70,14 @@
 
                                 @if ($item->status == 'active')
                                     <a href="{{ route('return-policy.inactive', $item->id) }}" title="Inactive"><i
-                                            class="bi bi-hand-thumbs-down text-danger fs-3"></i></a>
+                                            class="bi bi-hand-thumbs-down text-danger fs-3 me-2"></i></a>
                                 @else
                                     <a href="{{ route('return-policy.active', $item->id) }}" title="Active"><i
-                                            class="bi bi-hand-thumbs-up text-success fs-3"></i></a>
+                                            class="bi bi-hand-thumbs-up text-success fs-3 me-2"></i></a>
                                 @endif
 
                                 {{-- @if (Auth::guard('admin')->user()->can('edit.privacy')) --}}
-                                <a href="{{ route('admin.return-policy.edit', $item->id) }}" class="text-primary">
+                                <a href="{{ route('admin.return-policy.edit', $item->id) }}" class="text-primary me-2">
                                     <i class="bi bi-pencil text-primary"></i>
                                 </a>
                                 {{-- @endif

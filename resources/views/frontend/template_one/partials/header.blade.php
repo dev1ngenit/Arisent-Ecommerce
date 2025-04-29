@@ -390,7 +390,7 @@
                                             My Order</a>
                                         <hr class="mt-2 mb-2">
                                         <a class="pl-3 dropdown-item userlogin-header" style="font-size: 12px;"
-                                            href="{{ route('template.one.dashboard') }}"><i
+                                            href="{{ route('template.one.view.cart') }}"><i
                                                 class="pr-2 fal fa-shopping-cart"></i>
                                             My Cart</a>
                                     @endif

@@ -272,17 +272,6 @@
                                                                     data-toggle="tab">{{ $category->category_name }}</a>
                                                             </li>
                                                         @endforeach
-
-                                                        {{-- <li class="text-center mb-5"
-                                                            style="margin-bottom: 5px; border: #999 1px solid;border-radius: 5px;">
-                                                            <a href="#menu1" data-toggle="tab">Menu 1</a>
-                                                        </li>
-
-                                                        <li class="text-center mb-5"
-                                                            style="margin-bottom: 5px;border: #999 1px solid;border-radius: 5px;">
-                                                            <a href="#menu2" data-toggle="tab">Menu 2</a>
-                                                        </li> --}}
-
                                                     </ul>
 
                                                     <div class="gst-promo-text text-center"
@@ -312,9 +301,7 @@
                                                             @php
 
                                                                 $catwiseBrand = App\Models\Admin\Product::where(
-                                                                    'status',
-                                                                    '1',
-                                                                )
+                                                                    'status','1',)
                                                                     ->where('brand_id', $category->id)
                                                                     ->latest()
                                                                     ->get();
@@ -347,49 +334,6 @@
 
                                                         </div>
                                                     @endforeach
-
-                                                    {{-- <div id="menu1" class="tab-pane fade">
-                                                        <a href="">
-                                                            <div class="col-lg-2 col-md-3 col-sm-3 menu-block mb-3"
-                                                                style="padding: 5px">
-                                                                <div class="sub-list text-center"
-                                                                    style="height: 120px">
-                                                                    <div class="menu-card"
-                                                                        style="border: #999 1px solid;border-radius: 5px;">
-                                                                        <img src="https://www.jaragroups.com/storage/images/brand/download1614496759.png"
-                                                                            height="100%" width="100%"
-                                                                            alt="5Star" style="padding: 10px" />
-                                                                    </div>
-                                                                    <div>
-                                                                        <h5 class="fsz-10 mt-20">2</h5>
-                                                                    </div>
-                                                                    <br />
-                                                                </div>
-                                                            </div>
-                                                        </a>
-                                                    </div>
-
-                                                    <div id="menu2" class="tab-pane fade">
-                                                        <a href="">
-                                                            <div class="col-lg-2 col-md-3 col-sm-3 menu-block mb-3"
-                                                                style="padding: 5px">
-                                                                <div class="sub-list text-center"
-                                                                    style="height: 120px">
-                                                                    <div class="menu-card"
-                                                                        style="border: #999 1px solid;border-radius: 5px;">
-                                                                        <img src="https://www.jaragroups.com/storage/images/brand/download1614496759.png"
-                                                                            height="100%" width="100%"
-                                                                            alt="5Star" style="padding: 10px" />
-                                                                    </div>
-                                                                    <div>
-                                                                        <h5 class="fsz-10 mt-20">3</h5>
-                                                                    </div>
-                                                                    <br />
-                                                                </div>
-                                                            </div>
-                                                        </a>
-                                                    </div> --}}
-
 
                                                 </div>
                                             </div>

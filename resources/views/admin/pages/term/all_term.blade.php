@@ -84,14 +84,14 @@
 
                                         @if ($term->status == 1)
                                             <a href="{{ route('term.inactive', $term->id) }}" title="Inactive"><i
-                                                    class="bi bi-hand-thumbs-down text-danger fs-3"></i></a>
+                                                    class="bi bi-hand-thumbs-down text-danger fs-3 me-2"></i></a>
                                         @else
                                             <a href="{{ route('term.active', $term->id) }}" title="Active"><i
-                                                    class="bi bi-hand-thumbs-up text-success fs-3"></i></a>
+                                                    class="bi bi-hand-thumbs-up text-success fs-3 me-2"></i></a>
                                         @endif
 
                                         <a href="{{ route('edit.term', $term->id) }}" class="ms-1" title="Edit"><i
-                                                class="bi bi-pencil-square fs-3 text-primary"></i></a>
+                                                class="bi bi-pencil-square fs-3 me-2 text-primary"></i></a>
 
 
 

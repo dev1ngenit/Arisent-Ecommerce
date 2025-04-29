@@ -12,7 +12,7 @@
                     <div>
                         <div class="banner-text text-center pt-150 pb-120">
                             <h2 class="f-800 cod__black-color">
-                                DadaBhaai <span class="grenadier-color">Product</span>
+                                Your <span class="grenadier-color">Cart</span>
                             </h2>
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb pt-3">
@@ -20,7 +20,7 @@
                                         <a href="{{ route('index') }}">Home</a>
                                     </li>
                                     <li class="breadcrumb-item grenadier-color active" aria-current="page">
-                                        <a href="">
+                                        <a href="{{ route('template.one.checkout') }}">
                                             <span class="grenadier-color">Check Out</span>
                                         </a>
                                     </li>

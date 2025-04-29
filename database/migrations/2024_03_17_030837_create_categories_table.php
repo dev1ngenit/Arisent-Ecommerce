@@ -16,8 +16,8 @@ return new class extends Migration
 
             $table->string('category_name');
             $table->string('category_slug');
-            $table->string('description')->nullable();
-            $table->string('category_image');
+            $table->mediumText('description')->nullable();
+            $table->string('category_image')->nullable();
             $table->string('icon')->nullable();
             $table->string('status')->default(1);
 
