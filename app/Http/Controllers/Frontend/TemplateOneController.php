@@ -36,7 +36,7 @@ class TemplateOneController extends Controller
         // Apply category filter
         if (! empty($request->get('category'))) {
             $categorySlugs = explode(',', $request->get('category'));
-            $categoryIds   = Category::whereIn('category_slug', $categorySlugs)->pluck('id')->toArray();
+            $categoryIds   = Category::whereIn('category_slug', $categorySlugs)->latest('id')->pluck('id')->toArray();
             $products      = $products->whereIn('category_id', $categoryIds);
         }
 
@@ -62,7 +62,7 @@ class TemplateOneController extends Controller
 
         // Fetch the brands and categories for filters
         $brands    = Brand::where('status', 1)->orderBy('brand_name', 'ASC')->get();
-        $categorys = Category::where('status', 1)->orderBy('category_name', 'ASC')->get();
+        $categorys = Category::where('status', 1)->latest('id')->get();
 
         return view('frontend.template_one.product.template_one_all_product', compact('products', 'brands', 'categorys'));
     }

@@ -90,7 +90,7 @@
 
                                             <h6 title="{{ $product->products->product_name }}"
                                                 class="product__title mine__shaft-color f-700 mb-0 text-start">
-                                                <a href="{{ url('product' . '/' . $product->id . '/' . $product->product_slug) }}" title="{{ $product->products->product_name }}">
+                                                <a href="{{ url('product' . '/' . $product->products->id . '/' . $product->products->product_slug) }}" title="{{ $product->products->product_name }}">
                                                     {{ substr($product->products->product_name, 0, 25) }}
                                                 </a>
                                             </h6>
