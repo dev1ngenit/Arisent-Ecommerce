@@ -76,16 +76,16 @@ Route::middleware('auth:admin')->group(function () {
         ->name('admin.logout');
 });
 
-Route::middleware(['auth:admin', 'verified'])->group(function () {
+Route::middleware(['auth:admin', 'verified'])->prefix('admin')->group(function () {
 
     //Admin Dashboard
-    Route::get('/admin/dashboard', [AdminController::class, 'AdminDashboard'])->name('admin.dashboard');
+    Route::get('/dashboard', [AdminController::class, 'AdminDashboard'])->name('admin.dashboard');
 
     //Admin Profile
-    Route::get('/admin/profile', [AdminController::class, 'AdminProfile'])->name('admin.profile');
-    Route::post('/admin/profile/update', [AdminController::class, 'AdminProfileUpdate'])->name('admin.profile.update');
+    Route::get('/profile', [AdminController::class, 'AdminProfile'])->name('admin.profile');
+    Route::post('/profile/update', [AdminController::class, 'AdminProfileUpdate'])->name('admin.profile.update');
 
-    Route::post('/admin/account/update', [AdminController::class, 'AdminAccountUpdate'])->name('admin.account.update');
+    Route::post('/account/update', [AdminController::class, 'AdminAccountUpdate'])->name('admin.account.update');
 
     //Employee Details
     Route::get('/all/employee-details', [AdminController::class, 'AllEmployeeDetails'])->name('all.employee.details');
@@ -97,7 +97,7 @@ Route::middleware(['auth:admin', 'verified'])->group(function () {
 
     //Admin Password
     Route::get('/admin-password', [AdminController::class, 'AdminPasswordPage'])->name('admin.password.page');
-    Route::post('/admin/password/update/submit', [AdminController::class, 'AdminPasswordUpdateSubmit'])->name('admin.password.update.submit');
+    Route::post('/password/update/submit', [AdminController::class, 'AdminPasswordUpdateSubmit'])->name('admin.password.update.submit');
 
     //All User
     Route::get('/all-user', [AdminController::class, 'AllUser'])->name('all.user');
@@ -106,8 +106,8 @@ Route::middleware(['auth:admin', 'verified'])->group(function () {
     Route::get('/delete-user/{id}', [AdminController::class, 'DeleteUser'])->name('delete.user');
 
     //Active Or Inactive
-    Route::get('/admin/user-inactive/{id}', [AdminController::class, 'InactiveUserAdmin'])->name('user.inactive.admin');
-    Route::get('/admin/user-active/{id}', [AdminController::class, 'ActiveUserAdmin'])->name('user.active.admin');
+    Route::get('/user-inactive/{id}', [AdminController::class, 'InactiveUserAdmin'])->name('user.inactive.admin');
+    Route::get('/user-active/{id}', [AdminController::class, 'ActiveUserAdmin'])->name('user.active.admin');
 });
 
 Route::middleware(['auth:admin', 'verified'])->group(function () {
@@ -118,7 +118,6 @@ Route::middleware(['auth:admin', 'verified'])->group(function () {
         Route::get('/order', 'AdminAllOrder')->name('admin.all.order');
         // Route::get('/order', 'AdminAllOrder')->name('admin.all.order')->middleware('permission:all.order');
         Route::get('/order-details/{id}', 'AdminOrderDetails')->name('admin.order.details');
-
         //Processing
         Route::get('/order-processing', 'AdminProcessingOrder')->name('all.processing.order');
         //Shipped
@@ -127,21 +126,17 @@ Route::middleware(['auth:admin', 'verified'])->group(function () {
         Route::get('/order-deliver', 'AdminDeliverOrder')->name('all.delivered.order');
         //Cancel
         Route::get('/order-cancel', 'AdminCancelOrder')->name('all.cancel.order');
-
         //Order Status Change
         Route::get('/order-status/{id}', 'AdminOrderStatusChange')->name('admin.order.status');
         Route::get('/multi-order-status-update-store', 'multuOrderStatusUpdate')->name('multuOrderStatusUpdate');
-
         //Invoice
         Route::get('/order-invoice/{id}', 'AdminOrderInvoice')->name('admin.order.invoice');
-
         //Delete
         Route::get('/order-delete/{id}', 'AdminOrderDelete')->name('admin.order.delete');
     });
 
     //Product Section
     Route::controller(ProductController::class)->group(function () {
-
         // Route::get('/all/product', 'AllProduct')->name('all.product')->middleware('permission:all.product');
         Route::get('/all/product', 'AllProduct')->name('all.product');
         Route::get('/add/product', 'AddProduct')->name('add.product');
@@ -149,11 +144,9 @@ Route::middleware(['auth:admin', 'verified'])->group(function () {
         Route::get('/edit/product/{id}', 'EditProduct')->name('edit.product');
         Route::post('/update/product', 'UpdateProduct')->name('update.product');
         Route::get('/delete/product/{id}', 'DeleteProduct')->name('delete.product');
-
         Route::post('/store/multiimage', 'StoreMultiImage')->name('store.new.multiimage');
         Route::post('/update/multiimage', 'UpdateMultiImage')->name('update.multiimg');
         Route::get('/delete/multiimage/{id}', 'DeleteMultiImage')->name('delete.multiimg');
-
         // Active Or Inactive
         Route::get('/product-inactive/{id}', 'InactiveProduct')->name('product.inactive');
         Route::get('/product-active/{id}', 'ActiveProduct')->name('product.active');
@@ -193,12 +186,10 @@ Route::middleware(['auth:admin', 'verified'])->group(function () {
         Route::get('/all', 'AllSubscribe')->name('all.subscribe');
         Route::get('/delete/{id}', 'DeleteSubscribe')->name('delete.subscribe');
     });
-
     //Employee Dept Section
     Route::controller(EmployeeController::class)->prefix('employee')->group(function () {
 
         Route::get('/all', 'AllDept')->name('all.dept');
-        // Route::get('/all', 'AllDept')->name('all.dept')->middleware('permission:all.dept');
         Route::post('/store', 'StoreDept')->name('store.dept');
         Route::post('/update', 'UpdateDept')->name('update.dept');
         Route::get('/delete/{id}', 'DeleteDept')->name('delete.dept');
@@ -246,13 +237,7 @@ Route::middleware(['auth:admin', 'verified'])->group(function () {
     });
 
     //Subscribe Section
-    Route::controller(SubscribeController::class)->prefix('subscribe')->group(function () {
 
-        Route::get('/all', 'AllSubscribe')->name('all.subscribe');
-        // Route::post('/store', 'StoreContact')->name('contact.add');
-        // Route::post('/update', 'UpdateContact')->name('update.contact');
-        Route::get('/delete/{id}', 'DeleteSubscribe')->name('delete.subscribe');
-    });
 
     //Offer Category & offer Section
     Route::controller(OfferCategoryController::class)->prefix('offer')->group(function () {
@@ -313,7 +298,6 @@ Route::middleware(['auth:admin', 'verified'])->group(function () {
     Route::controller(AboutController::class)->prefix('about')->group(function () {
 
         Route::get('/all', 'AllAbout')->name('all.about');
-        // Route::get('/all', 'AllAbout')->name('all.about')->middleware('permission:all.about');
         Route::get('/add', 'AddAbout')->name('add.about');
         Route::post('/store', 'StoreAbout')->name('store.about');
         Route::get('/edit/{id}', 'EditAbout')->name('edit.about');
@@ -329,7 +313,6 @@ Route::middleware(['auth:admin', 'verified'])->group(function () {
         Route::post('/store', 'StoreFaq')->name('store.faq');
         Route::post('/update', 'UpdateFaq')->name('update.faq');
         Route::get('/delete/{id}', 'DeleteFaq')->name('delete.faq');
-
         //Active Or Inactive
         Route::get('/faq-inactive/{id}', 'InactiveFaq')->name('faq.inactive');
         Route::get('/faq-active/{id}', 'ActiveFaq')->name('faq.active');
@@ -463,9 +446,9 @@ Route::middleware(['auth:admin', 'verified'])->group(function () {
         Route::get('/add/roles/permission', 'AddRolesPermission')->name('add.roles.permission')->middleware('permission:all.role');
         Route::post('/role/permission/store', 'RolePermissionStore')->name('store.roles.permission');
         Route::get('/all/roles/permission', 'AllRolesPermission')->name('all.roles.permission');
-        Route::get('/admin/edit/roles/{id}', 'AdminRolesEdit')->name('admin.edit.roles');
-        Route::post('/admin/roles/update/{id}', 'AdminRolesUpdate')->name('admin.roles.update');
-        Route::get('/admin/delete/roles/{id}', 'AdminRolesDelete')->name('admin.delete.roles');
+        Route::get('/edit/roles/{id}', 'AdminRolesEdit')->name('admin.edit.roles');
+        Route::post('/roles/update/{id}', 'AdminRolesUpdate')->name('admin.roles.update');
+        Route::get('/delete/roles/{id}', 'AdminRolesDelete')->name('admin.delete.roles');
 
         //Admin Role Permission
         Route::get('/admin-all', 'AdminPermission')->name('all.admin.permission')->middleware('permission:all.role');

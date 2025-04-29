@@ -16,24 +16,19 @@ return new class extends Migration
 
             $table->unsignedBigInteger('brand_id');
             $table->foreign('brand_id')->references('id')->on('brands')->onDelete('cascade')->nullable();
-
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade')->nullable();
-
             $table->unsignedBigInteger('subcategory_id');
             $table->foreign('subcategory_id')->references('id')->on('sub_categories')->onDelete('cascade')->nullable();
-
             $table->unsignedBigInteger('childcategory_id');
             $table->foreign('childcategory_id')->references('id')->on('child_categories')->onDelete('cascade')->nullable();
 
             $table->string('product_name')->nullable();
             $table->string('product_slug')->nullable();
-
             $table->string('sku_code')->nullable();
             $table->string('mf_code')->nullable();
             $table->string('product_code')->nullable();
             $table->string('tags')->nullable();
-
             $table->string('color_id')->nullable();
             $table->string('parent_id')->nullable();
             $table->string('child_id')->nullable();
