@@ -39,7 +39,6 @@
                         id="navbarDropdownFeatures" role="button" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">
                         <i class="pr-2 fa-solid fa-bars"></i>
-
                         Category
                     </a>
                     <div class="p-0 dropdown-menu dropdown-menu-full main-menu-drop"
@@ -81,7 +80,7 @@
                                                             @forelse ($catwissubcat as $subcat)
                                                                 <div class="col-lg-3">
                                                                     <div>
-                                                                        <h5 class="" style="color: hsl(192.6deg 87.85% 48.2%);">
+                                                                        <h5 class="primary-color">
                                                                             {{ $subcat->subcategory_name }}
                                                                         </h5>
                                                                         <div class="divider"></div>

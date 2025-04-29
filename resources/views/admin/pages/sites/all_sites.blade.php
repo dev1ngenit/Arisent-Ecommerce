@@ -73,7 +73,7 @@
                                     <td class="text-center">{{ $key + 1 }}</td>
                                     <td>
                                         <img src="{{ asset('upload/logo_white/' . $site->logo_white) }}"
-                                            style="width: 40px;height:40px;" alt="">
+                                            style="width: 90%;height:40px;" alt="">
                                     </td>
                                     {{-- <td>
                                         <img src="{{ asset('upload/logo_black/' . $site->logo_black) }}"
@@ -81,7 +81,7 @@
                                     </td> --}}
                                     <td>
                                         <img src="{{ asset('upload/favicon/' . $site->favicon) }}"
-                                            style="width: 40px;height:40px;" alt="">
+                                            style="width: 100%;height:40px;" alt="">
                                     </td>
                                     <td>{{ $site->site_name }}</td>
                                     <td>{{ $site->site_slogan }}</td>
