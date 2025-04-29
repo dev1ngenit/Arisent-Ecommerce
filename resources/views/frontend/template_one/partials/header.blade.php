@@ -341,32 +341,16 @@
 
                                             {{ Auth::user()->name }}</a>
 
+
+                                        {{-- <a class="dropdown-item" href="{{ route('template.one.dashboard') }}"><i
+                                                class="pr-2 fal fa-key"></i>
+                                                Password Change</a> --}}
+
+
+                                        <hr class="mt-3 mb-2">
                                         <a class="dropdown-item" href="{{ route('template.one.dashboard') }}"><i
                                                 class="pr-2 fal fa-star"></i>
                                             My Dashboard</a>
-
-                                        <a class="dropdown-item" href="{{ route('template.one.dashboard') }}"><i
-                                                class="pr-2 fal fa-key"></i>
-                                            Password Change</a>
-
-                                        <hr class="mt-3 mb-2">
-                                        <form method="POST" action="{{ route('logout') }}">
-                                            @csrf
-                                            <a href="{{ route('logout') }}"
-                                                onclick="event.preventDefault();this.closest('form').submit();"
-                                                class="mt-0 cart-button w-100">
-                                                Logout
-                                            </a>
-                                        </form>
-                                    @else
-                                        <a href="{{ route('template.one.login') }}" class="mt-0 cart-button w-100">
-                                            Login
-                                        </a>
-                                        <hr class="mt-3 mb-2">
-                                        <a href="{{ route('template.one.login') }}" class="pl-3 text-muted"
-                                            style="font-size: 12px;">First time here? <span class="primary-color">Sign
-                                                Up</span></a>
-                                        <hr class="mt-2 mb-2">
                                         <a class="pl-3 dropdown-item userlogin-header" style="font-size: 12px;"
                                             href="{{ route('template.one.dashboard') }}"><i
                                                 class="pr-2 fal fa-user"></i>
@@ -385,6 +369,24 @@
                                                 class="pr-2 fal fa-box"></i>
                                             My Order</a>
                                         <hr class="mt-2 mb-2">
+                                        <form method="POST" action="{{ route('logout') }}">
+                                            @csrf
+                                            <a href="{{ route('logout') }}"
+                                                onclick="event.preventDefault();this.closest('form').submit();"
+                                                class="mt-0 cart-button w-100">
+                                                Logout
+                                            </a>
+                                        </form>
+                                    @else
+                                        <a href="{{ route('template.one.login') }}" class="mt-0 cart-button w-100">
+                                            Login
+                                        </a>
+                                        <hr class="mt-3 mb-2">
+                                        <a href="{{ route('template.one.login') }}" class="pl-3 text-muted"
+                                            style="font-size: 12px;">First time here? <span class="primary-color">Sign
+                                                Up</span></a>
+                                        <hr class="mt-2 mb-2">
+
                                         <a class="pl-3 dropdown-item userlogin-header" style="font-size: 12px;"
                                             href="{{ route('template.one.view.cart') }}"><i
                                                 class="pr-2 fal fa-shopping-cart"></i>
