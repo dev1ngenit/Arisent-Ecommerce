@@ -1928,13 +1928,13 @@ ul.list-inline li {
 
 .grenadier-color {
 
-    color: var(--primary-color);
+    color: hsl(194.03deg 71.26% 34.12%);
 
 }
 
 .grenadier-bg {
 
-    background-color: var(--primary-color);
+    background-color: hsl(194.03deg 71.26% 34.12%);
 
 }
 
