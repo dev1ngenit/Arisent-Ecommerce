@@ -31,9 +31,9 @@
 
 
     <!-- CSS here -->
-    <link rel="stylesheet" href="{{ asset('frontend/template_one/assets/css/meanmenu.css') }}" />
-    <link rel="stylesheet" href="{{ asset('frontend/template_one/assets/css/style.css') }}" />
-    <link rel="stylesheet" href="{{ asset('frontend/template_one/assets/css/responsive.css') }}" />
+    <link rel="stylesheet" href="{{ asset('frontend/template_one/assets/css/meanmenu.css?v=' . time()) }}" />
+    <link rel="stylesheet" href="{{ asset('frontend/template_one/assets/css/style.css?v=' . time()) }}" />
+    <link rel="stylesheet" href="{{ asset('frontend/template_one/assets/css/responsive.css?v=' . time()) }}" />
 
 
 
