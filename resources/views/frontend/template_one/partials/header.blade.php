@@ -27,11 +27,7 @@
 
             <!-- Categories Dropdown -->
             @php
-                $categorys = App\Models\Admin\Category::where('status', '1')
-                    ->orderBy('category_name', 'ASC')
-                    ->limit(9)
-                    ->latest()
-                    ->get();
+                $categorys = App\Models\Admin\Category::where('status', '1')->latest('id')->limit(9)->get();
             @endphp
             <ul class="ml-auto navbar-nav">
                 <li class="nav-item dropdown position-static">
@@ -42,7 +38,8 @@
                         Category
                     </a>
                     <div class="p-0 dropdown-menu dropdown-menu-full main-menu-drop"
-                        aria-labelledby="navbarDropdownFeatures" style="border-top: 2px solid #hsl(192.6deg 87.85% 48.2%)">
+                        aria-labelledby="navbarDropdownFeatures"
+                        style="border-top: 2px solid #hsl(192.6deg 87.85% 48.2%)">
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-12">
@@ -80,9 +77,11 @@
                                                             @forelse ($catwissubcat as $subcat)
                                                                 <div class="col-lg-3">
                                                                     <div>
-                                                                        <h5 class="primary-color">
-                                                                            {{ $subcat->subcategory_name }}
-                                                                        </h5>
+                                                                        <a href="">
+                                                                            <h5 class="primary-color">
+                                                                                {{ $subcat->subcategory_name }}
+                                                                            </h5>
+                                                                        </a>
                                                                         <div class="divider"></div>
                                                                         @php
                                                                             $childcats = App\Models\Admin\ChildCategory::where(
@@ -220,7 +219,8 @@
                                 ->get();
                         @endphp
                         <div class="dropdown-menu dropdown-menu-full main-menu-drop"
-                            style="border-top: 2px solid #hsl(192.6deg 87.85% 48.2%)" aria-labelledby="navbarDropdownPricing">
+                            style="border-top: 2px solid #hsl(192.6deg 87.85% 48.2%)"
+                            aria-labelledby="navbarDropdownPricing">
                             <div class="container">
                                 <div class="row">
                                     @foreach ($offers as $offer)
@@ -260,7 +260,6 @@
                 </ul>
             </div>
 
-            {{-- Ashiquzzaman  --}}
             <form class="ml-auto mr-3 searchbox" action="{{ route('product.search') }}" method="POST">
                 @csrf
                 <input type="search" placeholder="Product Search......" name="search" class="searchbox-input"
@@ -305,7 +304,6 @@
                 }
             </script> --}}
 
-            {{-- Ashiquzzaman  --}}
 
 
             <div class="cart--header__middle d-none d-md-block">
@@ -366,7 +364,8 @@
                                         </a>
                                         <hr class="mt-3 mb-2">
                                         <a href="{{ route('template.one.login') }}" class="pl-3 text-muted"
-                                            style="font-size: 12px;">First time here? <span class="primary-color">Sign Up</span></a>
+                                            style="font-size: 12px;">First time here? <span class="primary-color">Sign
+                                                Up</span></a>
                                         <hr class="mt-2 mb-2">
                                         <a class="pl-3 dropdown-item userlogin-header" style="font-size: 12px;"
                                             href="{{ route('template.one.dashboard') }}"><i
@@ -686,7 +685,8 @@
                                 ->get();
                         @endphp
                         <div class="dropdown-menu dropdown-menu-full main-menu-drop"
-                            style="border-top: 2px solid #hsl(192.6deg 87.85% 48.2%)" aria-labelledby="navbarDropdownPricing">
+                            style="border-top: 2px solid #hsl(192.6deg 87.85% 48.2%)"
+                            aria-labelledby="navbarDropdownPricing">
                             <div class="container">
                                 <div class="row">
                                     @foreach ($offers as $offer)

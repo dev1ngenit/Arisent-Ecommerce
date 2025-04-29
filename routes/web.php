@@ -93,6 +93,7 @@ Route::controller(TemplateOneController::class)->group(function () {
     Route::get('/offer-categorywise/product/{id}', 'OfferCategoryRelatedProductOne')->name('offer-categorywise.product');
     Route::get('/offerwise/product/{id}', 'OfferWiseProductOne')->name('offerwise.product');
     //Child Category
+    // Route::get('/product/subcategory/{id}/{subcategory_slug}', 'SubCategoryRelatedProductOne');
     Route::get('/product/childcategory/{id}/{childcategory_slug}', 'ChilldCategoryRelatedProductOne');
     //Contact
     Route::get('/contact', 'TemplateOneContact')->name('template_one.contact');
