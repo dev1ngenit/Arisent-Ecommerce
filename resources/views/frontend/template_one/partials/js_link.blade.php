@@ -1861,7 +1861,7 @@
 
 <script>
     $(window).load(function() {
-        $(".loader").fadeOut(3000);
+        $(".loader").fadeOut(800);
     });
 </script>
 {{-- <script>

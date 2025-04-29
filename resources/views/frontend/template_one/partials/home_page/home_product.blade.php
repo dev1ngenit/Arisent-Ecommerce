@@ -1,5 +1,5 @@
 @php
-    $categorys = App\Models\Admin\Category::where('status', '1')->orderBy('id', 'ASC')->distinct()->limit(4)->get();
+    $categorys = App\Models\Admin\Category::where('status', '1')->latest('id')->distinct()->limit(4)->get();
     $allproducts = App\Models\Admin\Product::where('status', '1')->latest()->get();
 @endphp
 
